@@ -1,0 +1,137 @@
+---
+author: Pablo Juan Belaustegui
+categories:
+- git
+- svn
+- github
+comments: true
+date: 2016-02-24T10:05:05Z
+published: true
+title: svn to git
+url: /2016/02/24/svn-to-git/
+image: 'images/svn-to-git.png'
+featured: true
+---
+
+# Svn to git, full migration
+
+Finally you decided that git is more suitable than svn for your work. But, what happens when you have projects that where using svn for a while?
+All of that information represented in thousand of svn revisions is something that normally you don't want to lose. For these cases I wrote this step by step guide to successfully migrate all the history stored in svn on a git repository, included all branches and tags no matter svn repository size. The only drawback is, more revisions you have more time you need to wait to get migration finished.
+ <!--more-->
+# Step by step
+
+To start the migration process, you need some info about how is data organized in your svn.
+
+## Layout of directories inside svn
+
+If you are lucky your project follows this directories layout
+
+- a/path/projectname
+	- trunk
+	- branches
+	- tags
+
+This can be simply informed to git-svn with -s or --stdlayout. If is not your case you have to inform to git-svn where is every one of these tree directories.
+```
+-T trunkSubdirecty or --trunk=trunkSubdirecty
+-t tagsSubdirecty or --tags=tagsSubdirecty
+-b brenchesSubdirecty or --branches=brenchesSubdirecty
+```
+
+For example you can have a layout like this
+
+- a/path
+	- trunk
+		- projectname1
+		- projectname2
+	- branches
+		- projectname1
+		- projectname2
+	- tags
+		- projectname1
+		- projectname2
+
+If you are migrating projectname1 the arguments must look like this
+```
+-T trunk/projectname1 -t tags/projectname1 -b branches/projectname1
+```
+
+## First svn revision where git history will start
+
+The other thing you need to know is the revision number where start the history of what you want to migrate. First candidate is first revision number where your project exists. You can ask svn by running this line.
+```
+svn log -r 1:HEAD --limit 1 svnrepourl/a/path/trunkSubdirectory
+```
+If you want to truncate some of the old history simply choose a newer revision number.
+
+## Creating git repository
+
+Standar
+```
+git svn clone --username=yourSvnUsername --stdlayout -r aRevisionNumber svnurl/a/path/projectname gitreponame
+```
+Custom layout
+```
+git svn clone --username=yourSvnUsername -T trunk/projectname -t tags/projectname -b branches/projectname -r aRevisionNumber svnurl/a/path/projectname gitreponame
+```
+
+## Fetching data from svn
+
+```
+cd gitreponame
+git svn fetch
+```
+This step could last long time even days depending the amount of revisions, data transfer ratios and from my experience, if you use windows takes more time than linux or osx. Git-svn will perform one request per revision to svn and will create a git commit if it considered convenient. If something goes wrong during data fetching, you simply run again "git svn fetch" and work will resume from last svn revision successfully processed. That's the reason why you must use "git clone -r n" and then "git svn fetch".
+When you run "git svn fetch" and finish with nothing to log it minds you finished the hardest part, now you have all data in your local git repository. But to finish your work you need to put all this information in github, bitbucket, your intranet git repositories container or where you consider useful.
+
+# Preparing local repository to push to an external repository
+
+## Updating master branch
+
+Run this line
+```
+git svn rebase
+```
+This has the same effect of
+```
+git reset --hard origin/trunk
+```
+but have the advantage of confirming you that origin/trunk is already updated with the last svn revision
+
+## Adding svn branches to local repository
+
+Regarding branches in git, are references to commit-objects inside git database you can simply copy those references that git-svn made.
+```
+cp .git/refs/remotes/origin/* .git/refs/heads/
+```
+If you run
+```
+git branch
+```
+You will see all branches that exists in svn including trunk
+
+## Adding svn tags as git tags on local repository
+
+Tags in git are different than branches, tag references point to tag-objects inside git database. The references that git-svn created are references that point to commit-objects instead of tag-objects, then they are branches instead of tags. Well, lets create a tag for every references that git-svn have created inside .git/refs/remotes/origin/tags.
+Just run this line, if you are using windows you have to run it inside git bash console
+```
+git for-each-ref refs/remotes/origin/tags | sed 's#^.*\([[:xdigit:]]\{40\}\).*refs/remotes/origin/tags/\(.*\)$#\2 \1#g' | while read p; do git tag -m "tag from svn" $p; done
+```
+If you run
+```
+git tag
+```
+You will see the same list of tags that exists in svn
+
+# Pushing data
+
+Create an empty repository in your repositories container, for example github. Then in your local repository add remote and push.
+```
+git remotes add newrepo git@github.com:aUser/aProjectName.git
+git push newrepo refs/heads/*
+git push --tags newrepo
+```
+
+# Say goodbye to svn
+
+At this point you can forget that your project once was using svn.
