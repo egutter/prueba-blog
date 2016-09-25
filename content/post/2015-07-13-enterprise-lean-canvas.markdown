@@ -6,6 +6,7 @@ comments: true
 date: 2015-07-13T10:43:47Z
 title: Enterprise Lean Canvas
 url: /2015/07/13/enterprise-lean-canvas/
+image: '/images/lean-canvas.png'
 ---
 
 A few days ago, we were asked to estimate a new big extension for a previous application we developed a year ago.

@@ -7,7 +7,6 @@ comments: true
 date: 2016-09-13T14:17:06Z
 title: From a newbie, to a newbie
 url: /2016/09/13/from-a-newbie-to-a-newbie/
-description: 'It's been less than a year since I joined 10Pines'
 
 ---
 

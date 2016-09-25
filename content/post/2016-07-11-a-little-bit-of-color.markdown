@@ -6,7 +6,7 @@ comments: true
 date: 2016-07-11T16:58:01Z
 title: A Little Bit of Color!
 url: /2016/07/11/a-little-bit-of-color/
-image: "/images/palette.jpg"
+image: "/images/palette2.jpg"
 ---
 
 #How to create a great palette for your app/web

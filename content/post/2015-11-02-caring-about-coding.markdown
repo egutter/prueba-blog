@@ -8,6 +8,7 @@ comments: true
 date: 2015-11-02T10:55:09Z
 title: Caring about coding
 url: /2015/11/02/caring-about-coding/
+featured: true
 ---
 
 _This is a repost of an article we wrote with our friends at 8th Light.
@@ -58,4 +59,3 @@ You can encourage people to take actions by just changing the words you use. Sta
 ---
 
 "Is the Broken Windows Theory Effective?" - SiOWfa13: Science in Our World: Certainty and Controversy. N.p., n.d. Web. 01 Oct. 2015.
-

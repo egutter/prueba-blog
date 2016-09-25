@@ -9,8 +9,6 @@ date: 2016-02-24T10:05:05Z
 published: true
 title: svn to git
 url: /2016/02/24/svn-to-git/
-image: 'images/svn-to-git.png'
-featured: true
 ---
 
 # Svn to git, full migration

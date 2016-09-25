@@ -7,11 +7,12 @@ params:
   cover: "/images/10pines-background.jpg"
   Subtitle: "We don't just write code. We craft your ideas"
   logo: "/images/10p-logo.png"
+  disqus: 10pinesblog
 # paginate: 9
 # copyright: "© 2009 Copyright Text"
 #
-# params:
-#   description: "Your Site Description" # optional
+#params:
+#  description: "Your Site Description" # optional
 #   twitter: "Your Twitter Name" # optional
 #   gitlab: "Your Gitlab Name" # optional
 #   github: "Your Github Name" # optional
