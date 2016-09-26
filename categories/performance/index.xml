@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Performance on 10 Pines Blog</title>
-    <link>http://blog.10pines.com/categories/performance/</link>
+    <link>http://egutter.github.io/prueba-blog/categories/performance/</link>
     <description>Recent content in Performance on 10 Pines Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 30 Aug 2013 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.10pines.com/categories/performance/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://egutter.github.io/prueba-blog/categories/performance/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Some performance case studies</title>
-      <link>http://blog.10pines.com/2013/08/30/some-performance-case-studies/</link>
+      <link>http://egutter.github.io/prueba-blog/2013/08/30/some-performance-case-studies/</link>
       <pubDate>Fri, 30 Aug 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.10pines.com/2013/08/30/some-performance-case-studies/</guid>
+      <guid>http://egutter.github.io/prueba-blog/2013/08/30/some-performance-case-studies/</guid>
       <description>&lt;p&gt;At 10Pines we do lightning talks every week to share interesting things with all our team.&lt;/p&gt;
 
 &lt;p&gt;Here is a presentation from the last Lighting Talk I gave.&lt;/p&gt;

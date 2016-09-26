@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Esug on 10 Pines Blog</title>
-    <link>http://blog.10pines.com/categories/esug/</link>
+    <link>http://egutter.github.io/prueba-blog/categories/esug/</link>
     <description>Recent content in Esug on 10 Pines Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 02 Oct 2010 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.10pines.com/categories/esug/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://egutter.github.io/prueba-blog/categories/esug/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Design principles behind Patagonia - ESUG 2010</title>
-      <link>http://blog.10pines.com/2010/10/02/design-principles-behind-patagonia-esug/</link>
+      <link>http://egutter.github.io/prueba-blog/2010/10/02/design-principles-behind-patagonia-esug/</link>
       <pubDate>Sat, 02 Oct 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.10pines.com/2010/10/02/design-principles-behind-patagonia-esug/</guid>
+      <guid>http://egutter.github.io/prueba-blog/2010/10/02/design-principles-behind-patagonia-esug/</guid>
       <description>&lt;p&gt;Patagonia is a conference registration web based system written in Pharo using Seaside, whose main purpose is to fulfill the ESUG conference registration needs. It was developed at 10Pines under the sponsorship of ESUG. It has been develop using some design principles that were &amp;ldquo;grown&amp;rdquo; developing other two systems, being Patagonia the latest version of them. These design principle&amp;rsquo;s objective is the development of &amp;ldquo;robust&amp;rdquo; software, that is, software that can easily change in a safe fashion, being at the same time self defensive when used incorrectly and self &amp;ldquo;teachable&amp;rdquo; to new programmers of the system.&lt;/p&gt;
 
 &lt;p&gt;{% youtube 8cgmdaKwRvU %}&lt;/p&gt;
@@ -29,10 +29,10 @@
     
     <item>
       <title>OOSCM: Object Oriented SCM - Beyond files - ESUG 2010</title>
-      <link>http://blog.10pines.com/2010/10/02/ooscm-object-oriented-scm-beyond-files-esug/</link>
+      <link>http://egutter.github.io/prueba-blog/2010/10/02/ooscm-object-oriented-scm-beyond-files-esug/</link>
       <pubDate>Sat, 02 Oct 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.10pines.com/2010/10/02/ooscm-object-oriented-scm-beyond-files-esug/</guid>
+      <guid>http://egutter.github.io/prueba-blog/2010/10/02/ooscm-object-oriented-scm-beyond-files-esug/</guid>
       <description>&lt;p&gt;OOSCM (Object Oriented Software Configuration Management) is a tool we are developing to better support traits that are unique to object oriented development. Current SCM tools (CVS,SVN,GIT,Monticello, etc) are file based solutions, the file is the minimum versionable element, but when developing with objects files are not the elements we manage, we manage and version classes, methods, packages, etc. OOSCM will keep the history of changes of these elements (from basic changes like modifying a method to composite one like renaming a class) providing at the same time means to treat products, baselines, projects, etc. as first class versionable elements with the objective of helping team development in all its steps (programming, integration, etc). The talk provides a description of the tool&amp;rsquo;s objective, architecture and current development state.&lt;/p&gt;
 
 &lt;p&gt;{% youtube gkP_Fy3tdZc %}&lt;/p&gt;
@@ -47,10 +47,10 @@
     
     <item>
       <title>How to be rich with smalltalk - Intregrating RIA &amp; Smalltalk</title>
-      <link>http://blog.10pines.com/2009/09/24/how-to-be-rich-with-smalltalk-intregrating-ria-and-smalltalk/</link>
+      <link>http://egutter.github.io/prueba-blog/2009/09/24/how-to-be-rich-with-smalltalk-intregrating-ria-and-smalltalk/</link>
       <pubDate>Thu, 24 Sep 2009 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.10pines.com/2009/09/24/how-to-be-rich-with-smalltalk-intregrating-ria-and-smalltalk/</guid>
+      <guid>http://egutter.github.io/prueba-blog/2009/09/24/how-to-be-rich-with-smalltalk-intregrating-ria-and-smalltalk/</guid>
       <description>&lt;p&gt;Nowadays, more applications are RIA oriented solutions. RIA (Rich Internet Applications) is a new kind of application with more advantages than traditional applications. It emerges as a combination of features offered by web applications and desktop applications. Even multimedia capabilities are covered because these environments have internal players.&lt;/p&gt;
 
 &lt;p&gt;RIA is a new concept that is growing with the advent of Adobe&amp;rsquo;s product Flex, Flash, OpenLaszlo and the Ajax platform.&lt;/p&gt;
@@ -78,10 +78,10 @@
     
     <item>
       <title>Mutation testing</title>
-      <link>http://blog.10pines.com/2009/09/18/mutation-testing/</link>
+      <link>http://egutter.github.io/prueba-blog/2009/09/18/mutation-testing/</link>
       <pubDate>Fri, 18 Sep 2009 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.10pines.com/2009/09/18/mutation-testing/</guid>
+      <guid>http://egutter.github.io/prueba-blog/2009/09/18/mutation-testing/</guid>
       <description>&lt;p&gt;During the 70s, mutation testing emerged as a technique to assess the fault-finding effectiveness of a test suite. It works mutating objects behavior and looking for tests to “kill” those mutants. The surviving mutants are the starting point to write better tests. Thus, this technique is an interesting alternative to code coverage regarding test quality.&lt;/p&gt;
 
 &lt;p&gt;However, so far it is a “brute force” technique that takes too long to provide useful results. This characteristic has forbidden its widespread and practical use regardless new techniques, such as schema-based mutation and selective mutation. Additionally, there are no mutation testing tools (to our knowledge) that work on a meta-circular and dynamic environments, such as Smalltalk, so the compile and link time are the current technique&amp;rsquo;s bottleneck.&lt;/p&gt;

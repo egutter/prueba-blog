@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Smalltalk on 10 Pines Blog</title>
-    <link>http://blog.10pines.com/categories/smalltalk/</link>
+    <link>http://egutter.github.io/prueba-blog/categories/smalltalk/</link>
     <description>Recent content in Smalltalk on 10 Pines Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 12 Nov 2010 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.10pines.com/categories/smalltalk/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://egutter.github.io/prueba-blog/categories/smalltalk/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>agile software development with smalltalk at smalltalks 2010</title>
-      <link>http://blog.10pines.com/2010/11/12/agile-software-development-with-smalltalks-at-smalltalks-2010/</link>
+      <link>http://egutter.github.io/prueba-blog/2010/11/12/agile-software-development-with-smalltalks-at-smalltalks-2010/</link>
       <pubDate>Fri, 12 Nov 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.10pines.com/2010/11/12/agile-software-development-with-smalltalks-at-smalltalks-2010/</guid>
+      <guid>http://egutter.github.io/prueba-blog/2010/11/12/agile-software-development-with-smalltalks-at-smalltalks-2010/</guid>
       <description>&lt;p&gt;Click &amp;lsquo;Read on&amp;rsquo; to see the presentation&lt;/p&gt;
 
 &lt;p&gt;{% slideshare 5754977 %}&lt;/p&gt;
@@ -25,10 +25,10 @@
     
     <item>
       <title>How to be rich with smalltalk - Intregrating RIA &amp; Smalltalk</title>
-      <link>http://blog.10pines.com/2009/09/24/how-to-be-rich-with-smalltalk-intregrating-ria-and-smalltalk/</link>
+      <link>http://egutter.github.io/prueba-blog/2009/09/24/how-to-be-rich-with-smalltalk-intregrating-ria-and-smalltalk/</link>
       <pubDate>Thu, 24 Sep 2009 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.10pines.com/2009/09/24/how-to-be-rich-with-smalltalk-intregrating-ria-and-smalltalk/</guid>
+      <guid>http://egutter.github.io/prueba-blog/2009/09/24/how-to-be-rich-with-smalltalk-intregrating-ria-and-smalltalk/</guid>
       <description>&lt;p&gt;Nowadays, more applications are RIA oriented solutions. RIA (Rich Internet Applications) is a new kind of application with more advantages than traditional applications. It emerges as a combination of features offered by web applications and desktop applications. Even multimedia capabilities are covered because these environments have internal players.&lt;/p&gt;
 
 &lt;p&gt;RIA is a new concept that is growing with the advent of Adobe&amp;rsquo;s product Flex, Flash, OpenLaszlo and the Ajax platform.&lt;/p&gt;
@@ -56,10 +56,10 @@
     
     <item>
       <title>Mutation testing</title>
-      <link>http://blog.10pines.com/2009/09/18/mutation-testing/</link>
+      <link>http://egutter.github.io/prueba-blog/2009/09/18/mutation-testing/</link>
       <pubDate>Fri, 18 Sep 2009 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.10pines.com/2009/09/18/mutation-testing/</guid>
+      <guid>http://egutter.github.io/prueba-blog/2009/09/18/mutation-testing/</guid>
       <description>&lt;p&gt;During the 70s, mutation testing emerged as a technique to assess the fault-finding effectiveness of a test suite. It works mutating objects behavior and looking for tests to “kill” those mutants. The surviving mutants are the starting point to write better tests. Thus, this technique is an interesting alternative to code coverage regarding test quality.&lt;/p&gt;
 
 &lt;p&gt;However, so far it is a “brute force” technique that takes too long to provide useful results. This characteristic has forbidden its widespread and practical use regardless new techniques, such as schema-based mutation and selective mutation. Additionally, there are no mutation testing tools (to our knowledge) that work on a meta-circular and dynamic environments, such as Smalltalk, so the compile and link time are the current technique&amp;rsquo;s bottleneck.&lt;/p&gt;
@@ -78,10 +78,10 @@
     
     <item>
       <title>About inheritance as means of reuse</title>
-      <link>http://blog.10pines.com/2009/05/20/about-inheritance-as-means-of-reuse/</link>
+      <link>http://egutter.github.io/prueba-blog/2009/05/20/about-inheritance-as-means-of-reuse/</link>
       <pubDate>Wed, 20 May 2009 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.10pines.com/2009/05/20/about-inheritance-as-means-of-reuse/</guid>
+      <guid>http://egutter.github.io/prueba-blog/2009/05/20/about-inheritance-as-means-of-reuse/</guid>
       <description>
 
 &lt;p&gt;When talking about Smalltalk, there is definitively an over use on the possibility to add messages to &lt;code&gt;Object&lt;/code&gt; class. It is so easy to do it, that people usually do it just to get something working fast, even if the coding is poor. There are a lot of messages (mainly &lt;code&gt;#isXXX&lt;/code&gt; messages) that do not belong to &lt;code&gt;Object&lt;/code&gt; and represent a bad design decision. Most of them are implemented there because they are &amp;ldquo;handy&amp;rdquo; and easily &amp;ldquo;reused&amp;rdquo;. For example &lt;code&gt;#-&amp;gt;&lt;/code&gt; or &lt;code&gt;#assert:&lt;/code&gt; implemented in Squeak. Definitively not all objects should respond to them.&lt;/p&gt;

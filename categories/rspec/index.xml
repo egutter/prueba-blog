@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Rspec on 10 Pines Blog</title>
-    <link>http://blog.10pines.com/categories/rspec/</link>
+    <link>http://egutter.github.io/prueba-blog/categories/rspec/</link>
     <description>Recent content in Rspec on 10 Pines Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 07 May 2013 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.10pines.com/categories/rspec/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://egutter.github.io/prueba-blog/categories/rspec/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Parallel tests for JRuby</title>
-      <link>http://blog.10pines.com/2013/05/07/parallel-tests-for-jruby/</link>
+      <link>http://egutter.github.io/prueba-blog/2013/05/07/parallel-tests-for-jruby/</link>
       <pubDate>Tue, 07 May 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.10pines.com/2013/05/07/parallel-tests-for-jruby/</guid>
+      <guid>http://egutter.github.io/prueba-blog/2013/05/07/parallel-tests-for-jruby/</guid>
       <description>&lt;p&gt;Recently, we&amp;rsquo;ve been porting one of our projects from Ruby 1.9.3 (MRI) to JRuby 1.7.3. There was a fair amount of work involved, mainly about Ruby gems and (in)compatibility with C extensions (which JRuby dropped support), but that will be left for another post. Here, I&amp;rsquo;d like to discuss the recent addition of JRuby support to the &lt;a href=&#34;https://github.com/grosser/parallel_tests&#34;&gt;parallel_tests&lt;/a&gt; gem.&lt;/p&gt;
 
 &lt;p&gt;Our tests take about 20 minutes to run (it&amp;rsquo;s suite of ~3800 examples, which are currently undergoing refactoring to improve performance), but a lot of the machine&amp;rsquo;s processing power is unused. So I thought we could start by actually running all the code we can, before starting to profile and tune it. Also, if the delays were caused by waiting events, it wouldn&amp;rsquo;t help making the code run faster. This sounds good, but it didn&amp;rsquo;t turn out to be that easy.&lt;/p&gt;

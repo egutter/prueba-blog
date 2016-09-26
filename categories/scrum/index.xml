@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Scrum on 10 Pines Blog</title>
-    <link>http://blog.10pines.com/categories/scrum/</link>
+    <link>http://egutter.github.io/prueba-blog/categories/scrum/</link>
     <description>Recent content in Scrum on 10 Pines Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 22 Jun 2010 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.10pines.com/categories/scrum/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://egutter.github.io/prueba-blog/categories/scrum/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Agile is clean code</title>
-      <link>http://blog.10pines.com/2010/06/22/agile-is-clean-code/</link>
+      <link>http://egutter.github.io/prueba-blog/2010/06/22/agile-is-clean-code/</link>
       <pubDate>Tue, 22 Jun 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.10pines.com/2010/06/22/agile-is-clean-code/</guid>
+      <guid>http://egutter.github.io/prueba-blog/2010/06/22/agile-is-clean-code/</guid>
       <description>
 
 &lt;p&gt;But &amp;hellip; Isn&amp;rsquo;t this a requirement for all approaches? Why do I have the impression that in Agile, the technical aspect is more important? When I was at University, I remember vividly having heard (and unfortunately later repeated) that the programmer had one of the less important tasks in the chain of producing software. The most important, more senior and smarter people are the architects/designers that analyse and design the application, giving the programmers some diagrams that they &amp;lsquo;just&amp;rsquo; have to translate into code. That seemed like an easy task!!&lt;/p&gt;

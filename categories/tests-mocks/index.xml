@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tests Mocks on 10 Pines Blog</title>
-    <link>http://blog.10pines.com/categories/tests-mocks/</link>
+    <link>http://egutter.github.io/prueba-blog/categories/tests-mocks/</link>
     <description>Recent content in Tests Mocks on 10 Pines Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 14 Jan 2016 15:13:41 +0000</lastBuildDate>
-    <atom:link href="http://blog.10pines.com/categories/tests-mocks/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://egutter.github.io/prueba-blog/categories/tests-mocks/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Be careful with the mocks</title>
-      <link>http://blog.10pines.com/2016/01/14/be-careful-with-the-mocks/</link>
+      <link>http://egutter.github.io/prueba-blog/2016/01/14/be-careful-with-the-mocks/</link>
       <pubDate>Thu, 14 Jan 2016 15:13:41 +0000</pubDate>
       
-      <guid>http://blog.10pines.com/2016/01/14/be-careful-with-the-mocks/</guid>
+      <guid>http://egutter.github.io/prueba-blog/2016/01/14/be-careful-with-the-mocks/</guid>
       <description>&lt;p&gt;Mocking objects is a common practice when writing tests, however it can be painful when refactoring a class tested with mocks. I will show a simple example to explain the problems that mocking can generate, but first I would like to give some definitions:&lt;/p&gt;
 
 &lt;ul&gt;

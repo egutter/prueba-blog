@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Design on 10 Pines Blog</title>
-    <link>http://blog.10pines.com/categories/design/</link>
+    <link>http://egutter.github.io/prueba-blog/categories/design/</link>
     <description>Recent content in Design on 10 Pines Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 18 Sep 2015 01:28:42 +0000</lastBuildDate>
-    <atom:link href="http://blog.10pines.com/categories/design/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://egutter.github.io/prueba-blog/categories/design/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Tests: Paving our way</title>
-      <link>http://blog.10pines.com/2015/09/18/tests-paving-our-way/</link>
+      <link>http://egutter.github.io/prueba-blog/2015/09/18/tests-paving-our-way/</link>
       <pubDate>Fri, 18 Sep 2015 01:28:42 +0000</pubDate>
       
-      <guid>http://blog.10pines.com/2015/09/18/tests-paving-our-way/</guid>
+      <guid>http://egutter.github.io/prueba-blog/2015/09/18/tests-paving-our-way/</guid>
       <description>
 
 &lt;blockquote&gt;

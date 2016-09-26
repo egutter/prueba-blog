@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Reflection on 10 Pines Blog</title>
-    <link>http://blog.10pines.com/categories/reflection/</link>
+    <link>http://egutter.github.io/prueba-blog/categories/reflection/</link>
     <description>Recent content in Reflection on 10 Pines Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 02 Dec 2014 17:10:14 +0000</lastBuildDate>
-    <atom:link href="http://blog.10pines.com/categories/reflection/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://egutter.github.io/prueba-blog/categories/reflection/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Java generics and inheritance (part 2)</title>
-      <link>http://blog.10pines.com/2014/12/02/java-generics-and-inheritance-part-2/</link>
+      <link>http://egutter.github.io/prueba-blog/2014/12/02/java-generics-and-inheritance-part-2/</link>
       <pubDate>Tue, 02 Dec 2014 17:10:14 +0000</pubDate>
       
-      <guid>http://blog.10pines.com/2014/12/02/java-generics-and-inheritance-part-2/</guid>
+      <guid>http://egutter.github.io/prueba-blog/2014/12/02/java-generics-and-inheritance-part-2/</guid>
       <description>
 
-&lt;p&gt;&lt;a href=&#34;http://blog.10pines.com/2014/12/02/java-generics-and-inheritance-part-1&#34;&gt;On the first part of this article&lt;/a&gt; I explained why java generics don&amp;rsquo;t allow up-casting for generified types.
+&lt;p&gt;&lt;a href=&#34;http://egutter.github.io/prueba-blog/2014/12/02/java-generics-and-inheritance-part-1&#34;&gt;On the first part of this article&lt;/a&gt; I explained why java generics don&amp;rsquo;t allow up-casting for generified types.
 In this part we will see why, arrays don&amp;rsquo;t have that restriction, and the implications for &lt;em&gt;reflection&lt;/em&gt;.&lt;/p&gt;
 
 &lt;h2 id=&#34;but-arrays&#34;&gt;But arrays&amp;hellip;&lt;/h2&gt;
@@ -40,7 +40,7 @@ objectArray[0] = 1; //1 is not a String -&amp;gt; ArrayStoreException
 
 &lt;p&gt;Yep, the array reacts to your wrong doing and it throws you an ArrayStoreException if you try to put anything that is not a String (or subtype). The array retains its complete type information in runtime.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://blog.10pines.com/images/2014-12-02-java-generics-and-inheritance-part-2-VennArrayObjectArrayString.jpg&#34; alt=&#34;Venn diagram of arrays&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://egutter.github.io/prueba-blog/images/2014-12-02-java-generics-and-inheritance-part-2-VennArrayObjectArrayString.jpg&#34; alt=&#34;Venn diagram of arrays&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;So basically, while you can see an array as an instance of a super type, the array doesn&amp;rsquo;t lose its type. The type of an array is not lost at runtime because it&amp;rsquo;s reified (there&amp;rsquo;s an object that represents it at runtime). It doesn&amp;rsquo;t depend on the type of the variable it&amp;rsquo;s assigned to.
 On the other hand, a list type does depend on the variable it&amp;rsquo;s assigned to, and that&amp;rsquo;s why you cannot up-cast generic types, so you don&amp;rsquo;t change the type of contained elements. As lists don&amp;rsquo;t reify their element type you could put whatever inside, and then the implicit casts of generics may break.&lt;/p&gt;
@@ -153,7 +153,7 @@ But it won&amp;rsquo;t help you much. It uses &lt;code&gt;Type&lt;/code&gt; hier
 
 &lt;p&gt;Not only you do have 3 different ways to know your super type, you also have three different non-polymorphic objects.  If you are like me for simplicity&amp;rsquo;s sake, you will say ok, let&amp;rsquo;s use the most complete one, and let&amp;rsquo;s forget about the others (the older ones). Let&amp;rsquo;s use &lt;code&gt;getAnnotatedSuperclass():AnnotatedType&lt;/code&gt; right?&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://blog.10pines.com/images/2014-12-02-java-generics-and-inheritance-part-2-threeSuperTypes.jpg&#34; alt=&#34;Three options for super-types&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://egutter.github.io/prueba-blog/images/2014-12-02-java-generics-and-inheritance-part-2-threeSuperTypes.jpg&#34; alt=&#34;Three options for super-types&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;But what if I have more than one inheritance level? What if I want to know an argument of the super type of my super type? Does AnnotatedType has a super class method as Class does? A super type of List&lt;String&gt; is Collection&lt;String&gt; can I get to it? &lt;strong&gt;Can I traverse my generic lineage? Short answer: no.&lt;/strong&gt;&lt;/p&gt;
 
@@ -161,11 +161,11 @@ But it won&amp;rsquo;t help you much. It uses &lt;code&gt;Type&lt;/code&gt; hier
 &lt;code&gt;AnnotatedType::getType()&lt;/code&gt; allows you to get a &lt;code&gt;Type&lt;/code&gt; instance which doesn&amp;rsquo;t have the concept of inheritance either&amp;hellip;. But&amp;hellip;.&lt;br /&gt;
 If &lt;code&gt;Type&lt;/code&gt; is an instance of &lt;code&gt;ParameterizedType&lt;/code&gt;, then you have &lt;code&gt;ParameterizedType::getRawType()&lt;/code&gt; that gives you an instance of &lt;code&gt;Class&lt;/code&gt; and finally you can ask that class its super type again.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://blog.10pines.com/images/2014-12-02-java-generics-and-inheritance-part-2-whot.jpg&#34; alt=&#34;Whot?&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://egutter.github.io/prueba-blog/images/2014-12-02-java-generics-and-inheritance-part-2-whot.jpg&#34; alt=&#34;Whot?&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Let me say it again: from a &lt;code&gt;Class&lt;/code&gt; instance you can have the annotated super type (to get the annotations) then get the generic &lt;code&gt;Type&lt;/code&gt;, cast it to a parameterized type (to get the type arguments), ask its raw class and only then get the super super type. It can&amp;rsquo;t be easier!&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://blog.10pines.com/images/2014-12-02-java-generics-and-inheritance-part-2-superSuperType.jpg&#34; alt=&#34;Navigating to a super type&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://egutter.github.io/prueba-blog/images/2014-12-02-java-generics-and-inheritance-part-2-superSuperType.jpg&#34; alt=&#34;Navigating to a super type&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Oh, one more thing. Each level you go up, you lose the actual type arguments. Why?&lt;br /&gt;
 Because you have to pass through a Class instance in order to go up the next level. &lt;code&gt;Class&lt;/code&gt; knows nothing about type arguments.&lt;br /&gt;
@@ -189,10 +189,10 @@ Two different personalities that need one representation. That&amp;rsquo;s why y
     
     <item>
       <title>Java generics and inheritance (part 1)</title>
-      <link>http://blog.10pines.com/2014/12/02/java-generics-and-inheritance-part-1/</link>
+      <link>http://egutter.github.io/prueba-blog/2014/12/02/java-generics-and-inheritance-part-1/</link>
       <pubDate>Tue, 02 Dec 2014 16:51:45 +0000</pubDate>
       
-      <guid>http://blog.10pines.com/2014/12/02/java-generics-and-inheritance-part-1/</guid>
+      <guid>http://egutter.github.io/prueba-blog/2014/12/02/java-generics-and-inheritance-part-1/</guid>
       <description>
 
 &lt;h2 id=&#34;types-sets-variables-and-casting&#34;&gt;Types, Sets, variables and casting&lt;/h2&gt;
@@ -230,7 +230,7 @@ To complicate things worse, the compiler will accept that same reasoning for arr
 
 &lt;p&gt;Why can arrays be assigned and lists cant&amp;rsquo;t? Have you ever dedicated some thoughts to it? They are both container types, they have both just one element type. What makes those types conceptually different?&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://blog.10pines.com/images/java-generics-and-inheritance-part-1-genericsYUNo.jpg&#34; alt=&#34;Generics YU&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://egutter.github.io/prueba-blog/images/java-generics-and-inheritance-part-1-genericsYUNo.jpg&#34; alt=&#34;Generics YU&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;the-reason&#34;&gt;The reason&lt;/h2&gt;
 
@@ -263,7 +263,7 @@ There are, of course, other solutions to this problem (see &lt;a href=&#34;http:
 
 &lt;p&gt;If you know what you are doing, there&amp;rsquo;s one way to workaround this &lt;em&gt;generics&lt;/em&gt; restriction. To see it graphically at compile time, we have three types &lt;code&gt;List&amp;lt;String&amp;gt;&lt;/code&gt;, &lt;code&gt;List&amp;lt;Object&amp;gt;&lt;/code&gt; and &lt;code&gt;List&lt;/code&gt; which is the &amp;ldquo;raw&amp;rdquo; type, represented as sets:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://blog.10pines.com/images/java-generics-and-inheritance-part-1-VennListObjectListString.jpg&#34; alt=&#34;Venn diagram of lists&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://egutter.github.io/prueba-blog/images/java-generics-and-inheritance-part-1-VennListObjectListString.jpg&#34; alt=&#34;Venn diagram of lists&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;The only way to escape this rule, at compile time, is to move to the super-set, and then go down to the other sub-set.&lt;/p&gt;
 
@@ -276,7 +276,7 @@ Just to warn you: if you manage to do this, you may have &lt;em&gt;ClassClassExc
 
 &lt;h2 id=&#34;but-arrays&#34;&gt;But arrays!&lt;/h2&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://blog.10pines.com/2014/12/02/java-generics-and-inheritance-part-2&#34;&gt;On the next part of this article&lt;/a&gt;, I&amp;rsquo;ll show you why this doesn&amp;rsquo;t happen with arrays, and the implications for reflection.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://egutter.github.io/prueba-blog/2014/12/02/java-generics-and-inheritance-part-2&#34;&gt;On the next part of this article&lt;/a&gt;, I&amp;rsquo;ll show you why this doesn&amp;rsquo;t happen with arrays, and the implications for reflection.&lt;/p&gt;
 </description>
     </item>
     

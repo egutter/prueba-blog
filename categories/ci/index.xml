@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ci on 10 Pines Blog</title>
-    <link>http://blog.10pines.com/categories/ci/</link>
+    <link>http://egutter.github.io/prueba-blog/categories/ci/</link>
     <description>Recent content in Ci on 10 Pines Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 18 May 2013 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.10pines.com/categories/ci/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://egutter.github.io/prueba-blog/categories/ci/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Parallel tests on Travis</title>
-      <link>http://blog.10pines.com/2013/05/18/parallel-tests-on-travis/</link>
+      <link>http://egutter.github.io/prueba-blog/2013/05/18/parallel-tests-on-travis/</link>
       <pubDate>Sat, 18 May 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.10pines.com/2013/05/18/parallel-tests-on-travis/</guid>
+      <guid>http://egutter.github.io/prueba-blog/2013/05/18/parallel-tests-on-travis/</guid>
       <description>
 
 &lt;p&gt;Since the last post, a lot of things happened: some things were fixed, some tests got faster and I learned that some aspects of JRuby are just slow (for now).&lt;/p&gt;

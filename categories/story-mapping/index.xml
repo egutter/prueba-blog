@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Story Mapping on 10 Pines Blog</title>
-    <link>http://blog.10pines.com/categories/story-mapping/</link>
+    <link>http://egutter.github.io/prueba-blog/categories/story-mapping/</link>
     <description>Recent content in Story Mapping on 10 Pines Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 22 Oct 2010 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.10pines.com/categories/story-mapping/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://egutter.github.io/prueba-blog/categories/story-mapping/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>agiles 2010: story mapping - un enfoque visual a la construcción del product backlog</title>
-      <link>http://blog.10pines.com/2010/10/22/agiles-2010-story-mapping-un-enfoque-visual-a-la-construccion-del-product-backlog/</link>
+      <link>http://egutter.github.io/prueba-blog/2010/10/22/agiles-2010-story-mapping-un-enfoque-visual-a-la-construccion-del-product-backlog/</link>
       <pubDate>Fri, 22 Oct 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.10pines.com/2010/10/22/agiles-2010-story-mapping-un-enfoque-visual-a-la-construccion-del-product-backlog/</guid>
+      <guid>http://egutter.github.io/prueba-blog/2010/10/22/agiles-2010-story-mapping-un-enfoque-visual-a-la-construccion-del-product-backlog/</guid>
       <description>&lt;p&gt;Click &amp;lsquo;Read on&amp;rsquo; to see the presentation&lt;/p&gt;
 
 &lt;p&gt;{% prezi ickvpa0kgxnc %}&lt;/p&gt;

@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Lean on 10 Pines Blog</title>
-    <link>http://blog.10pines.com/categories/lean/</link>
+    <link>http://egutter.github.io/prueba-blog/categories/lean/</link>
     <description>Recent content in Lean on 10 Pines Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 07 Nov 2014 11:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.10pines.com/categories/lean/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://egutter.github.io/prueba-blog/categories/lean/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>MVP&#39;s: The Real Deal</title>
-      <link>http://blog.10pines.com/2014/11/07/mvps-the-real-deal/</link>
+      <link>http://egutter.github.io/prueba-blog/2014/11/07/mvps-the-real-deal/</link>
       <pubDate>Fri, 07 Nov 2014 11:00:00 +0000</pubDate>
       
-      <guid>http://blog.10pines.com/2014/11/07/mvps-the-real-deal/</guid>
+      <guid>http://egutter.github.io/prueba-blog/2014/11/07/mvps-the-real-deal/</guid>
       <description>&lt;p&gt;We all know how it goes: An idea strikes our mind, and before we notice, hands are already on our keyboard, our favourite IDE wide open, (luckily a bit of brainstorming) and a product is born.&lt;/p&gt;
 
 &lt;p&gt;Yeah yeah, we all know we should hold the horses and make some state-of-the-art research. With ease we talk ourselves into believing that most of it sucks (compared with the product in our minds). We can do it way better, and everyone will love it, because everyone needs it. Code-blocks on it!&lt;/p&gt;
@@ -50,9 +50,9 @@ This hides the fact that an MVP may not even be an iteration of our product, jus
 
 &lt;p&gt;However, just so you can take some real example out of this article, I will share some pictures of a successful MVP user testing session conducted for a project I was part of. Potential users were presented a “wireframed” version of a web application in plain paper, and they were asked to perform specific tasks on it, using their hands as mouses, to finally get their feedback.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://blog.10pines.com/images/mvps-the-real-deal_1.jpg&#34; style=&#34;width: 227px;&#34; /&gt;
-&lt;img src=&#34;http://blog.10pines.com/images/mvps-the-real-deal_2.jpg&#34; style=&#34;width: 227px;&#34; /&gt;
-&lt;img src=&#34;http://blog.10pines.com/images/mvps-the-real-deal_3.jpg&#34; style=&#34;width: 227px;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://egutter.github.io/prueba-blog/images/mvps-the-real-deal_1.jpg&#34; style=&#34;width: 227px;&#34; /&gt;
+&lt;img src=&#34;http://egutter.github.io/prueba-blog/images/mvps-the-real-deal_2.jpg&#34; style=&#34;width: 227px;&#34; /&gt;
+&lt;img src=&#34;http://egutter.github.io/prueba-blog/images/mvps-the-real-deal_3.jpg&#34; style=&#34;width: 227px;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;This was a highly rewarding experience and you would probably be surprised to see how involved users became and how much information we collected, from both their words and their behaviour.&lt;/p&gt;
 

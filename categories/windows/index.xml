@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Windows on 10 Pines Blog</title>
-    <link>http://blog.10pines.com/categories/windows/</link>
+    <link>http://egutter.github.io/prueba-blog/categories/windows/</link>
     <description>Recent content in Windows on 10 Pines Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 19 Oct 2010 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.10pines.com/categories/windows/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://egutter.github.io/prueba-blog/categories/windows/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>deploy ruby on rails on windows 2008 server and iis 7.0</title>
-      <link>http://blog.10pines.com/2010/10/19/deploy-ruby-on-rails-on-windows-server-and-iis/</link>
+      <link>http://egutter.github.io/prueba-blog/2010/10/19/deploy-ruby-on-rails-on-windows-server-and-iis/</link>
       <pubDate>Tue, 19 Oct 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.10pines.com/2010/10/19/deploy-ruby-on-rails-on-windows-server-and-iis/</guid>
+      <guid>http://egutter.github.io/prueba-blog/2010/10/19/deploy-ruby-on-rails-on-windows-server-and-iis/</guid>
       <description>&lt;p&gt;Deploying Ruby On Rails in a Windows environment can be very painful. I couldn&amp;rsquo;t find any blog which really helped me, so I decided to summarize all the necessary steps I followed to successfully deploy a Rails application in a Windows 2008 server from scratch. I won&amp;rsquo;t give much explanation on each step, so if you like to know more about it, at the end of this post you&amp;rsquo;ll find a list of articles I found useful.&lt;/p&gt;
 
 &lt;p&gt;**The environment: **&lt;/p&gt;

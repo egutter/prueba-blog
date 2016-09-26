@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tdd on 10 Pines Blog</title>
-    <link>http://blog.10pines.com/categories/tdd/</link>
+    <link>http://egutter.github.io/prueba-blog/categories/tdd/</link>
     <description>Recent content in Tdd on 10 Pines Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 26 Jul 2016 17:39:03 +0000</lastBuildDate>
-    <atom:link href="http://blog.10pines.com/categories/tdd/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://egutter.github.io/prueba-blog/categories/tdd/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>An Inverted Test Pyramid</title>
-      <link>http://blog.10pines.com/2016/07/26/inverted-test-pyramid/</link>
+      <link>http://egutter.github.io/prueba-blog/2016/07/26/inverted-test-pyramid/</link>
       <pubDate>Tue, 26 Jul 2016 17:39:03 +0000</pubDate>
       
-      <guid>http://blog.10pines.com/2016/07/26/inverted-test-pyramid/</guid>
+      <guid>http://egutter.github.io/prueba-blog/2016/07/26/inverted-test-pyramid/</guid>
       <description>
 
 &lt;p&gt;I believe that most of us are familiar with the concept of &amp;ldquo;Test Pyramid&amp;rdquo;, a simple heuristic originally described by Mike Cohn, that is that a project should aim to have a larger number of unit tests than end-to-end tests. But after working on a project suffering from an inverted pyramid, I think it’s worth mentioning some of the downsides that relying solely on end-to-end tests might have.&lt;/p&gt;
@@ -39,10 +39,10 @@ It’s just important to keep in mind they test different things and their purpo
     
     <item>
       <title>Tests: Paving our way</title>
-      <link>http://blog.10pines.com/2015/09/18/tests-paving-our-way/</link>
+      <link>http://egutter.github.io/prueba-blog/2015/09/18/tests-paving-our-way/</link>
       <pubDate>Fri, 18 Sep 2015 01:28:42 +0000</pubDate>
       
-      <guid>http://blog.10pines.com/2015/09/18/tests-paving-our-way/</guid>
+      <guid>http://egutter.github.io/prueba-blog/2015/09/18/tests-paving-our-way/</guid>
       <description>
 
 &lt;blockquote&gt;

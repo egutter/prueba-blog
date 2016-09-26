@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Development on 10 Pines Blog</title>
-    <link>http://blog.10pines.com/categories/development/</link>
+    <link>http://egutter.github.io/prueba-blog/categories/development/</link>
     <description>Recent content in Development on 10 Pines Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 17 Feb 2016 17:39:59 +0000</lastBuildDate>
-    <atom:link href="http://blog.10pines.com/categories/development/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://egutter.github.io/prueba-blog/categories/development/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>How, What, Why: The three essences of software development</title>
-      <link>http://blog.10pines.com/2016/02/17/how-what-why-the-three-essences-of-software-development/</link>
+      <link>http://egutter.github.io/prueba-blog/2016/02/17/how-what-why-the-three-essences-of-software-development/</link>
       <pubDate>Wed, 17 Feb 2016 17:39:59 +0000</pubDate>
       
-      <guid>http://blog.10pines.com/2016/02/17/how-what-why-the-three-essences-of-software-development/</guid>
+      <guid>http://egutter.github.io/prueba-blog/2016/02/17/how-what-why-the-three-essences-of-software-development/</guid>
       <description>
 
 &lt;blockquote&gt;
@@ -253,10 +253,10 @@ It also reveals why computer systems security is so hard.&lt;/li&gt;
     
     <item>
       <title>Organizational Debt and The Romantic Dev</title>
-      <link>http://blog.10pines.com/2015/08/18/organizational-debt-and-the-romantic-dev/</link>
+      <link>http://egutter.github.io/prueba-blog/2015/08/18/organizational-debt-and-the-romantic-dev/</link>
       <pubDate>Tue, 18 Aug 2015 12:49:27 +0000</pubDate>
       
-      <guid>http://blog.10pines.com/2015/08/18/organizational-debt-and-the-romantic-dev/</guid>
+      <guid>http://egutter.github.io/prueba-blog/2015/08/18/organizational-debt-and-the-romantic-dev/</guid>
       <description>
 
 &lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
@@ -370,10 +370,10 @@ It also reveals why computer systems security is so hard.&lt;/li&gt;
     
     <item>
       <title>How to gently upgrade your Java application</title>
-      <link>http://blog.10pines.com/2015/06/15/how-to-gently-upgrade-your-java-application/</link>
+      <link>http://egutter.github.io/prueba-blog/2015/06/15/how-to-gently-upgrade-your-java-application/</link>
       <pubDate>Mon, 15 Jun 2015 14:48:00 +0000</pubDate>
       
-      <guid>http://blog.10pines.com/2015/06/15/how-to-gently-upgrade-your-java-application/</guid>
+      <guid>http://egutter.github.io/prueba-blog/2015/06/15/how-to-gently-upgrade-your-java-application/</guid>
       <description>&lt;p&gt;When I think about getting an upgrade I usually picture myself like this:&lt;/p&gt;
 
 &lt;p&gt;{% img /images/Feel_like_a_sir_in_hd_by_lemmino-200.png %}&lt;/p&gt;
@@ -552,10 +552,10 @@ If you are a little curious and explore the Collector&amp;rsquo;s  API and docum
     
     <item>
       <title>Essence-driven Development</title>
-      <link>http://blog.10pines.com/2015/02/18/essence-driven-development/</link>
+      <link>http://egutter.github.io/prueba-blog/2015/02/18/essence-driven-development/</link>
       <pubDate>Wed, 18 Feb 2015 11:13:05 +0000</pubDate>
       
-      <guid>http://blog.10pines.com/2015/02/18/essence-driven-development/</guid>
+      <guid>http://egutter.github.io/prueba-blog/2015/02/18/essence-driven-development/</guid>
       <description>&lt;p&gt;Something that has always seemed motivating is the feeling that my way of doing things generally maintained good adaptability. Throughout my years of study at the University, and later in 10pines, I realized the type of programmer who I want to be.&lt;/p&gt;
 
 &lt;p&gt;Many aim to learn Object-Oriented Programming, Functional Programming, or a particular programming language, but this profession is characterized for being constantly changing. For my part, I have always wanted to be sure I’m prepared to face any challenge. Therefore, my way to learn always relies on capturing the essence of knowledge.&lt;/p&gt;

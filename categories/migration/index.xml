@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Migration on 10 Pines Blog</title>
-    <link>http://blog.10pines.com/categories/migration/</link>
+    <link>http://egutter.github.io/prueba-blog/categories/migration/</link>
     <description>Recent content in Migration on 10 Pines Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 15 Jun 2015 14:48:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.10pines.com/categories/migration/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://egutter.github.io/prueba-blog/categories/migration/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>How to gently upgrade your Java application</title>
-      <link>http://blog.10pines.com/2015/06/15/how-to-gently-upgrade-your-java-application/</link>
+      <link>http://egutter.github.io/prueba-blog/2015/06/15/how-to-gently-upgrade-your-java-application/</link>
       <pubDate>Mon, 15 Jun 2015 14:48:00 +0000</pubDate>
       
-      <guid>http://blog.10pines.com/2015/06/15/how-to-gently-upgrade-your-java-application/</guid>
+      <guid>http://egutter.github.io/prueba-blog/2015/06/15/how-to-gently-upgrade-your-java-application/</guid>
       <description>&lt;p&gt;When I think about getting an upgrade I usually picture myself like this:&lt;/p&gt;
 
 &lt;p&gt;{% img /images/Feel_like_a_sir_in_hd_by_lemmino-200.png %}&lt;/p&gt;

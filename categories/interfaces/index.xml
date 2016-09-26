@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Interfaces on 10 Pines Blog</title>
-    <link>http://blog.10pines.com/categories/interfaces/</link>
+    <link>http://egutter.github.io/prueba-blog/categories/interfaces/</link>
     <description>Recent content in Interfaces on 10 Pines Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 19 May 2015 17:15:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.10pines.com/categories/interfaces/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://egutter.github.io/prueba-blog/categories/interfaces/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Java Interface Default Methods. What?</title>
-      <link>http://blog.10pines.com/2015/05/19/java-interface-default-methods/</link>
+      <link>http://egutter.github.io/prueba-blog/2015/05/19/java-interface-default-methods/</link>
       <pubDate>Tue, 19 May 2015 17:15:00 +0000</pubDate>
       
-      <guid>http://blog.10pines.com/2015/05/19/java-interface-default-methods/</guid>
+      <guid>http://egutter.github.io/prueba-blog/2015/05/19/java-interface-default-methods/</guid>
       <description>
 
 &lt;p&gt;In my last post I&amp;rsquo;ve presented both traits and mixins, with the promise of identifying the Java 8 Interface Default Methods. So, let&amp;rsquo;s get on it.&lt;/p&gt;
 
-&lt;p&gt;First of all, if you don’t know what I’m talking about, &lt;a href=&#34;http://blog.10pines.com/2014/10/14/mixins-or-traits/&#34;&gt;read my previous post&lt;/a&gt; -and &lt;em&gt;please&lt;/em&gt; ignore the fact that it took me almost half a year to write this second part :)&lt;/p&gt;
+&lt;p&gt;First of all, if you don’t know what I’m talking about, &lt;a href=&#34;http://egutter.github.io/prueba-blog/2014/10/14/mixins-or-traits/&#34;&gt;read my previous post&lt;/a&gt; -and &lt;em&gt;please&lt;/em&gt; ignore the fact that it took me almost half a year to write this second part :)&lt;/p&gt;
 
 &lt;p&gt;A quick summary:&lt;/p&gt;
 

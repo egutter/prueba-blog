@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Object Design on 10 Pines Blog</title>
-    <link>http://blog.10pines.com/categories/object-design/</link>
+    <link>http://egutter.github.io/prueba-blog/categories/object-design/</link>
     <description>Recent content in Object Design on 10 Pines Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 04 Jan 2016 10:32:10 +0000</lastBuildDate>
-    <atom:link href="http://blog.10pines.com/categories/object-design/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://egutter.github.io/prueba-blog/categories/object-design/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>There are null reasons</title>
-      <link>http://blog.10pines.com/2016/01/04/there-are-null-reasons/</link>
+      <link>http://egutter.github.io/prueba-blog/2016/01/04/there-are-null-reasons/</link>
       <pubDate>Mon, 04 Jan 2016 10:32:10 +0000</pubDate>
       
-      <guid>http://blog.10pines.com/2016/01/04/there-are-null-reasons/</guid>
+      <guid>http://egutter.github.io/prueba-blog/2016/01/04/there-are-null-reasons/</guid>
       <description>
 
 &lt;p&gt;This post will try and maybe fail to convince you that using &lt;code&gt;null&lt;/code&gt; in your code is an error.
@@ -190,10 +190,10 @@ But my intention is to give you few simple rules to follow and avoid null at all
     
     <item>
       <title>language’s type system and their impact in breaking dependencies</title>
-      <link>http://blog.10pines.com/2012/02/16/languages-type-system-and-their-impact-in-breaking-dependencies/</link>
+      <link>http://egutter.github.io/prueba-blog/2012/02/16/languages-type-system-and-their-impact-in-breaking-dependencies/</link>
       <pubDate>Thu, 16 Feb 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.10pines.com/2012/02/16/languages-type-system-and-their-impact-in-breaking-dependencies/</guid>
+      <guid>http://egutter.github.io/prueba-blog/2012/02/16/languages-type-system-and-their-impact-in-breaking-dependencies/</guid>
       <description>&lt;p&gt;One of the things that makes TDD difficult to apply on existing code (or just “legacy code”) is the dependencies that the object subject to test may have. The more “dependencies” the object has, the more difficult it will be to test it, almost for sure.&lt;/p&gt;
 
 &lt;p&gt;What makes things even harder is that usually most dependencies are incorrect, there is an unnecessary coupling between objects result of bad designs (yes, there are good designs and bad designs as there are good paintings and bad paintings, good music and bad music&amp;hellip; being the definition of good and bad relative to a set of principles or rules. At least there is a design principle in software development that we all agree on that looks to maximize cohesion and minimize coupling. So the more unnecessary dependencies, the bigger the coupling, the worst the design is).&lt;/p&gt;
@@ -247,10 +247,10 @@ But my intention is to give you few simple rules to follow and avoid null at all
     
     <item>
       <title>The Art of Naming</title>
-      <link>http://blog.10pines.com/2012/02/02/the-art-of-naming/</link>
+      <link>http://egutter.github.io/prueba-blog/2012/02/02/the-art-of-naming/</link>
       <pubDate>Thu, 02 Feb 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.10pines.com/2012/02/02/the-art-of-naming/</guid>
+      <guid>http://egutter.github.io/prueba-blog/2012/02/02/the-art-of-naming/</guid>
       <description>&lt;p&gt;Today we all know now that variables should not be called &lt;code&gt;x&lt;/code&gt; or &lt;code&gt;y&lt;/code&gt;, not even &lt;code&gt;i&lt;/code&gt; nor &lt;code&gt;n&lt;/code&gt; when we use the famous “for”&amp;hellip; but do you know why? have you had
 trouble naming a variable? and what about a method (message) or a class?&lt;/p&gt;
 
@@ -288,10 +288,10 @@ trouble naming a variable? and what about a method (message) or a class?&lt;/p&g
     
     <item>
       <title>About names when designing with objects</title>
-      <link>http://blog.10pines.com/2012/01/12/about-names-when-designing-with-objects/</link>
+      <link>http://egutter.github.io/prueba-blog/2012/01/12/about-names-when-designing-with-objects/</link>
       <pubDate>Thu, 12 Jan 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.10pines.com/2012/01/12/about-names-when-designing-with-objects/</guid>
+      <guid>http://egutter.github.io/prueba-blog/2012/01/12/about-names-when-designing-with-objects/</guid>
       <description>
 
 &lt;p&gt;One of the recurrent problems I see when teaching OO design is the “names” used by the programmers to name classes, methods, etc.&lt;/p&gt;
@@ -328,10 +328,10 @@ trouble naming a variable? and what about a method (message) or a class?&lt;/p&g
     
     <item>
       <title>Design principles behind Patagonia - ESUG 2010</title>
-      <link>http://blog.10pines.com/2010/10/02/design-principles-behind-patagonia-esug/</link>
+      <link>http://egutter.github.io/prueba-blog/2010/10/02/design-principles-behind-patagonia-esug/</link>
       <pubDate>Sat, 02 Oct 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.10pines.com/2010/10/02/design-principles-behind-patagonia-esug/</guid>
+      <guid>http://egutter.github.io/prueba-blog/2010/10/02/design-principles-behind-patagonia-esug/</guid>
       <description>&lt;p&gt;Patagonia is a conference registration web based system written in Pharo using Seaside, whose main purpose is to fulfill the ESUG conference registration needs. It was developed at 10Pines under the sponsorship of ESUG. It has been develop using some design principles that were &amp;ldquo;grown&amp;rdquo; developing other two systems, being Patagonia the latest version of them. These design principle&amp;rsquo;s objective is the development of &amp;ldquo;robust&amp;rdquo; software, that is, software that can easily change in a safe fashion, being at the same time self defensive when used incorrectly and self &amp;ldquo;teachable&amp;rdquo; to new programmers of the system.&lt;/p&gt;
 
 &lt;p&gt;{% youtube 8cgmdaKwRvU %}&lt;/p&gt;
@@ -346,10 +346,10 @@ trouble naming a variable? and what about a method (message) or a class?&lt;/p&g
     
     <item>
       <title>About inheritance as means of reuse</title>
-      <link>http://blog.10pines.com/2009/05/20/about-inheritance-as-means-of-reuse/</link>
+      <link>http://egutter.github.io/prueba-blog/2009/05/20/about-inheritance-as-means-of-reuse/</link>
       <pubDate>Wed, 20 May 2009 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.10pines.com/2009/05/20/about-inheritance-as-means-of-reuse/</guid>
+      <guid>http://egutter.github.io/prueba-blog/2009/05/20/about-inheritance-as-means-of-reuse/</guid>
       <description>
 
 &lt;p&gt;When talking about Smalltalk, there is definitively an over use on the possibility to add messages to &lt;code&gt;Object&lt;/code&gt; class. It is so easy to do it, that people usually do it just to get something working fast, even if the coding is poor. There are a lot of messages (mainly &lt;code&gt;#isXXX&lt;/code&gt; messages) that do not belong to &lt;code&gt;Object&lt;/code&gt; and represent a bad design decision. Most of them are implemented there because they are &amp;ldquo;handy&amp;rdquo; and easily &amp;ldquo;reused&amp;rdquo;. For example &lt;code&gt;#-&amp;gt;&lt;/code&gt; or &lt;code&gt;#assert:&lt;/code&gt; implemented in Squeak. Definitively not all objects should respond to them.&lt;/p&gt;

@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Best Practices on 10 Pines Blog</title>
-    <link>http://blog.10pines.com/categories/best-practices/</link>
+    <link>http://egutter.github.io/prueba-blog/categories/best-practices/</link>
     <description>Recent content in Best Practices on 10 Pines Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 25 Nov 2015 15:28:11 +0000</lastBuildDate>
-    <atom:link href="http://blog.10pines.com/categories/best-practices/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://egutter.github.io/prueba-blog/categories/best-practices/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Ruby On Pains</title>
-      <link>http://blog.10pines.com/2015/11/25/ruby-on-pains/</link>
+      <link>http://egutter.github.io/prueba-blog/2015/11/25/ruby-on-pains/</link>
       <pubDate>Wed, 25 Nov 2015 15:28:11 +0000</pubDate>
       
-      <guid>http://blog.10pines.com/2015/11/25/ruby-on-pains/</guid>
+      <guid>http://egutter.github.io/prueba-blog/2015/11/25/ruby-on-pains/</guid>
       <description>
 
 &lt;p&gt;Have you ever heard about the &lt;em&gt;Rails way&lt;/em&gt;?
