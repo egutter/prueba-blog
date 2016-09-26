@@ -3,7 +3,7 @@ build:
   steps:
     - arjen/hugo-build:
       version: "0.16"
-      theme: hugo-theme-bleak 
+      theme: hugo-theme-bleak
       flags: --buildDrafts=true
 deploy:
   steps:
@@ -11,5 +11,5 @@ deploy:
         packages: git ssh-client
     - lukevivier/gh-pages@0.2.1:
         token: $GIT_TOKEN
-        domain: egutter.github.io 
+        domain: prueba-blog.10pines.com
         basedir: public
