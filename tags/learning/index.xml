@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Learning on 10 Pines Blog</title>
-    <link>http://blog.10pines.com/tags/learning/</link>
+    <link>https://egutter.github.io/prueba-blog/tags/learning/</link>
     <description>Recent content in Learning on 10 Pines Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 13 Sep 2016 14:17:06 +0000</lastBuildDate>
-    <atom:link href="http://blog.10pines.com/tags/learning/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://egutter.github.io/prueba-blog/tags/learning/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>From a newbie, to a newbie</title>
-      <link>http://blog.10pines.com/2016/09/13/from-a-newbie-to-a-newbie/</link>
+      <link>https://egutter.github.io/prueba-blog/2016/09/13/from-a-newbie-to-a-newbie/</link>
       <pubDate>Tue, 13 Sep 2016 14:17:06 +0000</pubDate>
       
-      <guid>http://blog.10pines.com/2016/09/13/from-a-newbie-to-a-newbie/</guid>
+      <guid>https://egutter.github.io/prueba-blog/2016/09/13/from-a-newbie-to-a-newbie/</guid>
       <description>
 
 &lt;p&gt;It&amp;rsquo;s been less than a year since I joined 10Pines, and a little more than two since I started working officialy as a programmer. I don&amp;rsquo;t like calling myself a &lt;em&gt;junior&lt;/em&gt; developer because seniorities can be easily misused, as their meanings depend on what the person using these terms is looking for in a programmer and the context where they work at. What I can assure you is that I feel like a &lt;em&gt;newbie&lt;/em&gt; developer. Maybe it&amp;rsquo;s all in my head, since my fellow team members treat me as an equal at all times, but sometimes the lack of experience in some scenarios just gets me as frustrated as a kid learning to ride a bike. To fight this, I have gathered a couple of life-savers that help me keep on track when I&amp;rsquo;m about to call it quits.&lt;/p&gt;

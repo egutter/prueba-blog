@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Inheritance Behavior Interfaces on 10 Pines Blog</title>
+    <link>https://egutter.github.io/prueba-blog/categories/inheritance-behavior-interfaces/</link>
+    <description>Recent content in Inheritance Behavior Interfaces on 10 Pines Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 14 Oct 2014 14:03:36 +0000</lastBuildDate>
+    <atom:link href="https://egutter.github.io/prueba-blog/categories/inheritance-behavior-interfaces/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Mixins or Traits? That is the Question</title>
+      <link>https://egutter.github.io/prueba-blog/2014/10/14/mixins-or-traits/</link>
+      <pubDate>Tue, 14 Oct 2014 14:03:36 +0000</pubDate>
+      
+      <guid>https://egutter.github.io/prueba-blog/2014/10/14/mixins-or-traits/</guid>
+      <description>&lt;p&gt;A couple of days ago, a discussion came up in an &lt;a href=&#34;http://www.uqbar-project.org/&#34;&gt;uqbar foundation&lt;/a&gt;&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; mailing list about the Java 8 Interfaces Default Methods. They were named as «mixins», but I corrected them and called «traits without flattening».&lt;/p&gt;
+
+&lt;p&gt;After sending the mail, that last sentence kept ringing in my head, so I proposed myself to try to understand why was I calling them like that.
+But first things first.&lt;/p&gt;
+
+&lt;p&gt;#Mixins? Traits?&lt;/p&gt;
+
+&lt;p&gt;First of all, when I say &lt;strong&gt;mixin&lt;/strong&gt;, I&amp;rsquo;m using the definition given by Bracha and Cook in their paper «Mixin-Based Inheritance»:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;A mixin is an abstract subclass that may be used to specialize the behavior of a variety of parent classes.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;What does this mean? Some relevant things that came to my mind:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;A mixin &lt;em&gt;is a class&lt;/em&gt;, so it can define behaviour and state (i.e. methods and variables).&lt;/li&gt;
+&lt;li&gt;In particular, it&amp;rsquo;s a &lt;em&gt;subclass&lt;/em&gt;. We can call &lt;code&gt;super&lt;/code&gt;  (even though we don&amp;rsquo;t know yet who the parent class is)&lt;/li&gt;
+&lt;li&gt;It gives us a form of multiple inheritance, and it handles the &lt;a href=&#34;http://en.wikipedia.org/wiki/Multiple_inheritance&#34;&gt;diamond problem&lt;/a&gt; with linearization: The mixin is &amp;ldquo;embedded&amp;rdquo; in the inheritance chain, right before other class that understands the message that is implementing.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;This is kinda difficult to explain with just some words, so let&amp;rsquo;s write some code :)&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Note: I will be showing mixins in Scala. The problem is that Scala names them «traits», so it can be a little confusing. Please bear with me through this.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;{% img right /images/mot-diamond.png 160 470 class and mixins hierarchy example %}&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-scala&#34;&gt;
+trait BaseMixin {
+  def m1() = println(&amp;quot;this is m1 in BaseMixin&amp;quot;);
+}
+
+trait MixinA extends BaseMixin {
+  override def m1() = {
+    println(&amp;quot;this is m1 in Mixin A&amp;quot;)
+    super.m1
+  }
+}
+
+trait MixinB extends BaseMixin {
+  override def m1() = {
+    println(&amp;quot;this is m1 in Mixin B&amp;quot;)
+    super.m1
+  }
+}
+
+class BaseClass {
+  def m1() = println(&amp;quot;this is m1 in ParentClass&amp;quot;)
+}
+
+class SomeClass extends ParentClass with MixinA with MixinB {
+  override def m1() = {
+    println(&amp;quot;this is m1 in SomeClass&amp;quot;)
+    super.m1
+  }
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The diagram on the right sums up the hierarchy of  the code above. So, what happens when we do &lt;code&gt;new SomeClass().m1&lt;/code&gt;?&lt;/p&gt;
+
+&lt;p&gt;As we stated before, the method-call conflict is resolved by linearization. The console output of the evaluation hence is&lt;/p&gt;
+
+&lt;p&gt;{% img left /images/mot-linearized.png 100 600 classes and mixins linearized %}&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;
+this is m1 in SomeClass
+this is m1 in Mixin B
+this is m1 in Mixin A
+this is m1 in BaseMixin
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;As we can see, the MixinB is executed before MixinA. If we have some conflict, we just put some mixin above the other. In the case of Scala, mixins are linearized from the outside to the inside of the declaration&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:2&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;, as shown in the image on the left.
+This means that, if we change SomeClass as shown below:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-scala&#34;&gt;
+class SomeClass extends BaseClass with MixinB with MixinA {
+  override def m1() = {
+    println(&amp;quot;this is m1 in SomeClass&amp;quot;)
+    super.m1
+  }
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;when we call &lt;code&gt;new SomeClass().m1&lt;/code&gt;, what we get is&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;
+this is m1 in SomeClass
+this is m1 in Mixin A
+this is m1 in Mixin B
+this is m1 in BaseMixin
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;#So, what about traits?&lt;/p&gt;
+
+&lt;p&gt;I first heard the term &lt;strong&gt;trait&lt;/strong&gt; in Ducasse, Nierstrasz, Scharli, Wuyts and Black&amp;rsquo;s paper named  «Traits: A Mechanism for Fine-grained Reuse».&lt;/p&gt;
+
+&lt;p&gt;As we know, classes have two responsibilities: creating instances and defining behaviour. The idea behind the Traits approach it&amp;rsquo;s to separate those responsibilities (let&amp;rsquo;s follow the &lt;a href=&#34;http://en.wikipedia.org/wiki/Single_responsibility_principle&#34;&gt;single responsibility principle&lt;/a&gt; :) and let the classes as instances generators while traits defines the behaviour.&lt;/p&gt;
+
+&lt;p&gt;Things for taking into consideration:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Methods defined in classes precede the ones defined in traits.&lt;/li&gt;
+&lt;li&gt;The methods defined in the trait «have the same semantics» as the method defined in the class (Flattening property). It&amp;rsquo;s like they were copied into the class.&lt;/li&gt;
+&lt;li&gt;All the traits have the same precedence. If a conflict arises, we have to explicitly handle it.&lt;/li&gt;
+&lt;li&gt;Traits provides methods, but can require methods too. This allow us to use methods that are not defined in the same trait.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Some code please! (For this I&amp;rsquo;m going to use Smalltalk)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-smalltalk&#34;&gt;
+Trait named: #BaseTrait uses: {}
+	foo
+       ^ &#39;foo in BaseTrait&#39;
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And we have another trait that uses the described above.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-smalltalk&#34;&gt;
+Trait named: #TraitA uses: BaseTrait
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;What happens if we want to define &lt;code&gt;#foo&lt;/code&gt; in this new trait, and call &lt;code&gt;BaseTrait#foo&lt;/code&gt; + something else?
+We don&amp;rsquo;t have &lt;code&gt;super&lt;/code&gt;, because traits aren&amp;rsquo;t classes. The &lt;code&gt;uses:&lt;/code&gt; implies that the methods will be flattened, so there is no class hierarchy. And as far as we know, if we define &lt;code&gt;#foo&lt;/code&gt; we are overriding the method that came with the trait.
+In the end, we need some kind of conflict resolution, so we can call both &lt;code&gt;BaseTrait#foo&lt;/code&gt; and &lt;code&gt;TraitA#foo&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-smalltalk&#34;&gt;
+Trait named: #TraitA uses: BaseTrait @ {#fooBase-&amp;gt;#foo}
+&amp;quot;first conflict resolution strategy: aliasing the method
+#foo as #fooBase (this is read as «fooBase will call foo»)&amp;quot;
+    foo
+	  ^ self fooBase, &#39;foo in Trait A&#39;
+
+
+Trait named: #TraitB uses: BaseTrait @ {#fooBase-&amp;gt;#foo}
+&amp;quot;same as above&amp;quot;
+	foo
+  	^ self fooBase , &#39;foo in Trait B&#39;
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And finally, we want a class, because we need to instantiate objects.&lt;/p&gt;
+
+&lt;p&gt;Of course, I want all the behavior of the traits described above, but if I just use them I will have conflicts in two methods: &lt;code&gt;#foo&lt;/code&gt; (this one is the easy one to spot) and &lt;code&gt;#fooBase&lt;/code&gt;. Why? because &lt;code&gt;#fooBase&lt;/code&gt; is defined in both traits. It doesn&amp;rsquo;t matter if it is just an alias, the object that use the trait behaviour will understand &lt;code&gt;#fooBase&lt;/code&gt;.
+All said, let&amp;rsquo;s resolve some conflicts.&lt;/p&gt;
+
+&lt;p&gt;##The #foo problem
+The thing is, I want both &lt;code&gt;TraitA#foo&lt;/code&gt; and &lt;code&gt;TraitB#foo&lt;/code&gt;. So I will take the same approach as before and define an alias for each trait:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-smalltalk&#34;&gt;
+Object subclass: #SomeClass
+       uses: TraitA @ {#fooA-&amp;gt;#foo} + TraitB @ {#fooB-&amp;gt;#foo}
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;##The #fooBase problem
+Again, I want that behaviour in my class, as my &lt;code&gt;#foo&lt;/code&gt; will have to call it. We could take the same strategy and define an alias in both traits, and the magic is done.&lt;/p&gt;
+
+&lt;p&gt;But if I declare an alias, I will be having two different methods with the exact same behaviour. I really don&amp;rsquo;t know if this is bad, but it adds some extra complexity (and I don&amp;rsquo;t handle complexity very well :P).
+The other strategy is to exclude the method in the trait. If one trait excludes the method, then there is no conflict at all :)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-smalltalk&#34;&gt;
+Object subclass: #SomeClass uses: TraitA + (TraitB - {#fooBase})
+&amp;quot;the method #fooBase will be excluded of the TraitB&amp;quot;
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Therefore, applying both strategies, we have &lt;code&gt;#SomeClass&lt;/code&gt; defined&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-smalltalk&#34;&gt;
+Object subclass: #SomeClass
+	   uses: TraitA @ {#fooA-&amp;gt;#foo} + (TraitB @ {#fooB-&amp;gt;#foo} - {#fooBase})
+	foo
+  	  ^&#39;foo in SomeClass &#39;, self fooA, self fooB, self fooBase
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then, when we call &lt;code&gt;SomeClass new foo&lt;/code&gt; we get&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;
+&#39;foo in SomeClass foo in Trait A foo in Trait B foo in BaseTrait &#39;
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;As you can see, I resolved by hand every possible conflict, and it doesn&amp;rsquo;t matter how do I write the traits in the &lt;code&gt;uses:&lt;/code&gt; (&lt;code&gt;TraitA + TraitB&lt;/code&gt; is equivalent to &lt;code&gt;TraitB + TraitA&lt;/code&gt;). If I wanted the &lt;code&gt;TraitB#foo&lt;/code&gt; before the &lt;code&gt;BaseTrait#foo&lt;/code&gt;, I would simply change the method &lt;code&gt;SomeClass#foo&lt;/code&gt; and it&amp;rsquo;s done.&lt;/p&gt;
+
+&lt;p&gt;So, we have seen what mixins and traits are. We have now the tools to face the original issue; How can we define, using these terms, the Interfaces default methods?&lt;/p&gt;
+
+&lt;p&gt;But since this is already a loooong post, we will answer that question in the next one :). Don&amp;rsquo;t forget to check the blog!&lt;/p&gt;
+
+&lt;p&gt;Lucas.-&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;If you wanna know more about uqbar, mail me or anyone in the foundation (contacts are in the site)
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:1&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;In Scala you can explicitly call the method you want, doing &lt;code&gt;super[MixinA].m1&lt;/code&gt;
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:2&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

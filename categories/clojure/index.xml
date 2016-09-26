@@ -25,7 +25,7 @@
 For example, one of the exercises, which I had already implemented in Ruby, was modeling a tennis scoreboard. With OOP, I had an object that represented the game, and when someone scored I  could just send a message to that object and it would change the players&amp;rsquo; score.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;
-game.score_a_point_for(a_player) 
+game.score_a_point_for(a_player)
 
 &lt;/code&gt;&lt;/pre&gt;
 
@@ -76,19 +76,19 @@ end
 &lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;
 (defmulti calculate-next-score-for (fn [player game] (game player)))
 
-(defmethod calculate-next-score-for :zero [player game] 
+(defmethod calculate-next-score-for :zero [player game]
 (assoc game player :fifteen))
 
-(defmethod calculate-next-score-for :fifteen [player game] 
+(defmethod calculate-next-score-for :fifteen [player game]
 (assoc game player :thirty))
 
-(defmethod calculate-next-score-for :thirty [player game] 
+(defmethod calculate-next-score-for :thirty [player game]
 (assoc game player :forty))
 
-(defmethod calculate-next-score-for :forty [player game] 
+(defmethod calculate-next-score-for :forty [player game]
 (resolv-possible-victory-for player game))
 
-(defmethod calculate-next-score-for :advantage [player game] 
+(defmethod calculate-next-score-for :advantage [player game]
 (assoc game :winner player))
 
 &lt;/code&gt;&lt;/pre&gt;
