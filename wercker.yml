@@ -1,11 +1,10 @@
-box: wercker/default
+box: debian
 build:
   steps:
-    - arjen/hugo-build@1.12.1:
+    - arjen/hugo-build:
       version: "0.16"
-      theme: hugo-theme-bleak
-      config: config.yaml
-      flags: --buildDrafts=true --theme=hugo-theme-bleak -v
+      theme: herring-cove
+      flags: --buildDrafts=true -v
 deploy:
   steps:
     - install-packages:
