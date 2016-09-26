@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Backlog on 10 Pines Blog</title>
-    <link>http://egutter.github.io/prueba-blog/categories/backlog/</link>
+    <link>https://egutter.github.io/prueba-blog/categories/backlog/</link>
     <description>Recent content in Backlog on 10 Pines Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 09 Apr 2015 09:24:15 +0000</lastBuildDate>
-    <atom:link href="http://egutter.github.io/prueba-blog/categories/backlog/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://egutter.github.io/prueba-blog/categories/backlog/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>The Backlog Guy</title>
-      <link>http://egutter.github.io/prueba-blog/2015/04/09/the-backlog-guy/</link>
+      <link>https://egutter.github.io/prueba-blog/2015/04/09/the-backlog-guy/</link>
       <pubDate>Thu, 09 Apr 2015 09:24:15 +0000</pubDate>
       
-      <guid>http://egutter.github.io/prueba-blog/2015/04/09/the-backlog-guy/</guid>
+      <guid>https://egutter.github.io/prueba-blog/2015/04/09/the-backlog-guy/</guid>
       <description>
 
 &lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
@@ -29,15 +29,15 @@
 
 &lt;p&gt;1) First you have an idea&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://egutter.github.io/prueba-blog/images/ID-100311609.jpg&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://egutter.github.io/prueba-blog/images/ID-100311609.jpg&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;2) Then you start thinking, brainstorming and describing your idea&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://egutter.github.io/prueba-blog/images/ID-100248850.jpg&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://egutter.github.io/prueba-blog/images/ID-100248850.jpg&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;3) Then you need to break it in pieces that can fit an iteration and prioritize it. You can also try to estimate how big are the other items to start measuring your velocity and understanding the dimension of what you need to build.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://egutter.github.io/prueba-blog/images/backlog.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://egutter.github.io/prueba-blog/images/backlog.png&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Voila! The result is a backlog. At least a backlog to start with. The backlog is a living artifact that will mutate throughout the project, as more is understood, described and defined in the product. It is important to notice that the backlog it’s a document that serves as an interface between the business and technical sides of the team. Business folks will create it and development folks will consult it (and provide feedback) all the time. It is also important to understand that the backlog will contain items with different levels of refinement and granularity. The items on the top, which will be worked on in the near future need to be better understood and defined. The items after them less. And the items that are at the far bottom are just ideas. Why spending time and money if we don’t even know if we are going to do them, right?&lt;/p&gt;
 

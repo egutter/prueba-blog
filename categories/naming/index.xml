@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Naming on 10 Pines Blog</title>
-    <link>http://egutter.github.io/prueba-blog/categories/naming/</link>
+    <link>https://egutter.github.io/prueba-blog/categories/naming/</link>
     <description>Recent content in Naming on 10 Pines Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 02 Feb 2012 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://egutter.github.io/prueba-blog/categories/naming/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://egutter.github.io/prueba-blog/categories/naming/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>The Art of Naming</title>
-      <link>http://egutter.github.io/prueba-blog/2012/02/02/the-art-of-naming/</link>
+      <link>https://egutter.github.io/prueba-blog/2012/02/02/the-art-of-naming/</link>
       <pubDate>Thu, 02 Feb 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://egutter.github.io/prueba-blog/2012/02/02/the-art-of-naming/</guid>
+      <guid>https://egutter.github.io/prueba-blog/2012/02/02/the-art-of-naming/</guid>
       <description>&lt;p&gt;Today we all know now that variables should not be called &lt;code&gt;x&lt;/code&gt; or &lt;code&gt;y&lt;/code&gt;, not even &lt;code&gt;i&lt;/code&gt; nor &lt;code&gt;n&lt;/code&gt; when we use the famous “for”&amp;hellip; but do you know why? have you had
 trouble naming a variable? and what about a method (message) or a class?&lt;/p&gt;
 
@@ -52,10 +52,10 @@ trouble naming a variable? and what about a method (message) or a class?&lt;/p&g
     
     <item>
       <title>About names when designing with objects</title>
-      <link>http://egutter.github.io/prueba-blog/2012/01/12/about-names-when-designing-with-objects/</link>
+      <link>https://egutter.github.io/prueba-blog/2012/01/12/about-names-when-designing-with-objects/</link>
       <pubDate>Thu, 12 Jan 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://egutter.github.io/prueba-blog/2012/01/12/about-names-when-designing-with-objects/</guid>
+      <guid>https://egutter.github.io/prueba-blog/2012/01/12/about-names-when-designing-with-objects/</guid>
       <description>
 
 &lt;p&gt;One of the recurrent problems I see when teaching OO design is the “names” used by the programmers to name classes, methods, etc.&lt;/p&gt;

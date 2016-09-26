@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Config Management on 10 Pines Blog</title>
-    <link>http://egutter.github.io/prueba-blog/categories/config-management/</link>
+    <link>https://egutter.github.io/prueba-blog/categories/config-management/</link>
     <description>Recent content in Config Management on 10 Pines Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 23 Feb 2012 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://egutter.github.io/prueba-blog/categories/config-management/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://egutter.github.io/prueba-blog/categories/config-management/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>automatically change configuration based on current environment</title>
-      <link>http://egutter.github.io/prueba-blog/2012/02/23/automatically-change-configuration-based-on-current-environment/</link>
+      <link>https://egutter.github.io/prueba-blog/2012/02/23/automatically-change-configuration-based-on-current-environment/</link>
       <pubDate>Thu, 23 Feb 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://egutter.github.io/prueba-blog/2012/02/23/automatically-change-configuration-based-on-current-environment/</guid>
+      <guid>https://egutter.github.io/prueba-blog/2012/02/23/automatically-change-configuration-based-on-current-environment/</guid>
       <description>&lt;p&gt;What if the application &lt;strong&gt;were aware&lt;/strong&gt; of its different running environments so it could change its configuration &lt;strong&gt;automatically&lt;/strong&gt; based on the current one?&lt;/p&gt;
 
 &lt;p&gt;If we wanted to do that, we had to solve 2 issues:&lt;/p&gt;

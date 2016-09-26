@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Learning on 10 Pines Blog</title>
-    <link>http://egutter.github.io/prueba-blog/categories/learning/</link>
+    <link>https://egutter.github.io/prueba-blog/categories/learning/</link>
     <description>Recent content in Learning on 10 Pines Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 02 Nov 2015 12:07:16 +0000</lastBuildDate>
-    <atom:link href="http://egutter.github.io/prueba-blog/categories/learning/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://egutter.github.io/prueba-blog/categories/learning/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Learning Programming</title>
-      <link>http://egutter.github.io/prueba-blog/2015/11/02/learning-programming/</link>
+      <link>https://egutter.github.io/prueba-blog/2015/11/02/learning-programming/</link>
       <pubDate>Mon, 02 Nov 2015 12:07:16 +0000</pubDate>
       
-      <guid>http://egutter.github.io/prueba-blog/2015/11/02/learning-programming/</guid>
+      <guid>https://egutter.github.io/prueba-blog/2015/11/02/learning-programming/</guid>
       <description>
 
 &lt;h2 id=&#34;dealing-with-failure-and-frustration&#34;&gt;Dealing with failure and frustration&lt;/h2&gt;
@@ -84,10 +84,10 @@ And the importance of not living in a state of permanent frustration: in an envi
     
     <item>
       <title>Essence-driven Development</title>
-      <link>http://egutter.github.io/prueba-blog/2015/02/18/essence-driven-development/</link>
+      <link>https://egutter.github.io/prueba-blog/2015/02/18/essence-driven-development/</link>
       <pubDate>Wed, 18 Feb 2015 11:13:05 +0000</pubDate>
       
-      <guid>http://egutter.github.io/prueba-blog/2015/02/18/essence-driven-development/</guid>
+      <guid>https://egutter.github.io/prueba-blog/2015/02/18/essence-driven-development/</guid>
       <description>&lt;p&gt;Something that has always seemed motivating is the feeling that my way of doing things generally maintained good adaptability. Throughout my years of study at the University, and later in 10pines, I realized the type of programmer who I want to be.&lt;/p&gt;
 
 &lt;p&gt;Many aim to learn Object-Oriented Programming, Functional Programming, or a particular programming language, but this profession is characterized for being constantly changing. For my part, I have always wanted to be sure I’m prepared to face any challenge. Therefore, my way to learn always relies on capturing the essence of knowledge.&lt;/p&gt;

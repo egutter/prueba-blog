@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Automatizacion on 10 Pines Blog</title>
-    <link>http://egutter.github.io/prueba-blog/categories/automatizacion/</link>
+    <link>https://egutter.github.io/prueba-blog/categories/automatizacion/</link>
     <description>Recent content in Automatizacion on 10 Pines Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 13 Oct 2010 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://egutter.github.io/prueba-blog/categories/automatizacion/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://egutter.github.io/prueba-blog/categories/automatizacion/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>presentación agiles 2010 - automatización del deployment</title>
-      <link>http://egutter.github.io/prueba-blog/2010/10/13/presentacion-agiles-automatizacion-del-deployment/</link>
+      <link>https://egutter.github.io/prueba-blog/2010/10/13/presentacion-agiles-automatizacion-del-deployment/</link>
       <pubDate>Wed, 13 Oct 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://egutter.github.io/prueba-blog/2010/10/13/presentacion-agiles-automatizacion-del-deployment/</guid>
+      <guid>https://egutter.github.io/prueba-blog/2010/10/13/presentacion-agiles-automatizacion-del-deployment/</guid>
       <description>&lt;p&gt;Las metodologías ágiles son muy claras respecto al siguiente punto: todas las tareas repetitivas que se realizan en forma manual deben ser automatizadas!
 Existen actualmente excelentes herramientas que nos ayudan a automatizar el build, las ejecuciones de los tests y el deployment de aplicaciones, pero comenzar a utilizarlas no siempre es una tarea trivial. En esta sesión presentaremos Maven junto con un grupo de plugins y herramientas que nos ayudaran a automatizar las tareas rutinarias cuando trabajamos con una gran aplicación multi-módulo Java enterprise.&lt;/p&gt;
 

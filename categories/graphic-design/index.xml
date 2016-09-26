@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Graphic Design on 10 Pines Blog</title>
-    <link>http://egutter.github.io/prueba-blog/categories/graphic-design/</link>
+    <link>https://egutter.github.io/prueba-blog/categories/graphic-design/</link>
     <description>Recent content in Graphic Design on 10 Pines Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 11 Jul 2016 16:58:01 +0000</lastBuildDate>
-    <atom:link href="http://egutter.github.io/prueba-blog/categories/graphic-design/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://egutter.github.io/prueba-blog/categories/graphic-design/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>A Little Bit of Color!</title>
-      <link>http://egutter.github.io/prueba-blog/2016/07/11/a-little-bit-of-color/</link>
+      <link>https://egutter.github.io/prueba-blog/2016/07/11/a-little-bit-of-color/</link>
       <pubDate>Mon, 11 Jul 2016 16:58:01 +0000</pubDate>
       
-      <guid>http://egutter.github.io/prueba-blog/2016/07/11/a-little-bit-of-color/</guid>
+      <guid>https://egutter.github.io/prueba-blog/2016/07/11/a-little-bit-of-color/</guid>
       <description>&lt;p&gt;#How to create a great palette for your app/web&lt;/p&gt;
 
 &lt;p&gt;You may have never paid close attention to the colors you pick for your web or app, but having a good palette helps organizinge information in your site.The idea behind this post is not to give an introduction to color theory but to offer a simple guide to help you create an harmonious and useful palette.&lt;/p&gt;

@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Testing on 10 Pines Blog</title>
-    <link>http://egutter.github.io/prueba-blog/categories/testing/</link>
+    <link>https://egutter.github.io/prueba-blog/categories/testing/</link>
     <description>Recent content in Testing on 10 Pines Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 18 Sep 2009 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://egutter.github.io/prueba-blog/categories/testing/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://egutter.github.io/prueba-blog/categories/testing/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Mutation testing</title>
-      <link>http://egutter.github.io/prueba-blog/2009/09/18/mutation-testing/</link>
+      <link>https://egutter.github.io/prueba-blog/2009/09/18/mutation-testing/</link>
       <pubDate>Fri, 18 Sep 2009 00:00:00 +0000</pubDate>
       
-      <guid>http://egutter.github.io/prueba-blog/2009/09/18/mutation-testing/</guid>
+      <guid>https://egutter.github.io/prueba-blog/2009/09/18/mutation-testing/</guid>
       <description>&lt;p&gt;During the 70s, mutation testing emerged as a technique to assess the fault-finding effectiveness of a test suite. It works mutating objects behavior and looking for tests to “kill” those mutants. The surviving mutants are the starting point to write better tests. Thus, this technique is an interesting alternative to code coverage regarding test quality.&lt;/p&gt;
 
 &lt;p&gt;However, so far it is a “brute force” technique that takes too long to provide useful results. This characteristic has forbidden its widespread and practical use regardless new techniques, such as schema-based mutation and selective mutation. Additionally, there are no mutation testing tools (to our knowledge) that work on a meta-circular and dynamic environments, such as Smalltalk, so the compile and link time are the current technique&amp;rsquo;s bottleneck.&lt;/p&gt;

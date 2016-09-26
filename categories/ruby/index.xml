@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ruby on 10 Pines Blog</title>
-    <link>http://egutter.github.io/prueba-blog/categories/ruby/</link>
+    <link>https://egutter.github.io/prueba-blog/categories/ruby/</link>
     <description>Recent content in Ruby on 10 Pines Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 14 Jul 2016 13:00:00 +0000</lastBuildDate>
-    <atom:link href="http://egutter.github.io/prueba-blog/categories/ruby/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://egutter.github.io/prueba-blog/categories/ruby/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Collection Filters in Ruby</title>
-      <link>http://egutter.github.io/prueba-blog/2016/07/14/collection-filters-in-ruby/</link>
+      <link>https://egutter.github.io/prueba-blog/2016/07/14/collection-filters-in-ruby/</link>
       <pubDate>Thu, 14 Jul 2016 13:00:00 +0000</pubDate>
       
-      <guid>http://egutter.github.io/prueba-blog/2016/07/14/collection-filters-in-ruby/</guid>
+      <guid>https://egutter.github.io/prueba-blog/2016/07/14/collection-filters-in-ruby/</guid>
       <description>
 
 &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; acknowledgements (and thanks!) to Máximo Prieto (our OOP guru) who had this idea and he implemented it on
@@ -281,10 +281,10 @@ than open/closed? these are some of the questions I&amp;rsquo;ll try to answer i
     
     <item>
       <title>Ruby On Pains</title>
-      <link>http://egutter.github.io/prueba-blog/2015/11/25/ruby-on-pains/</link>
+      <link>https://egutter.github.io/prueba-blog/2015/11/25/ruby-on-pains/</link>
       <pubDate>Wed, 25 Nov 2015 15:28:11 +0000</pubDate>
       
-      <guid>http://egutter.github.io/prueba-blog/2015/11/25/ruby-on-pains/</guid>
+      <guid>https://egutter.github.io/prueba-blog/2015/11/25/ruby-on-pains/</guid>
       <description>
 
 &lt;p&gt;Have you ever heard about the &lt;em&gt;Rails way&lt;/em&gt;?
@@ -445,10 +445,10 @@ I would like to introduce some pains that I&amp;rsquo;ve seen and keep seeing in
     
     <item>
       <title>Symbols: the new return codes? (Pt. 2)</title>
-      <link>http://egutter.github.io/prueba-blog/2014/09/29/symbols-the-new-return-codes-part-2/</link>
+      <link>https://egutter.github.io/prueba-blog/2014/09/29/symbols-the-new-return-codes-part-2/</link>
       <pubDate>Mon, 29 Sep 2014 14:29:50 +0000</pubDate>
       
-      <guid>http://egutter.github.io/prueba-blog/2014/09/29/symbols-the-new-return-codes-part-2/</guid>
+      <guid>https://egutter.github.io/prueba-blog/2014/09/29/symbols-the-new-return-codes-part-2/</guid>
       <description>
 
 &lt;h2 id=&#34;flow-control-with-exceptions-and-closures&#34;&gt;Flow control with exceptions and closures&lt;/h2&gt;
@@ -673,10 +673,10 @@ Surprisingly enough, sometimes the only reason for closures to be unpopular is t
     
     <item>
       <title>Symbols: the new return codes?</title>
-      <link>http://egutter.github.io/prueba-blog/2014/09/24/symbols-the-new-return-codes/</link>
+      <link>https://egutter.github.io/prueba-blog/2014/09/24/symbols-the-new-return-codes/</link>
       <pubDate>Wed, 24 Sep 2014 16:45:03 +0000</pubDate>
       
-      <guid>http://egutter.github.io/prueba-blog/2014/09/24/symbols-the-new-return-codes/</guid>
+      <guid>https://egutter.github.io/prueba-blog/2014/09/24/symbols-the-new-return-codes/</guid>
       <description>
 
 &lt;p&gt;Recently I’ve read a &lt;a href=&#34;https://twitter.com/wycats/statuses/504043642869542912&#34; title=&#34;Use symbols&#34;&gt;tweet from Yehuda Katz&lt;/a&gt; in which he suggested an interesting idea, as an alternative for using nil as a result from a method: to use a symbol instead.&lt;/p&gt;
@@ -856,10 +856,10 @@ And second, but not less important, is because nil does not understand messages.
     
     <item>
       <title>Rock Your Ruby: The Value of Value</title>
-      <link>http://egutter.github.io/prueba-blog/2014/03/04/rock-your-ruby-the-value-of-value/</link>
+      <link>https://egutter.github.io/prueba-blog/2014/03/04/rock-your-ruby-the-value-of-value/</link>
       <pubDate>Tue, 04 Mar 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://egutter.github.io/prueba-blog/2014/03/04/rock-your-ruby-the-value-of-value/</guid>
+      <guid>https://egutter.github.io/prueba-blog/2014/03/04/rock-your-ruby-the-value-of-value/</guid>
       <description>
 
 &lt;p&gt;Check out the Ruby Gem at &lt;a href=&#34;https://github.com/10Pines/value_protocol&#34;&gt;GitHub&lt;/a&gt;&lt;/p&gt;

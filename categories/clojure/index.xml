@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Clojure on 10 Pines Blog</title>
-    <link>http://egutter.github.io/prueba-blog/categories/clojure/</link>
+    <link>https://egutter.github.io/prueba-blog/categories/clojure/</link>
     <description>Recent content in Clojure on 10 Pines Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 24 Sep 2014 16:36:22 +0000</lastBuildDate>
-    <atom:link href="http://egutter.github.io/prueba-blog/categories/clojure/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://egutter.github.io/prueba-blog/categories/clojure/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>State and Polymorphism with Clojure</title>
-      <link>http://egutter.github.io/prueba-blog/2014/09/24/clojure-multimethods/</link>
+      <link>https://egutter.github.io/prueba-blog/2014/09/24/clojure-multimethods/</link>
       <pubDate>Wed, 24 Sep 2014 16:36:22 +0000</pubDate>
       
-      <guid>http://egutter.github.io/prueba-blog/2014/09/24/clojure-multimethods/</guid>
+      <guid>https://egutter.github.io/prueba-blog/2014/09/24/clojure-multimethods/</guid>
       <description>
 
 &lt;p&gt;A couple of weeks ago, I started to take my first steps on Clojure as part of my apprenticeship residency. Having very little experience with functional programming, I quickly run into a few situations that I wasn&amp;rsquo;t sure how to handle. Setting aside Clojure&amp;rsquo;s syntax, which even though I like its simplicity and consistency, I still find the number of parenthesis somewhat uncomfortable. This short post will be about a couple of differences with OOP that caught my attention: how to approach state and how to handle polymorphism.&lt;/p&gt;

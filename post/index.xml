@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on 10 Pines Blog</title>
-    <link>http://egutter.github.io/prueba-blog/post/</link>
+    <link>https://egutter.github.io/prueba-blog/post/</link>
     <description>Recent content in Posts on 10 Pines Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 13 Sep 2016 14:17:06 +0000</lastBuildDate>
-    <atom:link href="http://egutter.github.io/prueba-blog/post/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://egutter.github.io/prueba-blog/post/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>From a newbie, to a newbie</title>
-      <link>http://egutter.github.io/prueba-blog/2016/09/13/from-a-newbie-to-a-newbie/</link>
+      <link>https://egutter.github.io/prueba-blog/2016/09/13/from-a-newbie-to-a-newbie/</link>
       <pubDate>Tue, 13 Sep 2016 14:17:06 +0000</pubDate>
       
-      <guid>http://egutter.github.io/prueba-blog/2016/09/13/from-a-newbie-to-a-newbie/</guid>
+      <guid>https://egutter.github.io/prueba-blog/2016/09/13/from-a-newbie-to-a-newbie/</guid>
       <description>
 
 &lt;p&gt;It&amp;rsquo;s been less than a year since I joined 10Pines, and a little more than two since I started working officialy as a programmer. I don&amp;rsquo;t like calling myself a &lt;em&gt;junior&lt;/em&gt; developer because seniorities can be easily misused, as their meanings depend on what the person using these terms is looking for in a programmer and the context where they work at. What I can assure you is that I feel like a &lt;em&gt;newbie&lt;/em&gt; developer. Maybe it&amp;rsquo;s all in my head, since my fellow team members treat me as an equal at all times, but sometimes the lack of experience in some scenarios just gets me as frustrated as a kid learning to ride a bike. To fight this, I have gathered a couple of life-savers that help me keep on track when I&amp;rsquo;m about to call it quits.&lt;/p&gt;
@@ -55,10 +55,10 @@
     
     <item>
       <title>An Inverted Test Pyramid</title>
-      <link>http://egutter.github.io/prueba-blog/2016/07/26/inverted-test-pyramid/</link>
+      <link>https://egutter.github.io/prueba-blog/2016/07/26/inverted-test-pyramid/</link>
       <pubDate>Tue, 26 Jul 2016 17:39:03 +0000</pubDate>
       
-      <guid>http://egutter.github.io/prueba-blog/2016/07/26/inverted-test-pyramid/</guid>
+      <guid>https://egutter.github.io/prueba-blog/2016/07/26/inverted-test-pyramid/</guid>
       <description>
 
 &lt;p&gt;I believe that most of us are familiar with the concept of &amp;ldquo;Test Pyramid&amp;rdquo;, a simple heuristic originally described by Mike Cohn, that is that a project should aim to have a larger number of unit tests than end-to-end tests. But after working on a project suffering from an inverted pyramid, I think it’s worth mentioning some of the downsides that relying solely on end-to-end tests might have.&lt;/p&gt;
@@ -83,10 +83,10 @@ It’s just important to keep in mind they test different things and their purpo
     
     <item>
       <title>Collection Filters in Ruby</title>
-      <link>http://egutter.github.io/prueba-blog/2016/07/14/collection-filters-in-ruby/</link>
+      <link>https://egutter.github.io/prueba-blog/2016/07/14/collection-filters-in-ruby/</link>
       <pubDate>Thu, 14 Jul 2016 13:00:00 +0000</pubDate>
       
-      <guid>http://egutter.github.io/prueba-blog/2016/07/14/collection-filters-in-ruby/</guid>
+      <guid>https://egutter.github.io/prueba-blog/2016/07/14/collection-filters-in-ruby/</guid>
       <description>
 
 &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; acknowledgements (and thanks!) to Máximo Prieto (our OOP guru) who had this idea and he implemented it on
@@ -353,10 +353,10 @@ than open/closed? these are some of the questions I&amp;rsquo;ll try to answer i
     
     <item>
       <title>A Little Bit of Color!</title>
-      <link>http://egutter.github.io/prueba-blog/2016/07/11/a-little-bit-of-color/</link>
+      <link>https://egutter.github.io/prueba-blog/2016/07/11/a-little-bit-of-color/</link>
       <pubDate>Mon, 11 Jul 2016 16:58:01 +0000</pubDate>
       
-      <guid>http://egutter.github.io/prueba-blog/2016/07/11/a-little-bit-of-color/</guid>
+      <guid>https://egutter.github.io/prueba-blog/2016/07/11/a-little-bit-of-color/</guid>
       <description>&lt;p&gt;#How to create a great palette for your app/web&lt;/p&gt;
 
 &lt;p&gt;You may have never paid close attention to the colors you pick for your web or app, but having a good palette helps organizinge information in your site.The idea behind this post is not to give an introduction to color theory but to offer a simple guide to help you create an harmonious and useful palette.&lt;/p&gt;
@@ -423,10 +423,10 @@ than open/closed? these are some of the questions I&amp;rsquo;ll try to answer i
     
     <item>
       <title>svn to git</title>
-      <link>http://egutter.github.io/prueba-blog/2016/02/24/svn-to-git/</link>
+      <link>https://egutter.github.io/prueba-blog/2016/02/24/svn-to-git/</link>
       <pubDate>Wed, 24 Feb 2016 10:05:05 +0000</pubDate>
       
-      <guid>http://egutter.github.io/prueba-blog/2016/02/24/svn-to-git/</guid>
+      <guid>https://egutter.github.io/prueba-blog/2016/02/24/svn-to-git/</guid>
       <description>
 
 &lt;h1 id=&#34;svn-to-git-full-migration&#34;&gt;Svn to git, full migration&lt;/h1&gt;
@@ -583,10 +583,10 @@ git push --tags newrepo
     
     <item>
       <title>How, What, Why: The three essences of software development</title>
-      <link>http://egutter.github.io/prueba-blog/2016/02/17/how-what-why-the-three-essences-of-software-development/</link>
+      <link>https://egutter.github.io/prueba-blog/2016/02/17/how-what-why-the-three-essences-of-software-development/</link>
       <pubDate>Wed, 17 Feb 2016 17:39:59 +0000</pubDate>
       
-      <guid>http://egutter.github.io/prueba-blog/2016/02/17/how-what-why-the-three-essences-of-software-development/</guid>
+      <guid>https://egutter.github.io/prueba-blog/2016/02/17/how-what-why-the-three-essences-of-software-development/</guid>
       <description>
 
 &lt;blockquote&gt;
@@ -825,10 +825,10 @@ It also reveals why computer systems security is so hard.&lt;/li&gt;
     
     <item>
       <title>To care or not to care</title>
-      <link>http://egutter.github.io/prueba-blog/2016/02/11/to-care-or-not-to-care/</link>
+      <link>https://egutter.github.io/prueba-blog/2016/02/11/to-care-or-not-to-care/</link>
       <pubDate>Thu, 11 Feb 2016 11:13:04 +0000</pubDate>
       
-      <guid>http://egutter.github.io/prueba-blog/2016/02/11/to-care-or-not-to-care/</guid>
+      <guid>https://egutter.github.io/prueba-blog/2016/02/11/to-care-or-not-to-care/</guid>
       <description>
 
 &lt;h1 id=&#34;that-is-the-question&#34;&gt;That is the question!&lt;/h1&gt;
@@ -861,10 +861,10 @@ Of course we had to mention that generally speaking developers are not the most 
     
     <item>
       <title>Be careful with the mocks</title>
-      <link>http://egutter.github.io/prueba-blog/2016/01/14/be-careful-with-the-mocks/</link>
+      <link>https://egutter.github.io/prueba-blog/2016/01/14/be-careful-with-the-mocks/</link>
       <pubDate>Thu, 14 Jan 2016 15:13:41 +0000</pubDate>
       
-      <guid>http://egutter.github.io/prueba-blog/2016/01/14/be-careful-with-the-mocks/</guid>
+      <guid>https://egutter.github.io/prueba-blog/2016/01/14/be-careful-with-the-mocks/</guid>
       <description>&lt;p&gt;Mocking objects is a common practice when writing tests, however it can be painful when refactoring a class tested with mocks. I will show a simple example to explain the problems that mocking can generate, but first I would like to give some definitions:&lt;/p&gt;
 
 &lt;ul&gt;
@@ -978,10 +978,10 @@ Of course we had to mention that generally speaking developers are not the most 
     
     <item>
       <title>There are null reasons</title>
-      <link>http://egutter.github.io/prueba-blog/2016/01/04/there-are-null-reasons/</link>
+      <link>https://egutter.github.io/prueba-blog/2016/01/04/there-are-null-reasons/</link>
       <pubDate>Mon, 04 Jan 2016 10:32:10 +0000</pubDate>
       
-      <guid>http://egutter.github.io/prueba-blog/2016/01/04/there-are-null-reasons/</guid>
+      <guid>https://egutter.github.io/prueba-blog/2016/01/04/there-are-null-reasons/</guid>
       <description>
 
 &lt;p&gt;This post will try and maybe fail to convince you that using &lt;code&gt;null&lt;/code&gt; in your code is an error.
@@ -1157,10 +1157,10 @@ But my intention is to give you few simple rules to follow and avoid null at all
     
     <item>
       <title>Ruby On Pains</title>
-      <link>http://egutter.github.io/prueba-blog/2015/11/25/ruby-on-pains/</link>
+      <link>https://egutter.github.io/prueba-blog/2015/11/25/ruby-on-pains/</link>
       <pubDate>Wed, 25 Nov 2015 15:28:11 +0000</pubDate>
       
-      <guid>http://egutter.github.io/prueba-blog/2015/11/25/ruby-on-pains/</guid>
+      <guid>https://egutter.github.io/prueba-blog/2015/11/25/ruby-on-pains/</guid>
       <description>
 
 &lt;p&gt;Have you ever heard about the &lt;em&gt;Rails way&lt;/em&gt;?
@@ -1321,10 +1321,10 @@ I would like to introduce some pains that I&amp;rsquo;ve seen and keep seeing in
     
     <item>
       <title>Learning Programming</title>
-      <link>http://egutter.github.io/prueba-blog/2015/11/02/learning-programming/</link>
+      <link>https://egutter.github.io/prueba-blog/2015/11/02/learning-programming/</link>
       <pubDate>Mon, 02 Nov 2015 12:07:16 +0000</pubDate>
       
-      <guid>http://egutter.github.io/prueba-blog/2015/11/02/learning-programming/</guid>
+      <guid>https://egutter.github.io/prueba-blog/2015/11/02/learning-programming/</guid>
       <description>
 
 &lt;h2 id=&#34;dealing-with-failure-and-frustration&#34;&gt;Dealing with failure and frustration&lt;/h2&gt;
@@ -1394,10 +1394,10 @@ And the importance of not living in a state of permanent frustration: in an envi
     
     <item>
       <title>Caring about coding</title>
-      <link>http://egutter.github.io/prueba-blog/2015/11/02/caring-about-coding/</link>
+      <link>https://egutter.github.io/prueba-blog/2015/11/02/caring-about-coding/</link>
       <pubDate>Mon, 02 Nov 2015 10:55:09 +0000</pubDate>
       
-      <guid>http://egutter.github.io/prueba-blog/2015/11/02/caring-about-coding/</guid>
+      <guid>https://egutter.github.io/prueba-blog/2015/11/02/caring-about-coding/</guid>
       <description>
 
 &lt;p&gt;&lt;em&gt;This is a repost of an article we wrote with our friends at 8th Light.
@@ -1451,10 +1451,10 @@ See the original article &lt;a href=&#34;http://blog.8thlight.com/alexandru-codr
     
     <item>
       <title>Tips for introducing yourself in a conference or &#39;the conference elevator pitch&#39;</title>
-      <link>http://egutter.github.io/prueba-blog/2015/10/13/the-conference-elevator-pitch/</link>
+      <link>https://egutter.github.io/prueba-blog/2015/10/13/the-conference-elevator-pitch/</link>
       <pubDate>Tue, 13 Oct 2015 15:26:07 +0000</pubDate>
       
-      <guid>http://egutter.github.io/prueba-blog/2015/10/13/the-conference-elevator-pitch/</guid>
+      <guid>https://egutter.github.io/prueba-blog/2015/10/13/the-conference-elevator-pitch/</guid>
       <description>
 
 &lt;p&gt;It could sounds basic, but when you talk with people in a conference, you have to think quickly. So it&amp;rsquo;s very important to have in mind a successful path to a productive five-minutes chat. After being talking with a lot of people and making a lot of mistakes (since not knowing what to say about what our company do, to not asking how to contact him/her back); I’ve decided to write down a guidelines to introduce yourself and getting to know the other person, avoiding typical mistakes.&lt;/p&gt;
@@ -1523,10 +1523,10 @@ Hope this is useful.&lt;/p&gt;
     
     <item>
       <title>Review of Agile 2015 @ Washington DC</title>
-      <link>http://egutter.github.io/prueba-blog/2015/10/07/review-of-agile-2015-at-washington-dc/</link>
+      <link>https://egutter.github.io/prueba-blog/2015/10/07/review-of-agile-2015-at-washington-dc/</link>
       <pubDate>Wed, 07 Oct 2015 12:34:33 +0000</pubDate>
       
-      <guid>http://egutter.github.io/prueba-blog/2015/10/07/review-of-agile-2015-at-washington-dc/</guid>
+      <guid>https://egutter.github.io/prueba-blog/2015/10/07/review-of-agile-2015-at-washington-dc/</guid>
       <description>
 
 &lt;h2 id=&#34;the-organization-the-conference&#34;&gt;The organization &amp;amp; the conference&lt;/h2&gt;
@@ -1605,10 +1605,10 @@ The latino community having dinner&lt;/p&gt;
     
     <item>
       <title>Tests: Paving our way</title>
-      <link>http://egutter.github.io/prueba-blog/2015/09/18/tests-paving-our-way/</link>
+      <link>https://egutter.github.io/prueba-blog/2015/09/18/tests-paving-our-way/</link>
       <pubDate>Fri, 18 Sep 2015 01:28:42 +0000</pubDate>
       
-      <guid>http://egutter.github.io/prueba-blog/2015/09/18/tests-paving-our-way/</guid>
+      <guid>https://egutter.github.io/prueba-blog/2015/09/18/tests-paving-our-way/</guid>
       <description>
 
 &lt;blockquote&gt;

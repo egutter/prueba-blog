@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Agile on 10 Pines Blog</title>
-    <link>http://egutter.github.io/prueba-blog/categories/agile/</link>
+    <link>https://egutter.github.io/prueba-blog/categories/agile/</link>
     <description>Recent content in Agile on 10 Pines Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 13 Oct 2015 15:26:07 +0000</lastBuildDate>
-    <atom:link href="http://egutter.github.io/prueba-blog/categories/agile/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://egutter.github.io/prueba-blog/categories/agile/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Tips for introducing yourself in a conference or &#39;the conference elevator pitch&#39;</title>
-      <link>http://egutter.github.io/prueba-blog/2015/10/13/the-conference-elevator-pitch/</link>
+      <link>https://egutter.github.io/prueba-blog/2015/10/13/the-conference-elevator-pitch/</link>
       <pubDate>Tue, 13 Oct 2015 15:26:07 +0000</pubDate>
       
-      <guid>http://egutter.github.io/prueba-blog/2015/10/13/the-conference-elevator-pitch/</guid>
+      <guid>https://egutter.github.io/prueba-blog/2015/10/13/the-conference-elevator-pitch/</guid>
       <description>
 
 &lt;p&gt;It could sounds basic, but when you talk with people in a conference, you have to think quickly. So it&amp;rsquo;s very important to have in mind a successful path to a productive five-minutes chat. After being talking with a lot of people and making a lot of mistakes (since not knowing what to say about what our company do, to not asking how to contact him/her back); I’ve decided to write down a guidelines to introduce yourself and getting to know the other person, avoiding typical mistakes.&lt;/p&gt;
@@ -83,10 +83,10 @@ Hope this is useful.&lt;/p&gt;
     
     <item>
       <title>Review of Agile 2015 @ Washington DC</title>
-      <link>http://egutter.github.io/prueba-blog/2015/10/07/review-of-agile-2015-at-washington-dc/</link>
+      <link>https://egutter.github.io/prueba-blog/2015/10/07/review-of-agile-2015-at-washington-dc/</link>
       <pubDate>Wed, 07 Oct 2015 12:34:33 +0000</pubDate>
       
-      <guid>http://egutter.github.io/prueba-blog/2015/10/07/review-of-agile-2015-at-washington-dc/</guid>
+      <guid>https://egutter.github.io/prueba-blog/2015/10/07/review-of-agile-2015-at-washington-dc/</guid>
       <description>
 
 &lt;h2 id=&#34;the-organization-the-conference&#34;&gt;The organization &amp;amp; the conference&lt;/h2&gt;
@@ -165,10 +165,10 @@ The latino community having dinner&lt;/p&gt;
     
     <item>
       <title>Enterprise Lean Canvas</title>
-      <link>http://egutter.github.io/prueba-blog/2015/07/13/enterprise-lean-canvas/</link>
+      <link>https://egutter.github.io/prueba-blog/2015/07/13/enterprise-lean-canvas/</link>
       <pubDate>Mon, 13 Jul 2015 10:43:47 +0000</pubDate>
       
-      <guid>http://egutter.github.io/prueba-blog/2015/07/13/enterprise-lean-canvas/</guid>
+      <guid>https://egutter.github.io/prueba-blog/2015/07/13/enterprise-lean-canvas/</guid>
       <description>&lt;p&gt;A few days ago, we were asked to estimate a new big extension for a previous application we developed a year ago.
 Since we had a strong deadline to send this proposal, and we couldn&amp;rsquo;t do it the way we are used to (through a Product Discovery Workshop), we decided to try an idea which was in my mind some time ago: a Corporate Lean Canvas, our customized variation to the original Lean Canvas [1].&lt;/p&gt;
 
@@ -207,10 +207,10 @@ In order to accomplish this we figured out how to adapt and customize the Lean C
     
     <item>
       <title>The Backlog Guy</title>
-      <link>http://egutter.github.io/prueba-blog/2015/04/09/the-backlog-guy/</link>
+      <link>https://egutter.github.io/prueba-blog/2015/04/09/the-backlog-guy/</link>
       <pubDate>Thu, 09 Apr 2015 09:24:15 +0000</pubDate>
       
-      <guid>http://egutter.github.io/prueba-blog/2015/04/09/the-backlog-guy/</guid>
+      <guid>https://egutter.github.io/prueba-blog/2015/04/09/the-backlog-guy/</guid>
       <description>
 
 &lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
@@ -225,15 +225,15 @@ In order to accomplish this we figured out how to adapt and customize the Lean C
 
 &lt;p&gt;1) First you have an idea&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://egutter.github.io/prueba-blog/images/ID-100311609.jpg&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://egutter.github.io/prueba-blog/images/ID-100311609.jpg&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;2) Then you start thinking, brainstorming and describing your idea&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://egutter.github.io/prueba-blog/images/ID-100248850.jpg&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://egutter.github.io/prueba-blog/images/ID-100248850.jpg&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;3) Then you need to break it in pieces that can fit an iteration and prioritize it. You can also try to estimate how big are the other items to start measuring your velocity and understanding the dimension of what you need to build.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://egutter.github.io/prueba-blog/images/backlog.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://egutter.github.io/prueba-blog/images/backlog.png&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Voila! The result is a backlog. At least a backlog to start with. The backlog is a living artifact that will mutate throughout the project, as more is understood, described and defined in the product. It is important to notice that the backlog it’s a document that serves as an interface between the business and technical sides of the team. Business folks will create it and development folks will consult it (and provide feedback) all the time. It is also important to understand that the backlog will contain items with different levels of refinement and granularity. The items on the top, which will be worked on in the near future need to be better understood and defined. The items after them less. And the items that are at the far bottom are just ideas. Why spending time and money if we don’t even know if we are going to do them, right?&lt;/p&gt;
 
@@ -280,10 +280,10 @@ Then &lt;em&gt;a particular set of observables consequences&lt;/em&gt;&lt;/p&gt;
     
     <item>
       <title>MVP&#39;s: The Real Deal</title>
-      <link>http://egutter.github.io/prueba-blog/2014/11/07/mvps-the-real-deal/</link>
+      <link>https://egutter.github.io/prueba-blog/2014/11/07/mvps-the-real-deal/</link>
       <pubDate>Fri, 07 Nov 2014 11:00:00 +0000</pubDate>
       
-      <guid>http://egutter.github.io/prueba-blog/2014/11/07/mvps-the-real-deal/</guid>
+      <guid>https://egutter.github.io/prueba-blog/2014/11/07/mvps-the-real-deal/</guid>
       <description>&lt;p&gt;We all know how it goes: An idea strikes our mind, and before we notice, hands are already on our keyboard, our favourite IDE wide open, (luckily a bit of brainstorming) and a product is born.&lt;/p&gt;
 
 &lt;p&gt;Yeah yeah, we all know we should hold the horses and make some state-of-the-art research. With ease we talk ourselves into believing that most of it sucks (compared with the product in our minds). We can do it way better, and everyone will love it, because everyone needs it. Code-blocks on it!&lt;/p&gt;
@@ -319,9 +319,9 @@ This hides the fact that an MVP may not even be an iteration of our product, jus
 
 &lt;p&gt;However, just so you can take some real example out of this article, I will share some pictures of a successful MVP user testing session conducted for a project I was part of. Potential users were presented a “wireframed” version of a web application in plain paper, and they were asked to perform specific tasks on it, using their hands as mouses, to finally get their feedback.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://egutter.github.io/prueba-blog/images/mvps-the-real-deal_1.jpg&#34; style=&#34;width: 227px;&#34; /&gt;
-&lt;img src=&#34;http://egutter.github.io/prueba-blog/images/mvps-the-real-deal_2.jpg&#34; style=&#34;width: 227px;&#34; /&gt;
-&lt;img src=&#34;http://egutter.github.io/prueba-blog/images/mvps-the-real-deal_3.jpg&#34; style=&#34;width: 227px;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://egutter.github.io/prueba-blog/images/mvps-the-real-deal_1.jpg&#34; style=&#34;width: 227px;&#34; /&gt;
+&lt;img src=&#34;https://egutter.github.io/prueba-blog/images/mvps-the-real-deal_2.jpg&#34; style=&#34;width: 227px;&#34; /&gt;
+&lt;img src=&#34;https://egutter.github.io/prueba-blog/images/mvps-the-real-deal_3.jpg&#34; style=&#34;width: 227px;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;This was a highly rewarding experience and you would probably be surprised to see how involved users became and how much information we collected, from both their words and their behaviour.&lt;/p&gt;
 
@@ -335,10 +335,10 @@ This hides the fact that an MVP may not even be an iteration of our product, jus
     
     <item>
       <title>Lean Sales Up - Ágiles 2014</title>
-      <link>http://egutter.github.io/prueba-blog/2014/10/28/lean-sales-up/</link>
+      <link>https://egutter.github.io/prueba-blog/2014/10/28/lean-sales-up/</link>
       <pubDate>Tue, 28 Oct 2014 10:05:44 +0000</pubDate>
       
-      <guid>http://egutter.github.io/prueba-blog/2014/10/28/lean-sales-up/</guid>
+      <guid>https://egutter.github.io/prueba-blog/2014/10/28/lean-sales-up/</guid>
       <description>&lt;p&gt;El proceso de preventa puede ser doloroso, largo y costoso.
 Es el primer punto de negociación. Hay que convencer al otro que somos la mejor opción. Y hay que ajustar las expectativas siempre altas del cliente.
 Sin embargo existe una forma de mejorar y llegar a un balance, donde el cliente y el proveedor se sientan seguros y conformes. En esta sesión exploraremos como conjugar el proceso delicado y “costoso” de la venta con los principios ágiles de lean.&lt;/p&gt;
@@ -363,10 +363,10 @@ El objetivo es mostrar como empezar a crear valor desde el momento cero. Crear v
     
     <item>
       <title>Software Existentialism</title>
-      <link>http://egutter.github.io/prueba-blog/2014/09/23/software-existentialism/</link>
+      <link>https://egutter.github.io/prueba-blog/2014/09/23/software-existentialism/</link>
       <pubDate>Tue, 23 Sep 2014 21:07:34 +0000</pubDate>
       
-      <guid>http://egutter.github.io/prueba-blog/2014/09/23/software-existentialism/</guid>
+      <guid>https://egutter.github.io/prueba-blog/2014/09/23/software-existentialism/</guid>
       <description>
 
 &lt;p&gt;A few days ago, in an interesting discussion I was having in a local Agile forum, someone posted the phrase:
@@ -442,10 +442,10 @@ Not so far in the future, our startup company might begin to lose market share. 
     
     <item>
       <title>Rethinking Estimations</title>
-      <link>http://egutter.github.io/prueba-blog/2014/03/21/rethinking-estimations/</link>
+      <link>https://egutter.github.io/prueba-blog/2014/03/21/rethinking-estimations/</link>
       <pubDate>Fri, 21 Mar 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://egutter.github.io/prueba-blog/2014/03/21/rethinking-estimations/</guid>
+      <guid>https://egutter.github.io/prueba-blog/2014/03/21/rethinking-estimations/</guid>
       <description>
 
 &lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; lang=&#34;en&#34;&gt;&lt;p&gt;When someone asks for an estimate I always think of this.&amp;#10;&amp;#10;&lt;a href=&#34;https://twitter.com/hashtag/NoEstimates?src=hash&#34;&gt;#NoEstimates&lt;/a&gt; &lt;a href=&#34;http://t.co/siZsVxs3D4&#34;&gt;pic.twitter.com/siZsVxs3D4&lt;/a&gt;&lt;/p&gt;&amp;mdash; Aaron Griffith (@Aaron_Griffith) &lt;a href=&#34;https://twitter.com/Aaron_Griffith/statuses/444547284416475136&#34;&gt;March 14, 2014&lt;/a&gt;&lt;/blockquote&gt;
@@ -666,10 +666,10 @@ value it is providing and try to improve!&lt;/strong&gt;.&lt;/p&gt;
     
     <item>
       <title>agile 2011 slc we were there</title>
-      <link>http://egutter.github.io/prueba-blog/2011/09/02/agile-slc-we-were-there/</link>
+      <link>https://egutter.github.io/prueba-blog/2011/09/02/agile-slc-we-were-there/</link>
       <pubDate>Fri, 02 Sep 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://egutter.github.io/prueba-blog/2011/09/02/agile-slc-we-were-there/</guid>
+      <guid>https://egutter.github.io/prueba-blog/2011/09/02/agile-slc-we-were-there/</guid>
       <description>
 
 &lt;h2 id=&#34;news-from-salt-lake-city&#34;&gt;News from Salt Lake City&lt;/h2&gt;
@@ -708,10 +708,10 @@ value it is providing and try to improve!&lt;/strong&gt;.&lt;/p&gt;
     
     <item>
       <title>agile software development with smalltalk at smalltalks 2010</title>
-      <link>http://egutter.github.io/prueba-blog/2010/11/12/agile-software-development-with-smalltalks-at-smalltalks-2010/</link>
+      <link>https://egutter.github.io/prueba-blog/2010/11/12/agile-software-development-with-smalltalks-at-smalltalks-2010/</link>
       <pubDate>Fri, 12 Nov 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://egutter.github.io/prueba-blog/2010/11/12/agile-software-development-with-smalltalks-at-smalltalks-2010/</guid>
+      <guid>https://egutter.github.io/prueba-blog/2010/11/12/agile-software-development-with-smalltalks-at-smalltalks-2010/</guid>
       <description>&lt;p&gt;Click &amp;lsquo;Read on&amp;rsquo; to see the presentation&lt;/p&gt;
 
 &lt;p&gt;{% slideshare 5754977 %}&lt;/p&gt;
@@ -722,10 +722,10 @@ value it is providing and try to improve!&lt;/strong&gt;.&lt;/p&gt;
     
     <item>
       <title>agiles 2010: story mapping - un enfoque visual a la construcción del product backlog</title>
-      <link>http://egutter.github.io/prueba-blog/2010/10/22/agiles-2010-story-mapping-un-enfoque-visual-a-la-construccion-del-product-backlog/</link>
+      <link>https://egutter.github.io/prueba-blog/2010/10/22/agiles-2010-story-mapping-un-enfoque-visual-a-la-construccion-del-product-backlog/</link>
       <pubDate>Fri, 22 Oct 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://egutter.github.io/prueba-blog/2010/10/22/agiles-2010-story-mapping-un-enfoque-visual-a-la-construccion-del-product-backlog/</guid>
+      <guid>https://egutter.github.io/prueba-blog/2010/10/22/agiles-2010-story-mapping-un-enfoque-visual-a-la-construccion-del-product-backlog/</guid>
       <description>&lt;p&gt;Click &amp;lsquo;Read on&amp;rsquo; to see the presentation&lt;/p&gt;
 
 &lt;p&gt;{% prezi ickvpa0kgxnc %}&lt;/p&gt;
@@ -736,10 +736,10 @@ value it is providing and try to improve!&lt;/strong&gt;.&lt;/p&gt;
     
     <item>
       <title>presentación agiles 2010 - automatización del deployment</title>
-      <link>http://egutter.github.io/prueba-blog/2010/10/13/presentacion-agiles-automatizacion-del-deployment/</link>
+      <link>https://egutter.github.io/prueba-blog/2010/10/13/presentacion-agiles-automatizacion-del-deployment/</link>
       <pubDate>Wed, 13 Oct 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://egutter.github.io/prueba-blog/2010/10/13/presentacion-agiles-automatizacion-del-deployment/</guid>
+      <guid>https://egutter.github.io/prueba-blog/2010/10/13/presentacion-agiles-automatizacion-del-deployment/</guid>
       <description>&lt;p&gt;Las metodologías ágiles son muy claras respecto al siguiente punto: todas las tareas repetitivas que se realizan en forma manual deben ser automatizadas!
 Existen actualmente excelentes herramientas que nos ayudan a automatizar el build, las ejecuciones de los tests y el deployment de aplicaciones, pero comenzar a utilizarlas no siempre es una tarea trivial. En esta sesión presentaremos Maven junto con un grupo de plugins y herramientas que nos ayudaran a automatizar las tareas rutinarias cuando trabajamos con una gran aplicación multi-módulo Java enterprise.&lt;/p&gt;
 
@@ -751,10 +751,10 @@ Existen actualmente excelentes herramientas que nos ayudan a automatizar el buil
     
     <item>
       <title>Agile is clean code</title>
-      <link>http://egutter.github.io/prueba-blog/2010/06/22/agile-is-clean-code/</link>
+      <link>https://egutter.github.io/prueba-blog/2010/06/22/agile-is-clean-code/</link>
       <pubDate>Tue, 22 Jun 2010 00:00:00 +0000</pubDate>
       
-      <guid>http://egutter.github.io/prueba-blog/2010/06/22/agile-is-clean-code/</guid>
+      <guid>https://egutter.github.io/prueba-blog/2010/06/22/agile-is-clean-code/</guid>
       <description>
 
 &lt;p&gt;But &amp;hellip; Isn&amp;rsquo;t this a requirement for all approaches? Why do I have the impression that in Agile, the technical aspect is more important? When I was at University, I remember vividly having heard (and unfortunately later repeated) that the programmer had one of the less important tasks in the chain of producing software. The most important, more senior and smarter people are the architects/designers that analyse and design the application, giving the programmers some diagrams that they &amp;lsquo;just&amp;rsquo; have to translate into code. That seemed like an easy task!!&lt;/p&gt;
@@ -799,10 +799,10 @@ Existen actualmente excelentes herramientas que nos ayudan a automatizar el buil
     
     <item>
       <title>Benefits of agile software development</title>
-      <link>http://egutter.github.io/prueba-blog/2009/06/10/benefits-of-agile-software-development/</link>
+      <link>https://egutter.github.io/prueba-blog/2009/06/10/benefits-of-agile-software-development/</link>
       <pubDate>Wed, 10 Jun 2009 00:00:00 +0000</pubDate>
       
-      <guid>http://egutter.github.io/prueba-blog/2009/06/10/benefits-of-agile-software-development/</guid>
+      <guid>https://egutter.github.io/prueba-blog/2009/06/10/benefits-of-agile-software-development/</guid>
       <description>
 
 &lt;h2 id=&#34;incremental-deployment-minimize-time-to-market&#34;&gt;Incremental deployment: minimize time-to-market&lt;/h2&gt;
@@ -825,10 +825,10 @@ Existen actualmente excelentes herramientas que nos ayudan a automatizar el buil
     
     <item>
       <title>Agile Myths: Shorter iterations are stressful</title>
-      <link>http://egutter.github.io/prueba-blog/2009/05/16/agile-myths-shorter-iterations-are-stressful/</link>
+      <link>https://egutter.github.io/prueba-blog/2009/05/16/agile-myths-shorter-iterations-are-stressful/</link>
       <pubDate>Sat, 16 May 2009 00:00:00 +0000</pubDate>
       
-      <guid>http://egutter.github.io/prueba-blog/2009/05/16/agile-myths-shorter-iterations-are-stressful/</guid>
+      <guid>https://egutter.github.io/prueba-blog/2009/05/16/agile-myths-shorter-iterations-are-stressful/</guid>
       <description>&lt;p&gt;One of the first steps a new agile team has to undertake is to choose their iteration length. My general advice is to start with 2 weeks iterations, although I let teams choose the length they feel comfortable with. I believe it is better if the team make their own decisions and learn with the experience. I&amp;rsquo;m gladly surprised when a team chooses a short iteration length, but sadly that doesn&amp;rsquo;t happen very frequently. Usually the main argument I&amp;rsquo;ve heard in favor of longer iterations is that shorter iterations are stressful and there is not enough time to finish all the work.&lt;/p&gt;
 
 &lt;p&gt;Opposed to this general belief, my own experience taught me that longer iterations are generally more stressful than shorter ones.

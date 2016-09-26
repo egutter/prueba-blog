@@ -9,7 +9,7 @@
 
         <meta property="og:title" content=" Java generics and inheritance (part 2) &middot;  10 Pines Blog" />
         <meta property="og:site_name" content="10 Pines Blog" />
-        <meta property="og:url" content="http://egutter.github.io/prueba-blog/2014/12/02/java-generics-and-inheritance-part-2/" />
+        <meta property="og:url" content="https://egutter.github.io/prueba-blog/2014/12/02/java-generics-and-inheritance-part-2/" />
 
     
         <meta property="og:type" content="article" />
@@ -21,7 +21,7 @@
         <meta name="twitter:creator" content="@" />
         <meta name="twitter:title" content="Java generics and inheritance (part 2)" />
         <meta name="twitter:description" content="" />
-        <meta name="twitter:url" content="http://egutter.github.io/prueba-blog/2014/12/02/java-generics-and-inheritance-part-2/" />
+        <meta name="twitter:url" content="https://egutter.github.io/prueba-blog/2014/12/02/java-generics-and-inheritance-part-2/" />
     
 
         <title> Java generics and inheritance (part 2) &middot;  10 Pines Blog</title>
@@ -39,11 +39,11 @@
         
 
     
-        <link href="http://egutter.github.io/prueba-blog/index.xml" rel="alternate" type="application/rss+xml" title="10 Pines Blog" />
+        <link href="https://egutter.github.io/prueba-blogindex.xml" rel="alternate" type="application/rss+xml" title="10 Pines Blog" />
     
 
     
-        <link rel="canonical" href="http://egutter.github.io/prueba-blog/2014/12/02/java-generics-and-inheritance-part-2/" />
+        <link rel="canonical" href="https://egutter.github.io/prueba-blog/2014/12/02/java-generics-and-inheritance-part-2/" />
 
     
     <script type="application/ld+json">
@@ -66,9 +66,9 @@
     
     
       var disqus_shortname = '10pinesblog';
-      var disqus_identifier = 'http:\/\/egutter.github.io\/prueba-blog\/2014\/12\/02\/java-generics-and-inheritance-part-2\/';
+      var disqus_identifier = 'https:\/\/egutter.github.io\/prueba-blog\/2014\/12\/02\/java-generics-and-inheritance-part-2\/';
       var disqus_title = 'Java generics and inheritance (part 2)';
-      var disqus_url = 'http:\/\/egutter.github.io\/prueba-blog\/2014\/12\/02\/java-generics-and-inheritance-part-2\/';
+      var disqus_url = 'https:\/\/egutter.github.io\/prueba-blog\/2014\/12\/02\/java-generics-and-inheritance-part-2\/';
     
 
     </script>
@@ -85,10 +85,10 @@
         <div id="ajax-container">
           <nav id="nav" class="nav">
             <div class="nav-logo">
-              <a href="http://egutter.github.io/prueba-blog/">
+              <a href="https://egutter.github.io/prueba-blog">
       			  	
       			  	
-      			  	<img src="http://egutter.github.io/prueba-blog/images/10p-logo.png" alt="Logo"/>
+      			  	<img src="https://egutter.github.io/prueba-blog/images/10p-logo.png" alt="Logo"/>
       			  	
               </a>
 			  	    
@@ -122,7 +122,7 @@
   			<section class="post-content">
   				
 
-<p><a href="http://egutter.github.io/prueba-blog/2014/12/02/java-generics-and-inheritance-part-1">On the first part of this article</a> I explained why java generics don&rsquo;t allow up-casting for generified types.
+<p><a href="https://egutter.github.io/prueba-blog/2014/12/02/java-generics-and-inheritance-part-1">On the first part of this article</a> I explained why java generics don&rsquo;t allow up-casting for generified types.
 In this part we will see why, arrays don&rsquo;t have that restriction, and the implications for <em>reflection</em>.</p>
 
 <h2 id="but-arrays">But arrays&hellip;</h2>
@@ -145,7 +145,7 @@ objectArray[0] = 1; //1 is not a String -&gt; ArrayStoreException
 
 <p>Yep, the array reacts to your wrong doing and it throws you an ArrayStoreException if you try to put anything that is not a String (or subtype). The array retains its complete type information in runtime.</p>
 
-<p><img src="http://egutter.github.io/prueba-blog/images/2014-12-02-java-generics-and-inheritance-part-2-VennArrayObjectArrayString.jpg" alt="Venn diagram of arrays" /></p>
+<p><img src="https://egutter.github.io/prueba-blog/images/2014-12-02-java-generics-and-inheritance-part-2-VennArrayObjectArrayString.jpg" alt="Venn diagram of arrays" /></p>
 
 <p>So basically, while you can see an array as an instance of a super type, the array doesn&rsquo;t lose its type. The type of an array is not lost at runtime because it&rsquo;s reified (there&rsquo;s an object that represents it at runtime). It doesn&rsquo;t depend on the type of the variable it&rsquo;s assigned to.
 On the other hand, a list type does depend on the variable it&rsquo;s assigned to, and that&rsquo;s why you cannot up-cast generic types, so you don&rsquo;t change the type of contained elements. As lists don&rsquo;t reify their element type you could put whatever inside, and then the implicit casts of generics may break.</p>
@@ -258,7 +258,7 @@ But it won&rsquo;t help you much. It uses <code>Type</code> hierarchy to know th
 
 <p>Not only you do have 3 different ways to know your super type, you also have three different non-polymorphic objects.  If you are like me for simplicity&rsquo;s sake, you will say ok, let&rsquo;s use the most complete one, and let&rsquo;s forget about the others (the older ones). Let&rsquo;s use <code>getAnnotatedSuperclass():AnnotatedType</code> right?</p>
 
-<p><img src="http://egutter.github.io/prueba-blog/images/2014-12-02-java-generics-and-inheritance-part-2-threeSuperTypes.jpg" alt="Three options for super-types" /></p>
+<p><img src="https://egutter.github.io/prueba-blog/images/2014-12-02-java-generics-and-inheritance-part-2-threeSuperTypes.jpg" alt="Three options for super-types" /></p>
 
 <p>But what if I have more than one inheritance level? What if I want to know an argument of the super type of my super type? Does AnnotatedType has a super class method as Class does? A super type of List<String> is Collection<String> can I get to it? <strong>Can I traverse my generic lineage? Short answer: no.</strong></p>
 
@@ -266,11 +266,11 @@ But it won&rsquo;t help you much. It uses <code>Type</code> hierarchy to know th
 <code>AnnotatedType::getType()</code> allows you to get a <code>Type</code> instance which doesn&rsquo;t have the concept of inheritance either&hellip;. But&hellip;.<br />
 If <code>Type</code> is an instance of <code>ParameterizedType</code>, then you have <code>ParameterizedType::getRawType()</code> that gives you an instance of <code>Class</code> and finally you can ask that class its super type again.</p>
 
-<p><img src="http://egutter.github.io/prueba-blog/images/2014-12-02-java-generics-and-inheritance-part-2-whot.jpg" alt="Whot?" /></p>
+<p><img src="https://egutter.github.io/prueba-blog/images/2014-12-02-java-generics-and-inheritance-part-2-whot.jpg" alt="Whot?" /></p>
 
 <p>Let me say it again: from a <code>Class</code> instance you can have the annotated super type (to get the annotations) then get the generic <code>Type</code>, cast it to a parameterized type (to get the type arguments), ask its raw class and only then get the super super type. It can&rsquo;t be easier!</p>
 
-<p><img src="http://egutter.github.io/prueba-blog/images/2014-12-02-java-generics-and-inheritance-part-2-superSuperType.jpg" alt="Navigating to a super type" /></p>
+<p><img src="https://egutter.github.io/prueba-blog/images/2014-12-02-java-generics-and-inheritance-part-2-superSuperType.jpg" alt="Navigating to a super type" /></p>
 
 <p>Oh, one more thing. Each level you go up, you lose the actual type arguments. Why?<br />
 Because you have to pass through a Class instance in order to go up the next level. <code>Class</code> knows nothing about type arguments.<br />
@@ -297,13 +297,13 @@ Two different personalities that need one representation. That&rsquo;s why you e
             
   				</div>
   				<div class="post-share">
-  					<a class="icon-twitter" href="https://twitter.com/share?text=Java%20generics%20and%20inheritance%20%28part%202%29&url=http%3a%2f%2fegutter.github.io%2fprueba-blog%2f2014%2f12%2f02%2fjava-generics-and-inheritance-part-2%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+  					<a class="icon-twitter" href="https://twitter.com/share?text=Java%20generics%20and%20inheritance%20%28part%202%29&url=https%3a%2f%2fegutter.github.io%2fprueba-blog%2f2014%2f12%2f02%2fjava-generics-and-inheritance-part-2%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
   						<span>Twitter</span>
   					</a>
-  					<a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fegutter.github.io%2fprueba-blog%2f2014%2f12%2f02%2fjava-generics-and-inheritance-part-2%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+  					<a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fegutter.github.io%2fprueba-blog%2f2014%2f12%2f02%2fjava-generics-and-inheritance-part-2%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
   						<span>Facebook</span>
   					</a>
-  					<a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fegutter.github.io%2fprueba-blog%2f2014%2f12%2f02%2fjava-generics-and-inheritance-part-2%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+  					<a class="icon-gplus" href="https://plus.google.com/share?url=https%3a%2f%2fegutter.github.io%2fprueba-blog%2f2014%2f12%2f02%2fjava-generics-and-inheritance-part-2%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
   						<span>Google+</span>
   					</a>
   				</div>
@@ -323,7 +323,7 @@ Two different personalities that need one representation. That&rsquo;s why you e
 
 			<nav class="post-nav">
 				
-					<a class="post-nav-item post-nav-next" href="http://egutter.github.io/prueba-blog/2015/02/18/essence-driven-development/">
+					<a class="post-nav-item post-nav-next" href="https://egutter.github.io/prueba-blog/2015/02/18/essence-driven-development/">
 						<section class="post-nav-teaser">
 							<span class="post-nav-icon"><i class="icon-arrow-left"></i></span>
 							<span class="post-nav-info">
@@ -334,7 +334,7 @@ Two different personalities that need one representation. That&rsquo;s why you e
 					</a>
 				
 				
-					<a class="post-nav-item post-nav-prev" href="http://egutter.github.io/prueba-blog/2014/12/02/java-generics-and-inheritance-part-1/">
+					<a class="post-nav-item post-nav-prev" href="https://egutter.github.io/prueba-blog/2014/12/02/java-generics-and-inheritance-part-1/">
 						<section class="post-nav-teaser">
 							<span class="post-nav-icon"><i class="icon-arrow-right"></i></span>
 							<span class="post-nav-info">

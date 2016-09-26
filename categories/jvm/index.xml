@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jvm on 10 Pines Blog</title>
-    <link>http://egutter.github.io/prueba-blog/categories/jvm/</link>
+    <link>https://egutter.github.io/prueba-blog/categories/jvm/</link>
     <description>Recent content in Jvm on 10 Pines Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 29 Feb 2012 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://egutter.github.io/prueba-blog/categories/jvm/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://egutter.github.io/prueba-blog/categories/jvm/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>akka, un framework con actores en la jvm</title>
-      <link>http://egutter.github.io/prueba-blog/2012/02/29/akka-un-framework-con-actores-en-la-jvm/</link>
+      <link>https://egutter.github.io/prueba-blog/2012/02/29/akka-un-framework-con-actores-en-la-jvm/</link>
       <pubDate>Wed, 29 Feb 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://egutter.github.io/prueba-blog/2012/02/29/akka-un-framework-con-actores-en-la-jvm/</guid>
+      <guid>https://egutter.github.io/prueba-blog/2012/02/29/akka-un-framework-con-actores-en-la-jvm/</guid>
       <description>
 
 &lt;h2 id=&#34;introducción&#34;&gt;Introducción&lt;/h2&gt;

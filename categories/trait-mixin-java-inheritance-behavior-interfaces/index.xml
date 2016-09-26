@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Trait Mixin Java Inheritance Behavior Interfaces on 10 Pines Blog</title>
-    <link>http://egutter.github.io/prueba-blog/categories/trait-mixin-java-inheritance-behavior-interfaces/</link>
+    <link>https://egutter.github.io/prueba-blog/categories/trait-mixin-java-inheritance-behavior-interfaces/</link>
     <description>Recent content in Trait Mixin Java Inheritance Behavior Interfaces on 10 Pines Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 14 Oct 2014 14:03:36 +0000</lastBuildDate>
-    <atom:link href="http://egutter.github.io/prueba-blog/categories/trait-mixin-java-inheritance-behavior-interfaces/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://egutter.github.io/prueba-blog/categories/trait-mixin-java-inheritance-behavior-interfaces/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Mixins or Traits? That is the Question</title>
-      <link>http://egutter.github.io/prueba-blog/2014/10/14/mixins-or-traits/</link>
+      <link>https://egutter.github.io/prueba-blog/2014/10/14/mixins-or-traits/</link>
       <pubDate>Tue, 14 Oct 2014 14:03:36 +0000</pubDate>
       
-      <guid>http://egutter.github.io/prueba-blog/2014/10/14/mixins-or-traits/</guid>
+      <guid>https://egutter.github.io/prueba-blog/2014/10/14/mixins-or-traits/</guid>
       <description>&lt;p&gt;A couple of days ago, a discussion came up in an &lt;a href=&#34;http://www.uqbar-project.org/&#34;&gt;uqbar foundation&lt;/a&gt;&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; mailing list about the Java 8 Interfaces Default Methods. They were named as «mixins», but I corrected them and called «traits without flattening».&lt;/p&gt;
 
 &lt;p&gt;After sending the mail, that last sentence kept ringing in my head, so I proposed myself to try to understand why was I calling them like that.

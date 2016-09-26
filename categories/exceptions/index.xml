@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Exceptions on 10 Pines Blog</title>
-    <link>http://egutter.github.io/prueba-blog/categories/exceptions/</link>
+    <link>https://egutter.github.io/prueba-blog/categories/exceptions/</link>
     <description>Recent content in Exceptions on 10 Pines Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 29 Sep 2014 14:29:50 +0000</lastBuildDate>
-    <atom:link href="http://egutter.github.io/prueba-blog/categories/exceptions/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://egutter.github.io/prueba-blog/categories/exceptions/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Symbols: the new return codes? (Pt. 2)</title>
-      <link>http://egutter.github.io/prueba-blog/2014/09/29/symbols-the-new-return-codes-part-2/</link>
+      <link>https://egutter.github.io/prueba-blog/2014/09/29/symbols-the-new-return-codes-part-2/</link>
       <pubDate>Mon, 29 Sep 2014 14:29:50 +0000</pubDate>
       
-      <guid>http://egutter.github.io/prueba-blog/2014/09/29/symbols-the-new-return-codes-part-2/</guid>
+      <guid>https://egutter.github.io/prueba-blog/2014/09/29/symbols-the-new-return-codes-part-2/</guid>
       <description>
 
 &lt;h2 id=&#34;flow-control-with-exceptions-and-closures&#34;&gt;Flow control with exceptions and closures&lt;/h2&gt;
@@ -239,10 +239,10 @@ Surprisingly enough, sometimes the only reason for closures to be unpopular is t
     
     <item>
       <title>Symbols: the new return codes?</title>
-      <link>http://egutter.github.io/prueba-blog/2014/09/24/symbols-the-new-return-codes/</link>
+      <link>https://egutter.github.io/prueba-blog/2014/09/24/symbols-the-new-return-codes/</link>
       <pubDate>Wed, 24 Sep 2014 16:45:03 +0000</pubDate>
       
-      <guid>http://egutter.github.io/prueba-blog/2014/09/24/symbols-the-new-return-codes/</guid>
+      <guid>https://egutter.github.io/prueba-blog/2014/09/24/symbols-the-new-return-codes/</guid>
       <description>
 
 &lt;p&gt;Recently I’ve read a &lt;a href=&#34;https://twitter.com/wycats/statuses/504043642869542912&#34; title=&#34;Use symbols&#34;&gt;tweet from Yehuda Katz&lt;/a&gt; in which he suggested an interesting idea, as an alternative for using nil as a result from a method: to use a symbol instead.&lt;/p&gt;
