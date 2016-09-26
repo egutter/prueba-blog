@@ -4,7 +4,8 @@ build:
     - arjen/hugo-build@1.12.1:
       version: "0.16"
       theme: hugo-theme-bleak
-      flags: --buildDrafts=true
+      config: config.yaml
+      flags: --buildDrafts=true --theme=hugo-theme-bleak -v
 deploy:
   steps:
     - install-packages:
