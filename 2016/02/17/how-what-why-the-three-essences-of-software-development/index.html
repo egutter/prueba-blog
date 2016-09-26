@@ -1,0 +1,486 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+
+    <head>
+
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <meta property="og:title" content=" How, What, Why: The three essences of software development &middot;  10 Pines Blog" />
+        <meta property="og:site_name" content="10 Pines Blog" />
+        <meta property="og:url" content="http://blog.10pines.com/2016/02/17/how-what-why-the-three-essences-of-software-development/" />
+
+    
+        <meta property="og:type" content="article" />
+        <meta property="og:article:published_time" content="2016-02-17T17:39:59Z" />
+        
+
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@" />
+        <meta name="twitter:creator" content="@" />
+        <meta name="twitter:title" content="How, What, Why: The three essences of software development" />
+        <meta name="twitter:description" content="" />
+        <meta name="twitter:url" content="http://blog.10pines.com/2016/02/17/how-what-why-the-three-essences-of-software-development/" />
+    
+
+        <title> How, What, Why: The three essences of software development &middot;  10 Pines Blog</title>
+
+    
+        <meta name="description" content="" />
+    
+
+        <meta name="p:domain_verify" content="fc173d84e3a4de948ed4bda2908afd3e"/>
+        <meta name="HandheldFriendly" content="True" />
+        <meta name="MobileOptimized" content="320" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        
+        
+
+    
+        <link href="http://blog.10pines.com/index.xml" rel="alternate" type="application/rss+xml" title="10 Pines Blog" />
+    
+
+    
+        <link rel="canonical" href="http://blog.10pines.com/2016/02/17/how-what-why-the-three-essences-of-software-development/" />
+
+    
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "How, What, Why: The three essences of software development",
+        "author": {
+            "@type": "Person",
+            "name": "http://profiles.google.com/?rel=author"
+        },
+        "datePublished": "2016-02-17",
+        "description": "",
+        "wordCount":  3297 
+    }
+
+    </script>
+
+    <script type="text/javascript">
+    
+    
+      var disqus_shortname = '10pinesblog';
+      var disqus_identifier = 'http:\/\/blog.10pines.com\/2016\/02\/17\/how-what-why-the-three-essences-of-software-development\/';
+      var disqus_title = 'How, What, Why: The three essences of software development';
+      var disqus_url = 'http:\/\/blog.10pines.com\/2016\/02\/17\/how-what-why-the-three-essences-of-software-development\/';
+    
+
+    </script>
+    
+
+    <style>
+@charset "UTF-8";article,header,img,main,nav,section{display:block}blockquote,p,pre,ul{margin:2em auto}#wrapper,pre{width:100%;box-sizing:border-box}#nav,#wrapper,code{position:relative}#nav,body{background:#fff}#menu,blockquote,pre code{background:0 0}#menu,#menu .menu-header,#menu .menu-list,#wrapper,.post-nav .post-nav-item .post-nav-teaser .post-nav-info,blockquote,pre{box-sizing:border-box}img{border:0;max-width:100%;height:auto;margin:2.5em auto}html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}code,pre{font-family:monospace,monospace;font-size:1em}@font-face{font-family:'Merriweather Sans';font-style:normal;font-weight:300;src:local("Merriweather Sans Light"),local("MerriweatherSans-Light"),url(//fonts.gstatic.com/s/merriweathersans/v5/6LmGj5dOJopQKEkt88GowY_zIojJi0m4a5Z6tRh6itY.woff) format("woff")}@font-face{font-family:'Merriweather Sans';font-style:normal;font-weight:400;src:local("Merriweather Sans Regular"),local("MerriweatherSans-Regular"),url(//fonts.gstatic.com/s/merriweathersans/v5/AKu1CjQ4qnV8MUltkAX3sL2aU247V0zTzydO4RoO9Ok.woff) format("woff")}@font-face{font-family:'Merriweather Sans';font-style:normal;font-weight:700;src:local("Merriweather Sans Bold"),local("MerriweatherSans-Bold"),url(//fonts.gstatic.com/s/merriweathersans/v5/6LmGj5dOJopQKEkt88GowQfd-b-I5PxxcmB4_-MNcqw.woff) format("woff")}@font-face{font-family:'Merriweather Sans';font-style:normal;font-weight:800;src:local("Merriweather Sans ExtraBold"),local("MerriweatherSans-ExtraBold"),url(//fonts.gstatic.com/s/merriweathersans/v5/6LmGj5dOJopQKEkt88GowWT7sFQ1Iz1BbpcuCPlgc9Q.woff) format("woff")}@font-face{font-family:'Merriweather Sans';font-style:italic;font-weight:300;src:local("Merriweather Sans Light Italic"),local("MerriweatherSans-LightItalic"),url(//fonts.gstatic.com/s/merriweathersans/v5/nAqt4hiqwq3tzCecpgPmVX9UU5BmOJGkLxUCVv5VXdc.woff) format("woff")}@font-face{font-family:'Merriweather Sans';font-style:italic;font-weight:400;src:local("Merriweather Sans Italic"),local("MerriweatherSans-Italic"),url(//fonts.gstatic.com/s/merriweathersans/v5/3Mz4hOHzs2npRMG3B1ascf0KIgDhPIHb_R-SWdtqte8.woff) format("woff")}@font-face{font-family:'Merriweather Sans';font-style:italic;font-weight:700;src:local("Merriweather Sans Bold Italic"),local("MerriweatherSans-BoldItalic"),url(//fonts.gstatic.com/s/merriweathersans/v5/nAqt4hiqwq3tzCecpgPmVYM8pfYvjMoOxygpzLVILAs.woff) format("woff")}@font-face{font-family:Inconsolata;font-style:normal;font-weight:400;src:local("Inconsolata"),url(//fonts.gstatic.com/s/inconsolata/v12/BjAYBlHtW3CJxDcjzrnZCIbN6UDyHWBl620a-IRfuBk.woff) format("woff")}@font-face{font-family:Inconsolata;font-style:normal;font-weight:700;src:local("Inconsolata Bold"),local("Inconsolata-Bold"),url(//fonts.gstatic.com/s/inconsolata/v12/AIed271kqQlcIRSOnQH0yTqR_3kx9_hJXbbyU8S6IN0.woff) format("woff")}@font-face{font-family:icons;src:url(/fonts/icons.eot?9273991);src:url(/fonts/icons.eot?9273991#iefix) format("embedded-opentype"),url(/fonts/icons.woff?9273991) format("woff"),url(/fonts/icons.ttf?9273991) format("truetype"),url(/fonts/icons.svg?9273991#icons) format("svg");font-weight:400;font-style:normal}[class^=icon-]:before{font-family:icons;font-style:normal;font-weight:400;speak:none;display:inline-block;text-decoration:inherit;width:1em;margin-right:.2em;text-align:center;font-variant:normal;text-transform:none;line-height:1em;margin-left:.2em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.icon-arrow-left:before{content:'\e804'}.icon-arrow-right:before{content:'\e807'}.icon-rss:before{content:'\e808'}.icon-menu:before{content:'\e809'}body{margin:0;font:300 1em/1.5em 'Merriweather Sans',sans-serif;color:#595B66}blockquote,i{font-style:italic}code,pre{font-family:Inconsolata,monospace}a,blockquote,code,i{font-weight:400}::-moz-selection{color:#222;background:#D6EDFF;text-shadow:none}::-moz-selection,::selection{color:#222;background:#D6EDFF;text-shadow:none}a{background-color:transparent;color:inherit;text-decoration:none;transition:all ease-out .2s}.post-content a{border-bottom:2px solid #36D995}h1,h4{text-rendering:optimizeLegibility;color:#1F2026}h1{font-size:2em;line-height:1em;margin:2em 0 -.5em}h4{font-size:1.25em;line-height:1.2em;margin:2.4em 0 -.8em}ul{list-style:none;padding-left:3em}blockquote{padding:0 1em;border-left:.25em solid #D4D5D9;color:#595B66}blockquote *{margin:1em auto}blockquote :first-child{margin-top:0}blockquote :last-child{margin-bottom:0}i{color:#363740}code{display:inline-block;top:-1px;padding:3px 6px;margin:-1px 2px;font-size:.875em;line-height:1.143em;background:#E1E2E6;color:#000;border-radius:2px}pre{padding:1em;white-space:pre;overflow:auto;background:#9D9FA6;color:#fff}pre code{position:static;top:auto;font-size:1em;line-height:1.5em;white-space:-moz-pre-wrap;white-space:pre-wrap;vertical-align:inherit;border:none;padding:0}#menu .menu-header:before,.post .post-title:before{border-bottom:4px solid #36D995;content:''}.inner{max-width:48em;margin:0 auto;padding:0 1em}#wrapper{min-height:100vh;padding-bottom:6em;background:#F2F3F5}#push{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0);-webkit-transform-style:preserve-3d;transform-style:preserve-3d;opacity:1}#nav{z-index:70;transition:all ease-out .4s;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0);-webkit-transform-style:preserve-3d;transform-style:preserve-3d;opacity:1}#nav:after{clear:both;content:'';display:table}#nav .nav-logo{float:left;height:2em;padding:1em;max-width:50%}#nav .nav-logo img{width:auto;max-width:none;height:2em;margin:0}#nav .nav-menu{float:right}#nav .nav-menu:after{clear:both;content:'';display:table}#nav .nav-menu a{display:block;width:1em;height:1em;line-height:1em;padding:1.5em;text-align:center;float:left;cursor:pointer}#nav .nav-menu a i:before{margin:auto}#menu{display:none;position:fixed;left:50%;top:5%;width:30em;height:90%;margin-left:-15em;padding:3em 0 0;overflow:hidden;transition:all ease-out .3s;-webkit-transform:translate3d(0,2em,0);transform:translate3d(0,2em,0);-webkit-transform-style:preserve-3d;transform-style:preserve-3d;opacity:0;z-index:100}@media only screen and (max-width:50em){#menu{width:90%;left:5%;margin-left:auto}}#menu .menu-header{position:absolute;left:0;top:0;width:100%;height:3.5em;padding:1em 1.5em .5em;margin-bottom:1em;line-height:2em;z-index:110;background:#fff}#menu .menu-header:before{position:absolute;left:-5%;bottom:-1em;width:110%;height:2em;background:#fff;box-shadow:0 .125em .125em rgba(0,0,0,.1);-webkit-transform:rotate(2.5deg);transform:rotate(2.5deg);transition:all ease-out .2s;z-index:115}#menu .menu-header:after{clear:both;content:'';display:table}#menu .menu-header .menu-label{position:relative;display:block;float:left;z-index:120}#menu .menu-header .menu-close{position:relative;display:block;float:right;width:2em;height:2em;padding:1em;margin:-1em -1.5em -1em 0;cursor:pointer;z-index:125}#menu .menu-header .menu-close:after,#menu .menu-header .menu-close:before{content:'';position:absolute;left:50%;top:50%;background:#9D9FA6;-webkit-transform:rotate(45deg);transform:rotate(45deg)}.overlay,.overlay:before{top:0;width:100%;height:100%}#menu .menu-header .menu-close:after{width:2px;height:1em;margin:-.5em 0 0 -1px}#menu .menu-header .menu-close:before{width:1em;height:2px;margin:-1px 0 0 -.5em}#menu .menu-list{position:relative;list-style:none;margin:0;padding:2em 0;height:100%;overflow-x:hidden;overflow-y:scroll;background:#fff}.overlay{position:fixed;left:0;z-index:80;display:none}.overlay:before{content:'';position:absolute;left:0;background:#1F2026;opacity:0;transition:all ease-out .3s;-webkit-transform-style:preserve-3d;transform-style:preserve-3d}.post{position:relative;z-index:20}.post .post-meta{display:block;font-size:.75em;line-height:1.334em;font-weight:400;margin-bottom:1.334em}.post .post-title{position:relative;color:#000;font-size:2em;line-height:1.375em;font-weight:800;text-indent:-1px;margin:.25em 0 .75em}.post .post-title:before{position:absolute;left:0;bottom:-.334em;width:1em;margin-bottom:-2px}.post .post-header{padding:4em 0 0;margin-bottom:3em}.post-footer .post-share a span{display:none}.post-nav .post-nav-item{position:fixed;top:50%;display:block;margin-top:-4em;overflow:hidden;border-radius:10em;transition:none}@media only screen and (max-width:70em){.post-nav .post-nav-item{position:absolute;top:auto;margin:auto;max-width:50%}}.post-nav .post-nav-item.post-nav-next{left:0;text-align:left}.post-nav .post-nav-item.post-nav-next .post-nav-icon{float:left}.post-nav .post-nav-item.post-nav-next .post-nav-icon i{left:-.05em}.post-nav .post-nav-item.post-nav-next .post-nav-info{padding-left:6em}.post-nav .post-nav-item.post-nav-prev{right:0;text-align:right}.post-nav .post-nav-item.post-nav-prev .post-nav-icon{float:right}.post-nav .post-nav-item.post-nav-prev .post-nav-icon i{right:-.05em}.post-nav .post-nav-item.post-nav-prev .post-nav-info{padding-right:6em}.post-nav .post-nav-item .post-nav-teaser{display:block;padding:1em;transition:all ease-out .2s;max-width:25em;overflow:visible}.post-nav .post-nav-item .post-nav-teaser:after{clear:both;content:'';display:table}.post-nav .post-nav-item .post-nav-teaser .post-nav-icon{display:block;width:5em;height:5em;line-height:5em;text-align:center;box-sizing:border-box;border-radius:10em;border:1px solid #36D995;box-shadow:0 0 0 0 transparent;transition:all ease-out .1s;background:#F2F3F5}.post-nav .post-nav-item .post-nav-teaser .post-nav-icon i{position:relative;font-size:2em}@media only screen and (max-width:30em){.post-nav .post-nav-item .post-nav-teaser .post-nav-icon{width:4em;height:4em;line-height:4em}.post-nav .post-nav-item .post-nav-teaser .post-nav-icon i{font-size:1.5em}}.post-nav .post-nav-item .post-nav-teaser .post-nav-icon i:before{margin:auto}.post-nav .post-nav-item .post-nav-teaser .post-nav-info{display:none;width:100%;transition:all ease-out .2s}.post-nav .post-nav-item .post-nav-teaser .post-nav-info .post-nav-title{display:block;max-height:1.25em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;margin:1.25em 0 .25em;font-size:1em;line-height:1.25em;font-weight:700;color:#363740}.post-nav .post-nav-item .post-nav-teaser .post-nav-info .post-nav-excerpt{display:block;max-height:1.334em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;margin:0;font-size:.75em;line-height:1.334em;font-weight:400;color:#9D9FA6}
+</style>
+
+
+    </head>
+    <body class="home-template" style="display: none;">
+      <section id="wrapper">
+        <div id="ajax-container">
+          <nav id="nav" class="nav">
+            <div class="nav-logo">
+              <a href="http://blog.10pines.com/">
+      			  	
+      			  	
+      			  	<img src="http://blog.10pines.com/images/10p-logo.png" alt="Logo"/>
+      			  	
+              </a>
+			  	    
+            </div>
+            <div class="nav-menu">
+              <a class="rss" href="">
+                <i class="icon-rss"></i>
+              </a>
+                
+                <a class="menu" data-action="toc" data-target="toc"><i class="icon-location"></i></a>
+                
+                
+            </div>
+          </nav>
+
+
+<main class="content" role="main">
+	<article class="post">
+		<div class="inner">
+
+			<div id="push">
+
+  			<header class="post-header">
+  				<span class="post-meta">
+						<span class="post-date">17 Feb 2016</span> <span class="reading-time">| <span class="estimated-reading-time">16 min.</span> (<span class="word-count">3297</span> words)</span></span>
+  				</span>
+  				<div class="clear"></div>
+  				<h1 class="post-title">How, What, Why: The three essences of software development</h1>
+  			</header>
+
+  			<section class="post-content">
+  				
+
+<blockquote>
+<p>&ldquo;Facebook is as much sociology and psychology as it is technology&rdquo; - <em>Mark Zuckerberg</em></p>
+</blockquote>
+
+<p>In my previous article, <a href="http://blog.10pines.com/2014/07/31/two-ways-we-understand-code-unitary-vs-integral-understanding/">Unitary vs Integral Understanding</a>,
+I delved into how we understand a part of a system in terms of how it relates to the rest of the system. To recap, Unitary Understanding is understanding the
+part by itself, abstracting the rest of the system, e.g. &ldquo;i = i + 1&rdquo; understood as a unit means nothing more than &ldquo;increment i by one&rdquo;.
+Integral Understanding would require us to see how that sentences interacts witht the rest of the code, so for example that sentence could &ldquo;move a loop forward&rdquo;.</p>
+
+<p>&ldquo;How&rdquo;, &ldquo;What&rdquo;, &ldquo;Why&rdquo; are three questions that are also helpful to see different facets of a system. A lot of what follows in this article might seem obvious to seasoned developers, but in my experience, these dimensions, because they&rsquo;re intuitive, are often not adecuately explained to junior developers.</p>
+
+<p>(warning: Abuse of the English language for rhetorical purposes might follow)</p>
+
+<h1 id="how">How</h1>
+
+<p>To ask &ldquo;how&rdquo; the software works, it means to basically treat it as many subsystems
+that collaborate between each other to produce a result. We don&rsquo;t care what the result is or why do we want that result.</p>
+
+<p>Suppose we have a Cow Counting System. You have this web app:</p>
+
+<p>{% img /images/2016-02-05-cow-counting-system.png %}</p>
+
+<p>The buttons plus and minus alter the current amount of cows we have right now. To ask &ldquo;how&rdquo; this works would mean answering</p>
+
+<ul>
+<li>&ldquo;Where it is deployed?&rdquo;</li>
+<li>&ldquo;Does it use POST roundtrips or AJAX requests?&rdquo;</li>
+<li>&ldquo;how does it keep state? mongo? sql? cookies?&rdquo;</li>
+</ul>
+
+<p>So &ldquo;How&rdquo; (and also &ldquo;what&rdquo; and &ldquo;why&rdquo;) is a guiding question we use to both understand existing system and to build new systems.
+And the starting point of the &ldquo;how&rdquo; is the result we want to achieve, so &ldquo;how&rdquo; is actually the last question we ask, since it&rsquo;s preceded by &ldquo;what&rdquo;.</p>
+
+<h1 id="what">What</h1>
+
+<p>&ldquo;What&rdquo; as in &ldquo;What does this system do&rdquo;? Going back to the Cow Counting System example, one might be tempted to answer &ldquo;what&rdquo; with:
+&ldquo;Well, the system has two buttons, and a cow count display, when the buttons are clicked,
+a POST goes to the server, increases the record in the database&hellip;&ldquo;, but that&rsquo;s what I called the &ldquo;how&rdquo;.</p>
+
+<p>So let&rsquo;s remove the &ldquo;how&rdquo; and just focus on the &ldquo;what&rdquo; and try again:
+&ldquo;Well, the system has two buttons, and a cow count display, when the buttons are clicked, the cow count is increased or decreased.&rdquo;</p>
+
+<p>But this description is lacking: <em>where is the human?</em>
+What is not only &ldquo;what the computer system does?&rdquo; but &ldquo;what the human does with the system and outside the system?&rdquo;</p>
+
+<h2 id="what-does-the-user-do">What does the user <em>do</em>?</h2>
+
+<p>In this case, suppose there is someone who wants to keep track of the cows in a corral. Cows go out sometimes to eat grass, so someone is there at the door
+of the corral hitting the minus button everytime a cow goes out to eat grass, and the plus button everytime a cow goes in.
+After the cows have finished eating grass, the user looks at the count, if it&rsquo;s lesser than the known amount of cows, the user will go out to look for the
+missing cow.</p>
+
+<p>This is a <em>story</em> (this is why Agile focuses on User Stories as the basis of requirements!). Stories basically have actors interpreting and acting
+through time with the state of things changing as a result of it.</p>
+
+<p>Let&rsquo;s look deeper into what happens in this very simple story. The user ACTS on the computer and ACTS outside the computer, clicks on the buttons, and
+goes looking for the unruly cow. And the user also INTERPRETS the computer and INTERPRETS the world outside the computer. All four things are linked.</p>
+
+<ol>
+<li>(Interpreting the world) User looks at cow going in and out</li>
+<li>(Acting on the computer) User clicks on plus and minus</li>
+<li>(Interpreting the world) User notices enough time has passed, must now ensure all cows are in the corral.</li>
+<li>(Interpreting the computer) Looking at the cow count display</li>
+<li>(Acting on the world) Go look for any missing cows.</li>
+</ol>
+
+<p>The external world is then &ldquo;linked&rdquo; to the computer system, allowing the user to interpret the world according to what they read on the screen.
+The user by reading the count on the screen takes that as a symbol of the actual amount of cows in the corral.</p>
+
+<p>This is not a feature of computer systems. Something fairly similar would happen if instead of a computer there were two people, someone counting
+the cows in their head, and another asking this person how many cows are in the corral and hearing back the answer.
+We humans interpret the world symbolically: we need to interpret the world and we need to go beyond our five senses, so words become facts about the world,
+a smile becomes happines, a foul smell becomes a gas leak, etc. Symbols work by hinting into something that goes beyond the symbol, in this case,
+the cow display is just a number on the screen, yet the user will go beyond the number on the screen and say &ldquo;this means the internal state of the computer
+equals the number I&rsquo;m reading, and the internal state of the system equals the amount of cows in the corral&rdquo;.</p>
+
+<p>So the interaction with the computer takes the form of a dialogue, human and computer talking
+with each other and interpreting what each other says, both interpreting symbollicaly each other, the human reads a plus sign and goes &ldquo;I guess that increments the counter&rdquo;
+and the computer when it receives a click it goes &ldquo;the user wanted to increment the counter, store updated data and refresh display&rdquo;.</p>
+
+<h2 id="the-interpretation-of-the-computer-system-is-dependent-on-the-contextual-story">The interpretation of the computer system is dependent on the contextual story</h2>
+
+<p>Each user will interpret what they read from the world and the computer, each symbol, according to their previous knowledge (i..e representation) of the world.
+So like children, who have little previous knowledge about the world, won&rsquo;t see in certain foul smell a hint of a gas leak, or might not see the subtleties
+in different kind of smiles, or might take words at face value without accounting for error and lies&hellip; users might sit in front of your lovely user interface
+and not understand a damn thing of what you meant to convey.</p>
+
+<p>Because every user has lived different lives, thought different things, and will interpret differently the symbols you&rsquo;re presenting to them.</p>
+
+<p>The Cow Counting System I presented earlier is a good example of this: After I told you the story of how the system was used, the symbols took on new meaning,
+e.g. plus means not only &ldquo;adding one&rdquo; but also &ldquo;cow went back into the corral&rdquo;.</p>
+
+<p>So, for example, doing a <a href="http://blog.10pines.com/2014/11/07/mvps-the-real-deal/">user test</a> is immensely helpful to understand <em>what</em> the system actually does when the user
+is sitting in front of the screen. My (admittedly short) experience with it is that it quickly reveals that:</p>
+
+<ol>
+<li>The people developing the system have a highly invested story with the system and understand everything and are generally not thinking of what a &ldquo;blank state&rdquo; user might
+interpret unless they cultivate this skill.</li>
+<li>Different users will create their own story with the system that won&rsquo;t match what you originally thought, for example someone might use the Cow Counting System to count
+how many cows do they have, regardless of whether they&rsquo;re inside the corral or not.</li>
+</ol>
+
+<p>The user interface needs to tell a good story, that&rsquo;s it, it needs to provide symbols along the ride, taking the context of each moment of the story at every point, to make
+sure the user builds a story that&rsquo;s coherent. I say that the user is the one that builds the story because like all symbolic communication, the story is hinted at by the
+teller, and it&rsquo;s the user&rsquo;s tasks to actually build it in their heads. It&rsquo;s a bit like the relationship between a recipe of a cake and the cake itself, and it&rsquo;s also why two
+different movie watchers might watch a different &ldquo;story&rdquo; when watching the same film (one might say it sucked, another might say it rocked).</p>
+
+<p>And you need to think your target users: a sleek interface might be mysterious to less proeficient users, a more explicit interface might look clunky to more proeficient ones.</p>
+
+<h2 id="bugs-are-what-happen-when-the-story-breaks-down">Bugs are what happen when the story breaks down</h2>
+
+<p>All software developers know this story: A user comes and reports a bug. The developers answer &ldquo;it&rsquo;s not a bug, it&rsquo;s a feature&rdquo;. Resentment might grow if the dev forgets
+what a bug is: A rupture in the story that the user is building. For example, if I click on a button that says &lsquo;delete&rsquo; and I see a message that says &ldquo;this user was deleted&rdquo;,
+then I figure out that the user is still there somehow (it was a soft deletion), I as a user might not care or not know if keeping the user &ldquo;half-deleted&rdquo; was a feature because
+it conflicted with my expectation. It might even conflict with my will (&ldquo;I want the user really deleted! I don&rsquo;t care if they cannot login anymore!&rdquo;).</p>
+
+<p>From the user point of view, that was a bug. Which brings us to the next question&hellip;</p>
+
+<h1 id="why">Why</h1>
+
+<p>&ldquo;Why&rdquo; are to &ldquo;whats&rdquo; like &ldquo;whats&rdquo; are to &ldquo;hows&rdquo;. To think about how to build a thing, first I need to know what I want to build, and to think what I want to build,
+I need to know why. If &ldquo;how&rdquo; was the realm of computers, &ldquo;what&rdquo; was the realm of human-computer interaction, &ldquo;why&rdquo; is the realm of the physical world, ideas, and will.
+Those three things are what actually gives form to software.</p>
+
+<p>Back to our example: what drives &ldquo;what&rdquo; the Cow Counting System does? and why we built it that way, with a display of the current count of cows and two buttons?</p>
+
+<ul>
+<li>Physical reality: Cows and their movement</li>
+<li>Ideas that mirror this reality: The mathematical concept of an indifferentiated set (an integer), where substraction and addition mirrors the physical reality
+of cows getting in and out.</li>
+<li>Symbolism: The symbols of a &ldquo;plus&rdquo; and a &ldquo;minus&rdquo; sign, the shape of the button, numbers, the image of the cow, and the expression &ldquo;cow counting system&rdquo; all draw from an
+ideal-symbolic system that&rsquo;s shared and enables communication.</li>
+<li>Human will: The user wants to control the cows. Why? Because a cow might get lost. Why do we care a cow might get lost? Because the owner of the cow profits from them,
+and a lost cow means a loss of profit.</li>
+</ul>
+
+<p>All these work like &ldquo;invisible forces&rdquo; that we intuitively graps and shape computer systems as much as pointers and loops.</p>
+
+<h2 id="know-thy-forces">Know thy forces</h2>
+
+<p>Knowing these forces is <em>partly</em> what allows to be creative and precise when designing <em>what</em> our software will do. Most of you, when I first introduced the
+Cow Counting System, probably didn&rsquo;t see any use for it, but when I introduced the story associated with it, could quickly see possible improvements: The system
+should know the total amount of cows besides knowing how many there are currently within the corral, compare the two, and possibly show a green sign whenever
+we have all cows in, and red whenever some cows are out. This proposal comes from knowing the forces at play outside the system, the will to control in one hand,
+and human distractedness and forgetfulness, by avoiding the need of the user of remembering the total count of cows and making a mental comparison, we avoid a source
+of mistakes that might lead to a loss of profit (symbolic reactions to the green and red colour is also a force we know applies here).</p>
+
+<p>Where do forces lie? Ultimately they lie in the human being, in forms of ideas, behaviors, desires, interpretations, institutions. The outside world plays a role as well,
+of course, but only insofar as it relates to use (remember the dictum &lsquo;man is the measure of all things&rsquo;). Again, in this example, cows are not just a number, each of them is
+unique, but as so far as this system is concerned, they&rsquo;re an undifferentiated set.</p>
+
+<h2 id="a-common-mistake-minimizing-the-forces">A common mistake: minimizing the forces</h2>
+
+<p>An usual mistake I see is to believe that what one needs to learn from the outside world is the domain, where the domain is basically entities, their attributes, their
+relations, how state changes through time, and the processes the user has interacting with these entities. So for this case, the domain would be cows, how many there are, which state they can be in (outside/inside the corral), and the act of counting and controlling them.</p>
+
+<p>But you need to consider <em>all</em> possible forces that can have any potential impact on the user. For example, an app you&rsquo;re trying to sell to end users is very different than, say,
+a cash register app that all cashiers on a supermarket are going to use. The driving force in both cases is profit, but in one case, the user needs to be interested in using the app,
+then it needs to use it, not shy away from it, and then buy it&hellip; everything that works towards this goal or against it matters. Psychological responses matter: Curiosity,
+desire, frustration, pleasure, etc. So the UI must look pretty, be clear to avoid frustration and confusion, engagement has to be built&hellip;</p>
+
+<p>Meanwhile, in the cashier app, efficiency is king. The UI doesn&rsquo;t need to be intuitive at first sight, nor pretty, it might even be complex, but the cashier has time to master it,
+and they cannot whine about it and stop using it&hellip; because they would lose their jobs. The person we need to convince to buy the app is not the cashier (the end user),
+but the supermarket owner, and very different goals mean different forces are at play.</p>
+
+<h2 id="some-more-examples-of-typical-forces-that-affect-most-systems">Some more examples of typical forces that affect most systems</h2>
+
+<ul>
+<li>Security: ownership/privacy of data</li>
+<li>History of what has happened: Being able to see what happened for debugging purposes, being able to blame a particular employee for missing cash, mining data, etc.</li>
+<li>The Law: Legal requirements, users being able to commit fraud by using your system</li>
+<li>Human forgetfulness</li>
+<li>Human mistakes, data being out of sync with the outside world: e.g. consider a feature to import thousands of users into a system via a csv, and what happens when the columns of
+the first name and last name are switched and you have no quick way of undoing the operation&hellip; people can and will make mistakes.</li>
+</ul>
+
+<h2 id="know-all-sides-and-their-interests-know-the-forces-in-opposition">Know all sides and their interests, know the forces in opposition</h2>
+
+<p>We need to be aware as well that there are many actors in a system that relate differently in each case.
+Take a social network for example. Many people use it for different things. Someone might use it to know new people, someone might use it to communicate with their families,
+someone might use it to promote themselves, their projects, their business, their points of views and experiences&hellip; while some people might create fake ids and learn when
+someone is on vacation to break into their houses. Advertisers, administrators, data miners, owners of the app, developers, devops, all have their sides and interests.</p>
+
+<p>And forces can be in opposition, and often are. People&rsquo;s interests with an app might collide. A banal example: Traceability might take developers time, disk space, and might
+slow down the app. So we desire traceability but we also need to consider the costs that come with traceability. A less banal example: you might want
+to make registration simple and unencumbering for the users, but at the same time avoid fraud and false identities. Nobody likes bureaucracy, right? But we might do
+want it when it helps us avoid undesirable situations.</p>
+
+<h1 id="conclusion-or-something-like-it-why-should-i-care-how-should-i-take-this-into-acount">Conclusion&hellip; or something like it: Why should I care? how should I take this into acount?</h1>
+
+<p>One might ask: &ldquo;why should I care about all this in the presence of division of labor?&rdquo; (or alternatively, &ldquo;knowing all those things is damn near impossible,
+that&rsquo;s why we do agile iterative processes and we seek constant feedback&rdquo;). It&rsquo;s true that sometimes different things are handled by different people, and with
+division of labor, some people focus more on the &ldquo;whys&rdquo; and &ldquo;whats&rdquo; and others more on the &ldquo;how&rdquo;.</p>
+
+<p>But even if you do work only in the &ldquo;how&rdquo;, it&rsquo;s helpful to be mindful of these things. A few examples:</p>
+
+<ul>
+<li>You&rsquo;ll notice that what might initially seem like an implementation detail, purely &ldquo;how&rdquo; stuff, actually ends up impacting in the end user. For example,
+in the Cow Counting System, doing a whole POST of the whole html page vs doing an ajax request is not equivalent, since POST makes the screen refresh,
+and it might be annoying for the user, and if many cows are going out at the same time, end up being problematic.</li>
+<li>You&rsquo;ll see that &ldquo;how&rdquo; you build the system and the &ldquo;whys&rdquo;, the external forces and entities, if they&rsquo;re in harmony or not, matters a lot when new requirements come in.
+E.g. Conceptually a user, how the user logs in into a system, and the email account we send notifications too, are different things that can be highly related,
+so in many systems, you get a single db record for User with an email field. This works fine and it&rsquo;s very simple, until it turns out a single user might have many ways of
+logging into the system, and the email for logging in might be different from the email you wanted email notifications to be sent to.</li>
+<li>Sometimes someone might say you &ldquo;what&rdquo; to implement, but when thinking of &ldquo;how&rdquo; to
+do it, you&rsquo;ll see that little details of the &ldquo;what&rdquo; are missing. Suppose a requirement that says &ldquo;Delete a user from the system&rdquo;. What does it mean deleting for
+traceability?
+What does it mean for entities created by that user? Should those entities disappear, or not? Is there any chance the user might want to undo the deletion? If the user
+profile is still visible, should it have a message saying &ldquo;this user has been deleted&rdquo;? To be able to
+understand these things and its ramifications the developers&rsquo;s theory of the system, the inner mental representation,comes into play, the theory of not only how the
+system works, but what it does, and how it relates to people and what do those people want from the system.</li>
+</ul>
+
+<p>In general, even in presence of division of labor, we should be mindful of exactly what you&rsquo;re delegating to whom and what is expected of each one of us, while at the same
+time it&rsquo;s good to strive to add the most value possible besides of what you&rsquo;re supposed to specialize in. And it&rsquo;s also good of being mindful of the forces at play, and the
+symbolic links we&rsquo;re reading and giving away.</p>
+
+<h1 id="further-reading">Further Reading</h1>
+
+<ul>
+<li><a href="http://www.jnd.org/dn.mss/design_as_communicat.html">Design as Communication</a>: An article by Don Norman, author of the book The Design of Everyday Things, that touches
+on how the interfaces we build communicate and help the user build a story.</li>
+<li><a href="http://pages.cs.wisc.edu/~remzi/Naur.pdf">Programming as Theory Building</a>: An old article (1985) by Peter Naur, early influential Computer Scientist, about how the
+activity of programming relies heavily on the programmer building useful internal theory of the system.</li>
+<li><a href="https://medium.com/@nicolaerusan/conceptual-debt-is-worse-than-technical-debt-5b65a910fd46#.asspxn589">Conceptual Debt is Worse than Technical Debt</a> an article on the
+concepts the system exposes to your users and how that impacts on the user experience.</li>
+<li><a href="https://www.ece.cmu.edu/~ganger/712.fall02/papers/p761-thompson.pdf">Reflections on Trusting Trust</a> A <em>very</em> short, 3 pages, but <em>very</em> important and <em>very</em> recommended
+reading about computer security by Ken Thompson. It relates to the concepts outlined here
+because it talks precisely about the symbolic thought and links that the <em>developer</em> makes when reading code, and the security pitfalls that come associated with it.
+It also reveals why computer systems security is so hard.</li>
+</ul>
+
+  			</section>
+
+  			<footer class="post-footer">
+  				<div class="post-tags">
+            
+  				</div>
+  				<div class="post-share">
+  					<a class="icon-twitter" href="https://twitter.com/share?text=How%2c%20What%2c%20Why%3a%20The%20three%20essences%20of%20software%20development&url=http%3a%2f%2fblog.10pines.com%2f2016%2f02%2f17%2fhow-what-why-the-three-essences-of-software-development%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+  						<span>Twitter</span>
+  					</a>
+  					<a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fblog.10pines.com%2f2016%2f02%2f17%2fhow-what-why-the-three-essences-of-software-development%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+  						<span>Facebook</span>
+  					</a>
+  					<a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fblog.10pines.com%2f2016%2f02%2f17%2fhow-what-why-the-three-essences-of-software-development%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+  						<span>Google+</span>
+  					</a>
+  				</div>
+  			</footer>
+
+  			<aside class="post-comments">
+    
+    
+    <div id="disqus_thread"></div>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+    
+</aside>
+
+
+			</div>
+
+			<nav class="post-nav">
+				
+					<a class="post-nav-item post-nav-next" href="http://blog.10pines.com/2016/02/24/svn-to-git/">
+						<section class="post-nav-teaser">
+							<span class="post-nav-icon"><i class="icon-arrow-left"></i></span>
+							<span class="post-nav-info">
+								<h4 class="post-nav-title">svn to git</h4>
+								<p class="post-nav-excerpt">&hellip;</p>
+							</span>
+						</section>
+					</a>
+				
+				
+					<a class="post-nav-item post-nav-prev" href="http://blog.10pines.com/2016/02/11/to-care-or-not-to-care/">
+						<section class="post-nav-teaser">
+							<span class="post-nav-icon"><i class="icon-arrow-right"></i></span>
+							<span class="post-nav-info">
+								<h4 class="post-nav-title">To care or not to care</h4>
+								<p class="post-nav-excerpt">&hellip;</p>
+							</span>
+						</section>
+					</a>
+				
+				<div class="clear"></div>
+			</nav>
+
+		</div>
+	</article>
+</main>
+
+				<div id="body-class" style="display: none;"></div>
+				<footer id="footer">
+					<section class="credits">
+						<span class="credits-theme">Theme <a href="https://github.com/zenithar/hugo-theme-bleak" target="_blank" rel="nofollow">Bleak</a> by <a href="http://zutrinken.com" target="_blank" rel="nofollow">zutrinken</a></span>
+						<span class="credits-software">Published with <a href="http://gohugo.io" target="_blank" rel="nofollow">Hugo</a></span>
+					</section>
+				</footer>
+				
+				
+<div id="tocMenu" data-target="toc">
+    <div class="menu-header">
+        <span class="menu-label">Menu</span>
+        <a class="menu-close" data-action="toc" data-target="toc"></a>
+    </div>
+    <div id="toc" class="menu-list">
+        <nav id="TableOfContents">
+<ul>
+<li><a href="#how">How</a></li>
+<li><a href="#what">What</a>
+<ul>
+<li><a href="#what-does-the-user-do">What does the user <em>do</em>?</a></li>
+<li><a href="#the-interpretation-of-the-computer-system-is-dependent-on-the-contextual-story">The interpretation of the computer system is dependent on the contextual story</a></li>
+<li><a href="#bugs-are-what-happen-when-the-story-breaks-down">Bugs are what happen when the story breaks down</a></li>
+</ul></li>
+<li><a href="#why">Why</a>
+<ul>
+<li><a href="#know-thy-forces">Know thy forces</a></li>
+<li><a href="#a-common-mistake-minimizing-the-forces">A common mistake: minimizing the forces</a></li>
+<li><a href="#some-more-examples-of-typical-forces-that-affect-most-systems">Some more examples of typical forces that affect most systems</a></li>
+<li><a href="#know-all-sides-and-their-interests-know-the-forces-in-opposition">Know all sides and their interests, know the forces in opposition</a></li>
+</ul></li>
+<li><a href="#conclusion-or-something-like-it-why-should-i-care-how-should-i-take-this-into-acount">Conclusion&hellip; or something like it: Why should I care? how should I take this into acount?</a></li>
+<li><a href="#further-reading">Further Reading</a></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+
+				<div class="overlay"></div>
+			</div>
+		</section>
+
+    <script>
+      (function(c,f){asyncLoader=function(i,h){i.foreach(function(k,j){e(j,d(j),h)});if(typeof h.callback=="function"){var g=setInterval(function(){if(f.readyState==="complete"){clearInterval(g);h.callback()}},10)}};var d=function(g){var h=g.split(".");return h[h.length-1]},e=function(h,i,g){switch(i){case"js":a(h,g);break;case"css":b(h);break;default:break}},a=function(i,h){var g=document.createElement("script");g.type="text/javascript";g.async=true;g.src=i;document.getElementsByTagName("head")[0].appendChild(g)},b=function(g){var h=document.createElement("link");h.type="text/css";h.rel="stylesheet";h.href=g;document.getElementsByTagName("head")[0].appendChild(h)};Array.prototype.foreach=function(h){for(var g=0;g<this.length;g++){h(g,this[g])}}})(this,document);
+
+      asyncLoader([
+				"/js/dependencies.js",
+				"/css/dependencies.css"
+      ],{
+        callback:function(){
+					asyncLoader([
+						"/css/style.css",
+						"/js/script.js"
+					], {
+						callback: function() {
+							$('body').fadeIn( 800 );
+						}
+					});
+        }
+      });
+
+</script>
+
+
+
+</body>
+</html>
+

@@ -1,0 +1,577 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+
+    <head>
+
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <meta property="og:title" content=" Is Java Dead? &middot;  10 Pines Blog" />
+        <meta property="og:site_name" content="10 Pines Blog" />
+        <meta property="og:url" content="http://blog.10pines.com/2014/06/05/is-java-dead/" />
+
+    
+        <meta property="og:type" content="article" />
+        <meta property="og:article:published_time" content="2014-06-05T00:00:00Z" />
+        
+
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@" />
+        <meta name="twitter:creator" content="@" />
+        <meta name="twitter:title" content="Is Java Dead?" />
+        <meta name="twitter:description" content="" />
+        <meta name="twitter:url" content="http://blog.10pines.com/2014/06/05/is-java-dead/" />
+    
+
+        <title> Is Java Dead? &middot;  10 Pines Blog</title>
+
+    
+        <meta name="description" content="" />
+    
+
+        <meta name="p:domain_verify" content="fc173d84e3a4de948ed4bda2908afd3e"/>
+        <meta name="HandheldFriendly" content="True" />
+        <meta name="MobileOptimized" content="320" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        
+        
+
+    
+        <link href="http://blog.10pines.com/index.xml" rel="alternate" type="application/rss+xml" title="10 Pines Blog" />
+    
+
+    
+        <link rel="canonical" href="http://blog.10pines.com/2014/06/05/is-java-dead/" />
+
+    
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "Is Java Dead?",
+        "author": {
+            "@type": "Person",
+            "name": "http://profiles.google.com/?rel=author"
+        },
+        "datePublished": "2014-06-05",
+        "description": "",
+        "wordCount":  2901 
+    }
+
+    </script>
+
+    <script type="text/javascript">
+    
+    
+      var disqus_shortname = '10pinesblog';
+      var disqus_identifier = 'http:\/\/blog.10pines.com\/2014\/06\/05\/is-java-dead\/';
+      var disqus_title = 'Is Java Dead?';
+      var disqus_url = 'http:\/\/blog.10pines.com\/2014\/06\/05\/is-java-dead\/';
+    
+
+    </script>
+    
+
+    <style>
+@charset "UTF-8";article,header,img,main,nav,section{display:block}blockquote,p,pre,ul{margin:2em auto}#wrapper,pre{width:100%;box-sizing:border-box}#nav,#wrapper,code{position:relative}#nav,body{background:#fff}#menu,blockquote,pre code{background:0 0}#menu,#menu .menu-header,#menu .menu-list,#wrapper,.post-nav .post-nav-item .post-nav-teaser .post-nav-info,blockquote,pre{box-sizing:border-box}img{border:0;max-width:100%;height:auto;margin:2.5em auto}html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}code,pre{font-family:monospace,monospace;font-size:1em}@font-face{font-family:'Merriweather Sans';font-style:normal;font-weight:300;src:local("Merriweather Sans Light"),local("MerriweatherSans-Light"),url(//fonts.gstatic.com/s/merriweathersans/v5/6LmGj5dOJopQKEkt88GowY_zIojJi0m4a5Z6tRh6itY.woff) format("woff")}@font-face{font-family:'Merriweather Sans';font-style:normal;font-weight:400;src:local("Merriweather Sans Regular"),local("MerriweatherSans-Regular"),url(//fonts.gstatic.com/s/merriweathersans/v5/AKu1CjQ4qnV8MUltkAX3sL2aU247V0zTzydO4RoO9Ok.woff) format("woff")}@font-face{font-family:'Merriweather Sans';font-style:normal;font-weight:700;src:local("Merriweather Sans Bold"),local("MerriweatherSans-Bold"),url(//fonts.gstatic.com/s/merriweathersans/v5/6LmGj5dOJopQKEkt88GowQfd-b-I5PxxcmB4_-MNcqw.woff) format("woff")}@font-face{font-family:'Merriweather Sans';font-style:normal;font-weight:800;src:local("Merriweather Sans ExtraBold"),local("MerriweatherSans-ExtraBold"),url(//fonts.gstatic.com/s/merriweathersans/v5/6LmGj5dOJopQKEkt88GowWT7sFQ1Iz1BbpcuCPlgc9Q.woff) format("woff")}@font-face{font-family:'Merriweather Sans';font-style:italic;font-weight:300;src:local("Merriweather Sans Light Italic"),local("MerriweatherSans-LightItalic"),url(//fonts.gstatic.com/s/merriweathersans/v5/nAqt4hiqwq3tzCecpgPmVX9UU5BmOJGkLxUCVv5VXdc.woff) format("woff")}@font-face{font-family:'Merriweather Sans';font-style:italic;font-weight:400;src:local("Merriweather Sans Italic"),local("MerriweatherSans-Italic"),url(//fonts.gstatic.com/s/merriweathersans/v5/3Mz4hOHzs2npRMG3B1ascf0KIgDhPIHb_R-SWdtqte8.woff) format("woff")}@font-face{font-family:'Merriweather Sans';font-style:italic;font-weight:700;src:local("Merriweather Sans Bold Italic"),local("MerriweatherSans-BoldItalic"),url(//fonts.gstatic.com/s/merriweathersans/v5/nAqt4hiqwq3tzCecpgPmVYM8pfYvjMoOxygpzLVILAs.woff) format("woff")}@font-face{font-family:Inconsolata;font-style:normal;font-weight:400;src:local("Inconsolata"),url(//fonts.gstatic.com/s/inconsolata/v12/BjAYBlHtW3CJxDcjzrnZCIbN6UDyHWBl620a-IRfuBk.woff) format("woff")}@font-face{font-family:Inconsolata;font-style:normal;font-weight:700;src:local("Inconsolata Bold"),local("Inconsolata-Bold"),url(//fonts.gstatic.com/s/inconsolata/v12/AIed271kqQlcIRSOnQH0yTqR_3kx9_hJXbbyU8S6IN0.woff) format("woff")}@font-face{font-family:icons;src:url(/fonts/icons.eot?9273991);src:url(/fonts/icons.eot?9273991#iefix) format("embedded-opentype"),url(/fonts/icons.woff?9273991) format("woff"),url(/fonts/icons.ttf?9273991) format("truetype"),url(/fonts/icons.svg?9273991#icons) format("svg");font-weight:400;font-style:normal}[class^=icon-]:before{font-family:icons;font-style:normal;font-weight:400;speak:none;display:inline-block;text-decoration:inherit;width:1em;margin-right:.2em;text-align:center;font-variant:normal;text-transform:none;line-height:1em;margin-left:.2em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.icon-arrow-left:before{content:'\e804'}.icon-arrow-right:before{content:'\e807'}.icon-rss:before{content:'\e808'}.icon-menu:before{content:'\e809'}body{margin:0;font:300 1em/1.5em 'Merriweather Sans',sans-serif;color:#595B66}blockquote,i{font-style:italic}code,pre{font-family:Inconsolata,monospace}a,blockquote,code,i{font-weight:400}::-moz-selection{color:#222;background:#D6EDFF;text-shadow:none}::-moz-selection,::selection{color:#222;background:#D6EDFF;text-shadow:none}a{background-color:transparent;color:inherit;text-decoration:none;transition:all ease-out .2s}.post-content a{border-bottom:2px solid #36D995}h1,h4{text-rendering:optimizeLegibility;color:#1F2026}h1{font-size:2em;line-height:1em;margin:2em 0 -.5em}h4{font-size:1.25em;line-height:1.2em;margin:2.4em 0 -.8em}ul{list-style:none;padding-left:3em}blockquote{padding:0 1em;border-left:.25em solid #D4D5D9;color:#595B66}blockquote *{margin:1em auto}blockquote :first-child{margin-top:0}blockquote :last-child{margin-bottom:0}i{color:#363740}code{display:inline-block;top:-1px;padding:3px 6px;margin:-1px 2px;font-size:.875em;line-height:1.143em;background:#E1E2E6;color:#000;border-radius:2px}pre{padding:1em;white-space:pre;overflow:auto;background:#9D9FA6;color:#fff}pre code{position:static;top:auto;font-size:1em;line-height:1.5em;white-space:-moz-pre-wrap;white-space:pre-wrap;vertical-align:inherit;border:none;padding:0}#menu .menu-header:before,.post .post-title:before{border-bottom:4px solid #36D995;content:''}.inner{max-width:48em;margin:0 auto;padding:0 1em}#wrapper{min-height:100vh;padding-bottom:6em;background:#F2F3F5}#push{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0);-webkit-transform-style:preserve-3d;transform-style:preserve-3d;opacity:1}#nav{z-index:70;transition:all ease-out .4s;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0);-webkit-transform-style:preserve-3d;transform-style:preserve-3d;opacity:1}#nav:after{clear:both;content:'';display:table}#nav .nav-logo{float:left;height:2em;padding:1em;max-width:50%}#nav .nav-logo img{width:auto;max-width:none;height:2em;margin:0}#nav .nav-menu{float:right}#nav .nav-menu:after{clear:both;content:'';display:table}#nav .nav-menu a{display:block;width:1em;height:1em;line-height:1em;padding:1.5em;text-align:center;float:left;cursor:pointer}#nav .nav-menu a i:before{margin:auto}#menu{display:none;position:fixed;left:50%;top:5%;width:30em;height:90%;margin-left:-15em;padding:3em 0 0;overflow:hidden;transition:all ease-out .3s;-webkit-transform:translate3d(0,2em,0);transform:translate3d(0,2em,0);-webkit-transform-style:preserve-3d;transform-style:preserve-3d;opacity:0;z-index:100}@media only screen and (max-width:50em){#menu{width:90%;left:5%;margin-left:auto}}#menu .menu-header{position:absolute;left:0;top:0;width:100%;height:3.5em;padding:1em 1.5em .5em;margin-bottom:1em;line-height:2em;z-index:110;background:#fff}#menu .menu-header:before{position:absolute;left:-5%;bottom:-1em;width:110%;height:2em;background:#fff;box-shadow:0 .125em .125em rgba(0,0,0,.1);-webkit-transform:rotate(2.5deg);transform:rotate(2.5deg);transition:all ease-out .2s;z-index:115}#menu .menu-header:after{clear:both;content:'';display:table}#menu .menu-header .menu-label{position:relative;display:block;float:left;z-index:120}#menu .menu-header .menu-close{position:relative;display:block;float:right;width:2em;height:2em;padding:1em;margin:-1em -1.5em -1em 0;cursor:pointer;z-index:125}#menu .menu-header .menu-close:after,#menu .menu-header .menu-close:before{content:'';position:absolute;left:50%;top:50%;background:#9D9FA6;-webkit-transform:rotate(45deg);transform:rotate(45deg)}.overlay,.overlay:before{top:0;width:100%;height:100%}#menu .menu-header .menu-close:after{width:2px;height:1em;margin:-.5em 0 0 -1px}#menu .menu-header .menu-close:before{width:1em;height:2px;margin:-1px 0 0 -.5em}#menu .menu-list{position:relative;list-style:none;margin:0;padding:2em 0;height:100%;overflow-x:hidden;overflow-y:scroll;background:#fff}.overlay{position:fixed;left:0;z-index:80;display:none}.overlay:before{content:'';position:absolute;left:0;background:#1F2026;opacity:0;transition:all ease-out .3s;-webkit-transform-style:preserve-3d;transform-style:preserve-3d}.post{position:relative;z-index:20}.post .post-meta{display:block;font-size:.75em;line-height:1.334em;font-weight:400;margin-bottom:1.334em}.post .post-title{position:relative;color:#000;font-size:2em;line-height:1.375em;font-weight:800;text-indent:-1px;margin:.25em 0 .75em}.post .post-title:before{position:absolute;left:0;bottom:-.334em;width:1em;margin-bottom:-2px}.post .post-header{padding:4em 0 0;margin-bottom:3em}.post-footer .post-share a span{display:none}.post-nav .post-nav-item{position:fixed;top:50%;display:block;margin-top:-4em;overflow:hidden;border-radius:10em;transition:none}@media only screen and (max-width:70em){.post-nav .post-nav-item{position:absolute;top:auto;margin:auto;max-width:50%}}.post-nav .post-nav-item.post-nav-next{left:0;text-align:left}.post-nav .post-nav-item.post-nav-next .post-nav-icon{float:left}.post-nav .post-nav-item.post-nav-next .post-nav-icon i{left:-.05em}.post-nav .post-nav-item.post-nav-next .post-nav-info{padding-left:6em}.post-nav .post-nav-item.post-nav-prev{right:0;text-align:right}.post-nav .post-nav-item.post-nav-prev .post-nav-icon{float:right}.post-nav .post-nav-item.post-nav-prev .post-nav-icon i{right:-.05em}.post-nav .post-nav-item.post-nav-prev .post-nav-info{padding-right:6em}.post-nav .post-nav-item .post-nav-teaser{display:block;padding:1em;transition:all ease-out .2s;max-width:25em;overflow:visible}.post-nav .post-nav-item .post-nav-teaser:after{clear:both;content:'';display:table}.post-nav .post-nav-item .post-nav-teaser .post-nav-icon{display:block;width:5em;height:5em;line-height:5em;text-align:center;box-sizing:border-box;border-radius:10em;border:1px solid #36D995;box-shadow:0 0 0 0 transparent;transition:all ease-out .1s;background:#F2F3F5}.post-nav .post-nav-item .post-nav-teaser .post-nav-icon i{position:relative;font-size:2em}@media only screen and (max-width:30em){.post-nav .post-nav-item .post-nav-teaser .post-nav-icon{width:4em;height:4em;line-height:4em}.post-nav .post-nav-item .post-nav-teaser .post-nav-icon i{font-size:1.5em}}.post-nav .post-nav-item .post-nav-teaser .post-nav-icon i:before{margin:auto}.post-nav .post-nav-item .post-nav-teaser .post-nav-info{display:none;width:100%;transition:all ease-out .2s}.post-nav .post-nav-item .post-nav-teaser .post-nav-info .post-nav-title{display:block;max-height:1.25em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;margin:1.25em 0 .25em;font-size:1em;line-height:1.25em;font-weight:700;color:#363740}.post-nav .post-nav-item .post-nav-teaser .post-nav-info .post-nav-excerpt{display:block;max-height:1.334em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;margin:0;font-size:.75em;line-height:1.334em;font-weight:400;color:#9D9FA6}
+</style>
+
+
+    </head>
+    <body class="home-template" style="display: none;">
+      <section id="wrapper">
+        <div id="ajax-container">
+          <nav id="nav" class="nav">
+            <div class="nav-logo">
+              <a href="http://blog.10pines.com/">
+      			  	
+      			  	
+      			  	<img src="http://blog.10pines.com/images/10p-logo.png" alt="Logo"/>
+      			  	
+              </a>
+			  	    
+            </div>
+            <div class="nav-menu">
+              <a class="rss" href="">
+                <i class="icon-rss"></i>
+              </a>
+                
+                <a class="menu" data-action="toc" data-target="toc"><i class="icon-location"></i></a>
+                
+                
+            </div>
+          </nav>
+
+
+<main class="content" role="main">
+	<article class="post">
+		<div class="inner">
+
+			<div id="push">
+
+  			<header class="post-header">
+  				<span class="post-meta">
+						<span class="post-date">5 Jun 2014</span> <span class="reading-time">| <span class="estimated-reading-time">14 min.</span> (<span class="word-count">2901</span> words)</span></span>
+  				</span>
+  				<div class="clear"></div>
+  				<h1 class="post-title">Is Java Dead?</h1>
+  			</header>
+
+  			<section class="post-content">
+  				
+
+<p>The answer is: of course not!!, but now that I got your attention surely due to
+the title that mimics the lately hot <a href="http://david.heinemeierhansson.com/2014/tdd-is-dead-long-live-testing.html"><em>&ldquo;Is TDD Dead?&rdquo;</em></a> discussion
+started by <a href="https://twitter.com/dhh">@dhh</a>, I would like to concentrate on the real objective of
+this post that I think it is really more important: is Java taking the right
+road? or in other words, are the last changes in Java 8 <em>&ldquo;good&rdquo;</em> ones or not?</p>
+
+<p>So, let me start saying why I think Java is not dead, to stop any language fight
+from the beginning even though the reason is a no brainer. It is not dead
+because despite how old Java is becoming and how it is starting to show its
+wrinkles through the lack of type inference, numbers not being objects, etc.,
+it is still widely used, it has a big and productive community and I think that
+almost for sure, its community is the one that more open source projects has
+produced. A language it is not only used by its technicals features but also for
+the community it has, the projects it supports, etc.</p>
+
+<p>Having said that and made that clear, let&rsquo;s now concentrate only on the
+technical part. So, are the changes of Java 8 <em>&ldquo;good&rdquo;</em>? Are they useful? How can
+we measure if they are <em>&ldquo;good or bad&rdquo;</em>? The plain answer is, it depends, it
+always depends :-). But, it depends on what?. A few months ago after a talk I
+gave at the <a href="http://scrumbolivia.com/?page_id=825">Scrum Gathering Bolivia</a>, an attendee came to talk to
+me because I made some comments about Python&rsquo;s issues. He told me: &ldquo;I&rsquo;m really
+happy with Python! I think I&rsquo;m more productive that I used to be with the
+language I used before&rdquo;. I asked him which language was that, and he said:
+&ldquo;Java&rdquo;. So yes, it depends. If you are used to program with Java, suffering due
+to its archaic type system, the lack of closures and its verbosity, Python looks
+like the holy grail, but is it?</p>
+
+<p>Programming languages reflect the knowledge, beliefs and ways to solve problems
+the authors of those languages have. But not only that, they carry on their
+shoulders the heavy weight of its history and that is, as I understand, what it
+is killing Java, or at least what it is not making Java get any better when you
+compare it with other languages.</p>
+
+<p>Of course that for Java programmers, version 8 has many interesting features,
+but from the point of view of other programming languages, how <em>&ldquo;good&rdquo;</em> are
+they? Are these changes making Java a &ldquo;better&rdquo; language or just keeping it from
+its (in)evitable dead end? I propose you to analyze some of the Java 8 changes
+from both perspectives and see where we get.</p>
+
+<h2 id="new-date-and-time-model-so-called-api">New Date and Time model (so called API)</h2>
+
+<p>It is about time to throw away the ugly, full of design errors, best example of
+all the things you don&rsquo;t have to do, <strong><code>Calendar</code></strong> class. That class contains
+almost all the design flaws you can look for, like a misleading name because its
+instances do not represent calendars but dates, or dates with time, or&hellip; wait a
+moment, another problem, it does not represent just one thing but many! it does
+not follow the <em>&ldquo;Single Responsibility Principle&rdquo;</em> and not only that, it allows
+you to represent invalid dates as February 31st of 2014, or change dates when
+dates should be immutables like the numbers and many other objects. You have no
+idea the amount of people I interviewed with the misconception of what a
+<strong><code>Date</code></strong> is and what a <strong><code>Calendar</code></strong> is due to this really bad abstraction
+(all Java programmers).</p>
+
+<p>So, the new date/time model is <em>&ldquo;good&rdquo;</em>, it is an advance towards less
+misunderstanding, it provides new nouns that makes the language grow and allows
+us to talk and think about days of month, like <code>December 25th</code> (with the
+abstraction <code>MonthDay</code>) or months of year as <code>April 2014</code> (with <code>YearMonth</code>).
+Finally, with the new time model not everything is a <code>Calendar</code>!.</p>
+
+<p>We can also express &ldquo;measures of time&rdquo; with a <code>Duration</code> and even <code>Years</code>! Yes!
+they broke the fear of &ldquo;optimization&rdquo; that makes most programmers represent
+years with integers! We all know that a number is not a year, we all know that a
+number does not respond to <code>isLeap</code> but it makes a lot of sense for a <code>Year</code> to
+answer that, so I toast for this new time model that prioritizes good
+abstractions over performance/space.</p>
+
+<p>Yes, this model is &ldquo;good&rdquo;, but is it? Let&rsquo;s see how it compares to a date/time
+model of other languages. In this case the one implemented in <a href="http://pharo.org/">Pharo</a> (an
+open source implementation of Smalltalk) called <a href="http://smalltalkhub.com/#!/~HernanWilkinson/Chalten">Chalten</a>. (You can
+read about it in this <a href="http://www.sciencedirect.com/science/article/pii/S1477842405000424">paper</a> published in 2005). With Chalten you can
+not only represent those elements that you can with Java 8 but also many more,
+starting with real measures of time because it uses an algebraic model that
+allows you to represent any type of measure (<a href="http://smalltalkhub.com/#!/~HernanWilkinson/Aconcagua">Aconcagua</a>). With
+Chalten you can represent <em>1 day</em>, <em>3 months</em>, <em>5 year</em>, <em>7 centuries</em> and any
+other kind of time measure like <em>2 semesters</em> (if you create the unit
+<strong>semester</strong>). There is not only a <code>Duration</code> that it is limited to the time
+units it provides through messages like <code>toHours</code>, <code>toMinutes</code>, <code>toNanos</code>, etc.
+but the possibility to create any time unit you need or want.</p>
+
+<p>Chalten is based on an analogy that sees <em>Time</em> as a line of different
+granularities where you can zoom in and zoom out, and therefore you can
+represent intervals in those lines, vectors and segments of any granularity and
+apply the common well known operations like intersection, union, iteration, etc.
+on any of them.</p>
+
+<p>With Chalten you can represent relative points in time like <em>&ldquo;20 days from now&rdquo;</em>
+or <em>&ldquo;3 months since April 2014&rdquo;</em>. Those relative points can be filtered with the
+filtering rules of a &ldquo;calendar&rdquo;, as a labor calendar that defines Saturdays and
+Sundays as not working days, and therefore &ldquo;20 days from now&rdquo; will not be the
+same applied that calendar that to another one where Saturdays are workable
+days. These are, to name a few, features Chalten has since 2005 that the new
+Java time model lacks.</p>
+
+<p>So, is the new java date/time model &ldquo;good&rdquo;? It is better than the previous one.
+Is it the best one? Sadly it is not if you compare it to other long ago known
+solutions. But it definitely does not hurts you like other &ldquo;new features&rdquo; of
+Java 8.</p>
+
+<h2 id="the-so-waited-closures-wait-lambdas">The so waited Closures… wait Lambdas!</h2>
+
+<p>Let&rsquo;s start making clear that <strong>Closures</strong> are not the same as <strong>Lambdas</strong>, not
+even <strong>Full Closures</strong>. The definition of these concepts will vary depending on
+the literature, programming language, etc., but mainly the difference is how
+they bind. With Java Lambdas you can not change variables of the current
+lexicography context, where with Closures like the ones you have in C# you can,
+but you can even do more with Full Closures where the return also binds to the
+current context as in Ruby and Smalltalk.</p>
+
+<p>So, are Java Lambdas &ldquo;good&rdquo;? Well, definitely they are better that the freakish
+anonymous classes because all the boilerplate to use them is gone, but in the
+end are almost the same. The Java lambdas are mainly syntax sugar to avoid using
+certain kind of anonymous classes and a minor (good) change on how they bind.</p>
+
+<p>Java lambdas will allow you to code better, to create better abstractions, to
+reduce &ldquo;lines of repeated code&rdquo; but still, Java lambdas are not the &ldquo;best
+solution&rdquo;. Full closures would be better as proved by Ruby, Smalltalk, Scheme
+and the famous <a href="http://library.readscheme.org/page1.html">&ldquo;Lambda: The ultimate x&rdquo;</a> series of papers
+written of the last half of the 70s&hellip; yes, a long time ago.</p>
+
+<p>Why Java 8 does not have Full Closures or at least Closures? Definitely not
+because they are not good, definitely not because they are difficult or very
+hard to implement, Ruby has them since its creation circa the same year as Java,
+Scheme has them since the mid 70s and Smalltalk too.</p>
+
+<h2 id="null-considered-harmful">Null considered harmful</h2>
+
+<p>If I took @dhh&rsquo;s &ldquo;Is TDD Dead&hellip;&rdquo; phrase, why not used the so famous &ldquo;x
+considered harmful&rdquo; derived from Dijkstra&rsquo;s well know &ldquo;Goto considered harmful&rdquo;?</p>
+
+<p>I see with great joy that we are starting to realize that <code>null</code> is not a good
+idea. We are starting to see more and more languages that are trying to provide
+a solution to all the problems <code>null</code> provokes. Even the newly Apple&rsquo;s Swift
+provides some aid allowing variables to reference <code>nil</code> or not, and send
+messages with a &ldquo;?&rdquo; at the end that helps avoiding to check for <code>null</code>/<code>nil</code> on
+each message send.</p>
+
+<p>What is Java 8 doing about it? It provides an abstraction called <code>Optional&lt;T&gt;</code>
+that responds to messages like <code>ifPresent</code> (encapsulating the hated
+<code>if x==null</code>), <code>orElse(T anObject)</code> that returns the wrapped object or the
+parameter <code>anObject</code> if the wrapped one is <code>null</code>, and some others.</p>
+
+<p>At first sight looks good, it is an abstraction that encapsulates all the
+<code>if x==null</code> we are forced to write if we want to produce robust software. Looks
+like a step forward, but is it? Let see what other languages have, for example
+Ruby.</p>
+
+<p>Let&rsquo;s start pointing a big difference. In Ruby <code>nil</code> is an object, not a
+<strong>&ldquo;reserved word&rdquo;</strong> that the compiler recognizes and treats specially. So
+because <code>nil</code> is an object it can answer messages like <code>nil?</code> that encapsulated
+the <code>if x==nil</code> and many other you would like. The same in Smalltalk, <code>nil</code>
+responds messages like <code>ifNil:</code> that encapsulates the
+<code>if anObject isNil then ...</code> in just one <code>anObject ifNil ...</code>, and <code>ifNotNil:</code>,
+and <code>ifNil:ifNotNil:</code>, etc. All very handy messages and all the new messages you
+may need because <code>nil</code> is an object and therefore you can extend its protocol.</p>
+
+<p>So what is the difference? The difference is that in Ruby and Smalltalk you
+don&rsquo;t need a special abstraction to handle <code>null</code>, it is just it!. There is no
+need for an <code>Optional&lt;T&gt;</code> abstraction to wrap an object and respond messages
+you would like <code>null</code> to answer.</p>
+
+<p>With time, we will start to realize that the <code>Optional&lt;T&gt;</code> class has the same
+issues that the <code>Integer</code> class, the <code>Long</code> class and all the wrappers of the
+data types used to represent numbers in Java because numbers are not objects. It
+looks like we have learn nothing from the mistake of not having objects all the
+way down. Let&rsquo;s see some examples starting to interact with the wrapped object.</p>
+
+<pre><code class="language-java">...
+Optional&lt;String&gt; aString = Optional.of(&quot;something&quot;);
+aString.charAt(1); &lt;-- It does not compile because aString's type is Optional
+...
+</code></pre>
+
+<p>As you can guess, the example does not compile in the line 3 because <code>aString</code>
+is not really a <code>String</code> but an <code>Optional</code>. So we have to send the message <code>get</code>
+to <code>aString</code> to get the real String (does it sound as a tongue-twister? I
+promise it is not my purpose :-) ):</p>
+
+<pre><code class="language-java">...
+Optional&lt;String&gt; aString = Optional.of(&quot;something&quot;);
+aString.get().charAt(1); &lt;-- Now it works because we are getting the wrapped object
+...
+</code></pre>
+
+<p>Therefore, everytime we want to access the &ldquo;real&rdquo; object we need to send <code>get</code>
+to the optional one. So if we want to send many messages we have to:</p>
+
+<pre><code class="language-java">...
+Optional&lt;String&gt; aString = Optional.of(&quot;something&quot;);
+aString.get().charAt(1);  aString.get().charAt(1);
+aString.get().charAt(2);
+aString.get().charAt(3);
+aString.get().charAt(4);... etc
+... etc
+</code></pre>
+
+<p>To avoid sending that many <code>get</code>, we could just do:</p>
+
+<pre><code class="language-java">...
+Optional&lt;String&gt; aString = Optional.of(&quot;something&quot;);
+...
+String realString = aString.get();
+realString.charAt(1);
+realString.charAt(2);
+realString.charAt(3);
+realString.charAt(4);
+... etc
+</code></pre>
+
+<p>But if we do this, why are we using <code>Optional</code> for? We can make a mistake and
+assign <code>null</code> to <code>realString</code> and get back to what we wanted to avoid in the
+first place. So <code>Optional</code> does not really stops programmers to send messages to
+<code>null</code>.</p>
+
+<p>Now let&rsquo;s go a little bit deeper. A common use case is to stop execution and
+return from a method if a variable references <code>null</code>, like:</p>
+
+<pre><code class="language-java">...
+if (aVariable==null) return;
+...
+</code></pre>
+
+<p>How does the new abstraction help us in this case? Let&rsquo;s see, it would be great
+to write something like this:</p>
+
+<pre><code class="language-java">...
+Optional&lt;String&gt; aString = Optional.ofNullable(null);
+aString.ifNotPressent({return;});
+...
+</code></pre>
+
+<p>But it is not possible because there is no message <code>ifNotPresent</code> in <code>Optional</code>!
+just <code>ifPresent</code>. Let&rsquo;s see how we can do the opposite with <code>ifPresent</code>. Let&rsquo;s
+say I want to return if the variable is not referencing <code>null</code>:</p>
+
+<pre><code class="language-java">...
+Optional&lt;String&gt; aString = Optional.ofNullable(&quot;something&quot;);
+aString.ifPresent(aNotNullString -&gt;{return;});
+System.out.println(&quot;got here&quot;);
+...
+</code></pre>
+
+<p>What do you say? does it get to <em>&ldquo;got here&rdquo;</em>? :-) or does it return from the
+method where this code is? Sadly it gets to <em>&ldquo;got here&rdquo;</em>, it does not return as
+one would expect because lambdas are not full closures! That return exits the
+lambda but not the method where the return is written.</p>
+
+<p>So, how do we get out of this mess? How can return from a method if an
+<code>Optional</code> is wrapping <code>null</code>? Writing:</p>
+
+<pre><code class="language-java">...
+if (!aString.isPresent()) return;
+...
+</code></pre>
+
+<p>Please, you tell me the difference with:</p>
+
+<pre><code class="language-java">...
+if (aString==null) return;
+...
+</code></pre>
+
+<p>What have we gain? Only more complexity. Are there any alternatives? How do
+other languages treat this problem? In languages with full closures where null
+is an object like Ruby or Smalltalk, you could just write:</p>
+
+<pre><code class="language-smalltalk">aString ifNil: [ ^something ] (the ^ means return)
+</code></pre>
+
+<p>And that is all folks, simple, direct and does what you expect, if <code>aString</code>
+references <code>nil</code> returns &ldquo;something&rdquo;.</p>
+
+<p>So, not only the <code>Optional</code> abstraction is a halfway solution (a fullway
+solution would be to make <code>null</code> a first class object) but the lack of full
+closures do not really help much here, on the contrary.</p>
+
+<p>To end this section, I would like you to think a little bit more about this
+problem. Is there another solution besides making <code>null</code> a first class object
+and have full closure to solve this problem? I think there is. I think the best
+solution is to get rid of <code>null</code>/<code>nil</code> completely. Not even the &ldquo;?&rdquo; of Swift or
+C#. The truth is that we do not need <code>null</code>/<code>nil</code>, it has so many meanings, we
+use it so badly, it is so error prone that the best solution would be to remove
+that idea completely. So instead of <code>null</code>/<code>nil</code> we would have an abstraction
+called <code>UninitializedVariable</code> to indicate that case, another called
+<code>NoSuperclass</code> to point out the a class has no super class, or <code>EndOfList</code> to
+indicate the we got to the end of a linked list or <code>UndefinedAddress</code> to
+represent the fact that the user did not specify his/her address and so on.
+Think about it for a moment, you may like it :-) but if not, watch Tony Hoare&rsquo;s
+opinion about <a href="http://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare">&ldquo;Null References: The billon dollar mistake&rdquo;</a></p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Are the Java 8 changes &ldquo;good&rdquo;? Some of them yes, the date/time model is
+definitely better of what we had, the way to represent code with lambdas is
+definitely better that anonymous classes but sadly not good enough, and the
+<code>Optional</code> abstraction does not solve the real problem but adds complexity. Some
+of these changes are good if you are a Java programmer but some are not, even if
+you are a Java programmer, because they add unnecessary complexity, and if you
+are not a Java programmer, most of them are still ancient code, like for Ruby or
+Smalltalk programmers, even for people that work with C#.</p>
+
+<p>You may wonder what it is the goal of this post. Is it to talk/promote Smalltalk
+or Ruby? Is it to show that I don&rsquo;t like Java? Not really. I wrote it because
+I&rsquo;m afraid that for people that only work with Java these changes may look
+great, a step forward a better life. My fear is that those people may think that
+the only way to treat <code>null</code> is with <code>Optional</code> because all the know is <em>&ldquo;the
+Java way&rdquo;</em>, they only live in the <em>&ldquo;Java world&rdquo;</em>. My fear is that I will now
+start interviewing people that instead of confusing Dates with Calendars will
+confuse Closure with Lambda, people that will not see that instead of hiding the
+problem under the carpet as with Optional, we should get rid of the real dust.</p>
+
+<p>So, I wrote this post in an attempt to open programmers mind, to show them that
+there are other places too look at and learn, even if you make a living from
+Java. If you really love Java, the only way to get a better Java is forcing
+real, profound changes on it, not just changes that keeps back-compatibility.</p>
+
+<p>Will Java ever make profound changes on it? Will Java take better paths? I think
+it will not. The back compatibility principle they apply is stopping Java to
+evolve better. We will never see Java without <code>null</code> or at least a first class
+object null, we will never see Java with a better type system, we will never see
+numbers as objects in Java; its back compatibility does not simple allow it.</p>
+
+<p>I would like to finish with something <a href="http://en.wikipedia.org/wiki/Alan_Kay">Alan Kay</a> said about Smalltalk, its
+creation, when discussing the future of the language with his group composed by
+great minds like <a href="http://en.wikipedia.org/wiki/Adele_Goldberg_(computer_scientist)">Adele Goldberg</a> and <a href="http://en.wikipedia.org/wiki/Dan_Ingalls">Dan Ingalls</a> among others.
+Basically he was not happy making Smalltalk a commercial language because he
+knew that after releasing it, Smalltalk would stop evolving because the priority
+would be to satisfy users/customers needs (backward compatibility among them)
+instead of creating new features and experimenting new ideas.</p>
+
+<p>In other words, when a programming language hits the market its future is
+defined.</p>
+
+  			</section>
+
+  			<footer class="post-footer">
+  				<div class="post-tags">
+            
+  				</div>
+  				<div class="post-share">
+  					<a class="icon-twitter" href="https://twitter.com/share?text=Is%20Java%20Dead%3f&url=http%3a%2f%2fblog.10pines.com%2f2014%2f06%2f05%2fis-java-dead%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+  						<span>Twitter</span>
+  					</a>
+  					<a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fblog.10pines.com%2f2014%2f06%2f05%2fis-java-dead%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+  						<span>Facebook</span>
+  					</a>
+  					<a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fblog.10pines.com%2f2014%2f06%2f05%2fis-java-dead%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+  						<span>Google+</span>
+  					</a>
+  				</div>
+  			</footer>
+
+  			<aside class="post-comments">
+    
+    
+    <div id="disqus_thread"></div>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+    
+</aside>
+
+
+			</div>
+
+			<nav class="post-nav">
+				
+					<a class="post-nav-item post-nav-next" href="http://blog.10pines.com/2014/07/31/two-ways-we-understand-code-unitary-vs-integral-understanding/">
+						<section class="post-nav-teaser">
+							<span class="post-nav-icon"><i class="icon-arrow-left"></i></span>
+							<span class="post-nav-info">
+								<h4 class="post-nav-title">Two ways we understand code: Unitary vs Integral understanding</h4>
+								<p class="post-nav-excerpt">&hellip;</p>
+							</span>
+						</section>
+					</a>
+				
+				
+					<a class="post-nav-item post-nav-prev" href="http://blog.10pines.com/2014/03/21/rethinking-estimations/">
+						<section class="post-nav-teaser">
+							<span class="post-nav-icon"><i class="icon-arrow-right"></i></span>
+							<span class="post-nav-info">
+								<h4 class="post-nav-title">Rethinking Estimations</h4>
+								<p class="post-nav-excerpt">&hellip;</p>
+							</span>
+						</section>
+					</a>
+				
+				<div class="clear"></div>
+			</nav>
+
+		</div>
+	</article>
+</main>
+
+				<div id="body-class" style="display: none;"></div>
+				<footer id="footer">
+					<section class="credits">
+						<span class="credits-theme">Theme <a href="https://github.com/zenithar/hugo-theme-bleak" target="_blank" rel="nofollow">Bleak</a> by <a href="http://zutrinken.com" target="_blank" rel="nofollow">zutrinken</a></span>
+						<span class="credits-software">Published with <a href="http://gohugo.io" target="_blank" rel="nofollow">Hugo</a></span>
+					</section>
+				</footer>
+				
+				
+<div id="tocMenu" data-target="toc">
+    <div class="menu-header">
+        <span class="menu-label">Menu</span>
+        <a class="menu-close" data-action="toc" data-target="toc"></a>
+    </div>
+    <div id="toc" class="menu-list">
+        <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#new-date-and-time-model-so-called-api">New Date and Time model (so called API)</a></li>
+<li><a href="#the-so-waited-closures-wait-lambdas">The so waited Closures… wait Lambdas!</a></li>
+<li><a href="#null-considered-harmful">Null considered harmful</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+
+				<div class="overlay"></div>
+			</div>
+		</section>
+
+    <script>
+      (function(c,f){asyncLoader=function(i,h){i.foreach(function(k,j){e(j,d(j),h)});if(typeof h.callback=="function"){var g=setInterval(function(){if(f.readyState==="complete"){clearInterval(g);h.callback()}},10)}};var d=function(g){var h=g.split(".");return h[h.length-1]},e=function(h,i,g){switch(i){case"js":a(h,g);break;case"css":b(h);break;default:break}},a=function(i,h){var g=document.createElement("script");g.type="text/javascript";g.async=true;g.src=i;document.getElementsByTagName("head")[0].appendChild(g)},b=function(g){var h=document.createElement("link");h.type="text/css";h.rel="stylesheet";h.href=g;document.getElementsByTagName("head")[0].appendChild(h)};Array.prototype.foreach=function(h){for(var g=0;g<this.length;g++){h(g,this[g])}}})(this,document);
+
+      asyncLoader([
+				"/js/dependencies.js",
+				"/css/dependencies.css"
+      ],{
+        callback:function(){
+					asyncLoader([
+						"/css/style.css",
+						"/js/script.js"
+					], {
+						callback: function() {
+							$('body').fadeIn( 800 );
+						}
+					});
+        }
+      });
+
+</script>
+
+
+
+</body>
+</html>
+

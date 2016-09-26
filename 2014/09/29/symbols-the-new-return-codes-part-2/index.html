@@ -1,0 +1,463 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+
+    <head>
+
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <meta property="og:title" content=" Symbols: the new return codes? (Pt. 2) &middot;  10 Pines Blog" />
+        <meta property="og:site_name" content="10 Pines Blog" />
+        <meta property="og:url" content="http://blog.10pines.com/2014/09/29/symbols-the-new-return-codes-part-2/" />
+
+    
+        <meta property="og:type" content="article" />
+        <meta property="og:article:published_time" content="2014-09-29T14:29:50Z" />
+        
+
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@" />
+        <meta name="twitter:creator" content="@" />
+        <meta name="twitter:title" content="Symbols: the new return codes? (Pt. 2)" />
+        <meta name="twitter:description" content="" />
+        <meta name="twitter:url" content="http://blog.10pines.com/2014/09/29/symbols-the-new-return-codes-part-2/" />
+    
+
+        <title> Symbols: the new return codes? (Pt. 2) &middot;  10 Pines Blog</title>
+
+    
+        <meta name="description" content="" />
+    
+
+        <meta name="p:domain_verify" content="fc173d84e3a4de948ed4bda2908afd3e"/>
+        <meta name="HandheldFriendly" content="True" />
+        <meta name="MobileOptimized" content="320" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        
+        
+
+    
+        <link href="http://blog.10pines.com/index.xml" rel="alternate" type="application/rss+xml" title="10 Pines Blog" />
+    
+
+    
+        <link rel="canonical" href="http://blog.10pines.com/2014/09/29/symbols-the-new-return-codes-part-2/" />
+
+    
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "Symbols: the new return codes? (Pt. 2)",
+        "author": {
+            "@type": "Person",
+            "name": "http://profiles.google.com/?rel=author"
+        },
+        "datePublished": "2014-09-29",
+        "description": "",
+        "wordCount":  1107 
+    }
+
+    </script>
+
+    <script type="text/javascript">
+    
+    
+      var disqus_shortname = '10pinesblog';
+      var disqus_identifier = 'http:\/\/blog.10pines.com\/2014\/09\/29\/symbols-the-new-return-codes-part-2\/';
+      var disqus_title = 'Symbols: the new return codes? (Pt. 2)';
+      var disqus_url = 'http:\/\/blog.10pines.com\/2014\/09\/29\/symbols-the-new-return-codes-part-2\/';
+    
+
+    </script>
+    
+
+    <style>
+@charset "UTF-8";article,header,img,main,nav,section{display:block}blockquote,p,pre,ul{margin:2em auto}#wrapper,pre{width:100%;box-sizing:border-box}#nav,#wrapper,code{position:relative}#nav,body{background:#fff}#menu,blockquote,pre code{background:0 0}#menu,#menu .menu-header,#menu .menu-list,#wrapper,.post-nav .post-nav-item .post-nav-teaser .post-nav-info,blockquote,pre{box-sizing:border-box}img{border:0;max-width:100%;height:auto;margin:2.5em auto}html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}code,pre{font-family:monospace,monospace;font-size:1em}@font-face{font-family:'Merriweather Sans';font-style:normal;font-weight:300;src:local("Merriweather Sans Light"),local("MerriweatherSans-Light"),url(//fonts.gstatic.com/s/merriweathersans/v5/6LmGj5dOJopQKEkt88GowY_zIojJi0m4a5Z6tRh6itY.woff) format("woff")}@font-face{font-family:'Merriweather Sans';font-style:normal;font-weight:400;src:local("Merriweather Sans Regular"),local("MerriweatherSans-Regular"),url(//fonts.gstatic.com/s/merriweathersans/v5/AKu1CjQ4qnV8MUltkAX3sL2aU247V0zTzydO4RoO9Ok.woff) format("woff")}@font-face{font-family:'Merriweather Sans';font-style:normal;font-weight:700;src:local("Merriweather Sans Bold"),local("MerriweatherSans-Bold"),url(//fonts.gstatic.com/s/merriweathersans/v5/6LmGj5dOJopQKEkt88GowQfd-b-I5PxxcmB4_-MNcqw.woff) format("woff")}@font-face{font-family:'Merriweather Sans';font-style:normal;font-weight:800;src:local("Merriweather Sans ExtraBold"),local("MerriweatherSans-ExtraBold"),url(//fonts.gstatic.com/s/merriweathersans/v5/6LmGj5dOJopQKEkt88GowWT7sFQ1Iz1BbpcuCPlgc9Q.woff) format("woff")}@font-face{font-family:'Merriweather Sans';font-style:italic;font-weight:300;src:local("Merriweather Sans Light Italic"),local("MerriweatherSans-LightItalic"),url(//fonts.gstatic.com/s/merriweathersans/v5/nAqt4hiqwq3tzCecpgPmVX9UU5BmOJGkLxUCVv5VXdc.woff) format("woff")}@font-face{font-family:'Merriweather Sans';font-style:italic;font-weight:400;src:local("Merriweather Sans Italic"),local("MerriweatherSans-Italic"),url(//fonts.gstatic.com/s/merriweathersans/v5/3Mz4hOHzs2npRMG3B1ascf0KIgDhPIHb_R-SWdtqte8.woff) format("woff")}@font-face{font-family:'Merriweather Sans';font-style:italic;font-weight:700;src:local("Merriweather Sans Bold Italic"),local("MerriweatherSans-BoldItalic"),url(//fonts.gstatic.com/s/merriweathersans/v5/nAqt4hiqwq3tzCecpgPmVYM8pfYvjMoOxygpzLVILAs.woff) format("woff")}@font-face{font-family:Inconsolata;font-style:normal;font-weight:400;src:local("Inconsolata"),url(//fonts.gstatic.com/s/inconsolata/v12/BjAYBlHtW3CJxDcjzrnZCIbN6UDyHWBl620a-IRfuBk.woff) format("woff")}@font-face{font-family:Inconsolata;font-style:normal;font-weight:700;src:local("Inconsolata Bold"),local("Inconsolata-Bold"),url(//fonts.gstatic.com/s/inconsolata/v12/AIed271kqQlcIRSOnQH0yTqR_3kx9_hJXbbyU8S6IN0.woff) format("woff")}@font-face{font-family:icons;src:url(/fonts/icons.eot?9273991);src:url(/fonts/icons.eot?9273991#iefix) format("embedded-opentype"),url(/fonts/icons.woff?9273991) format("woff"),url(/fonts/icons.ttf?9273991) format("truetype"),url(/fonts/icons.svg?9273991#icons) format("svg");font-weight:400;font-style:normal}[class^=icon-]:before{font-family:icons;font-style:normal;font-weight:400;speak:none;display:inline-block;text-decoration:inherit;width:1em;margin-right:.2em;text-align:center;font-variant:normal;text-transform:none;line-height:1em;margin-left:.2em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.icon-arrow-left:before{content:'\e804'}.icon-arrow-right:before{content:'\e807'}.icon-rss:before{content:'\e808'}.icon-menu:before{content:'\e809'}body{margin:0;font:300 1em/1.5em 'Merriweather Sans',sans-serif;color:#595B66}blockquote,i{font-style:italic}code,pre{font-family:Inconsolata,monospace}a,blockquote,code,i{font-weight:400}::-moz-selection{color:#222;background:#D6EDFF;text-shadow:none}::-moz-selection,::selection{color:#222;background:#D6EDFF;text-shadow:none}a{background-color:transparent;color:inherit;text-decoration:none;transition:all ease-out .2s}.post-content a{border-bottom:2px solid #36D995}h1,h4{text-rendering:optimizeLegibility;color:#1F2026}h1{font-size:2em;line-height:1em;margin:2em 0 -.5em}h4{font-size:1.25em;line-height:1.2em;margin:2.4em 0 -.8em}ul{list-style:none;padding-left:3em}blockquote{padding:0 1em;border-left:.25em solid #D4D5D9;color:#595B66}blockquote *{margin:1em auto}blockquote :first-child{margin-top:0}blockquote :last-child{margin-bottom:0}i{color:#363740}code{display:inline-block;top:-1px;padding:3px 6px;margin:-1px 2px;font-size:.875em;line-height:1.143em;background:#E1E2E6;color:#000;border-radius:2px}pre{padding:1em;white-space:pre;overflow:auto;background:#9D9FA6;color:#fff}pre code{position:static;top:auto;font-size:1em;line-height:1.5em;white-space:-moz-pre-wrap;white-space:pre-wrap;vertical-align:inherit;border:none;padding:0}#menu .menu-header:before,.post .post-title:before{border-bottom:4px solid #36D995;content:''}.inner{max-width:48em;margin:0 auto;padding:0 1em}#wrapper{min-height:100vh;padding-bottom:6em;background:#F2F3F5}#push{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0);-webkit-transform-style:preserve-3d;transform-style:preserve-3d;opacity:1}#nav{z-index:70;transition:all ease-out .4s;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0);-webkit-transform-style:preserve-3d;transform-style:preserve-3d;opacity:1}#nav:after{clear:both;content:'';display:table}#nav .nav-logo{float:left;height:2em;padding:1em;max-width:50%}#nav .nav-logo img{width:auto;max-width:none;height:2em;margin:0}#nav .nav-menu{float:right}#nav .nav-menu:after{clear:both;content:'';display:table}#nav .nav-menu a{display:block;width:1em;height:1em;line-height:1em;padding:1.5em;text-align:center;float:left;cursor:pointer}#nav .nav-menu a i:before{margin:auto}#menu{display:none;position:fixed;left:50%;top:5%;width:30em;height:90%;margin-left:-15em;padding:3em 0 0;overflow:hidden;transition:all ease-out .3s;-webkit-transform:translate3d(0,2em,0);transform:translate3d(0,2em,0);-webkit-transform-style:preserve-3d;transform-style:preserve-3d;opacity:0;z-index:100}@media only screen and (max-width:50em){#menu{width:90%;left:5%;margin-left:auto}}#menu .menu-header{position:absolute;left:0;top:0;width:100%;height:3.5em;padding:1em 1.5em .5em;margin-bottom:1em;line-height:2em;z-index:110;background:#fff}#menu .menu-header:before{position:absolute;left:-5%;bottom:-1em;width:110%;height:2em;background:#fff;box-shadow:0 .125em .125em rgba(0,0,0,.1);-webkit-transform:rotate(2.5deg);transform:rotate(2.5deg);transition:all ease-out .2s;z-index:115}#menu .menu-header:after{clear:both;content:'';display:table}#menu .menu-header .menu-label{position:relative;display:block;float:left;z-index:120}#menu .menu-header .menu-close{position:relative;display:block;float:right;width:2em;height:2em;padding:1em;margin:-1em -1.5em -1em 0;cursor:pointer;z-index:125}#menu .menu-header .menu-close:after,#menu .menu-header .menu-close:before{content:'';position:absolute;left:50%;top:50%;background:#9D9FA6;-webkit-transform:rotate(45deg);transform:rotate(45deg)}.overlay,.overlay:before{top:0;width:100%;height:100%}#menu .menu-header .menu-close:after{width:2px;height:1em;margin:-.5em 0 0 -1px}#menu .menu-header .menu-close:before{width:1em;height:2px;margin:-1px 0 0 -.5em}#menu .menu-list{position:relative;list-style:none;margin:0;padding:2em 0;height:100%;overflow-x:hidden;overflow-y:scroll;background:#fff}.overlay{position:fixed;left:0;z-index:80;display:none}.overlay:before{content:'';position:absolute;left:0;background:#1F2026;opacity:0;transition:all ease-out .3s;-webkit-transform-style:preserve-3d;transform-style:preserve-3d}.post{position:relative;z-index:20}.post .post-meta{display:block;font-size:.75em;line-height:1.334em;font-weight:400;margin-bottom:1.334em}.post .post-title{position:relative;color:#000;font-size:2em;line-height:1.375em;font-weight:800;text-indent:-1px;margin:.25em 0 .75em}.post .post-title:before{position:absolute;left:0;bottom:-.334em;width:1em;margin-bottom:-2px}.post .post-header{padding:4em 0 0;margin-bottom:3em}.post-footer .post-share a span{display:none}.post-nav .post-nav-item{position:fixed;top:50%;display:block;margin-top:-4em;overflow:hidden;border-radius:10em;transition:none}@media only screen and (max-width:70em){.post-nav .post-nav-item{position:absolute;top:auto;margin:auto;max-width:50%}}.post-nav .post-nav-item.post-nav-next{left:0;text-align:left}.post-nav .post-nav-item.post-nav-next .post-nav-icon{float:left}.post-nav .post-nav-item.post-nav-next .post-nav-icon i{left:-.05em}.post-nav .post-nav-item.post-nav-next .post-nav-info{padding-left:6em}.post-nav .post-nav-item.post-nav-prev{right:0;text-align:right}.post-nav .post-nav-item.post-nav-prev .post-nav-icon{float:right}.post-nav .post-nav-item.post-nav-prev .post-nav-icon i{right:-.05em}.post-nav .post-nav-item.post-nav-prev .post-nav-info{padding-right:6em}.post-nav .post-nav-item .post-nav-teaser{display:block;padding:1em;transition:all ease-out .2s;max-width:25em;overflow:visible}.post-nav .post-nav-item .post-nav-teaser:after{clear:both;content:'';display:table}.post-nav .post-nav-item .post-nav-teaser .post-nav-icon{display:block;width:5em;height:5em;line-height:5em;text-align:center;box-sizing:border-box;border-radius:10em;border:1px solid #36D995;box-shadow:0 0 0 0 transparent;transition:all ease-out .1s;background:#F2F3F5}.post-nav .post-nav-item .post-nav-teaser .post-nav-icon i{position:relative;font-size:2em}@media only screen and (max-width:30em){.post-nav .post-nav-item .post-nav-teaser .post-nav-icon{width:4em;height:4em;line-height:4em}.post-nav .post-nav-item .post-nav-teaser .post-nav-icon i{font-size:1.5em}}.post-nav .post-nav-item .post-nav-teaser .post-nav-icon i:before{margin:auto}.post-nav .post-nav-item .post-nav-teaser .post-nav-info{display:none;width:100%;transition:all ease-out .2s}.post-nav .post-nav-item .post-nav-teaser .post-nav-info .post-nav-title{display:block;max-height:1.25em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;margin:1.25em 0 .25em;font-size:1em;line-height:1.25em;font-weight:700;color:#363740}.post-nav .post-nav-item .post-nav-teaser .post-nav-info .post-nav-excerpt{display:block;max-height:1.334em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;margin:0;font-size:.75em;line-height:1.334em;font-weight:400;color:#9D9FA6}
+</style>
+
+
+    </head>
+    <body class="home-template" style="display: none;">
+      <section id="wrapper">
+        <div id="ajax-container">
+          <nav id="nav" class="nav">
+            <div class="nav-logo">
+              <a href="http://blog.10pines.com/">
+      			  	
+      			  	
+      			  	<img src="http://blog.10pines.com/images/10p-logo.png" alt="Logo"/>
+      			  	
+              </a>
+			  	    
+            </div>
+            <div class="nav-menu">
+              <a class="rss" href="">
+                <i class="icon-rss"></i>
+              </a>
+                
+                <a class="menu" data-action="toc" data-target="toc"><i class="icon-location"></i></a>
+                
+                
+            </div>
+          </nav>
+
+
+<main class="content" role="main">
+	<article class="post">
+		<div class="inner">
+
+			<div id="push">
+
+  			<header class="post-header">
+  				<span class="post-meta">
+						<span class="post-date">29 Sep 2014</span> <span class="reading-time">| <span class="estimated-reading-time">6 min.</span> (<span class="word-count">1107</span> words)</span></span>
+  				</span>
+  				<div class="clear"></div>
+  				<h1 class="post-title">Symbols: the new return codes? (Pt. 2)</h1>
+  			</header>
+
+  			<section class="post-content">
+  				
+
+<h2 id="flow-control-with-exceptions-and-closures">Flow control with exceptions and closures</h2>
+
+<p>In <a href="http://blog.10pines.com/2014/09/23/symbols-the-new-return-codes/" title="Symbols, the new return codes?">this previous post</a> we&rsquo;ve considered the benefits and inconveniences of using nil and symbols as return values in a method.
+Now we’ll evaluate the possibility of throwing an exception, and yet another alternative: using a closure.</p>
+
+<p>So, before jumping in, let&rsquo;s bring to memory the example with which we were working.</p>
+
+<pre><code class="language-ruby">
+class User
+
+  def find_by_id(id)
+    # retrieve something from the persistence layer
+    user_record = persistence_layer.find_record_by_id(id)
+
+    # build user from record
+    parse user_record
+  end
+
+end
+
+</code></pre>
+
+<p>This method should find an instance of a class by it&rsquo;s id. If none is found, then <code>find_record_by_id</code> returns nil.</p>
+
+<h2 id="throwing-an-exception">Throwing an exception</h2>
+
+<p>If we were to work with exceptions in this scenario, the code for our method would look something like this:</p>
+
+<pre><code class="language-ruby">
+class User
+ 
+  def find_by_id(id)
+    # retrieve something from the persistence layer
+    user_record = persistence_layer.find_record_by_id(id)
+    
+    raise ObjectNotFoundError.new(id) if user_record.nil? 
+    
+    # build user from record
+    parse user_record
+  end
+ 
+end
+
+</code></pre>
+
+<p>And this is how we would use it:</p>
+
+<pre><code class="language-ruby">
+begin
+  user = User.find_by_id(1)
+rescue ObjectNotFoundError =&gt; e
+  # do something to handle user not found
+end
+ 
+# do something with the user
+
+</code></pre>
+
+<p>This solution is usually more acceptable than the ones we have previously considered.
+It allows us to send a meaningful message to those who are expecting a non-null object, telling them that it was not found, and it also provides a way to choose the scope in which we want to handle the object-not-found situation.</p>
+
+<p>Plus, we automatically have context: and almost as much as we want to! Besides from getting the full stack trace printed out to our noses, exceptions provide us a way to subclass and specify errors, to add descriptions, and even supply the id of the user that we were looking for.<sup class="footnote-ref" id="fnref:1"><a rel="footnote" href="#fn:1">1</a></sup></p>
+
+<p>And if we don&rsquo;t want to catch them, it&rsquo;s OK too. We can let them reach our global error handler, and forget about it.</p>
+
+<p>This is fine if we don’t mind using a try/catch block each time we send the message, or any message that we know collaborates with this one.
+But it comes with the burden of needing to know what, and if, this message throws an exception. Something that without meta-programming, we lack in dynamic typed programming languages.</p>
+
+<p>Another downside is that we would be using exceptions as flow-control structures, when instead we should be using them for what they are really meant to do: handle exceptional cases.<sup class="footnote-ref" id="fnref:2"><a rel="footnote" href="#fn:2">2</a></sup>
+If having an unauthenticated user is part of our business logic, then not finding him in our database should be something quite normal.</p>
+
+<p>So, what can we do if we don’t want to sprinkle our code with try/catch blocks, nor remember that we have to?
+What if we want to have an object that represents the decisions we make in the flow of the program?</p>
+
+<p>Then, we arrive to our final destination: closures!</p>
+
+<h2 id="using-closures">Using Closures</h2>
+
+<p>What benefit do closures provide for us, and why?
+Let’s see how we would use them in our method:</p>
+
+<pre><code class="language-ruby">
+class User
+ 
+  def find_by_id(id, &amp;user_not_found_block)
+    # retrieve something from the persistence layer
+    user_record = persistence_layer.find_record_by_id(id)
+    
+     # do something to handle user not found
+    return user_not_found_block.call if user_record.nil? 
+    
+    # build user from record
+    parse user_record
+  end
+ 
+end
+
+</code></pre>
+
+<p>So, what has changed?</p>
+
+<p>First of all, let’s pay attention to the signature. This signature by itself will remind us that each time we send this message, we should provide a way to handle an inexistent result.</p>
+
+<pre><code class="language-ruby">
+user = User.find_by_id(1) { raise &quot;Hey! I couldn't find an user with id: #{1}&quot; }
+ 
+# do something with the user
+
+</code></pre>
+
+<p>Or even better!</p>
+
+<pre><code class="language-ruby">
+user = User.find_by_id(1) { AnonymousUser.new }
+
+</code></pre>
+
+<p>This way, we could return an object that is polymorphic with what we are expecting (a <code>User</code>), as opossed to the nil/symbols scenario.<sup class="footnote-ref" id="fnref:3"><a rel="footnote" href="#fn:3">3</a></sup></p>
+
+<p>And of course, if we don’t want to provide a block each time we use this particular method, the class of the object itself could define a default way of handling this, which could be, for example, throwing an exception:</p>
+
+<pre><code class="language-ruby">
+class User
+
+
+  def find_by_id(id, user_not_found_block=method(:default_not_found_block))
+    # retrieve something from the persistence layer
+    user_record = persistence_layer.find_record_by_id(id)
+    
+     # do something to handle user not found
+    return user_not_found_block.call(id) if user_record.nil? 
+    
+    # build user from record
+    parse user_record
+  end
+
+  def default_not_found_block(id)
+    raise &quot;Hey! I couldn't find an user with id: #{id}&quot; 
+  end
+ 
+end
+
+</code></pre>
+
+<p>The second advantage of using closures, besides the friendly reminder of the object-not-found possibility, is that <strong>it eliminates the need of checking for nil each time we send the message</strong> <code>find_by_id</code>. This is what allows us to encapsulate the <code>if</code>, and get rid of the repeated pattern.</p>
+
+<p>In this matter, it is similar to the “throw an exception” solution, but with the benefit that at the same time it solves the exceptional case from within the method, it does so using a block provided from an outer context. And apart from eliminating repeated code, closures are flexible enough to allow us to recreate any of the situations we&rsquo;ve reviewed so far (which tells us they are a good generalization).</p>
+
+<p>The third advantage, also similar to the exceptions solution, is that because closures bind to the context in which they are instantiated, there is no context loss. So you still have access to the execution context (e.g. you could make use of the user id, if you needed to).</p>
+
+<p>The fourth advantage is that using closures you can create your own flow control sintax.<sup class="footnote-ref" id="fnref:4"><a rel="footnote" href="#fn:4">4</a></sup></p>
+
+<p>And finally, in systems where performance is critical, closures tend to behave better than exceptions.<sup class="footnote-ref" id="fnref:5"><a rel="footnote" href="#fn:5">5</a></sup></p>
+
+<p>So, where is the trick? What&rsquo;s the downside?
+Surprisingly enough, sometimes the only reason for closures to be unpopular is the mental effort that one must do before being able to incorporate them into the way of thinking. But the truth is we have been using this since Smalltalk&rsquo;s “detect”!</p>
+
+<h2 id="to-summarize">To summarize</h2>
+
+<p>Nil</p>
+
+<pre><code>+ Does not answer messages
+
+- Will explode only if (and when) we try to use it
+- Hard to debug
+- Repeated code
+</code></pre>
+
+<p>Symbols</p>
+
+<pre><code>+ Descriptive
+
+- Be careful when you write them!
+- Annoying conventions
+- They answer messages, they can be evasive
+</code></pre>
+
+<p>Exceptions</p>
+
+<pre><code>+ Descriptive
++ We can choose the solution's scope
++ Automatic context information
++ We can choose not to handle them
+
+- Try/catch blocks everywhere
+- Need to remember which methods throw them
+- Normal flow handled by exceptions
+</code></pre>
+
+<p>Closures</p>
+
+<pre><code>+ Friendly reminder
++ Default way to handle error
++ Flexible
++ No context loss
++ You can create your own flow control sintax
++ Performant
+
+- Mental effort?
+</code></pre>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:1">more on writing exceptions in ruby <a href="https://www.youtube.com/watch?v=nlvCYJodigM&amp;list=PLMkq_h36PcLA4yY58tQgj5FAXRzMaZAaY" title="Implementando Excepciones con Ruby">here!</a>
+ <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
+<li id="fn:2">see <a href="http://c2.com/cgi/wiki?DontUseExceptionsForFlowControl" title="Don't use exceptions for flow control">Don&rsquo;t use exceptions for flow control</a>
+ <a class="footnote-return" href="#fnref:2"><sup>[return]</sup></a></li>
+<li id="fn:3">see <a href="http://www.cs.oberlin.edu/~jwalker/refs/woolf.ps" title="Null Object Pattern">Null Object Pattern</a>
+ <a class="footnote-return" href="#fnref:3"><sup>[return]</sup></a></li>
+<li id="fn:4">see <a href="http://library.readscheme.org/page1.html" title="The Original 'Lambda Papers' by Guy Steele and Gerald Sussman">Lambda: The Ultimate</a>
+ <a class="footnote-return" href="#fnref:4"><sup>[return]</sup></a></li>
+<li id="fn:5">more on exceptions performance in JRuby <a href="http://blog.10pines.com/2013/05/18/parallel-tests-on-travis/" title="Parallel Tests on Travis">here!</a>
+ <a class="footnote-return" href="#fnref:5"><sup>[return]</sup></a></li>
+</ol>
+</div>
+
+  			</section>
+
+  			<footer class="post-footer">
+  				<div class="post-tags">
+            
+  				</div>
+  				<div class="post-share">
+  					<a class="icon-twitter" href="https://twitter.com/share?text=Symbols%3a%20the%20new%20return%20codes%3f%20%28Pt.%202%29&url=http%3a%2f%2fblog.10pines.com%2f2014%2f09%2f29%2fsymbols-the-new-return-codes-part-2%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+  						<span>Twitter</span>
+  					</a>
+  					<a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fblog.10pines.com%2f2014%2f09%2f29%2fsymbols-the-new-return-codes-part-2%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+  						<span>Facebook</span>
+  					</a>
+  					<a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fblog.10pines.com%2f2014%2f09%2f29%2fsymbols-the-new-return-codes-part-2%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+  						<span>Google+</span>
+  					</a>
+  				</div>
+  			</footer>
+
+  			<aside class="post-comments">
+    
+    
+    <div id="disqus_thread"></div>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+    
+</aside>
+
+
+			</div>
+
+			<nav class="post-nav">
+				
+					<a class="post-nav-item post-nav-next" href="http://blog.10pines.com/2014/10/14/mixins-or-traits/">
+						<section class="post-nav-teaser">
+							<span class="post-nav-icon"><i class="icon-arrow-left"></i></span>
+							<span class="post-nav-info">
+								<h4 class="post-nav-title">Mixins or Traits? That is the Question</h4>
+								<p class="post-nav-excerpt">&hellip;</p>
+							</span>
+						</section>
+					</a>
+				
+				
+					<a class="post-nav-item post-nav-prev" href="http://blog.10pines.com/2014/09/24/symbols-the-new-return-codes/">
+						<section class="post-nav-teaser">
+							<span class="post-nav-icon"><i class="icon-arrow-right"></i></span>
+							<span class="post-nav-info">
+								<h4 class="post-nav-title">Symbols: the new return codes?</h4>
+								<p class="post-nav-excerpt">&hellip;</p>
+							</span>
+						</section>
+					</a>
+				
+				<div class="clear"></div>
+			</nav>
+
+		</div>
+	</article>
+</main>
+
+				<div id="body-class" style="display: none;"></div>
+				<footer id="footer">
+					<section class="credits">
+						<span class="credits-theme">Theme <a href="https://github.com/zenithar/hugo-theme-bleak" target="_blank" rel="nofollow">Bleak</a> by <a href="http://zutrinken.com" target="_blank" rel="nofollow">zutrinken</a></span>
+						<span class="credits-software">Published with <a href="http://gohugo.io" target="_blank" rel="nofollow">Hugo</a></span>
+					</section>
+				</footer>
+				
+				
+<div id="tocMenu" data-target="toc">
+    <div class="menu-header">
+        <span class="menu-label">Menu</span>
+        <a class="menu-close" data-action="toc" data-target="toc"></a>
+    </div>
+    <div id="toc" class="menu-list">
+        <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#flow-control-with-exceptions-and-closures">Flow control with exceptions and closures</a></li>
+<li><a href="#throwing-an-exception">Throwing an exception</a></li>
+<li><a href="#using-closures">Using Closures</a></li>
+<li><a href="#to-summarize">To summarize</a></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+
+				<div class="overlay"></div>
+			</div>
+		</section>
+
+    <script>
+      (function(c,f){asyncLoader=function(i,h){i.foreach(function(k,j){e(j,d(j),h)});if(typeof h.callback=="function"){var g=setInterval(function(){if(f.readyState==="complete"){clearInterval(g);h.callback()}},10)}};var d=function(g){var h=g.split(".");return h[h.length-1]},e=function(h,i,g){switch(i){case"js":a(h,g);break;case"css":b(h);break;default:break}},a=function(i,h){var g=document.createElement("script");g.type="text/javascript";g.async=true;g.src=i;document.getElementsByTagName("head")[0].appendChild(g)},b=function(g){var h=document.createElement("link");h.type="text/css";h.rel="stylesheet";h.href=g;document.getElementsByTagName("head")[0].appendChild(h)};Array.prototype.foreach=function(h){for(var g=0;g<this.length;g++){h(g,this[g])}}})(this,document);
+
+      asyncLoader([
+				"/js/dependencies.js",
+				"/css/dependencies.css"
+      ],{
+        callback:function(){
+					asyncLoader([
+						"/css/style.css",
+						"/js/script.js"
+					], {
+						callback: function() {
+							$('body').fadeIn( 800 );
+						}
+					});
+        }
+      });
+
+</script>
+
+
+
+</body>
+</html>
+

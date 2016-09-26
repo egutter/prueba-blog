@@ -1,0 +1,407 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+
+    <head>
+
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <meta property="og:title" content=" How to gently upgrade your Java application &middot;  10 Pines Blog" />
+        <meta property="og:site_name" content="10 Pines Blog" />
+        <meta property="og:url" content="http://blog.10pines.com/2015/06/15/how-to-gently-upgrade-your-java-application/" />
+
+    
+        <meta property="og:type" content="article" />
+        <meta property="og:article:published_time" content="2015-06-15T14:48:00Z" />
+        
+
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@" />
+        <meta name="twitter:creator" content="@" />
+        <meta name="twitter:title" content="How to gently upgrade your Java application" />
+        <meta name="twitter:description" content="" />
+        <meta name="twitter:url" content="http://blog.10pines.com/2015/06/15/how-to-gently-upgrade-your-java-application/" />
+    
+
+        <title> How to gently upgrade your Java application &middot;  10 Pines Blog</title>
+
+    
+        <meta name="description" content="" />
+    
+
+        <meta name="p:domain_verify" content="fc173d84e3a4de948ed4bda2908afd3e"/>
+        <meta name="HandheldFriendly" content="True" />
+        <meta name="MobileOptimized" content="320" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        
+        
+
+    
+        <link href="http://blog.10pines.com/index.xml" rel="alternate" type="application/rss+xml" title="10 Pines Blog" />
+    
+
+    
+        <link rel="canonical" href="http://blog.10pines.com/2015/06/15/how-to-gently-upgrade-your-java-application/" />
+
+    
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "How to gently upgrade your Java application",
+        "author": {
+            "@type": "Person",
+            "name": "http://profiles.google.com/?rel=author"
+        },
+        "datePublished": "2015-06-15",
+        "description": "",
+        "wordCount":  1050 
+    }
+
+    </script>
+
+    <script type="text/javascript">
+    
+    
+      var disqus_shortname = '10pinesblog';
+      var disqus_identifier = 'http:\/\/blog.10pines.com\/2015\/06\/15\/how-to-gently-upgrade-your-java-application\/';
+      var disqus_title = 'How to gently upgrade your Java application';
+      var disqus_url = 'http:\/\/blog.10pines.com\/2015\/06\/15\/how-to-gently-upgrade-your-java-application\/';
+    
+
+    </script>
+    
+
+    <style>
+@charset "UTF-8";article,header,img,main,nav,section{display:block}blockquote,p,pre,ul{margin:2em auto}#wrapper,pre{width:100%;box-sizing:border-box}#nav,#wrapper,code{position:relative}#nav,body{background:#fff}#menu,blockquote,pre code{background:0 0}#menu,#menu .menu-header,#menu .menu-list,#wrapper,.post-nav .post-nav-item .post-nav-teaser .post-nav-info,blockquote,pre{box-sizing:border-box}img{border:0;max-width:100%;height:auto;margin:2.5em auto}html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}code,pre{font-family:monospace,monospace;font-size:1em}@font-face{font-family:'Merriweather Sans';font-style:normal;font-weight:300;src:local("Merriweather Sans Light"),local("MerriweatherSans-Light"),url(//fonts.gstatic.com/s/merriweathersans/v5/6LmGj5dOJopQKEkt88GowY_zIojJi0m4a5Z6tRh6itY.woff) format("woff")}@font-face{font-family:'Merriweather Sans';font-style:normal;font-weight:400;src:local("Merriweather Sans Regular"),local("MerriweatherSans-Regular"),url(//fonts.gstatic.com/s/merriweathersans/v5/AKu1CjQ4qnV8MUltkAX3sL2aU247V0zTzydO4RoO9Ok.woff) format("woff")}@font-face{font-family:'Merriweather Sans';font-style:normal;font-weight:700;src:local("Merriweather Sans Bold"),local("MerriweatherSans-Bold"),url(//fonts.gstatic.com/s/merriweathersans/v5/6LmGj5dOJopQKEkt88GowQfd-b-I5PxxcmB4_-MNcqw.woff) format("woff")}@font-face{font-family:'Merriweather Sans';font-style:normal;font-weight:800;src:local("Merriweather Sans ExtraBold"),local("MerriweatherSans-ExtraBold"),url(//fonts.gstatic.com/s/merriweathersans/v5/6LmGj5dOJopQKEkt88GowWT7sFQ1Iz1BbpcuCPlgc9Q.woff) format("woff")}@font-face{font-family:'Merriweather Sans';font-style:italic;font-weight:300;src:local("Merriweather Sans Light Italic"),local("MerriweatherSans-LightItalic"),url(//fonts.gstatic.com/s/merriweathersans/v5/nAqt4hiqwq3tzCecpgPmVX9UU5BmOJGkLxUCVv5VXdc.woff) format("woff")}@font-face{font-family:'Merriweather Sans';font-style:italic;font-weight:400;src:local("Merriweather Sans Italic"),local("MerriweatherSans-Italic"),url(//fonts.gstatic.com/s/merriweathersans/v5/3Mz4hOHzs2npRMG3B1ascf0KIgDhPIHb_R-SWdtqte8.woff) format("woff")}@font-face{font-family:'Merriweather Sans';font-style:italic;font-weight:700;src:local("Merriweather Sans Bold Italic"),local("MerriweatherSans-BoldItalic"),url(//fonts.gstatic.com/s/merriweathersans/v5/nAqt4hiqwq3tzCecpgPmVYM8pfYvjMoOxygpzLVILAs.woff) format("woff")}@font-face{font-family:Inconsolata;font-style:normal;font-weight:400;src:local("Inconsolata"),url(//fonts.gstatic.com/s/inconsolata/v12/BjAYBlHtW3CJxDcjzrnZCIbN6UDyHWBl620a-IRfuBk.woff) format("woff")}@font-face{font-family:Inconsolata;font-style:normal;font-weight:700;src:local("Inconsolata Bold"),local("Inconsolata-Bold"),url(//fonts.gstatic.com/s/inconsolata/v12/AIed271kqQlcIRSOnQH0yTqR_3kx9_hJXbbyU8S6IN0.woff) format("woff")}@font-face{font-family:icons;src:url(/fonts/icons.eot?9273991);src:url(/fonts/icons.eot?9273991#iefix) format("embedded-opentype"),url(/fonts/icons.woff?9273991) format("woff"),url(/fonts/icons.ttf?9273991) format("truetype"),url(/fonts/icons.svg?9273991#icons) format("svg");font-weight:400;font-style:normal}[class^=icon-]:before{font-family:icons;font-style:normal;font-weight:400;speak:none;display:inline-block;text-decoration:inherit;width:1em;margin-right:.2em;text-align:center;font-variant:normal;text-transform:none;line-height:1em;margin-left:.2em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.icon-arrow-left:before{content:'\e804'}.icon-arrow-right:before{content:'\e807'}.icon-rss:before{content:'\e808'}.icon-menu:before{content:'\e809'}body{margin:0;font:300 1em/1.5em 'Merriweather Sans',sans-serif;color:#595B66}blockquote,i{font-style:italic}code,pre{font-family:Inconsolata,monospace}a,blockquote,code,i{font-weight:400}::-moz-selection{color:#222;background:#D6EDFF;text-shadow:none}::-moz-selection,::selection{color:#222;background:#D6EDFF;text-shadow:none}a{background-color:transparent;color:inherit;text-decoration:none;transition:all ease-out .2s}.post-content a{border-bottom:2px solid #36D995}h1,h4{text-rendering:optimizeLegibility;color:#1F2026}h1{font-size:2em;line-height:1em;margin:2em 0 -.5em}h4{font-size:1.25em;line-height:1.2em;margin:2.4em 0 -.8em}ul{list-style:none;padding-left:3em}blockquote{padding:0 1em;border-left:.25em solid #D4D5D9;color:#595B66}blockquote *{margin:1em auto}blockquote :first-child{margin-top:0}blockquote :last-child{margin-bottom:0}i{color:#363740}code{display:inline-block;top:-1px;padding:3px 6px;margin:-1px 2px;font-size:.875em;line-height:1.143em;background:#E1E2E6;color:#000;border-radius:2px}pre{padding:1em;white-space:pre;overflow:auto;background:#9D9FA6;color:#fff}pre code{position:static;top:auto;font-size:1em;line-height:1.5em;white-space:-moz-pre-wrap;white-space:pre-wrap;vertical-align:inherit;border:none;padding:0}#menu .menu-header:before,.post .post-title:before{border-bottom:4px solid #36D995;content:''}.inner{max-width:48em;margin:0 auto;padding:0 1em}#wrapper{min-height:100vh;padding-bottom:6em;background:#F2F3F5}#push{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0);-webkit-transform-style:preserve-3d;transform-style:preserve-3d;opacity:1}#nav{z-index:70;transition:all ease-out .4s;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0);-webkit-transform-style:preserve-3d;transform-style:preserve-3d;opacity:1}#nav:after{clear:both;content:'';display:table}#nav .nav-logo{float:left;height:2em;padding:1em;max-width:50%}#nav .nav-logo img{width:auto;max-width:none;height:2em;margin:0}#nav .nav-menu{float:right}#nav .nav-menu:after{clear:both;content:'';display:table}#nav .nav-menu a{display:block;width:1em;height:1em;line-height:1em;padding:1.5em;text-align:center;float:left;cursor:pointer}#nav .nav-menu a i:before{margin:auto}#menu{display:none;position:fixed;left:50%;top:5%;width:30em;height:90%;margin-left:-15em;padding:3em 0 0;overflow:hidden;transition:all ease-out .3s;-webkit-transform:translate3d(0,2em,0);transform:translate3d(0,2em,0);-webkit-transform-style:preserve-3d;transform-style:preserve-3d;opacity:0;z-index:100}@media only screen and (max-width:50em){#menu{width:90%;left:5%;margin-left:auto}}#menu .menu-header{position:absolute;left:0;top:0;width:100%;height:3.5em;padding:1em 1.5em .5em;margin-bottom:1em;line-height:2em;z-index:110;background:#fff}#menu .menu-header:before{position:absolute;left:-5%;bottom:-1em;width:110%;height:2em;background:#fff;box-shadow:0 .125em .125em rgba(0,0,0,.1);-webkit-transform:rotate(2.5deg);transform:rotate(2.5deg);transition:all ease-out .2s;z-index:115}#menu .menu-header:after{clear:both;content:'';display:table}#menu .menu-header .menu-label{position:relative;display:block;float:left;z-index:120}#menu .menu-header .menu-close{position:relative;display:block;float:right;width:2em;height:2em;padding:1em;margin:-1em -1.5em -1em 0;cursor:pointer;z-index:125}#menu .menu-header .menu-close:after,#menu .menu-header .menu-close:before{content:'';position:absolute;left:50%;top:50%;background:#9D9FA6;-webkit-transform:rotate(45deg);transform:rotate(45deg)}.overlay,.overlay:before{top:0;width:100%;height:100%}#menu .menu-header .menu-close:after{width:2px;height:1em;margin:-.5em 0 0 -1px}#menu .menu-header .menu-close:before{width:1em;height:2px;margin:-1px 0 0 -.5em}#menu .menu-list{position:relative;list-style:none;margin:0;padding:2em 0;height:100%;overflow-x:hidden;overflow-y:scroll;background:#fff}.overlay{position:fixed;left:0;z-index:80;display:none}.overlay:before{content:'';position:absolute;left:0;background:#1F2026;opacity:0;transition:all ease-out .3s;-webkit-transform-style:preserve-3d;transform-style:preserve-3d}.post{position:relative;z-index:20}.post .post-meta{display:block;font-size:.75em;line-height:1.334em;font-weight:400;margin-bottom:1.334em}.post .post-title{position:relative;color:#000;font-size:2em;line-height:1.375em;font-weight:800;text-indent:-1px;margin:.25em 0 .75em}.post .post-title:before{position:absolute;left:0;bottom:-.334em;width:1em;margin-bottom:-2px}.post .post-header{padding:4em 0 0;margin-bottom:3em}.post-footer .post-share a span{display:none}.post-nav .post-nav-item{position:fixed;top:50%;display:block;margin-top:-4em;overflow:hidden;border-radius:10em;transition:none}@media only screen and (max-width:70em){.post-nav .post-nav-item{position:absolute;top:auto;margin:auto;max-width:50%}}.post-nav .post-nav-item.post-nav-next{left:0;text-align:left}.post-nav .post-nav-item.post-nav-next .post-nav-icon{float:left}.post-nav .post-nav-item.post-nav-next .post-nav-icon i{left:-.05em}.post-nav .post-nav-item.post-nav-next .post-nav-info{padding-left:6em}.post-nav .post-nav-item.post-nav-prev{right:0;text-align:right}.post-nav .post-nav-item.post-nav-prev .post-nav-icon{float:right}.post-nav .post-nav-item.post-nav-prev .post-nav-icon i{right:-.05em}.post-nav .post-nav-item.post-nav-prev .post-nav-info{padding-right:6em}.post-nav .post-nav-item .post-nav-teaser{display:block;padding:1em;transition:all ease-out .2s;max-width:25em;overflow:visible}.post-nav .post-nav-item .post-nav-teaser:after{clear:both;content:'';display:table}.post-nav .post-nav-item .post-nav-teaser .post-nav-icon{display:block;width:5em;height:5em;line-height:5em;text-align:center;box-sizing:border-box;border-radius:10em;border:1px solid #36D995;box-shadow:0 0 0 0 transparent;transition:all ease-out .1s;background:#F2F3F5}.post-nav .post-nav-item .post-nav-teaser .post-nav-icon i{position:relative;font-size:2em}@media only screen and (max-width:30em){.post-nav .post-nav-item .post-nav-teaser .post-nav-icon{width:4em;height:4em;line-height:4em}.post-nav .post-nav-item .post-nav-teaser .post-nav-icon i{font-size:1.5em}}.post-nav .post-nav-item .post-nav-teaser .post-nav-icon i:before{margin:auto}.post-nav .post-nav-item .post-nav-teaser .post-nav-info{display:none;width:100%;transition:all ease-out .2s}.post-nav .post-nav-item .post-nav-teaser .post-nav-info .post-nav-title{display:block;max-height:1.25em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;margin:1.25em 0 .25em;font-size:1em;line-height:1.25em;font-weight:700;color:#363740}.post-nav .post-nav-item .post-nav-teaser .post-nav-info .post-nav-excerpt{display:block;max-height:1.334em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;margin:0;font-size:.75em;line-height:1.334em;font-weight:400;color:#9D9FA6}
+</style>
+
+
+    </head>
+    <body class="home-template" style="display: none;">
+      <section id="wrapper">
+        <div id="ajax-container">
+          <nav id="nav" class="nav">
+            <div class="nav-logo">
+              <a href="http://blog.10pines.com/">
+      			  	
+      			  	
+      			  	<img src="http://blog.10pines.com/images/10p-logo.png" alt="Logo"/>
+      			  	
+              </a>
+			  	    
+            </div>
+            <div class="nav-menu">
+              <a class="rss" href="">
+                <i class="icon-rss"></i>
+              </a>
+                
+                <a class="menu" data-action="toc" data-target="toc"><i class="icon-location"></i></a>
+                
+                
+            </div>
+          </nav>
+
+
+<main class="content" role="main">
+	<article class="post">
+		<div class="inner">
+
+			<div id="push">
+
+  			<header class="post-header">
+  				<span class="post-meta">
+						<span class="post-date">15 Jun 2015</span> <span class="reading-time">| <span class="estimated-reading-time">5 min.</span> (<span class="word-count">1050</span> words)</span></span>
+  				</span>
+  				<div class="clear"></div>
+  				<h1 class="post-title">How to gently upgrade your Java application</h1>
+  			</header>
+
+  			<section class="post-content">
+  				<p>When I think about getting an upgrade I usually picture myself like this:</p>
+
+<p>{% img /images/Feel_like_a_sir_in_hd_by_lemmino-200.png %}</p>
+
+<p>But… as the time passes… I feel like Homer applying for the university, something like:</p>
+
+<p>{% img /images/homer205ei9.png %}</p>
+
+<p>Since in 10Pines we reached a successful migration I want to share with you our experience on the road. Also, I want this post to be as short as it can be in order to be handy and easy to read, so, if you have doubts please leave a comment!</p>
+
+<blockquote>
+<p><strong>Context</strong>:
+In 10Pines we work with a set of tools to help us building robust software. The main tools are Jenkins (+sonar+findbugs) for continuous integration, Github and Artifactory for artifacts management, among others. Our goal is to <strong>upgrade Java without losing our environment</strong> (including our metrics) in our existing projects.</p>
+</blockquote>
+
+<p>#Lessons learned</p>
+
+<p>##1) Retrocompatibility
+We all know the efforts made by the Java team to allow retrocompatibility (maybe… it’s even too much), but… it’s true… so if you just change your java version and compile as Java 8 everything is wonderful.</p>
+
+<p>BUT I dare you to go to your largest project and replace the first (and horrible) loop with a (beautiful) lambda and see what happens…</p>
+
+<p>{% img /images/parliamentExplosion.jpg %}</p>
+
+<p>The lesson learned here is that:</p>
+
+<blockquote>
+<p>Java is retrocompatible BUT the frameworks not necessarily are…</p>
+</blockquote>
+
+<p>Specially if you use “too much reflection”&hellip; let’s say javaasit or Spring or something who depends on Spring (almost everything!).</p>
+
+<p>##2) Be prepared to upgrade</p>
+
+<p>Yes… you have to upgrade your tools and dependencies and development environments and your application server…</p>
+
+<blockquote>
+<p>Basically, you&rsquo;ll have to upgrade pretty much everything, as a consecuence of 1)</p>
+</blockquote>
+
+<p>Here is a list of technologies that we had to upgrade:</p>
+
+<ul>
+<li>Spring</li>
+<li>Spring security</li>
+<li>Quartz</li>
+<li>Jacoco</li>
+<li>Jenkins</li>
+<li>Findbugs</li>
+<li>Sonar</li>
+<li>Tomcat</li>
+<li>Eclipse</li>
+</ul>
+
+<p>##3) Lambdas are not closures</p>
+
+<p>I don’t want to start a flame war here trying to define the concepts… but…
+&gt; If you consider a <em>closure</em> the one that you use in Smalltalk and a lambda the one that you have in Java 8 then be aware of the differences</p>
+
+<p>###Context awareness:</p>
+
+<p>####Scopes&hellip;</p>
+
+<p>You can NOT modify references outside the context, example:
+Smalltalk code:</p>
+
+<pre><code class="language-smalltalk">total := 0.
+numbers do: [ :number | total := total + number ]
+</code></pre>
+
+<p>Java (ideal) but <strong>not working</strong> code (because you cannot modify non final variables in the local scope):</p>
+
+<pre><code class="language-java">Integer total = 0;
+numbers.forEach(number -&gt; total = total + number);
+</code></pre>
+
+<p>Java <strong>working</strong> code :</p>
+
+<pre><code class="language-java">final AtomicInteger total = new AtomicInteger(0);
+numbers.forEach(number -&gt; total.set(total.get() + number));
+</code></pre>
+
+<p>Summary:</p>
+
+<blockquote>
+<p>You have the same restrictions as inside an inner class</p>
+</blockquote>
+
+<p>####Return&hellip;</p>
+
+<p>When you are in a lambda you return from the lambda and not from the whole context:
+Smalltalk:</p>
+
+<pre><code class="language-smalltalk">theReturnCase
+	|example|
+	example := [ ^5 ]
+	example value
+	^ 10
+</code></pre>
+
+<p>If you invoke <code>theReturnCase()</code>, you get 5!</p>
+
+<p>Java:</p>
+
+<pre><code class="language-java">private static Integer theReturnCase() {
+	Supplier&lt;Integer&gt; example = () -&gt; {return 5;};
+	example.get();
+	return 10;
+}
+</code></pre>
+
+<p>If you invoke <code>theReturnCase()</code>, you get 10!</p>
+
+<blockquote>
+<p>I think that the best strategy is the one in Ruby where I can choose the behavior I want. Anyway it&rsquo;s allways good to know the result</p>
+</blockquote>
+
+<p>##4) New default options</p>
+
+<p>There are a lot of changes, <em>even the default options for generating javadoc</em>. This is important specially if you use a plugin like maven-release-plugin, because maybe you are as lucky as us… and now your build fails because your javadoc have some errors&hellip;</p>
+
+<p>{% img /images/fuuu.jpg %}</p>
+
+<p>This is because we have a new default when generating javadoc! It&rsquo;s a strict check, so if you have some errors like for example: <code>@see com.tenpines.commons.persistence.entities.Fechable</code> and this class has been renamed now you have a failing javadoc, and your build is failing.</p>
+
+<p>You can correct it, in fact you should correct it. But you can also change the option of fail on javadoc errors.</p>
+
+<p>##5) Streams have too much potential</p>
+
+<p>{% img /images/tooMuchPotencial.png %}</p>
+
+<p>Yes, they can be asynchronous, parallel, lazy ….
+But for a simple usage they are verbose, ok we are java programmers and we are used to that, but time to time I think why Oracle? why?</p>
+
+<p>Let’s say you want to select the older people from a list:</p>
+
+<p>In Smalltalk:</p>
+
+<pre><code class="language-smalltalk">people select: [ :p | p.isOlder]
+</code></pre>
+
+<p>Now in Java 8:</p>
+
+<pre><code class="language-smalltalk">people.stream().filter(p -&gt; p.isOlder()).collect(Collectors.toList()))
+</code></pre>
+
+<blockquote>
+<p>We have to obtain a new object that can understand <strong>filter</strong> (the famous Stream), then we have to declare the filter condition and finally obtain the filtered list</p>
+</blockquote>
+
+<p>Stream of Java8 works with operations and terminators, <strong>collect</strong> is a terminator which obtains a list containing the result of applying all the operations, in our example a list of Person.
+If you are a little curious and explore the Collector&rsquo;s  API and documentation, at least for me, it&rsquo;s quite confusing but fortunately we are provided with usefull implementations. For our example we want an innocent list and we don´t care about other stuff, so it&rsquo;s ok.</p>
+
+<p>#Good things are waiting for you</p>
+
+<p>Yes, we had a hard time in the beginning (specially, because we did this like one year ago), but the truth is that our code has been improving a lot, specially with the new Date API and the existence of lambdas, we are able to build better abstractions, and yes:</p>
+
+<ul>
+<li>For simple usage streams are verbose, but it’s VERY easy to build something to improve that.</li>
+<li>You have to upgrade, but it’s a good practice for you to be up to date, specially with frameworks that include lot of updates and bug fixes.</li>
+<li>Maybe your javadoc is failing but it sounds to me that it&rsquo;s time to think Why do you have wrong javadocs? Also, if you are in a hurry you can change the default easily</li>
+<li>Lambdas are not closure and that is really sad (at least for me)… although at the end of the day I’m happy to have this concept and we should push for improve it.</li>
+</ul>
+
+<blockquote>
+<p>Java 8 it’s not all about lambdas! We have a lot of interesting new features that gives us more tools to keep improving.</p>
+</blockquote>
+
+<p>With more time we can write another post giving examples of our code improvements and talking about our “experiments” simplifying the language, but that is another story. Just for now:</p>
+
+<blockquote>
+<p>Upgrade should be the path to follow. Maybe it’s a little rough, but today we are very happy with our decision.</p>
+</blockquote>
+
+  			</section>
+
+  			<footer class="post-footer">
+  				<div class="post-tags">
+            
+  				</div>
+  				<div class="post-share">
+  					<a class="icon-twitter" href="https://twitter.com/share?text=How%20to%20gently%20upgrade%20your%20Java%20application&url=http%3a%2f%2fblog.10pines.com%2f2015%2f06%2f15%2fhow-to-gently-upgrade-your-java-application%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+  						<span>Twitter</span>
+  					</a>
+  					<a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fblog.10pines.com%2f2015%2f06%2f15%2fhow-to-gently-upgrade-your-java-application%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+  						<span>Facebook</span>
+  					</a>
+  					<a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fblog.10pines.com%2f2015%2f06%2f15%2fhow-to-gently-upgrade-your-java-application%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+  						<span>Google+</span>
+  					</a>
+  				</div>
+  			</footer>
+
+  			<aside class="post-comments">
+    
+    
+    <div id="disqus_thread"></div>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+    
+</aside>
+
+
+			</div>
+
+			<nav class="post-nav">
+				
+					<a class="post-nav-item post-nav-next" href="http://blog.10pines.com/2015/07/13/enterprise-lean-canvas/">
+						<section class="post-nav-teaser">
+							<span class="post-nav-icon"><i class="icon-arrow-left"></i></span>
+							<span class="post-nav-info">
+								<h4 class="post-nav-title">Enterprise Lean Canvas</h4>
+								<p class="post-nav-excerpt">&hellip;</p>
+							</span>
+						</section>
+					</a>
+				
+				
+					<a class="post-nav-item post-nav-prev" href="http://blog.10pines.com/2015/05/19/java-interface-default-methods/">
+						<section class="post-nav-teaser">
+							<span class="post-nav-icon"><i class="icon-arrow-right"></i></span>
+							<span class="post-nav-info">
+								<h4 class="post-nav-title">Java Interface Default Methods. What?</h4>
+								<p class="post-nav-excerpt">&hellip;</p>
+							</span>
+						</section>
+					</a>
+				
+				<div class="clear"></div>
+			</nav>
+
+		</div>
+	</article>
+</main>
+
+				<div id="body-class" style="display: none;"></div>
+				<footer id="footer">
+					<section class="credits">
+						<span class="credits-theme">Theme <a href="https://github.com/zenithar/hugo-theme-bleak" target="_blank" rel="nofollow">Bleak</a> by <a href="http://zutrinken.com" target="_blank" rel="nofollow">zutrinken</a></span>
+						<span class="credits-software">Published with <a href="http://gohugo.io" target="_blank" rel="nofollow">Hugo</a></span>
+					</section>
+				</footer>
+				
+				
+<div id="tocMenu" data-target="toc">
+    <div class="menu-header">
+        <span class="menu-label">Menu</span>
+        <a class="menu-close" data-action="toc" data-target="toc"></a>
+    </div>
+    <div id="toc" class="menu-list">
+        
+    </div>
+</div>
+
+
+				<div class="overlay"></div>
+			</div>
+		</section>
+
+    <script>
+      (function(c,f){asyncLoader=function(i,h){i.foreach(function(k,j){e(j,d(j),h)});if(typeof h.callback=="function"){var g=setInterval(function(){if(f.readyState==="complete"){clearInterval(g);h.callback()}},10)}};var d=function(g){var h=g.split(".");return h[h.length-1]},e=function(h,i,g){switch(i){case"js":a(h,g);break;case"css":b(h);break;default:break}},a=function(i,h){var g=document.createElement("script");g.type="text/javascript";g.async=true;g.src=i;document.getElementsByTagName("head")[0].appendChild(g)},b=function(g){var h=document.createElement("link");h.type="text/css";h.rel="stylesheet";h.href=g;document.getElementsByTagName("head")[0].appendChild(h)};Array.prototype.foreach=function(h){for(var g=0;g<this.length;g++){h(g,this[g])}}})(this,document);
+
+      asyncLoader([
+				"/js/dependencies.js",
+				"/css/dependencies.css"
+      ],{
+        callback:function(){
+					asyncLoader([
+						"/css/style.css",
+						"/js/script.js"
+					], {
+						callback: function() {
+							$('body').fadeIn( 800 );
+						}
+					});
+        }
+      });
+
+</script>
+
+
+
+</body>
+</html>
+

@@ -1,0 +1,480 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+
+    <head>
+
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <meta property="og:title" content=" Rock Your Ruby: The Value of Value &middot;  10 Pines Blog" />
+        <meta property="og:site_name" content="10 Pines Blog" />
+        <meta property="og:url" content="http://blog.10pines.com/2014/03/04/rock-your-ruby-the-value-of-value/" />
+
+    
+        <meta property="og:type" content="article" />
+        <meta property="og:article:published_time" content="2014-03-04T00:00:00Z" />
+        
+
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@" />
+        <meta name="twitter:creator" content="@" />
+        <meta name="twitter:title" content="Rock Your Ruby: The Value of Value" />
+        <meta name="twitter:description" content="" />
+        <meta name="twitter:url" content="http://blog.10pines.com/2014/03/04/rock-your-ruby-the-value-of-value/" />
+    
+
+        <title> Rock Your Ruby: The Value of Value &middot;  10 Pines Blog</title>
+
+    
+        <meta name="description" content="" />
+    
+
+        <meta name="p:domain_verify" content="fc173d84e3a4de948ed4bda2908afd3e"/>
+        <meta name="HandheldFriendly" content="True" />
+        <meta name="MobileOptimized" content="320" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        
+        
+
+    
+        <link href="http://blog.10pines.com/index.xml" rel="alternate" type="application/rss+xml" title="10 Pines Blog" />
+    
+
+    
+        <link rel="canonical" href="http://blog.10pines.com/2014/03/04/rock-your-ruby-the-value-of-value/" />
+
+    
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "Rock Your Ruby: The Value of Value",
+        "author": {
+            "@type": "Person",
+            "name": "http://profiles.google.com/?rel=author"
+        },
+        "datePublished": "2014-03-04",
+        "description": "",
+        "wordCount":  1254 
+    }
+
+    </script>
+
+    <script type="text/javascript">
+    
+    
+      var disqus_shortname = '10pinesblog';
+      var disqus_identifier = 'http:\/\/blog.10pines.com\/2014\/03\/04\/rock-your-ruby-the-value-of-value\/';
+      var disqus_title = 'Rock Your Ruby: The Value of Value';
+      var disqus_url = 'http:\/\/blog.10pines.com\/2014\/03\/04\/rock-your-ruby-the-value-of-value\/';
+    
+
+    </script>
+    
+
+    <style>
+@charset "UTF-8";article,header,img,main,nav,section{display:block}blockquote,p,pre,ul{margin:2em auto}#wrapper,pre{width:100%;box-sizing:border-box}#nav,#wrapper,code{position:relative}#nav,body{background:#fff}#menu,blockquote,pre code{background:0 0}#menu,#menu .menu-header,#menu .menu-list,#wrapper,.post-nav .post-nav-item .post-nav-teaser .post-nav-info,blockquote,pre{box-sizing:border-box}img{border:0;max-width:100%;height:auto;margin:2.5em auto}html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}code,pre{font-family:monospace,monospace;font-size:1em}@font-face{font-family:'Merriweather Sans';font-style:normal;font-weight:300;src:local("Merriweather Sans Light"),local("MerriweatherSans-Light"),url(//fonts.gstatic.com/s/merriweathersans/v5/6LmGj5dOJopQKEkt88GowY_zIojJi0m4a5Z6tRh6itY.woff) format("woff")}@font-face{font-family:'Merriweather Sans';font-style:normal;font-weight:400;src:local("Merriweather Sans Regular"),local("MerriweatherSans-Regular"),url(//fonts.gstatic.com/s/merriweathersans/v5/AKu1CjQ4qnV8MUltkAX3sL2aU247V0zTzydO4RoO9Ok.woff) format("woff")}@font-face{font-family:'Merriweather Sans';font-style:normal;font-weight:700;src:local("Merriweather Sans Bold"),local("MerriweatherSans-Bold"),url(//fonts.gstatic.com/s/merriweathersans/v5/6LmGj5dOJopQKEkt88GowQfd-b-I5PxxcmB4_-MNcqw.woff) format("woff")}@font-face{font-family:'Merriweather Sans';font-style:normal;font-weight:800;src:local("Merriweather Sans ExtraBold"),local("MerriweatherSans-ExtraBold"),url(//fonts.gstatic.com/s/merriweathersans/v5/6LmGj5dOJopQKEkt88GowWT7sFQ1Iz1BbpcuCPlgc9Q.woff) format("woff")}@font-face{font-family:'Merriweather Sans';font-style:italic;font-weight:300;src:local("Merriweather Sans Light Italic"),local("MerriweatherSans-LightItalic"),url(//fonts.gstatic.com/s/merriweathersans/v5/nAqt4hiqwq3tzCecpgPmVX9UU5BmOJGkLxUCVv5VXdc.woff) format("woff")}@font-face{font-family:'Merriweather Sans';font-style:italic;font-weight:400;src:local("Merriweather Sans Italic"),local("MerriweatherSans-Italic"),url(//fonts.gstatic.com/s/merriweathersans/v5/3Mz4hOHzs2npRMG3B1ascf0KIgDhPIHb_R-SWdtqte8.woff) format("woff")}@font-face{font-family:'Merriweather Sans';font-style:italic;font-weight:700;src:local("Merriweather Sans Bold Italic"),local("MerriweatherSans-BoldItalic"),url(//fonts.gstatic.com/s/merriweathersans/v5/nAqt4hiqwq3tzCecpgPmVYM8pfYvjMoOxygpzLVILAs.woff) format("woff")}@font-face{font-family:Inconsolata;font-style:normal;font-weight:400;src:local("Inconsolata"),url(//fonts.gstatic.com/s/inconsolata/v12/BjAYBlHtW3CJxDcjzrnZCIbN6UDyHWBl620a-IRfuBk.woff) format("woff")}@font-face{font-family:Inconsolata;font-style:normal;font-weight:700;src:local("Inconsolata Bold"),local("Inconsolata-Bold"),url(//fonts.gstatic.com/s/inconsolata/v12/AIed271kqQlcIRSOnQH0yTqR_3kx9_hJXbbyU8S6IN0.woff) format("woff")}@font-face{font-family:icons;src:url(/fonts/icons.eot?9273991);src:url(/fonts/icons.eot?9273991#iefix) format("embedded-opentype"),url(/fonts/icons.woff?9273991) format("woff"),url(/fonts/icons.ttf?9273991) format("truetype"),url(/fonts/icons.svg?9273991#icons) format("svg");font-weight:400;font-style:normal}[class^=icon-]:before{font-family:icons;font-style:normal;font-weight:400;speak:none;display:inline-block;text-decoration:inherit;width:1em;margin-right:.2em;text-align:center;font-variant:normal;text-transform:none;line-height:1em;margin-left:.2em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.icon-arrow-left:before{content:'\e804'}.icon-arrow-right:before{content:'\e807'}.icon-rss:before{content:'\e808'}.icon-menu:before{content:'\e809'}body{margin:0;font:300 1em/1.5em 'Merriweather Sans',sans-serif;color:#595B66}blockquote,i{font-style:italic}code,pre{font-family:Inconsolata,monospace}a,blockquote,code,i{font-weight:400}::-moz-selection{color:#222;background:#D6EDFF;text-shadow:none}::-moz-selection,::selection{color:#222;background:#D6EDFF;text-shadow:none}a{background-color:transparent;color:inherit;text-decoration:none;transition:all ease-out .2s}.post-content a{border-bottom:2px solid #36D995}h1,h4{text-rendering:optimizeLegibility;color:#1F2026}h1{font-size:2em;line-height:1em;margin:2em 0 -.5em}h4{font-size:1.25em;line-height:1.2em;margin:2.4em 0 -.8em}ul{list-style:none;padding-left:3em}blockquote{padding:0 1em;border-left:.25em solid #D4D5D9;color:#595B66}blockquote *{margin:1em auto}blockquote :first-child{margin-top:0}blockquote :last-child{margin-bottom:0}i{color:#363740}code{display:inline-block;top:-1px;padding:3px 6px;margin:-1px 2px;font-size:.875em;line-height:1.143em;background:#E1E2E6;color:#000;border-radius:2px}pre{padding:1em;white-space:pre;overflow:auto;background:#9D9FA6;color:#fff}pre code{position:static;top:auto;font-size:1em;line-height:1.5em;white-space:-moz-pre-wrap;white-space:pre-wrap;vertical-align:inherit;border:none;padding:0}#menu .menu-header:before,.post .post-title:before{border-bottom:4px solid #36D995;content:''}.inner{max-width:48em;margin:0 auto;padding:0 1em}#wrapper{min-height:100vh;padding-bottom:6em;background:#F2F3F5}#push{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0);-webkit-transform-style:preserve-3d;transform-style:preserve-3d;opacity:1}#nav{z-index:70;transition:all ease-out .4s;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0);-webkit-transform-style:preserve-3d;transform-style:preserve-3d;opacity:1}#nav:after{clear:both;content:'';display:table}#nav .nav-logo{float:left;height:2em;padding:1em;max-width:50%}#nav .nav-logo img{width:auto;max-width:none;height:2em;margin:0}#nav .nav-menu{float:right}#nav .nav-menu:after{clear:both;content:'';display:table}#nav .nav-menu a{display:block;width:1em;height:1em;line-height:1em;padding:1.5em;text-align:center;float:left;cursor:pointer}#nav .nav-menu a i:before{margin:auto}#menu{display:none;position:fixed;left:50%;top:5%;width:30em;height:90%;margin-left:-15em;padding:3em 0 0;overflow:hidden;transition:all ease-out .3s;-webkit-transform:translate3d(0,2em,0);transform:translate3d(0,2em,0);-webkit-transform-style:preserve-3d;transform-style:preserve-3d;opacity:0;z-index:100}@media only screen and (max-width:50em){#menu{width:90%;left:5%;margin-left:auto}}#menu .menu-header{position:absolute;left:0;top:0;width:100%;height:3.5em;padding:1em 1.5em .5em;margin-bottom:1em;line-height:2em;z-index:110;background:#fff}#menu .menu-header:before{position:absolute;left:-5%;bottom:-1em;width:110%;height:2em;background:#fff;box-shadow:0 .125em .125em rgba(0,0,0,.1);-webkit-transform:rotate(2.5deg);transform:rotate(2.5deg);transition:all ease-out .2s;z-index:115}#menu .menu-header:after{clear:both;content:'';display:table}#menu .menu-header .menu-label{position:relative;display:block;float:left;z-index:120}#menu .menu-header .menu-close{position:relative;display:block;float:right;width:2em;height:2em;padding:1em;margin:-1em -1.5em -1em 0;cursor:pointer;z-index:125}#menu .menu-header .menu-close:after,#menu .menu-header .menu-close:before{content:'';position:absolute;left:50%;top:50%;background:#9D9FA6;-webkit-transform:rotate(45deg);transform:rotate(45deg)}.overlay,.overlay:before{top:0;width:100%;height:100%}#menu .menu-header .menu-close:after{width:2px;height:1em;margin:-.5em 0 0 -1px}#menu .menu-header .menu-close:before{width:1em;height:2px;margin:-1px 0 0 -.5em}#menu .menu-list{position:relative;list-style:none;margin:0;padding:2em 0;height:100%;overflow-x:hidden;overflow-y:scroll;background:#fff}.overlay{position:fixed;left:0;z-index:80;display:none}.overlay:before{content:'';position:absolute;left:0;background:#1F2026;opacity:0;transition:all ease-out .3s;-webkit-transform-style:preserve-3d;transform-style:preserve-3d}.post{position:relative;z-index:20}.post .post-meta{display:block;font-size:.75em;line-height:1.334em;font-weight:400;margin-bottom:1.334em}.post .post-title{position:relative;color:#000;font-size:2em;line-height:1.375em;font-weight:800;text-indent:-1px;margin:.25em 0 .75em}.post .post-title:before{position:absolute;left:0;bottom:-.334em;width:1em;margin-bottom:-2px}.post .post-header{padding:4em 0 0;margin-bottom:3em}.post-footer .post-share a span{display:none}.post-nav .post-nav-item{position:fixed;top:50%;display:block;margin-top:-4em;overflow:hidden;border-radius:10em;transition:none}@media only screen and (max-width:70em){.post-nav .post-nav-item{position:absolute;top:auto;margin:auto;max-width:50%}}.post-nav .post-nav-item.post-nav-next{left:0;text-align:left}.post-nav .post-nav-item.post-nav-next .post-nav-icon{float:left}.post-nav .post-nav-item.post-nav-next .post-nav-icon i{left:-.05em}.post-nav .post-nav-item.post-nav-next .post-nav-info{padding-left:6em}.post-nav .post-nav-item.post-nav-prev{right:0;text-align:right}.post-nav .post-nav-item.post-nav-prev .post-nav-icon{float:right}.post-nav .post-nav-item.post-nav-prev .post-nav-icon i{right:-.05em}.post-nav .post-nav-item.post-nav-prev .post-nav-info{padding-right:6em}.post-nav .post-nav-item .post-nav-teaser{display:block;padding:1em;transition:all ease-out .2s;max-width:25em;overflow:visible}.post-nav .post-nav-item .post-nav-teaser:after{clear:both;content:'';display:table}.post-nav .post-nav-item .post-nav-teaser .post-nav-icon{display:block;width:5em;height:5em;line-height:5em;text-align:center;box-sizing:border-box;border-radius:10em;border:1px solid #36D995;box-shadow:0 0 0 0 transparent;transition:all ease-out .1s;background:#F2F3F5}.post-nav .post-nav-item .post-nav-teaser .post-nav-icon i{position:relative;font-size:2em}@media only screen and (max-width:30em){.post-nav .post-nav-item .post-nav-teaser .post-nav-icon{width:4em;height:4em;line-height:4em}.post-nav .post-nav-item .post-nav-teaser .post-nav-icon i{font-size:1.5em}}.post-nav .post-nav-item .post-nav-teaser .post-nav-icon i:before{margin:auto}.post-nav .post-nav-item .post-nav-teaser .post-nav-info{display:none;width:100%;transition:all ease-out .2s}.post-nav .post-nav-item .post-nav-teaser .post-nav-info .post-nav-title{display:block;max-height:1.25em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;margin:1.25em 0 .25em;font-size:1em;line-height:1.25em;font-weight:700;color:#363740}.post-nav .post-nav-item .post-nav-teaser .post-nav-info .post-nav-excerpt{display:block;max-height:1.334em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;margin:0;font-size:.75em;line-height:1.334em;font-weight:400;color:#9D9FA6}
+</style>
+
+
+    </head>
+    <body class="home-template" style="display: none;">
+      <section id="wrapper">
+        <div id="ajax-container">
+          <nav id="nav" class="nav">
+            <div class="nav-logo">
+              <a href="http://blog.10pines.com/">
+      			  	
+      			  	
+      			  	<img src="http://blog.10pines.com/images/10p-logo.png" alt="Logo"/>
+      			  	
+              </a>
+			  	    
+            </div>
+            <div class="nav-menu">
+              <a class="rss" href="">
+                <i class="icon-rss"></i>
+              </a>
+                
+                <a class="menu" data-action="toc" data-target="toc"><i class="icon-location"></i></a>
+                
+                
+            </div>
+          </nav>
+
+
+<main class="content" role="main">
+	<article class="post">
+		<div class="inner">
+
+			<div id="push">
+
+  			<header class="post-header">
+  				<span class="post-meta">
+						<span class="post-date">4 Mar 2014</span> <span class="reading-time">| <span class="estimated-reading-time">6 min.</span> (<span class="word-count">1254</span> words)</span></span>
+  				</span>
+  				<div class="clear"></div>
+  				<h1 class="post-title">Rock Your Ruby: The Value of Value</h1>
+  			</header>
+
+  			<section class="post-content">
+  				
+
+<p>Check out the Ruby Gem at <a href="https://github.com/10Pines/value_protocol">GitHub</a></p>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>Go ahead and ask the developer sitting next to you what is the thing that loves
+the most about Ruby. It should come as no surprise that simplicity, flexibility
+and expressiveness are the main reasons Ruby junkies just can&rsquo;t get enough of
+it.</p>
+
+<p>In Matz own words, seems like the &lsquo;go with the flow&rsquo; philosophy was present
+right from the start in the Ruby community:</p>
+
+<p>{% blockquote %}
+&ldquo;Actually, I&rsquo;m trying to make Ruby natural, not simple.&rdquo;
+{% endblockquote %}</p>
+
+<h2 id="cuttin-loose-from-the-language-cliché">Cuttin&rsquo; loose from the language cliché</h2>
+
+<p>I do believe in the principles and values Ruby was built upon, but I don&rsquo;t like
+clichés. We should be critic about the restrictions a programming language
+impose on us, and really pay attention when things don&rsquo;t feel right.</p>
+
+<p>Here&rsquo;s a concrete example to show you what I&rsquo;m talking about. Check out these
+uses of the <code>:detect</code> message:</p>
+
+<pre><code class="language-ruby">
+discount_rules.detect(lambda{ default_discount_rule }) { |rule| rule.applies_on? a_product }
+students.detect(lambda{ anonymous_student }) { |student| student.is_named? 'John' }
+
+</code></pre>
+
+<p>Do they &lsquo;feel natural&rsquo; to you? Do you think there is something wrong with them?
+Take another look.</p>
+
+<h2 id="noise-duplication">Noise &amp; Duplication</h2>
+
+<p>There are two things that fire my alarms about these examples.</p>
+
+<p>First, the unnecessary noisy syntax<sup class="footnote-ref" id="fnref:1"><a rel="footnote" href="#fn:1">1</a></sup> needed to pass the block that gets
+evaluated when no object matched the <code>:detect</code> condition<sup class="footnote-ref" id="fnref:2"><a rel="footnote" href="#fn:2">2</a></sup>. I feel that
+departs from the original intent of Ruby (to feel natural to the developer) by
+forcing the use of &lsquo;tech&rsquo; terms.</p>
+
+<p>Second, the presence of repeated code. I don&rsquo;t mind writing blocks if I really
+need to, but they seem overkill when all I want is to return an object to handle
+the &ldquo;if none&rdquo; case.</p>
+
+<h2 id="dealing-with-duplicated-code">Dealing with duplicated code</h2>
+
+<p>In the Object Oriented paradigm repeated code is a symptom of a missing
+abstraction, a concept that is not being modeled. As a consequence, what would
+be its implementation is scattered around the methods that were supposed to use
+it.</p>
+
+<p>It should be clear from the examples that repeated code does not mean repeated
+text, but repeated collaborations of message sends. These examples were choosen
+to demonstrate that repeating code involves repeating collaborations of message
+sends, instead of simply repeating text<sup class="footnote-ref" id="fnref:3"><a rel="footnote" href="#fn:3">3</a></sup>.</p>
+
+<p>Let&rsquo;s take a look at what is repeated, and what is not, between the two uses of
+<code>:detect</code>:</p>
+
+<pre><code class="language-ruby">
+discount_rules.detect(lambda{ default_discount_rule }) { |rule| rule.applies_on? a_product }
+students.detect(lambda{ anonymous_student }) { |student| student.is_named? 'John' }
+
+# the collaboration pattern seems to be:
+FOO.detect(lambda{ BAR }) { BAZ }
+
+</code></pre>
+
+<p>Whenever we want to return an object when no object matches a condition we&rsquo;re
+wrapping it with a <code>lambda</code>, because that is what the <code>:detect</code> message expects
+as first collaborator.</p>
+
+<p>One way to go would be to add a new method to the <code>Enumerable</code> module that does
+the dirty lambda wrapping for us, but that solution would only work for
+<code>:detect</code>.</p>
+
+<p>It would be great to come up with a more generic solution, one that works for
+any method that expects a block to be passed in.</p>
+
+<h2 id="designing-a-generic-solution">Designing a generic solution</h2>
+
+<p>We would like is to be able to express these examples in a more natural way,
+getting rid of the extra <code>lambda</code> parts:</p>
+
+<pre><code class="language-ruby">
+# look ma' no lambdas!
+discount_rules.detect(default_discount_rule) { |rule| rule.applies_on? a_product }
+students.detect(anonymous_student) { |student| student.is_named? 'John' }
+
+</code></pre>
+
+<p>Let&rsquo;s start solving this &ldquo;challenge&rdquo; not only by writing a test first, but
+writing the test&rsquo;s assert first:</p>
+
+<pre><code class="language-ruby">
+it 'should be possible to pass any object when a block without arguments is expected' do
+  apple = Object.new
+  fruits = []
+    
+  fruit = fruits.detect(apple) { |fruit| false }
+  
+  fruit.should == apple
+end
+
+</code></pre>
+
+<p>After running it (and watching it turn red) the failure message reveales the
+root of the problem:</p>
+
+<pre><code>NoMethodError: undefined method `call' for #&lt;Object:0x00000001390d68&gt;
+</code></pre>
+
+<p>Besides the missing message implementation, what this really means is that
+instances of <code>Object</code> are not polymorphic with lambdas (instances of <code>Proc</code>)
+with respect to the <code>:call</code> message.</p>
+
+<p>To make this tests pass, let&rsquo;s do the simplest thing possible and add the
+<code>:call</code> method returning <code>self</code> to <code>Object</code>.</p>
+
+<p>But hey, we can do better! What about being able to pass an arbitraty object to
+the <code>:select</code> method (which expects an <em>implicit</em> block that takes one external
+collaborator)?</p>
+
+<pre><code class="language-ruby">
+it 'should be possible to pass any object when an implicit block with arguments is expected' do
+  apple = Object.new
+  orange = Object.new
+  fruits = [apple, orangee]
+  apples_only = FruitFilter.new apple
+
+  selected_fruits = fruits.select &amp;apples_only
+
+  selected_fruits.should have(1).item
+  selected_fruits.should include apple
+end
+
+</code></pre>
+
+<p><em>FruitFilter<sup class="footnote-ref" id="fnref:4"><a rel="footnote" href="#fn:4">4</a></sup> is a test class I used to express better the intent of the
+test.</em></p>
+
+<p>This time, the failure message is a little more cryptic:</p>
+
+<pre><code>TypeError: wrong argument type Object (expected Proc)
+</code></pre>
+
+<p>We need an instance of <code>Proc</code> to be passed in to <code>:select</code>. The unary <code>&amp;</code>
+operator converts blocks to procs, but <code>Object</code> is not a <code>proc</code> and neither
+knows how to respond to the <code>:to_proc</code> message that gets sent when using <code>&amp;</code>.</p>
+
+<p>Let&rsquo;s do the simplest thing to pass the test, and implement <code>:to_proc</code> in
+<code>Object</code>, returning a <code>proc</code> that evaluates <code>self.call</code> (that was implemented in
+the first test).</p>
+
+<p>Here&rsquo;s how <code>Object</code> looks like after passing the tests:</p>
+
+<pre><code class="language-ruby">
+class Object
+
+  def call *args
+    self
+  end
+
+  def to_proc
+    proc{ |*args| self.call *args }
+  end
+
+end
+
+</code></pre>
+
+<p><em>There are still some test cases left to be consider to make sure everything
+works as expected/nothing was broken (like backwards compatibility with <code>Proc</code>,
+<code>Method</code> and <code>Symbol</code> <code>:call</code> and <code>:to_proc</code> methods)<sup class="footnote-ref" id="fnref:5"><a rel="footnote" href="#fn:5">5</a></sup>.</em></p>
+
+<h2 id="what-s-the-deal-with-the-value-of-value">What&rsquo;s the deal with the &ldquo;Value of Value&rdquo;?</h2>
+
+<p>The need to reduce the friction when working with blocks was motivated by the
+way Smalltalk solves the problem. Any object knows how to respond to the
+<code>#value</code> message (which behaves in the same as the <code>:call</code> message just
+implemented).</p>
+
+<p>Even though the implementation is pretty straight forward, just returning
+<code>self</code>, relying on <code>#value</code> in Smalltalk allows us to express domain concepts
+better, making the code easier to read by dealing with objects or blocks in the
+same way<sup class="footnote-ref" id="fnref:6"><a rel="footnote" href="#fn:6">6</a></sup>.</p>
+
+<p>From my point of view, it is a little method that adds great value.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>By working the solution step by step through TDD, we&rsquo;re now in a position to
+explain and tell the cause of repeated code in the initial examples: instances
+of <code>Object</code> were not polymorphic with instances of <code>Proc</code>. That forced us to
+wrap objects in lambdas so <code>:detect</code> could work as expected.</p>
+
+<p>Two missing abstractions (methods, in this case) were implemented in <code>Object</code> to
+get rid of repeated code, <code>:call</code> and <code>:to_proc</code> methods.</p>
+
+<p>Besides the immediate benefit of the implemented feature, I really enjoyed the
+oportunity to strictly follow the OO paradigm and TDD to see how far they can be
+taken. I valued the fact that Ruby can be modified to make it fit my needs.</p>
+
+<p>Do not take for granted a language is expressive or feels natural just because
+that&rsquo;s what the documentations says and the community accepts it without
+questioning. Learn from the past (as we did from Smalltalk in this case) to
+avoid reinventing the flat tire.</p>
+
+<p>Don&rsquo;t get trapped in the language cliché. Build your own Ruby.</p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:1">I&rsquo;m talking about the <code>lambda</code>/<code>proc</code> keywords preceding the braces needed to create a <code>Proc</code>.
+ <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
+<li id="fn:2">see <code>:detect</code> method documentation at <a href="http://ruby-doc.org/core-2.1.0/Enumerable.html#method-i-detect">RubyDoc</a>
+ <a class="footnote-return" href="#fnref:2"><sup>[return]</sup></a></li>
+<li id="fn:3">If you want to understand or learn more about this concept, enroll in one of our courses! See <a href="http://www.10pines.com/training/listado-cursos/diseno-avanzado-de-software-con-objetos-i">Diseño Avanzado de Software Con Objetos I</a> and <a href="http://www.10pines.com/training/listado-cursos/diseno-avanzado-de-software-con-objetos-ii">Diseño Avanzado de Software Con Objetos II</a>
+ <a class="footnote-return" href="#fnref:3"><sup>[return]</sup></a></li>
+<li id="fn:4">FruitFilter <a href="https://github.com/10Pines/value_protocol/blob/master/spec/fruit_filter.rb">source code</a>
+ <a class="footnote-return" href="#fnref:4"><sup>[return]</sup></a></li>
+<li id="fn:5">Check the whole test suite at <a href="https://github.com/10Pines/value_protocol/tree/master/spec">GitHub</a>
+ <a class="footnote-return" href="#fnref:5"><sup>[return]</sup></a></li>
+<li id="fn:6">Dont&rsquo; just stand there! Go ahead, grab a copy of <a href="http://pharo.org/">Pharo</a> (a Smalltalk dialect) and browse for implementors and senders of <code>#value</code>
+ <a class="footnote-return" href="#fnref:6"><sup>[return]</sup></a></li>
+</ol>
+</div>
+
+  			</section>
+
+  			<footer class="post-footer">
+  				<div class="post-tags">
+            
+  				</div>
+  				<div class="post-share">
+  					<a class="icon-twitter" href="https://twitter.com/share?text=Rock%20Your%20Ruby%3a%20The%20Value%20of%20Value&url=http%3a%2f%2fblog.10pines.com%2f2014%2f03%2f04%2frock-your-ruby-the-value-of-value%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+  						<span>Twitter</span>
+  					</a>
+  					<a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fblog.10pines.com%2f2014%2f03%2f04%2frock-your-ruby-the-value-of-value%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+  						<span>Facebook</span>
+  					</a>
+  					<a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fblog.10pines.com%2f2014%2f03%2f04%2frock-your-ruby-the-value-of-value%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+  						<span>Google+</span>
+  					</a>
+  				</div>
+  			</footer>
+
+  			<aside class="post-comments">
+    
+    
+    <div id="disqus_thread"></div>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+    
+</aside>
+
+
+			</div>
+
+			<nav class="post-nav">
+				
+					<a class="post-nav-item post-nav-next" href="http://blog.10pines.com/2014/03/21/rethinking-estimations/">
+						<section class="post-nav-teaser">
+							<span class="post-nav-icon"><i class="icon-arrow-left"></i></span>
+							<span class="post-nav-info">
+								<h4 class="post-nav-title">Rethinking Estimations</h4>
+								<p class="post-nav-excerpt">&hellip;</p>
+							</span>
+						</section>
+					</a>
+				
+				
+					<a class="post-nav-item post-nav-prev" href="http://blog.10pines.com/2014/02/01/refactoring-legacy-code-story/">
+						<section class="post-nav-teaser">
+							<span class="post-nav-icon"><i class="icon-arrow-right"></i></span>
+							<span class="post-nav-info">
+								<h4 class="post-nav-title">Refactoring legacy code story</h4>
+								<p class="post-nav-excerpt">&hellip;</p>
+							</span>
+						</section>
+					</a>
+				
+				<div class="clear"></div>
+			</nav>
+
+		</div>
+	</article>
+</main>
+
+				<div id="body-class" style="display: none;"></div>
+				<footer id="footer">
+					<section class="credits">
+						<span class="credits-theme">Theme <a href="https://github.com/zenithar/hugo-theme-bleak" target="_blank" rel="nofollow">Bleak</a> by <a href="http://zutrinken.com" target="_blank" rel="nofollow">zutrinken</a></span>
+						<span class="credits-software">Published with <a href="http://gohugo.io" target="_blank" rel="nofollow">Hugo</a></span>
+					</section>
+				</footer>
+				
+				
+<div id="tocMenu" data-target="toc">
+    <div class="menu-header">
+        <span class="menu-label">Menu</span>
+        <a class="menu-close" data-action="toc" data-target="toc"></a>
+    </div>
+    <div id="toc" class="menu-list">
+        <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#cuttin-loose-from-the-language-cliché">Cuttin&rsquo; loose from the language cliché</a></li>
+<li><a href="#noise-duplication">Noise &amp; Duplication</a></li>
+<li><a href="#dealing-with-duplicated-code">Dealing with duplicated code</a></li>
+<li><a href="#designing-a-generic-solution">Designing a generic solution</a></li>
+<li><a href="#what-s-the-deal-with-the-value-of-value">What&rsquo;s the deal with the &ldquo;Value of Value&rdquo;?</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+
+				<div class="overlay"></div>
+			</div>
+		</section>
+
+    <script>
+      (function(c,f){asyncLoader=function(i,h){i.foreach(function(k,j){e(j,d(j),h)});if(typeof h.callback=="function"){var g=setInterval(function(){if(f.readyState==="complete"){clearInterval(g);h.callback()}},10)}};var d=function(g){var h=g.split(".");return h[h.length-1]},e=function(h,i,g){switch(i){case"js":a(h,g);break;case"css":b(h);break;default:break}},a=function(i,h){var g=document.createElement("script");g.type="text/javascript";g.async=true;g.src=i;document.getElementsByTagName("head")[0].appendChild(g)},b=function(g){var h=document.createElement("link");h.type="text/css";h.rel="stylesheet";h.href=g;document.getElementsByTagName("head")[0].appendChild(h)};Array.prototype.foreach=function(h){for(var g=0;g<this.length;g++){h(g,this[g])}}})(this,document);
+
+      asyncLoader([
+				"/js/dependencies.js",
+				"/css/dependencies.css"
+      ],{
+        callback:function(){
+					asyncLoader([
+						"/css/style.css",
+						"/js/script.js"
+					], {
+						callback: function() {
+							$('body').fadeIn( 800 );
+						}
+					});
+        }
+      });
+
+</script>
+
+
+
+</body>
+</html>
+

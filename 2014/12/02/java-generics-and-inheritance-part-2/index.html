@@ -1,0 +1,414 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+
+    <head>
+
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <meta property="og:title" content=" Java generics and inheritance (part 2) &middot;  10 Pines Blog" />
+        <meta property="og:site_name" content="10 Pines Blog" />
+        <meta property="og:url" content="http://blog.10pines.com/2014/12/02/java-generics-and-inheritance-part-2/" />
+
+    
+        <meta property="og:type" content="article" />
+        <meta property="og:article:published_time" content="2014-12-02T17:10:14Z" />
+        
+
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@" />
+        <meta name="twitter:creator" content="@" />
+        <meta name="twitter:title" content="Java generics and inheritance (part 2)" />
+        <meta name="twitter:description" content="" />
+        <meta name="twitter:url" content="http://blog.10pines.com/2014/12/02/java-generics-and-inheritance-part-2/" />
+    
+
+        <title> Java generics and inheritance (part 2) &middot;  10 Pines Blog</title>
+
+    
+        <meta name="description" content="" />
+    
+
+        <meta name="p:domain_verify" content="fc173d84e3a4de948ed4bda2908afd3e"/>
+        <meta name="HandheldFriendly" content="True" />
+        <meta name="MobileOptimized" content="320" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        
+        
+
+    
+        <link href="http://blog.10pines.com/index.xml" rel="alternate" type="application/rss+xml" title="10 Pines Blog" />
+    
+
+    
+        <link rel="canonical" href="http://blog.10pines.com/2014/12/02/java-generics-and-inheritance-part-2/" />
+
+    
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "Java generics and inheritance (part 2)",
+        "author": {
+            "@type": "Person",
+            "name": "http://profiles.google.com/?rel=author"
+        },
+        "datePublished": "2014-12-02",
+        "description": "",
+        "wordCount":  1443 
+    }
+
+    </script>
+
+    <script type="text/javascript">
+    
+    
+      var disqus_shortname = '10pinesblog';
+      var disqus_identifier = 'http:\/\/blog.10pines.com\/2014\/12\/02\/java-generics-and-inheritance-part-2\/';
+      var disqus_title = 'Java generics and inheritance (part 2)';
+      var disqus_url = 'http:\/\/blog.10pines.com\/2014\/12\/02\/java-generics-and-inheritance-part-2\/';
+    
+
+    </script>
+    
+
+    <style>
+@charset "UTF-8";article,header,img,main,nav,section{display:block}blockquote,p,pre,ul{margin:2em auto}#wrapper,pre{width:100%;box-sizing:border-box}#nav,#wrapper,code{position:relative}#nav,body{background:#fff}#menu,blockquote,pre code{background:0 0}#menu,#menu .menu-header,#menu .menu-list,#wrapper,.post-nav .post-nav-item .post-nav-teaser .post-nav-info,blockquote,pre{box-sizing:border-box}img{border:0;max-width:100%;height:auto;margin:2.5em auto}html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}code,pre{font-family:monospace,monospace;font-size:1em}@font-face{font-family:'Merriweather Sans';font-style:normal;font-weight:300;src:local("Merriweather Sans Light"),local("MerriweatherSans-Light"),url(//fonts.gstatic.com/s/merriweathersans/v5/6LmGj5dOJopQKEkt88GowY_zIojJi0m4a5Z6tRh6itY.woff) format("woff")}@font-face{font-family:'Merriweather Sans';font-style:normal;font-weight:400;src:local("Merriweather Sans Regular"),local("MerriweatherSans-Regular"),url(//fonts.gstatic.com/s/merriweathersans/v5/AKu1CjQ4qnV8MUltkAX3sL2aU247V0zTzydO4RoO9Ok.woff) format("woff")}@font-face{font-family:'Merriweather Sans';font-style:normal;font-weight:700;src:local("Merriweather Sans Bold"),local("MerriweatherSans-Bold"),url(//fonts.gstatic.com/s/merriweathersans/v5/6LmGj5dOJopQKEkt88GowQfd-b-I5PxxcmB4_-MNcqw.woff) format("woff")}@font-face{font-family:'Merriweather Sans';font-style:normal;font-weight:800;src:local("Merriweather Sans ExtraBold"),local("MerriweatherSans-ExtraBold"),url(//fonts.gstatic.com/s/merriweathersans/v5/6LmGj5dOJopQKEkt88GowWT7sFQ1Iz1BbpcuCPlgc9Q.woff) format("woff")}@font-face{font-family:'Merriweather Sans';font-style:italic;font-weight:300;src:local("Merriweather Sans Light Italic"),local("MerriweatherSans-LightItalic"),url(//fonts.gstatic.com/s/merriweathersans/v5/nAqt4hiqwq3tzCecpgPmVX9UU5BmOJGkLxUCVv5VXdc.woff) format("woff")}@font-face{font-family:'Merriweather Sans';font-style:italic;font-weight:400;src:local("Merriweather Sans Italic"),local("MerriweatherSans-Italic"),url(//fonts.gstatic.com/s/merriweathersans/v5/3Mz4hOHzs2npRMG3B1ascf0KIgDhPIHb_R-SWdtqte8.woff) format("woff")}@font-face{font-family:'Merriweather Sans';font-style:italic;font-weight:700;src:local("Merriweather Sans Bold Italic"),local("MerriweatherSans-BoldItalic"),url(//fonts.gstatic.com/s/merriweathersans/v5/nAqt4hiqwq3tzCecpgPmVYM8pfYvjMoOxygpzLVILAs.woff) format("woff")}@font-face{font-family:Inconsolata;font-style:normal;font-weight:400;src:local("Inconsolata"),url(//fonts.gstatic.com/s/inconsolata/v12/BjAYBlHtW3CJxDcjzrnZCIbN6UDyHWBl620a-IRfuBk.woff) format("woff")}@font-face{font-family:Inconsolata;font-style:normal;font-weight:700;src:local("Inconsolata Bold"),local("Inconsolata-Bold"),url(//fonts.gstatic.com/s/inconsolata/v12/AIed271kqQlcIRSOnQH0yTqR_3kx9_hJXbbyU8S6IN0.woff) format("woff")}@font-face{font-family:icons;src:url(/fonts/icons.eot?9273991);src:url(/fonts/icons.eot?9273991#iefix) format("embedded-opentype"),url(/fonts/icons.woff?9273991) format("woff"),url(/fonts/icons.ttf?9273991) format("truetype"),url(/fonts/icons.svg?9273991#icons) format("svg");font-weight:400;font-style:normal}[class^=icon-]:before{font-family:icons;font-style:normal;font-weight:400;speak:none;display:inline-block;text-decoration:inherit;width:1em;margin-right:.2em;text-align:center;font-variant:normal;text-transform:none;line-height:1em;margin-left:.2em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.icon-arrow-left:before{content:'\e804'}.icon-arrow-right:before{content:'\e807'}.icon-rss:before{content:'\e808'}.icon-menu:before{content:'\e809'}body{margin:0;font:300 1em/1.5em 'Merriweather Sans',sans-serif;color:#595B66}blockquote,i{font-style:italic}code,pre{font-family:Inconsolata,monospace}a,blockquote,code,i{font-weight:400}::-moz-selection{color:#222;background:#D6EDFF;text-shadow:none}::-moz-selection,::selection{color:#222;background:#D6EDFF;text-shadow:none}a{background-color:transparent;color:inherit;text-decoration:none;transition:all ease-out .2s}.post-content a{border-bottom:2px solid #36D995}h1,h4{text-rendering:optimizeLegibility;color:#1F2026}h1{font-size:2em;line-height:1em;margin:2em 0 -.5em}h4{font-size:1.25em;line-height:1.2em;margin:2.4em 0 -.8em}ul{list-style:none;padding-left:3em}blockquote{padding:0 1em;border-left:.25em solid #D4D5D9;color:#595B66}blockquote *{margin:1em auto}blockquote :first-child{margin-top:0}blockquote :last-child{margin-bottom:0}i{color:#363740}code{display:inline-block;top:-1px;padding:3px 6px;margin:-1px 2px;font-size:.875em;line-height:1.143em;background:#E1E2E6;color:#000;border-radius:2px}pre{padding:1em;white-space:pre;overflow:auto;background:#9D9FA6;color:#fff}pre code{position:static;top:auto;font-size:1em;line-height:1.5em;white-space:-moz-pre-wrap;white-space:pre-wrap;vertical-align:inherit;border:none;padding:0}#menu .menu-header:before,.post .post-title:before{border-bottom:4px solid #36D995;content:''}.inner{max-width:48em;margin:0 auto;padding:0 1em}#wrapper{min-height:100vh;padding-bottom:6em;background:#F2F3F5}#push{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0);-webkit-transform-style:preserve-3d;transform-style:preserve-3d;opacity:1}#nav{z-index:70;transition:all ease-out .4s;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0);-webkit-transform-style:preserve-3d;transform-style:preserve-3d;opacity:1}#nav:after{clear:both;content:'';display:table}#nav .nav-logo{float:left;height:2em;padding:1em;max-width:50%}#nav .nav-logo img{width:auto;max-width:none;height:2em;margin:0}#nav .nav-menu{float:right}#nav .nav-menu:after{clear:both;content:'';display:table}#nav .nav-menu a{display:block;width:1em;height:1em;line-height:1em;padding:1.5em;text-align:center;float:left;cursor:pointer}#nav .nav-menu a i:before{margin:auto}#menu{display:none;position:fixed;left:50%;top:5%;width:30em;height:90%;margin-left:-15em;padding:3em 0 0;overflow:hidden;transition:all ease-out .3s;-webkit-transform:translate3d(0,2em,0);transform:translate3d(0,2em,0);-webkit-transform-style:preserve-3d;transform-style:preserve-3d;opacity:0;z-index:100}@media only screen and (max-width:50em){#menu{width:90%;left:5%;margin-left:auto}}#menu .menu-header{position:absolute;left:0;top:0;width:100%;height:3.5em;padding:1em 1.5em .5em;margin-bottom:1em;line-height:2em;z-index:110;background:#fff}#menu .menu-header:before{position:absolute;left:-5%;bottom:-1em;width:110%;height:2em;background:#fff;box-shadow:0 .125em .125em rgba(0,0,0,.1);-webkit-transform:rotate(2.5deg);transform:rotate(2.5deg);transition:all ease-out .2s;z-index:115}#menu .menu-header:after{clear:both;content:'';display:table}#menu .menu-header .menu-label{position:relative;display:block;float:left;z-index:120}#menu .menu-header .menu-close{position:relative;display:block;float:right;width:2em;height:2em;padding:1em;margin:-1em -1.5em -1em 0;cursor:pointer;z-index:125}#menu .menu-header .menu-close:after,#menu .menu-header .menu-close:before{content:'';position:absolute;left:50%;top:50%;background:#9D9FA6;-webkit-transform:rotate(45deg);transform:rotate(45deg)}.overlay,.overlay:before{top:0;width:100%;height:100%}#menu .menu-header .menu-close:after{width:2px;height:1em;margin:-.5em 0 0 -1px}#menu .menu-header .menu-close:before{width:1em;height:2px;margin:-1px 0 0 -.5em}#menu .menu-list{position:relative;list-style:none;margin:0;padding:2em 0;height:100%;overflow-x:hidden;overflow-y:scroll;background:#fff}.overlay{position:fixed;left:0;z-index:80;display:none}.overlay:before{content:'';position:absolute;left:0;background:#1F2026;opacity:0;transition:all ease-out .3s;-webkit-transform-style:preserve-3d;transform-style:preserve-3d}.post{position:relative;z-index:20}.post .post-meta{display:block;font-size:.75em;line-height:1.334em;font-weight:400;margin-bottom:1.334em}.post .post-title{position:relative;color:#000;font-size:2em;line-height:1.375em;font-weight:800;text-indent:-1px;margin:.25em 0 .75em}.post .post-title:before{position:absolute;left:0;bottom:-.334em;width:1em;margin-bottom:-2px}.post .post-header{padding:4em 0 0;margin-bottom:3em}.post-footer .post-share a span{display:none}.post-nav .post-nav-item{position:fixed;top:50%;display:block;margin-top:-4em;overflow:hidden;border-radius:10em;transition:none}@media only screen and (max-width:70em){.post-nav .post-nav-item{position:absolute;top:auto;margin:auto;max-width:50%}}.post-nav .post-nav-item.post-nav-next{left:0;text-align:left}.post-nav .post-nav-item.post-nav-next .post-nav-icon{float:left}.post-nav .post-nav-item.post-nav-next .post-nav-icon i{left:-.05em}.post-nav .post-nav-item.post-nav-next .post-nav-info{padding-left:6em}.post-nav .post-nav-item.post-nav-prev{right:0;text-align:right}.post-nav .post-nav-item.post-nav-prev .post-nav-icon{float:right}.post-nav .post-nav-item.post-nav-prev .post-nav-icon i{right:-.05em}.post-nav .post-nav-item.post-nav-prev .post-nav-info{padding-right:6em}.post-nav .post-nav-item .post-nav-teaser{display:block;padding:1em;transition:all ease-out .2s;max-width:25em;overflow:visible}.post-nav .post-nav-item .post-nav-teaser:after{clear:both;content:'';display:table}.post-nav .post-nav-item .post-nav-teaser .post-nav-icon{display:block;width:5em;height:5em;line-height:5em;text-align:center;box-sizing:border-box;border-radius:10em;border:1px solid #36D995;box-shadow:0 0 0 0 transparent;transition:all ease-out .1s;background:#F2F3F5}.post-nav .post-nav-item .post-nav-teaser .post-nav-icon i{position:relative;font-size:2em}@media only screen and (max-width:30em){.post-nav .post-nav-item .post-nav-teaser .post-nav-icon{width:4em;height:4em;line-height:4em}.post-nav .post-nav-item .post-nav-teaser .post-nav-icon i{font-size:1.5em}}.post-nav .post-nav-item .post-nav-teaser .post-nav-icon i:before{margin:auto}.post-nav .post-nav-item .post-nav-teaser .post-nav-info{display:none;width:100%;transition:all ease-out .2s}.post-nav .post-nav-item .post-nav-teaser .post-nav-info .post-nav-title{display:block;max-height:1.25em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;margin:1.25em 0 .25em;font-size:1em;line-height:1.25em;font-weight:700;color:#363740}.post-nav .post-nav-item .post-nav-teaser .post-nav-info .post-nav-excerpt{display:block;max-height:1.334em;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;margin:0;font-size:.75em;line-height:1.334em;font-weight:400;color:#9D9FA6}
+</style>
+
+
+    </head>
+    <body class="home-template" style="display: none;">
+      <section id="wrapper">
+        <div id="ajax-container">
+          <nav id="nav" class="nav">
+            <div class="nav-logo">
+              <a href="http://blog.10pines.com/">
+      			  	
+      			  	
+      			  	<img src="http://blog.10pines.com/images/10p-logo.png" alt="Logo"/>
+      			  	
+              </a>
+			  	    
+            </div>
+            <div class="nav-menu">
+              <a class="rss" href="">
+                <i class="icon-rss"></i>
+              </a>
+                
+                <a class="menu" data-action="toc" data-target="toc"><i class="icon-location"></i></a>
+                
+                
+            </div>
+          </nav>
+
+
+<main class="content" role="main">
+	<article class="post">
+		<div class="inner">
+
+			<div id="push">
+
+  			<header class="post-header">
+  				<span class="post-meta">
+						<span class="post-date">2 Dec 2014</span> <span class="reading-time">| <span class="estimated-reading-time">7 min.</span> (<span class="word-count">1443</span> words)</span></span>
+  				</span>
+  				<div class="clear"></div>
+  				<h1 class="post-title">Java generics and inheritance (part 2)</h1>
+  			</header>
+
+  			<section class="post-content">
+  				
+
+<p><a href="http://blog.10pines.com/2014/12/02/java-generics-and-inheritance-part-1">On the first part of this article</a> I explained why java generics don&rsquo;t allow up-casting for generified types.
+In this part we will see why, arrays don&rsquo;t have that restriction, and the implications for <em>reflection</em>.</p>
+
+<h2 id="but-arrays">But arrays&hellip;</h2>
+
+<p>If generified lists aren&rsquo;t allowed to up-cast, why arrays are?<br />
+The reason is very simple: arrays don&rsquo;t erase their element type. At runtime, each array knows exactly which kind of element it should allow in. If you try this code:</p>
+
+<pre><code class="language-java">
+String[] stringArray = new String[1];
+Object[] objectArray = stringArray; // Perfectly normal
+
+</code></pre>
+
+<p>The compiler allows you to up-cast. What if we try to put something in the string array, that is not a string?</p>
+
+<pre><code class="language-java">
+objectArray[0] = 1; //1 is not a String -&gt; ArrayStoreException
+
+</code></pre>
+
+<p>Yep, the array reacts to your wrong doing and it throws you an ArrayStoreException if you try to put anything that is not a String (or subtype). The array retains its complete type information in runtime.</p>
+
+<p><img src="http://blog.10pines.com/images/2014-12-02-java-generics-and-inheritance-part-2-VennArrayObjectArrayString.jpg" alt="Venn diagram of arrays" /></p>
+
+<p>So basically, while you can see an array as an instance of a super type, the array doesn&rsquo;t lose its type. The type of an array is not lost at runtime because it&rsquo;s reified (there&rsquo;s an object that represents it at runtime). It doesn&rsquo;t depend on the type of the variable it&rsquo;s assigned to.
+On the other hand, a list type does depend on the variable it&rsquo;s assigned to, and that&rsquo;s why you cannot up-cast generic types, so you don&rsquo;t change the type of contained elements. As lists don&rsquo;t reify their element type you could put whatever inside, and then the implicit casts of generics may break.</p>
+
+<h2 id="not-everything-is-erased">Not everything is erased</h2>
+
+<p>Would all this be fixed if we retained the element type of List, as arrays do?<br />
+If we could do that, then we could be consistent about the list type, no matter what. And we could check that the list contains elements of a single type.
+In other words if we retained the type argument of a generified type in runtime, using reflection we could reject wrong elements.<br />
+I dare say that if the type arguments were reified with the parameterized type and made available to the created instance, none of the counter-intuitive generics restrictions would be needed. Assigning a string list to an object list variable would be as natural as doing so for arrays.</p>
+
+<p><strong>Bad news</strong> is that instantiating a generic class with a type argument like</p>
+
+<pre><code class="language-java">
+new ArrayList&lt;String&gt;()
+
+</code></pre>
+
+<p>Will not preserve its type argument at runtime, and there seems to be no interest in doing so.</p>
+
+<p><strong>Good news</strong> is that extending a generic class with a type argument like</p>
+
+<pre><code class="language-java">
+class MyStringList extends ArrayList&lt;String&gt;{
+  List&lt;Object&gt; castToObjectList(){return (List)this;}
+}
+
+</code></pre>
+
+<p>Does retain the type argument in runtime. So using reflection to check for valid additions to the list is possible and also this kind of code is compile time safe:</p>
+
+<pre><code class="language-java">
+MyStringList stringList = new MyStringList();
+List&lt;Object&gt; objectList = stringList.castToObjectList(); // no error
+objectList.add(1);   // Proper error if not a string
+
+</code></pre>
+
+<h2 id="multiple-ways-of-getting-the-supertype">Multiple ways of getting the supertype</h2>
+
+<p>So far this has been an introduction to finally talk about reflection and generics.<br />
+We declared a class that parametrizes a List:</p>
+
+<pre><code class="language-java">
+class MyStringList extends ArrayList&lt;String&gt;{
+ ...
+    public boolean add(Object s) {
+        if(!getReifiedElementType().isInstance(s)){
+            return false; // Or throw new IllegalArgument()
+        }
+        return super.add((String)s);
+    }
+ ...
+}
+
+</code></pre>
+
+<p>It extends ArrayList with a <em>String</em> type parameter, and checks for valid additions based on the type of contained elements.<br />
+This can be done at runtime using reflection. But let&rsquo;s see how that <code>getReifiedElementType()</code> could get the String type parameter from its superclass.</p>
+
+<p><strong>Pre-java 5</strong>: original <code>getSuperclass()</code> method</p>
+
+<pre><code class="language-java">
+		Class&lt;?&gt; myRawSuperclass= MyStringList.class.getSuperclass();
+
+</code></pre>
+
+<p>However, that will only return you an ArrayList.class instance. No type argument information.
+This is the runtime super-type of our class (<code>ArrayList</code>), but it&rsquo;s not the compile time super-type (<code>ArrayList&lt;String&gt;</code>).</p>
+
+<p><strong>Post-Java 5</strong>: <code>Class.getGenericSuperclass()</code></p>
+
+<pre><code class="language-java">
+Type myGenericSuperClass = MyStringList.class.getGenericSuperclass();
+
+</code></pre>
+
+<p>You guessed right. This Type instance has the type arguments. However, it wouldn&rsquo;t let you access it unless you know what sub-typ of <code>Type</code> is:</p>
+
+<pre><code class="language-java">
+  ParameterizedType parameterizedSuperclass = (ParameterizedType) myGenericSuperClass;
+  Type[] typeArguments = parameterizedSuperclass.getActualTypeArguments();
+
+</code></pre>
+
+<p>Yeah. You are forced to downcast it. <code>Type</code> is designed in such a way that has no behavior and it is useless by itself. You need to ask what kind of instance is before doing something with it, and then downcast it.
+If you check the returned Type array for arguments, you will find String.class as the only contained element (again, only after downcasting it will you be able to do something useful).</p>
+
+<p><strong>Post-Java 8</strong>: <code>Class.getAnnotatedSuperclass()</code></p>
+
+<pre><code class="language-java">
+  AnnotatedType annotatedSuperclass = MyStringList.class.getAnnotatedSuperclass();
+  Type typeThatWasAnnotated = annotatedSuperclass.getType();
+  Annotation[] annotations = annotatedSuperclass.getAnnotations();
+
+</code></pre>
+
+<p>What&rsquo;s this AnnotatedType instance you ask?<br />
+It&rsquo;s how Oracle engineers extended reflection to support annotations on types. Since Java 8, you can use annotations on any type declaration. My class can extend an annotated super type:</p>
+
+<pre><code class="language-java">
+public class MyStringList extends ArrayList&lt;@NotNull String&gt; {
+
+</code></pre>
+
+<p>So, basically every type can have annotations that specify the type more precisely (although they have no effect on runtime). And the way to know which annotations and which type arguments are used is by calling <code>getAnnotatedSuperclass()</code>.
+But it won&rsquo;t help you much. It uses <code>Type</code> hierarchy to know the type arguments.</p>
+
+<h2 id="ok-let-s-use-the-latest">Ok, let&rsquo;s use the latest</h2>
+
+<p>Not only you do have 3 different ways to know your super type, you also have three different non-polymorphic objects.  If you are like me for simplicity&rsquo;s sake, you will say ok, let&rsquo;s use the most complete one, and let&rsquo;s forget about the others (the older ones). Let&rsquo;s use <code>getAnnotatedSuperclass():AnnotatedType</code> right?</p>
+
+<p><img src="http://blog.10pines.com/images/2014-12-02-java-generics-and-inheritance-part-2-threeSuperTypes.jpg" alt="Three options for super-types" /></p>
+
+<p>But what if I have more than one inheritance level? What if I want to know an argument of the super type of my super type? Does AnnotatedType has a super class method as Class does? A super type of List<String> is Collection<String> can I get to it? <strong>Can I traverse my generic lineage? Short answer: no.</strong></p>
+
+<p>An <code>AnnotatedType</code> doesn&rsquo;t have the concept of inheritance in any of its methods &hellip;. But &hellip;<br />
+<code>AnnotatedType::getType()</code> allows you to get a <code>Type</code> instance which doesn&rsquo;t have the concept of inheritance either&hellip;. But&hellip;.<br />
+If <code>Type</code> is an instance of <code>ParameterizedType</code>, then you have <code>ParameterizedType::getRawType()</code> that gives you an instance of <code>Class</code> and finally you can ask that class its super type again.</p>
+
+<p><img src="http://blog.10pines.com/images/2014-12-02-java-generics-and-inheritance-part-2-whot.jpg" alt="Whot?" /></p>
+
+<p>Let me say it again: from a <code>Class</code> instance you can have the annotated super type (to get the annotations) then get the generic <code>Type</code>, cast it to a parameterized type (to get the type arguments), ask its raw class and only then get the super super type. It can&rsquo;t be easier!</p>
+
+<p><img src="http://blog.10pines.com/images/2014-12-02-java-generics-and-inheritance-part-2-superSuperType.jpg" alt="Navigating to a super type" /></p>
+
+<p>Oh, one more thing. Each level you go up, you lose the actual type arguments. Why?<br />
+Because you have to pass through a Class instance in order to go up the next level. <code>Class</code> knows nothing about type arguments.<br />
+In our example, once you get to the super type of ArrayList you will get a type variable <code>E</code> instead of the actual type argument <code>String</code>. You will have to manually keep track of type parameters, variable names and type arguments to figure out which is which.</p>
+
+<p>I have no idea why they just didn&rsquo;t add the annotations and generics information in <code>Type</code> instead of adding another <code>AnnotatedType</code>, and chose to have 3 different representations (and two parallel class hierarchies) for type information. Someone should have noticed that something was going wrong when they had almost same class names!</p>
+
+<h2 id="one-last-thing-contradiction">One last thing: contradiction</h2>
+
+<p>Don&rsquo;t be too harsh on them. Reflection is supposed to represent parts of the language. It&rsquo;s not necessarily complete (it doesn&rsquo;t have to represent everything) but it should be true and precise about the things it does.</p>
+
+<p>The way java reflection API has evolved to include generics information is the result of an unsolvable contradiction produced by erasure.<br />
+Java language at compile time is not what Java language is at runtime. This may seem obvious, but it&rsquo;s a recent discovery for me: if you have erasure (or any other compilation transformation) then you have two languages.<br />
+The constructs that the language has at compile time don&rsquo;t exist at runtime and that&rsquo;s why reflection has internal contradictions at runtime when it tries to represent compile time concepts. A <code>List</code> is not the same type at compile-time as <code>List&lt;String&gt;</code>, however at runtime, they are!</p>
+
+<p>That&rsquo;s why at runtime the super class of <code>MyStringList</code> is <code>ArrayList</code>, not <code>ArrayList&lt;String&gt;</code>. That&rsquo;s why you lose the type arguments of a parameterized type when you have a Class.<br />
+Because making the language erase part of itself at compile time generates two different languages. And if you call with the same name the runtime and the compile versions of a language constructs, you will have contradictions.<br />
+Two different personalities that need one representation. That&rsquo;s why you end up with a schizo reflection. You are two inside one.</p>
+
+  			</section>
+
+  			<footer class="post-footer">
+  				<div class="post-tags">
+            
+  				</div>
+  				<div class="post-share">
+  					<a class="icon-twitter" href="https://twitter.com/share?text=Java%20generics%20and%20inheritance%20%28part%202%29&url=http%3a%2f%2fblog.10pines.com%2f2014%2f12%2f02%2fjava-generics-and-inheritance-part-2%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+  						<span>Twitter</span>
+  					</a>
+  					<a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fblog.10pines.com%2f2014%2f12%2f02%2fjava-generics-and-inheritance-part-2%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+  						<span>Facebook</span>
+  					</a>
+  					<a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fblog.10pines.com%2f2014%2f12%2f02%2fjava-generics-and-inheritance-part-2%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+  						<span>Google+</span>
+  					</a>
+  				</div>
+  			</footer>
+
+  			<aside class="post-comments">
+    
+    
+    <div id="disqus_thread"></div>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+    
+</aside>
+
+
+			</div>
+
+			<nav class="post-nav">
+				
+					<a class="post-nav-item post-nav-next" href="http://blog.10pines.com/2015/02/18/essence-driven-development/">
+						<section class="post-nav-teaser">
+							<span class="post-nav-icon"><i class="icon-arrow-left"></i></span>
+							<span class="post-nav-info">
+								<h4 class="post-nav-title">Essence-driven Development</h4>
+								<p class="post-nav-excerpt">&hellip;</p>
+							</span>
+						</section>
+					</a>
+				
+				
+					<a class="post-nav-item post-nav-prev" href="http://blog.10pines.com/2014/12/02/java-generics-and-inheritance-part-1/">
+						<section class="post-nav-teaser">
+							<span class="post-nav-icon"><i class="icon-arrow-right"></i></span>
+							<span class="post-nav-info">
+								<h4 class="post-nav-title">Java generics and inheritance (part 1)</h4>
+								<p class="post-nav-excerpt">&hellip;</p>
+							</span>
+						</section>
+					</a>
+				
+				<div class="clear"></div>
+			</nav>
+
+		</div>
+	</article>
+</main>
+
+				<div id="body-class" style="display: none;"></div>
+				<footer id="footer">
+					<section class="credits">
+						<span class="credits-theme">Theme <a href="https://github.com/zenithar/hugo-theme-bleak" target="_blank" rel="nofollow">Bleak</a> by <a href="http://zutrinken.com" target="_blank" rel="nofollow">zutrinken</a></span>
+						<span class="credits-software">Published with <a href="http://gohugo.io" target="_blank" rel="nofollow">Hugo</a></span>
+					</section>
+				</footer>
+				
+				
+<div id="tocMenu" data-target="toc">
+    <div class="menu-header">
+        <span class="menu-label">Menu</span>
+        <a class="menu-close" data-action="toc" data-target="toc"></a>
+    </div>
+    <div id="toc" class="menu-list">
+        <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#but-arrays">But arrays&hellip;</a></li>
+<li><a href="#not-everything-is-erased">Not everything is erased</a></li>
+<li><a href="#multiple-ways-of-getting-the-supertype">Multiple ways of getting the supertype</a></li>
+<li><a href="#ok-let-s-use-the-latest">Ok, let&rsquo;s use the latest</a></li>
+<li><a href="#one-last-thing-contradiction">One last thing: contradiction</a></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+
+				<div class="overlay"></div>
+			</div>
+		</section>
+
+    <script>
+      (function(c,f){asyncLoader=function(i,h){i.foreach(function(k,j){e(j,d(j),h)});if(typeof h.callback=="function"){var g=setInterval(function(){if(f.readyState==="complete"){clearInterval(g);h.callback()}},10)}};var d=function(g){var h=g.split(".");return h[h.length-1]},e=function(h,i,g){switch(i){case"js":a(h,g);break;case"css":b(h);break;default:break}},a=function(i,h){var g=document.createElement("script");g.type="text/javascript";g.async=true;g.src=i;document.getElementsByTagName("head")[0].appendChild(g)},b=function(g){var h=document.createElement("link");h.type="text/css";h.rel="stylesheet";h.href=g;document.getElementsByTagName("head")[0].appendChild(h)};Array.prototype.foreach=function(h){for(var g=0;g<this.length;g++){h(g,this[g])}}})(this,document);
+
+      asyncLoader([
+				"/js/dependencies.js",
+				"/css/dependencies.css"
+      ],{
+        callback:function(){
+					asyncLoader([
+						"/css/style.css",
+						"/js/script.js"
+					], {
+						callback: function() {
+							$('body').fadeIn( 800 );
+						}
+					});
+        }
+      });
+
+</script>
+
+
+
+</body>
+</html>
+
