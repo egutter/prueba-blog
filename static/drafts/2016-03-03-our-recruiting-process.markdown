@@ -21,7 +21,6 @@ The second one is more funny and is a courtesy of the web [^1]
 Imagine an interview for a carpenter in a "big-house-construction-company".
 This would be the dialog between the HR recruiter and the candidate.
 
-{% blockquote %}
 -- Interviewer: So, you're a carpenter, are you?
 -- Carpenter: That's right, that's what I do.
 -- Interviewer: How long have you been doing it?
@@ -46,11 +45,9 @@ This would be the dialog between the HR recruiter and the candidate.
 -- Carpenter: Well, sure they do, but I bang nails all day, and -- well, look, I need the work, so I'm definitely willing to use rocks if you want. I try to keep an open mind.
 -- Interviewer: OK, well we have a few other candidates we're looking at, so we'll let you know.
 -- Carpenter: Well, thanks for your time. I enjoyed meeting you.
-{% endblockquote %}
 
 NEXT DAY:
 
-{% blockquote %}
 Ring...
 -- Interviewer: Hello?
 -- Carpenter: Hello. Remember me, I'm the carpenter you interviewed for the brown house job. Just wanted to touch base to see if you've made a decision.
@@ -60,7 +57,6 @@ Ring...
 -- Carpenter: Really -- how much experience does he have?
 -- Interviewer: Well, he's not really a carpenter, he's a car salesman -- but he's sold a lot of brown cars and he's worked with walnut interiors.
 -- Carpenter: [click]
-{% endblockquote %}
 
 ## Our recipe for choosing the right seeds
 I think these two stories clearly exemplify the biggest problems when recruiting people in a traditional company.
@@ -122,7 +118,7 @@ In order to avoid this dramatic scenario, we have a last step.
 If everything went fine with the previous stages, the final one is an interview with all the pines and the new seed. The idea here is that you choose who to work with. This candidate is a potential teammate, so you have to decide if you would like to work with him or her. And in the other hand, the seed can see all the universe of possible teammates in the company and don't be surprised the first day of work (or first week). This interview is more relaxed and mix technical questions with personal ones. We also encourage everyone to ask questions and share experiences.
 Summarizing, the goal of this step is from the people in the company side to answer the question: "Would I like to work with this guy?". And from the perspective of the candidate to answer the same question as well: "Would I like to work with this group of people?"
 
-##Final thoughts
+## Final thoughts
 One important thing to highlight is: we don't have a HR or recruiting department. We choose our own people. Every pine can and must be involved in this process so the task of recruiting is a cross functional task every engineer must be involved with.
 
 Summarizing the 4 stages, we try to identify in the seed the things we DO care:
@@ -139,4 +135,3 @@ Lastly, at 10Pines have a very very very low turnover rate[^3]. I think our recr
 [^1]: http://www.jasonbock.net/jb/News/Item/7c334037d1a9437d9fa6506e2f35eaac
 [^2]: https://www.smartrecruiters.com/blog/7-reasons-why-recruiting-is-just-like-dating/
 [^3]: in 6 years we lost 4 people, 1 because he decided to be a musician, another because he married with a polish girl and moved to Poland, and 2 others to start their own company
-
