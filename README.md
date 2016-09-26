@@ -1,2 +1,2 @@
 # prueba-blog
-Prueba blog
+Prueba blog readme
