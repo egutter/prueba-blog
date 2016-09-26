@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ci on 10 Pines Blog</title>
+    <link>http://blog.10pines.com/categories/ci/</link>
+    <description>Recent content in Ci on 10 Pines Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 18 May 2013 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://blog.10pines.com/categories/ci/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Parallel tests on Travis</title>
+      <link>http://blog.10pines.com/2013/05/18/parallel-tests-on-travis/</link>
+      <pubDate>Sat, 18 May 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.10pines.com/2013/05/18/parallel-tests-on-travis/</guid>
+      <description>
+
+&lt;p&gt;Since the last post, a lot of things happened: some things were fixed, some tests got faster and I learned that some aspects of JRuby are just slow (for now).&lt;/p&gt;
+
+&lt;p&gt;First of all, the author of parallel_tests was very kind to not only accept my pull requests, but to provide feedback and even fix my broken code instead of rejecting it. There was a way in RSpec to correctly calculate time spent on each file, instead of doing it per example (which resulted in the problems mentioned in the previous post). This resulted in increased CPU throughput (at least in MRI) as all processors could be loaded at the same time, instead of having them working together only a fraction of the time (because some of them finished earlier and remained idle).&lt;/p&gt;
+
+&lt;h2 id=&#34;ruby-mri&#34;&gt;Ruby MRI&lt;/h2&gt;
+
+&lt;p&gt;Unfortunately, the good part ended at that point, as there was another problem. We were disabling the garbage collector during each test, and re-enabling it after, an idea apparently taken from a famous success story for improving tests speed. It worked well for some time, but at some point (maybe because deeply nested contexts), it started to consume a lot of memory (like 2 or 3 GB, instead of &amp;lt; 1), which of course was inconvenient for running many of them in parallel.&lt;/p&gt;
+
+&lt;p&gt;One could easily disable those instructions, but it made our tests run even slower (like half an hour). So I looked for tuning parameters relevant to the garbage collector, and found this &lt;a href=&#34;http://meta.discourse.org/t/tuning-ruby-and-rails-for-discourse/4126&#34;&gt;interesting article&lt;/a&gt;. After trying some parameters, both the time and memory consumption were substantially reduced, combining the best of both worlds. Even if Google&amp;rsquo;s tcmalloc and Ruby 2.0 gave a little boost, the main trick was to run the GC less often (but frequently enough to avoid eating all RAM). Also keep in mind that the mentioned article was mostly interested in latency, while in this case I only cared about throughput, even if the optimizations we used were the same.&lt;/p&gt;
+
+&lt;p&gt;Finally, we merged our test categories &amp;ldquo;fast&amp;rdquo;, &amp;ldquo;slow&amp;rdquo; and even the cucumbers into a single Travis CI task, which ran in 8 minutes (most of which is spent installing gems and setting up the environment)!&lt;/p&gt;
+
+&lt;h2 id=&#34;jruby&#34;&gt;JRuby&lt;/h2&gt;
+
+&lt;p&gt;In JRuby that problem didn&amp;rsquo;t even exist, as it just outputted a few warnings indicating that &amp;ldquo;GC.enable&amp;rdquo; and &amp;ldquo;GC.disable&amp;rdquo; weren&amp;rsquo;t implemented. The problem in this case was speed (as before), so I suspected the equivalent of the previous issue but for Java. So I immediately started reading about the JVM garbage collector options, doing some profiling with jconsole, visualvm (and the great VisualGC plugin), and logging, I found nothing. Really, the old generation wasn&amp;rsquo;t even used (as tests just create objects and throw them away) and the collection of the young generation was very fast (I even tried using all my 8GBs of available RAM to reduce the number of collections, but it gave no improvements).&lt;/p&gt;
+
+&lt;p&gt;Just about to give up, I tried to find an answer at the #jruby IRC channel. There, someone said it was JRuby&amp;rsquo;s implementation of exceptions, which was about 18 times slower than MRI. The conversation is archived &lt;a href=&#34;http://logs.jruby.org/jruby/2013-05-16.html&#34;&gt;here&lt;/a&gt; (look for &amp;ldquo;alepulver&amp;rdquo;). Fortunately, with parallel_tests the Travis task took 23 minutes, which is not (that) bad. In the end, before JRuby 2.0, this is all we can get. I couldn&amp;rsquo;t increase the number of processes beyond 5 because Travis killed them (even considering that with default settings, parallel_tests says the machine has 32 cores!).&lt;/p&gt;
+
+&lt;p&gt;By the way, most of the work I did for the initial JRuby patch was replaced by the standard Ruby &amp;ldquo;open&amp;rdquo; which supports pipes. It&amp;rsquo;s simpler, but doesn&amp;rsquo;t support reading from both stdout and stderr separately. I know it&amp;rsquo;s for the better, but it&amp;rsquo;s a little sad too (considering the hours it took)&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;That concludes my efforts to make tests run faster as a bulk. Maybe later I&amp;rsquo;ll try Zeus (for running one test instantly when developing) or pry-rescue (for doing TDD in a way inspired by Smalltalk).&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

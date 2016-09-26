@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mixin on 10 Pines Blog</title>
+    <link>http://blog.10pines.com/categories/mixin/</link>
+    <description>Recent content in Mixin on 10 Pines Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 19 May 2015 17:15:00 +0000</lastBuildDate>
+    <atom:link href="http://blog.10pines.com/categories/mixin/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Java Interface Default Methods. What?</title>
+      <link>http://blog.10pines.com/2015/05/19/java-interface-default-methods/</link>
+      <pubDate>Tue, 19 May 2015 17:15:00 +0000</pubDate>
+      
+      <guid>http://blog.10pines.com/2015/05/19/java-interface-default-methods/</guid>
+      <description>
+
+&lt;p&gt;In my last post I&amp;rsquo;ve presented both traits and mixins, with the promise of identifying the Java 8 Interface Default Methods. So, let&amp;rsquo;s get on it.&lt;/p&gt;
+
+&lt;p&gt;First of all, if you don’t know what I’m talking about, &lt;a href=&#34;http://blog.10pines.com/2014/10/14/mixins-or-traits/&#34;&gt;read my previous post&lt;/a&gt; -and &lt;em&gt;please&lt;/em&gt; ignore the fact that it took me almost half a year to write this second part :)&lt;/p&gt;
+
+&lt;p&gt;A quick summary:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Mixins:&lt;/strong&gt; Abstract subclasses. You can call &lt;code&gt;super&lt;/code&gt; from inside the mixin, and can define both methods and variables. Mixins automatically solves conflict by linearization (inserting the mixin in the method lookup chain from left to right).&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Traits:&lt;/strong&gt; Allow us to define behaviour outside the class, but don&amp;rsquo;t define state. The methods defined in the trait «have the same semantics» as the method defined in the class (Flattening property). It’s like they were copied into the class. You have to handle conflicts by yourself.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Now we can fully dive into Java Interface default methods.&lt;/p&gt;
+
+&lt;h1 id=&#34;how-do-we-define-a-default-method-whatever-that-is&#34;&gt;How do we define a default method (whatever that is)?&lt;/h1&gt;
+
+&lt;p&gt;Easy peasy:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;
+public interface InterfaceA {
+	public default String m1() { return &amp;quot;This is InterfaceA.m1&amp;quot;; }
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The only difference with a Class method is the little keyword &lt;code&gt;default&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;So, assuming we have a class like the following&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;
+public class SomeClass implements InterfaceA { }
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;When we call &lt;code&gt;new SomeClass().m1()&lt;/code&gt; the evaluation sysout is &lt;code&gt;This is InterfaceA.m1&lt;/code&gt;. As I said, easy peasy.&lt;/p&gt;
+
+&lt;h1 id=&#34;aaaaaand-what-about-multiple-inheritance&#34;&gt;Aaaaaand&amp;hellip; what about multiple inheritance?&lt;/h1&gt;
+
+&lt;p&gt;Both traits and mixins allow us some kind of multiple inheritance. I&amp;rsquo;m trying to define default methods as some of the two, so is logical to expect this particular behavior in java 8 too.&lt;/p&gt;
+
+&lt;p&gt;Well, you are right. The way to do it is:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;
+public interface InterfaceB {
+	public default String m1() { return &amp;quot; This is InterfaceB.m1&amp;quot;; }
+}
+
+public class SomeClass implements InterfaceA, InterfaceB { }
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And we have our multiple inheritance&amp;hellip; or not?&lt;/p&gt;
+
+&lt;h2 id=&#34;conflict-solving&#34;&gt;Conflict Solving&lt;/h2&gt;
+
+&lt;p&gt;There are three rules to consider in the method lookup while dealing with default methods:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Classes win over interfaces.&lt;/strong&gt;  If a class in the superclass chain has a declaration for the method (concrete or abstract), you&amp;rsquo;re done, and defaults are irrelevant.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;More specific interfaces win over less specific ones&lt;/strong&gt;* (where specificity means &amp;ldquo;subtyping&amp;rdquo;).  A default from List wins over a default from Collection, regardless of where or how or how many times List and Collection enter the inheritance graph.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;There is no Rule #3.&lt;/strong&gt; If there is not a unique winner according to the above rules, concrete classes must disambiguate manually.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;And, because of Rule #3:&lt;/p&gt;
+
+&lt;p&gt;{% img /images/compile-error.png %}&lt;/p&gt;
+
+&lt;p&gt;So, we need to solve the conflicts ourselves. Let&amp;rsquo;s clean up our own mess:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;
+public class SomeClass implements InterfaceA, InterfaceB {
+	@Override
+	public String m1() {
+		return InterfaceA.super.m1() + InterfaceB.super.m1();
+	}
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Ok, it&amp;rsquo;s not the prettiest solution, but it&amp;rsquo;s definitely easy to understand what&amp;rsquo;s happening there: I&amp;rsquo;m calling first to &lt;code&gt;InterfaceA.m1()&lt;/code&gt; and then &lt;code&gt;InterfaceB.m1()&lt;/code&gt;&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+
+&lt;p&gt;With this override, if we reevaluate &lt;code&gt;new SomeClass().m1()&lt;/code&gt; we get &lt;code&gt;This is InterfaceA.m1 This is InterfaceB.m1&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h1 id=&#34;so-what-it-is&#34;&gt;So? What it is?&lt;/h1&gt;
+
+&lt;p&gt;There are two big things to take into consideration for defining (or deciding) between one or the other:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Default methods are defined in &lt;em&gt;interfaces&lt;/em&gt;. As we know, we cannot declare variables in interfaces - there are just method declarations (and now, definitions); and&lt;/li&gt;
+&lt;li&gt;We don&amp;rsquo;t have an automatic method for conflict solving (i.e. linearization), we have to decide &lt;em&gt;manually&lt;/em&gt; how we are going to call our methods.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;With this things in mind, I&amp;rsquo;m inclined to say that &lt;strong&gt;Interface default methods &lt;em&gt;are&lt;/em&gt; traits&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Mixins can have state and solve multiple inheritance problems with linearization, while traits can’t&amp;rsquo; define variables and they let you deal with conflict solving.&lt;/p&gt;
+
+&lt;p&gt;Yes, Pharo&amp;rsquo;s traits had more ways to solve conflicts, but I don&amp;rsquo;t think that is enough to discard default methods as traits.&lt;/p&gt;
+
+&lt;p&gt;They are no perfect traits, but as a mostly-java developer, I&amp;rsquo;m already used to that :)&lt;/p&gt;
+
+&lt;h2 id=&#34;wait-you-are-forgetting-the-flattening-property&#34;&gt;Wait, you are forgetting the flattening property&lt;/h2&gt;
+
+&lt;p&gt;Well&amp;hellip; I don&amp;rsquo;t &lt;em&gt;really&lt;/em&gt; know about this.&lt;/p&gt;
+
+&lt;p&gt;I know the object understand &lt;code&gt;m1()&lt;/code&gt;. And I can distinguish between default and non-default methods&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:if-that-is-useful-for-something&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:if-that-is-useful-for-something&#34;&gt;0&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+
+&lt;p&gt;What I cannot know is if the method is actually &amp;ldquo;flattenizing&amp;rdquo; (it&amp;rsquo;s that even a word?) into the class. Nor I know a way to demonstrate it. So I decided it&amp;rsquo;s easier to ignore that issue :)&lt;/p&gt;
+
+&lt;p&gt;I think that flattening it&amp;rsquo;s not the core of traits, it&amp;rsquo;s just an implementation issue and a nice feature for analyze in academical environments. IMHO the real value comes from conflict solving and variables - or in this case, the absence of them.&lt;/p&gt;
+
+&lt;h1 id=&#34;some-thoughts-i-came-up-with-during-this-process&#34;&gt;Some thoughts I came up with during this process&lt;/h1&gt;
+
+&lt;p&gt;It is not particulary necessary to classify default methods. I see them closer to traits than to mixins. Some can disagree. Some others can have a different understanding about traits/mixins. The thing is, &lt;em&gt;there&amp;rsquo;s no real reason for making this distinction&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;I did it just because I find things like these entertaining, not practical. In the end (i.e. day-to-day work) I call&amp;rsquo;em default methods, just like the rest of my teammates.&lt;/p&gt;
+
+&lt;p&gt;Another fun (and maybe practical) thing to do is find the best practices with these things. Default Methods are another tool we have in our hands, so let&amp;rsquo;s try to get the best of&amp;rsquo;em while we build &lt;em&gt;good software.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;But I&amp;rsquo;ve just getting into this path, so let&amp;rsquo;s talk about that some other time :)&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;It does looks &lt;a href=&#34;http://blog.10pines.com/2014/10/14/mixins-or-traits/#fn:2&#34;&gt;suspiciously similar to Scala&lt;/a&gt;, doesn&amp;rsquo;t it?
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:1&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

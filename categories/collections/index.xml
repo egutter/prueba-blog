@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Collections on 10 Pines Blog</title>
+    <link>http://blog.10pines.com/categories/collections/</link>
+    <description>Recent content in Collections on 10 Pines Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 15 Nov 2013 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://blog.10pines.com/categories/collections/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Collecting Collections - Day 32</title>
+      <link>http://blog.10pines.com/2013/11/15/collecting-collections-day-32/</link>
+      <pubDate>Fri, 15 Nov 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.10pines.com/2013/11/15/collecting-collections-day-32/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;http://blog.10pines.com/2013/11/06/collecting-collections-day-20&#34;&gt;Previously on &amp;ldquo;Collecting Collections&amp;rdquo;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;method-semantics&#34;&gt;Method semantics&lt;/h2&gt;
+
+&lt;p&gt;After gathering a bunch of methods in a table and reading their source or documentation, I had a basic idea for every one of them.I wanted to reduce the amount of necessary concepts to work with a collection. Something like 250 was too much.&amp;ldquo;Maybe if I make a graph, analyzing which method depends on which other I could get a view of the important ones&amp;rdquo;. At least that&amp;rsquo;s what I thought.&lt;/p&gt;
+
+&lt;p&gt;{% img /images/grafo_organico_de_metodos.jpg %}
+(Done with the excellent graph editor: &lt;a href=&#34;http://www.yworks.com/en/products_yed_about.html&#34;&gt;yEd&lt;/a&gt;)&lt;/p&gt;
+
+&lt;p&gt;As you can see, the complexity is overwhelming. For each method I tried to understand what its intention was and then I tried to describe how it could be done in terms of other methods. In that way I made an edge of the graph for each dependency.&lt;/p&gt;
+
+&lt;p&gt;When building this graph I found that some methods had more than one dependency shared with other method. This was specially true for &amp;ldquo;simetric methods&amp;rdquo;, for example, &lt;code&gt;addLast&lt;/code&gt;, &lt;code&gt;addFirst&lt;/code&gt;. They had the same dependencies  but added just a small variation to the concept they represent. &amp;ldquo;Those are the places were missing concepts are! If you can&amp;rsquo;t name something you are condemned to describe it&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;That&amp;rsquo;s what my methods were doing! They used other methods as concepts to describe what they do, and the lack of a name was forcing me to repeat descriptions (dependencies).&lt;/p&gt;
+
+&lt;p&gt;Two things came to my mind: If I could see a graph like this at any programming level for its dependencies (architecture, class, method, etc) , I would be able to detect this kind of code duplication very easily. Our eye is trained to find this kind of knots. (It could be done automatically, of course). A tool like this on our environments would be great!&lt;/p&gt;
+
+&lt;p&gt;I should change the definition of my current methods and try to introduce concepts as needed to simplify the graph&lt;/p&gt;
+
+&lt;p&gt;Then, methods like &lt;code&gt;addLast: anObject&lt;/code&gt; and &lt;code&gt;addFirst: anObject&lt;/code&gt; will depend on &lt;code&gt;at: anOrdinal add: anObject&lt;/code&gt; making &amp;ldquo;first&amp;rdquo; and &amp;ldquo;last&amp;rdquo; an argument. I changed definitions of methods and added a few new ones on the table. The graph simplified a bit (some overlapping lines dissapeared), but it still was a gordian knot. At this point I was imagining how to implement each, but didn&amp;rsquo;t touch a line of code.&lt;/p&gt;
+
+&lt;h2 id=&#34;collection-concepts&#34;&gt;Collection concepts&lt;/h2&gt;
+
+&lt;p&gt;While making the graph and adding new methods I annotated which concepts I needed to describe each method. I wanted to list every concept I needed on my mind. At least which ones were the strongest.&lt;/p&gt;
+
+&lt;p&gt;For this task I used &lt;a href=&#34;http://www.mindmup.com/&#34;&gt;MindMup&lt;/a&gt;
+{% img /images/concepts_map.jpg %}&lt;/p&gt;
+
+&lt;p&gt;I won&amp;rsquo;t detail each one, but the closest to the collection.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Space: &lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;I found that many methods used, or needed some kind of space were they operated. Specially those involving order. This notion of space is not mathematical but takes some ideas. For example, when iterating an array we normally use an index N. We access the element on position N, and then add 1 to N, and access the N+1 position. We can do this because we are on natural numbers domain and it has an order relation that states that N+1 is the minimum number that satisfies N &amp;lt; N+1. We can traverse and access the array elements in order because we do so using an index that is part of the natural numbers space. The space associated with arrays is a natural number interval space.&lt;/p&gt;
+
+&lt;p&gt;What about an unordered collection, let&amp;rsquo;s say a bag. It doesn&amp;rsquo;t have an order. What is its space? For a bag, the elements are stored according to its equality. Equal elements are replaced or rejected, whether they are the same or not. When traversing the bag we don&amp;rsquo;t expect an specific order, but we do expect that we don&amp;rsquo;t pass 2 times over the same equality, and all the equalities are accessed. That means (to me) that the space of the bag is that of the equality. Depending on how the equality relation is defined you define how many positions the space have. For example, if you define the equality to be always true. You would have a one position space, where only one element could be put on the bag. When traversing the bag you want to visit every equality present on the bag. The objects stored there serve as representants.&lt;/p&gt;
+
+&lt;p&gt;So depending on the space, there were relations that the method used, or not. If I could find a way to abstract this concept I could add meaningful operations where there were none because the type of collection didn&amp;rsquo;t contemplate it.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Storage:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Some operations were just to use the collection as a place to keep things. Those operations could be classified as CRUD operations. And were no so different from SQL insert, delete, select and update. In one way or another, the intention was very similar. This gives me the idea that every &amp;ldquo;whole&amp;rdquo; as an abstract concept should have these basic abstract operations. Whenever you have a whole/part relationship you will want to add, remove, modify or check an part of the whole.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Identity:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;When using collections we retain references to them as a way to keep some form of identity and history of the whole. The collection as a reference enables you to access one thing, but having the ability to interact with many (each element). Doing so the operations done on the collection are shared among all of their referants. Also meaning that while you retain the reference to the collection the elements will be there. For example, if you want to model the relationship between a father and its childs you make a collection for the father and put all the childs in. You, then, have two identities, the father and the collection. Adding to the collection means more childs to the father. You modify the collection as a way to express the relationships.&lt;/p&gt;
+
+&lt;p&gt;An alternative will be to express every relationship between father and child. The collection defined in this way by comprehension will be the elements that meet that relationship. You know one identity (the father) and many other (the relationships). However it seems that its easier for us as programmers (at least OO Programmers) to treat collections as manipulable identities instead. (Probably because an identity can have behavior?)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Mutability:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Another important aspect of collections is that the majority are mutable (at leas the basics). There are non mutable versions, or concurrent versions. But to me, that means that is easier for us to program thinking in linear execution of object modifications rather than parallel non mutating object transformations. However, if parallel computing continues to grow as is growing now, we&amp;rsquo;ll probably have to modify our sources because there are some assumptions there (yes there! on the collections) that will not be real.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Execution flow&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The last concept or aspect that got my attention was that (specially on Smalltalk) there were 2-in-1 methods like &lt;code&gt;selectThenDo&lt;/code&gt;, or &lt;code&gt;detectIfNone&lt;/code&gt;. At first I thought that they were just a lazy&amp;rsquo;s programmer method. &amp;ldquo;They don&amp;rsquo;t want to call select and do everytime! I&amp;rsquo;m sure&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;However when building the graph I realized that having &lt;code&gt;selectAndDo&lt;/code&gt; as a concept served to simplify the graph. Now other methods can reuse that method reducing its own complexity, requiring less steps to do what they do.&lt;/p&gt;
+
+&lt;p&gt;What about &lt;code&gt;detectIfNone&lt;/code&gt;. I thought it was just checking for the result of detect. However, if the collection can have any object inside, you can&amp;rsquo;t compare the result with anything to assume that is &amp;ldquo;none&amp;rdquo;. The property of &amp;ldquo;not being in the collection&amp;rdquo; is not something you can check outside the collection. Is something that only the collection can answer you.&lt;/p&gt;
+
+&lt;p&gt;So the collection has to help you in directing the execution flow when the operations you make in it have more than one outcome.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Collecting Collections - Day 37</title>
+      <link>http://blog.10pines.com/2013/11/15/collecting-collections-day-37/</link>
+      <pubDate>Fri, 15 Nov 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.10pines.com/2013/11/15/collecting-collections-day-37/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;http://blog.10pines.com/2013/11/15/collecting-collections-day-37&#34;&gt;Previously on &amp;ldquo;Collecting Collections&amp;rdquo;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;performance&#34;&gt;Performance&lt;/h2&gt;
+
+&lt;p&gt;I was designing in my head, analyzing how to implement each method, visioning dependencies between methods and I stumbled upon &lt;code&gt;size&lt;/code&gt;.
+Very simple to implement. Perhaps so simple that two different implementations popped in my head.&lt;/p&gt;
+
+&lt;p&gt;The first option was something similar to Javas&amp;rsquo; with a cached integer for a fast response. If I add an element to the collection, I should add 1 to the integer representing the size. If the collection is asked about it size, the integer is returned. Super-fast!&lt;/p&gt;
+
+&lt;p&gt;But that meant that other methods (besides &lt;code&gt;size&lt;/code&gt;) had to update that integer when modifying the collection. Mmmhh, something is not right if others have to do totally unrelated actions in their behavior for you to accomplish your responsibility, right?&lt;/p&gt;
+
+&lt;p&gt;The second implementation was similar to Smalltalks&amp;rsquo;, counting each element every time that &lt;code&gt;size&lt;/code&gt; is asked. No other method was involved to update cached values, behaviorally autonomous implementation, but iterating all the collection just to answer size? What if it&amp;rsquo;s a really big collection, and I must ask &lt;code&gt;size&lt;/code&gt; frequently?&lt;/p&gt;
+
+&lt;p&gt;It was a dilemma for a moment. Just for a moment.&lt;/p&gt;
+
+&lt;p&gt;I decided to discard performance, really, totally. Caching values and involving more than one method to maintain state didn&amp;rsquo;t sound good at all. And I was concerned more about reusability, and semantic simplicity. Being able to define the behavior of one method in the simplest way and in terms of other definitions if possible.&lt;/p&gt;
+
+&lt;p&gt;I do care about performance, specially on collections. However in this visit to collections I prioritized the design principle of &lt;a href=&#34;http://en.wikipedia.org/wiki/Don&#39;t_repeat_yourself&#34;&gt;&amp;ldquo;don&amp;rsquo;t repeat yourself&amp;rdquo;&lt;/a&gt;. I tried to focus on reusing behavior while being semantically correct. I forced myself not to consider performance, not just a bit. I wanted correctness, simplicity, not performance. In all other methods to come, performance was out of the question.&lt;/p&gt;
+
+&lt;p&gt;If I took that restriction off, could I get some new ideas? If I rejected performance will I embrace better semantics? I accepted the idea and told myself: &amp;ldquo;Maybe later I could recheck some definitions to enhance and improve performance&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;I decided to define &lt;code&gt;size&lt;/code&gt; as a kind of &lt;code&gt;inject&lt;/code&gt; where you start form 0 and increment one by each element. I didn&amp;rsquo;t care if it was slower as the collection grew, the definition of size was elegantly simple, and reused the definition of inject.&lt;/p&gt;
+
+&lt;p&gt;The important thing was that while inadvisable in real world implementations, in my imaginary collections forgetting performance allowed me for semantically better definitions of some methods.&lt;/p&gt;
+
+&lt;h2 id=&#34;iteration&#34;&gt;Iteration&lt;/h2&gt;
+
+&lt;p&gt;The other, real big dilemma was the kind of iteration. I mean, internal or external iteration? What&amp;rsquo;s your favourite?&lt;/p&gt;
+
+&lt;p&gt;I found out that it was a good topic for arguments. People do seem to have a favourite option. It was strange for me because I liked both, and they are free. I mean, you can have both, right?&lt;/p&gt;
+
+&lt;p&gt;Luckily for rubists, Ruby followed that direction, and it lets you have it your way &lt;code&gt;each&lt;/code&gt; behaves as internal and external depending on how you call it. In java you &amp;ldquo;could&amp;rdquo; probably have both, but the complexity of internal iteration without closures makes it a no-go. Smalltalk is also biased, but towards internal interation, as it&amp;rsquo;s the choice made for &lt;code&gt;Collection&lt;/code&gt; class. But of course, it is easier to implement external iteration in smalltalk, than internal in Java. At least prettier.&lt;/p&gt;
+
+&lt;p&gt;Aside from personal / subjective reasons I wanted to know what were the pros/cons of each option (as with any design decision).
+I read from &lt;a href=&#34;http://gafter.blogspot.com/2007/07/internal-versus-external-iterators.html&#34;&gt;here&lt;/a&gt;, &lt;a href=&#34;http://journal.stuffwithstuff.com/2013/01/13/iteration-inside-and-out/&#34;&gt;here&lt;/a&gt;, &lt;a href=&#34;http://www.cs.ox.ac.uk/jeremy.gibbons/publications/iterator.pdf&#34;&gt;here&lt;/a&gt;, &lt;a href=&#34;http://c2.com/cgi/wiki?InternalizeExternalIterators&#34;&gt;here&lt;/a&gt; and &lt;a href=&#34;http://okmij.org/ftp/papers/LL3-collections-enumerators.txt&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;let-s-agree-to-disagree&#34;&gt;Let&amp;rsquo;s agree to disagree&lt;/h2&gt;
+
+&lt;p&gt;When I talk about iteration I mean the process of traversing a resource (may be a collection, a file, a result set from a remote database, etc) in a specified order, to do something with it, applying an operation item after item.&lt;/p&gt;
+
+&lt;p&gt;An iteration has then a resource where you get items, a traversal that define which items and in what order, and an operation that defines what is done on each one.&lt;/p&gt;
+
+&lt;p&gt;Additionally you can view the iteration as an interaction between a producer code that knows how to generate the items, and a consumer code that knows what to do with them. This perspective is helpful in understanding the differences between iteration types.&lt;/p&gt;
+
+&lt;h2 id=&#34;differences&#34;&gt;Differences&lt;/h2&gt;
+
+&lt;p&gt;I was really surprised by the fact that they are not mutually replaceable. Though they have shared uses cases, there are a few use cases that only one type of iteration fits. Then why choose only one, if one doesn&amp;rsquo;t fits all?&lt;/p&gt;
+
+&lt;p&gt;Let me tell you what I found about iterations:&lt;/p&gt;
+
+&lt;h3 id=&#34;pros&#34;&gt;Pros:&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;External iteration: Reified traversal&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;em&gt;Consumer decides when:&lt;/em&gt; The traversal is abstracted as an iterator object given to the consumer, so the consumer of the iterated elements is in control of when the iteration must advance.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;em&gt;Source abstraction:&lt;/em&gt; Because traversal is abstracted, you can consume elements without knowing where they come from. You just need a reference to the iterator object.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;em&gt;Deferment:&lt;/em&gt; Because consumer is in control of the iteration, you can delay real iteration until the moment consumer ask for an item. This allows for lazy iteration of costly elements.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;em&gt;Iteration sharing:&lt;/em&gt; As an object, the iterator can be shared among consumers, passed as argument, decorated, augmented, etc. Thus allowing you to add, change, combine or share traversal semantics.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;em&gt;Traversal reusability:&lt;/em&gt; As traversal has to be an object, it is easier to detect recurring patterns for the way resources are iterated and reuse pre-existing definitions.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Internal iteration: Reified operation&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;em&gt;Producer decides when:&lt;/em&gt; The iteration is abstracted as a method that receives an operation to apply on each item. The producer decides when to advance the iteration, and when to apply the operation to each element.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;em&gt;Destination abstraction:&lt;/em&gt; Because the operation is abstracted to the producer, you can apply it to each element without knowing what is happening with them.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;em&gt;Completeness:&lt;/em&gt; Because the producer decides when the iteration advances, it knows when it is completed (started and finished), being able to manage resources associated to the iteration. It can close files, liberate connections, etc after the iteration is done without waiting for the producer.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;em&gt;Operation sharing:&lt;/em&gt; As an object, the operation can be shared among producers, passed as argument, decorated, augmented, etc.  Thus allowing you to add, change, combine or share operation semantics.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;em&gt;Operation reusability:&lt;/em&gt; As operation has to be an object, it is easier to detect recurring patterns for the actions applied to an item and reuse pre-existing definitions.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;cons&#34;&gt;Cons:&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;External iteration: Unfinished business&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;em&gt;Uncompleted iterations:&lt;/em&gt; Because the consumer decides when to advance the iteration, there&amp;rsquo;s no way for the producer to ensure that the iteration is completed (started and finished). The consumer could potentially never finish the iteration.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;em&gt;Resource leakage:&lt;/em&gt; As a side effect of uncompleted iterations, if the iteration involves resources that must be freed, forever lasting iterations mean resource leakage. Unless the consumer notifies the producer when the iteration is done, there&amp;rsquo;s no way for the producer to release the resources. (Specially with the default interface for Java iterators).&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;em&gt;Operation duplication:&lt;/em&gt; Because the operation is not forcefully reified, distracted consumer code can repeat the definition of an operation. It&amp;rsquo;s easy to express the same operation as inline code more than once on different methods, thus violating the &lt;a href=&#34;http://en.wikipedia.org/wiki/Don&#39;t_repeat_yourself&#34;&gt;DRY principle&lt;/a&gt;, and making operations hard to reuse.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;em&gt;Hard to implement:&lt;/em&gt; As you want to make traversal an object, you have to retain traversal state in that object. Depending on the type of iterated resource, and the way you want to traverse it, that could be very hard to implement as you have to decompose a loop in steps, that only an method invocation advances (At least is difficult for me).&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Internal iteration: One at a time&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;em&gt;Non parallelizable:&lt;/em&gt; Because the producer decides when to advance the iteration, there&amp;rsquo;s no way for the consumer to make two coordinated parallel iterations (one step on both iteration at the same time). If you want to compare elements in order for two collections you will have a hard time trying to coordinate both producers. In languages with continuations or coroutines, I imagine you could achieve it by pausing each iteration on the operation, comparing elements and resuming, but it sure adds some complexity not for average joe.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;em&gt;No way out:&lt;/em&gt; The consumer doesn&amp;rsquo;t have a normal way to stop the iteration in the middle. Unless the producer offers some kind of communication mechanism, the consumer has to use exceptions to abnormally cut the iteration, or be forced to consume every element produced until the end of the iteration.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;em&gt;Resource eagerness:&lt;/em&gt; As a side effect of &amp;ldquo;No way out&amp;rdquo; the producer could use costly resources not really needed by the the consumer, just to finish the partially needed iteration.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;em&gt;Traversal duplication:&lt;/em&gt; Because the traversal of the resource is not forcefully reified in the iteration, distracted producer code can repeat the definition of how you are iterating the resource. It&amp;rsquo;s easy to express the traversal of a structure as an inline code more than once on different methods, thus violating the DRY principle.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;conclusions&#34;&gt;Conclusions&lt;/h2&gt;
+
+&lt;p&gt;You don&amp;rsquo;t have to choose one kind of iteration. Really! Try to keep both and use them where they fit best.
+Adding internal from external iteration is trivial on many languages.
+Adding external from internal can be impossible unless you have a &amp;ldquo;yield&amp;rdquo; construct.&lt;/p&gt;
+
+&lt;p&gt;I recommend you check how to do it in your language in case you need any of them.&lt;/p&gt;
+
+&lt;p&gt;Some of the cons I mentioned can be reduced by including concepts from one type of iteration on the other. For example you can reify operations though they are not needed with external iterations to avoid code duplication. The same for traversal with internal iterations, so you can detect recurring patterns. Again, depending on your language of choice, this can vary from trivial to horribly verbose.&lt;/p&gt;
+
+&lt;p&gt;Additionally add some form of communication between the consumer and the producer, so the consumer can tell the producer when to stop. On both options there&amp;rsquo;s a negative consequence for not having this communication (Uncompleted iterations, Resource leakage, No way out, resource eagerness) so if you can, add it, and use it.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Collecting Collections - Day 20</title>
+      <link>http://blog.10pines.com/2013/11/06/collecting-collections-day-20/</link>
+      <pubDate>Wed, 06 Nov 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.10pines.com/2013/11/06/collecting-collections-day-20/</guid>
+      <description>
+
+&lt;p&gt;Some time ago I started digging collection APIs in a few languages trying to answer a philosophical question. How were the whole/part relationships represented on programming languages (through collections) and what were the operations that we (as programmers) used on them.What started as a few minutes skimming through collections sources in Smalltalk, Java and (thanks to Ignacio) Ruby, have become an intensive and interesting work of exploration and discovery that branched more questions and a toy Java project also.&lt;/p&gt;
+
+&lt;p&gt;After a month and a half, I don&amp;rsquo;t have a clear answer to my question but as I dig deeper, some concepts that were unknown to me seem interesting enough to share. So I thought I could keep a log in this blog of what I&amp;rsquo;m doing and thinking, and at the same time share what I discover.Hopefully it might be helpful to someone.&lt;/p&gt;
+
+&lt;h2 id=&#34;first-steps&#34;&gt;First steps&lt;/h2&gt;
+
+&lt;p&gt;I started by looking at the different protocols for collections and different types of collections in each of three languages:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Smalltalk: Because is THE reference for everything&lt;/li&gt;
+&lt;li&gt;Java: Because is the language I know best&lt;/li&gt;
+&lt;li&gt;Ruby: Because is very popular nowadays and I have who ask to in the company&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;After navigating source code, reading online documentation and writing down every common or interesting method I collected approximately 250 different methods. Some were shared among languages as &lt;code&gt;size&lt;/code&gt;, some were exclusive as &lt;code&gt;identityIncludes: anObject&lt;/code&gt; from Smalltalk. My objective was to discriminate methods by its semantics regardless its name or its class. The idea was to identify different operations. That&amp;rsquo;s how &lt;code&gt;removeLast&lt;/code&gt;, &lt;code&gt;pop → obj or nil&lt;/code&gt; or &lt;code&gt;E removeLast();&lt;/code&gt; were grouped as the same operation.&lt;/p&gt;
+
+&lt;p&gt;Online sources consulted for collection apis&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Smalltalk&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.gnu.org/software/smalltalk/manual-base/&#34;&gt;http://www.gnu.org/software/smalltalk/manual-base/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://stephane.ducasse.free.fr/FreeBooks/BlueBook/&#34;&gt;http://stephane.ducasse.free.fr/FreeBooks/BlueBook/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://pdep.com.ar/material/apuntes/Guia_de_lenguajes-1-6.pdf?attredirects=0&#34;&gt;http://pdep.com.ar/material/apuntes/Guia_de_lenguajes-1-6.pdf?attredirects=0&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Ruby&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://ruby-doc.org/core-2.0.0/Enumerable.html&#34;&gt;http://ruby-doc.org/core-2.0.0/Enumerable.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://ruby-doc.org/core-2.0.0/Array.html&#34;&gt;http://ruby-doc.org/core-2.0.0/Array.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Java&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://docs.oracle.com/javase/7/docs/api/java/util/Collection.html&#34;&gt;http://docs.oracle.com/javase/7/docs/api/java/util/Collection.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;too-many-operations-and-variants&#34;&gt;Too many operations and variants&lt;/h2&gt;
+
+&lt;p&gt;250 something methods was not what I expected, 30 or 50 at maximum! I had to find a way to reduce that number. I didn&amp;rsquo;t believe that some many concepts were needed when working with collections.&lt;/p&gt;
+
+&lt;p&gt;{% img /images/methods_table.jpg %}
+(Screenshot of part of the method table)&lt;/p&gt;
+
+&lt;p&gt;I started analyzing each one of them and trying to find a way to describe one operation in terms of others. For example, &lt;code&gt;addAllFirst&lt;/code&gt; could be described as doing for each element &lt;code&gt;addFirst&lt;/code&gt;. If I could find the main operations, probably the rest were variations of them. I purposely ignored obvious performance considerations. I added attributes to categorize the methods (didn&amp;rsquo;t work well but helped me understand them).&lt;/p&gt;
+
+&lt;p&gt;Interestingly, when trying to describe some methods in terms of others I found that I couldn&amp;rsquo;t get a good description, but there were variations of the concept as &lt;code&gt;addFirst&lt;/code&gt; and &lt;code&gt;addLast&lt;/code&gt;. One could say that &lt;code&gt;addLast&lt;/code&gt; is a version of &lt;code&gt;addFirst&lt;/code&gt; in which you start reversed. But the same would be true simmetrically. Maybe, there was a missing concept there. Maybe I was trying to indicate the position but in a relative way. What is the difference between &lt;code&gt;addFirst&lt;/code&gt; in Smalltalk and &lt;code&gt;add(0, ...)&lt;/code&gt; in Java? Pragmatically, they do the same, but semantically they are using different coordinate systems. Why there isn&amp;rsquo;t an &lt;code&gt;addSecond&lt;/code&gt; method? Nobody add at the second position?&lt;/p&gt;
+
+&lt;p&gt;I couldn&amp;rsquo;t answer those questions either, but surely some concepts started to emerge. I was sure that something like &lt;code&gt;add:obj at:ordinal&lt;/code&gt; used as &lt;code&gt;add: &#39;text&#39; at: firstPosition&lt;/code&gt; was missing and some concepts were not reified, as &amp;ldquo;order&amp;rdquo;, or &amp;ldquo;positon&amp;rdquo;.If you don&amp;rsquo;t have and order, which is the first one? Could you &lt;code&gt;addFirst&lt;/code&gt; in a fixed size array?&lt;/p&gt;
+
+&lt;h2 id=&#34;common-operations-or-shared-operations&#34;&gt;Common operations or shared operations?&lt;/h2&gt;
+
+&lt;p&gt;As I checked different collection types, I realized that some operations were perfectly applicable on some types but there was no method for that (specially in Java). If I could find a common API between collections, was it possible for me to extend existing APIs to include those additional methods?&lt;/p&gt;
+
+&lt;p&gt;But wait, what if I needed to share a method definition between classes from different hierarchies? Single inheritance, Java and Java closed collections, started to sound as no-go. What about Smalltalk, did they have that problem? It turned out that as long as you followed standard operations on standard classes you didn&amp;rsquo;t; and the guys that designed Smalltalk did a very good job at designing the collections hierarchy. However, you do have the problem when going out of the standard (that is rarer than in Java because of the extensive collection protocol). But if you need some standard collection methods on your custom classes and you don&amp;rsquo;t inherit from collection, you might be in trouble.&lt;/p&gt;
+
+&lt;p&gt;There are approaches to attack this problem (sharing behavior in different hierarchies), that range from multiple inheritance, class algebra, traits, etc. But I wanted to think in a solution that were applicable on Java (the language I use most), so my options weren&amp;rsquo;t many (any?). On the other hand I started to question if it had sense to define a method in seemingly different and unconnected classes, or maybe the operations on the collections were something of weight of their own, not something proper of the collection class. What if I wanted to create a new type of collection that could &lt;code&gt;addAllFirst&lt;/code&gt;? Should I define that method again? Should I move it up in some strange shared hierarchy? What if &lt;code&gt;addAllFirst&lt;/code&gt; were a concept applicable to files? If a file is an ordered collection of bytes should it have and &lt;code&gt;addAllFirst&lt;/code&gt; somewhere in its hierachy? What if it didn&amp;rsquo;t? Was a bad designed hierarchy? Could I design the perfect hierarchy for every possible collection? What was the possible cost of that?&lt;/p&gt;
+
+&lt;p&gt;Maybe I should abandon the idea of inheritance to gain the freedom of composition, but that carries the problem of identity. How can an external object reference to my state as it were his? Normally you would say that, you don&amp;rsquo;t do that. You don&amp;rsquo;t want another class messing with your state, but then you have to provide a good interface between both. The problem of the perfect hierarchy started to evolve as the problem of the perfect collaboration protocol for collections.&lt;/p&gt;
+
+&lt;p&gt;I don&amp;rsquo;t have the answer to that either. But I&amp;rsquo;m on day 42 now, and messing with a toy project in java, trying some ideas that came after a little more research. I don&amp;rsquo;t have a clear answer now but I feel I&amp;rsquo;m close to something (I hope it is not big wall of &amp;ldquo;can&amp;rsquo;t do&amp;rdquo;).&lt;/p&gt;
+
+&lt;p&gt;I will tell you more in another post so I don&amp;rsquo;t bore you more and continue coding!&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lean on 10 Pines Blog</title>
+    <link>http://blog.10pines.com/categories/lean/</link>
+    <description>Recent content in Lean on 10 Pines Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 07 Nov 2014 11:00:00 +0000</lastBuildDate>
+    <atom:link href="http://blog.10pines.com/categories/lean/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>MVP&#39;s: The Real Deal</title>
+      <link>http://blog.10pines.com/2014/11/07/mvps-the-real-deal/</link>
+      <pubDate>Fri, 07 Nov 2014 11:00:00 +0000</pubDate>
+      
+      <guid>http://blog.10pines.com/2014/11/07/mvps-the-real-deal/</guid>
+      <description>&lt;p&gt;We all know how it goes: An idea strikes our mind, and before we notice, hands are already on our keyboard, our favourite IDE wide open, (luckily a bit of brainstorming) and a product is born.&lt;/p&gt;
+
+&lt;p&gt;Yeah yeah, we all know we should hold the horses and make some state-of-the-art research. With ease we talk ourselves into believing that most of it sucks (compared with the product in our minds). We can do it way better, and everyone will love it, because everyone needs it. Code-blocks on it!&lt;/p&gt;
+
+&lt;p&gt;Some hard-work and long-night weeks go by, and now we have our first MVP, our minimal viable product, something to show to our early-adopters and check what happens. It may not be definitive, but hey! this is Agile, we are doing Iterative-incremental development here!&lt;/p&gt;
+
+&lt;p&gt;This is the moment where fantasy starts to fall apart. Our early-adopters do not adopt it as much as we wished. We realize our solution may not be as compelling as we thought, or maybe the customer pain we were trying to relieve was not as significant as we originally thought. User feedback indicates it’s time to pivot, make a value-proposition switch, maybe change our entire business model, hence most of what we have been (luckily just) coding.&lt;/p&gt;
+
+&lt;p&gt;As a both freelance and enterprise developer, as well as novice entrepreneur, I have seen (and experienced) this scenario countless times, across a wide project-scale spectrum. And I have to admit, until some months ago, this was the moment when I felt kind of relieved and said “*Oh god, good thing I got this information at such an early stage. This saved me tons of resources and wasted effort*”.&lt;/p&gt;
+
+&lt;p&gt;But what about this: &lt;strong&gt;Was there any way I could have saved more resources and avoided even this wasted effort?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;By all means, the answer is Yes. But be aware fearless reader! You will have to dig into some dark zones.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Do you imagine letting prospective users interact with a paper version of your product and ask someone to click a “link” on a paper with their index finger?&lt;/li&gt;
+&lt;li&gt;Do you conceive testing the market response to an AI based solution without any real AI implementation but manual work instead?&lt;/li&gt;
+&lt;li&gt;What about spending some of your scarce budget on customer profiling before ANY coding?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Scary, I know.&lt;/p&gt;
+
+&lt;p&gt;The purpose of this article is to get right what most of us got wrong in the first place about MVPs: &lt;strong&gt;An MVP it&amp;rsquo;s something that only exists in order to help us learn about our customers and their behaviour&lt;/strong&gt;.
+This hides the fact that an MVP may not even be an iteration of our product, just an &amp;ldquo;experiment&amp;rdquo; designed for discovery purposes. And this is, for most of us, a quite uncomfortable idea. Our comfort-zone relies on the build -&amp;gt; deliver flow, and anything else feels just upside-down. At least at the beginning.&lt;/p&gt;
+
+&lt;p&gt;Remember your early days with TDD? When you were not yet &lt;em&gt;test-infected&lt;/em&gt;? You may remember that first awkwardness of coding the &lt;strong&gt;what&lt;/strong&gt; prior to the &lt;strong&gt;how&lt;/strong&gt;. You may remember it, but now TDD has become second nature to you and anything else probably feels kind of blind-walking, right?&lt;/p&gt;
+
+&lt;p&gt;Well, now think about an &lt;em&gt;mvp-infected&lt;/em&gt; state, where any feature you choose to build, has an mvp-guided customer-side validation that ensures there is a value for your customers behind it&amp;hellip;. What a sweet road to walk through!&lt;/p&gt;
+
+&lt;p&gt;Some advice though: be as sure as you can of what you are hoping to measure (learn) with an MVP. Or leastwise, keep firmly in mind what you are &lt;strong&gt;NOT&lt;/strong&gt; trying to validate. As said, our unconscious will struggle to find external approval (comfort) in every aspect it can, and deviate our attention from the specific purpose of the MVP.&lt;/p&gt;
+
+&lt;p&gt;There are lots of known ways to achieve this, we all know (or should) books like &lt;a href=&#34;http://theleanstartup.com/&#34;&gt;The Lean Startup&lt;/a&gt; (Eric Ries) and &lt;a href=&#34;http://www.guykawasaki.com/the-art-of-the-start/&#34;&gt;The Art of the Start&lt;/a&gt; (Guy Kawasaki), two great books that bring a warehouse of real-life examples of successful MVP’s. However there is no proven methodology behind MVP’s and the best way to answer your specific market questions will probably emerge from creativity and some lateral thinking.&lt;/p&gt;
+
+&lt;p&gt;However, just so you can take some real example out of this article, I will share some pictures of a successful MVP user testing session conducted for a project I was part of. Potential users were presented a “wireframed” version of a web application in plain paper, and they were asked to perform specific tasks on it, using their hands as mouses, to finally get their feedback.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.10pines.com/images/mvps-the-real-deal_1.jpg&#34; style=&#34;width: 227px;&#34; /&gt;
+&lt;img src=&#34;http://blog.10pines.com/images/mvps-the-real-deal_2.jpg&#34; style=&#34;width: 227px;&#34; /&gt;
+&lt;img src=&#34;http://blog.10pines.com/images/mvps-the-real-deal_3.jpg&#34; style=&#34;width: 227px;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This was a highly rewarding experience and you would probably be surprised to see how involved users became and how much information we collected, from both their words and their behaviour.&lt;/p&gt;
+
+&lt;p&gt;Great MVP’s are born from deeply understanding how little we know about our customers and how crucial this is for the success of our venture.&lt;/p&gt;
+
+&lt;p&gt;Good luck getting to know your customer!&lt;/p&gt;
+
+&lt;p&gt;P.S. If you are comfortable with spanish, take a look at &lt;a href=&#34;http://blog.10pines.com/2014/10/28/lean-sales-up/&#34;&gt;this post&lt;/a&gt;, wich gives a highly interesting approach of lean principles applied to the sales process.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

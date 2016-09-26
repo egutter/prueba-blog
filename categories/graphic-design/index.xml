@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Graphic Design on 10 Pines Blog</title>
+    <link>http://blog.10pines.com/categories/graphic-design/</link>
+    <description>Recent content in Graphic Design on 10 Pines Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 11 Jul 2016 16:58:01 +0000</lastBuildDate>
+    <atom:link href="http://blog.10pines.com/categories/graphic-design/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>A Little Bit of Color!</title>
+      <link>http://blog.10pines.com/2016/07/11/a-little-bit-of-color/</link>
+      <pubDate>Mon, 11 Jul 2016 16:58:01 +0000</pubDate>
+      
+      <guid>http://blog.10pines.com/2016/07/11/a-little-bit-of-color/</guid>
+      <description>&lt;p&gt;#How to create a great palette for your app/web&lt;/p&gt;
+
+&lt;p&gt;You may have never paid close attention to the colors you pick for your web or app, but having a good palette helps organizinge information in your site.The idea behind this post is not to give an introduction to color theory but to offer a simple guide to help you create an harmonious and useful palette.&lt;/p&gt;
+
+&lt;p&gt;#What does a good palette look like?&lt;/p&gt;
+
+&lt;p&gt;Well, it depends on what we need. We have to think of color as an aid to organize information, for instance having different sections and identifying them more easily or drawing the user’s attention to take a specific action.&lt;/p&gt;
+
+&lt;p&gt;The first step to create our palette is understanding how it’s composed: basically we have 2 main color groups, neutral and highlights. The first group can be used on large blocks (our main, footer, header, texts, etc.). And the second one is ideal for smaller elements that need to draw attention, such as buttons, links and call to actions.&lt;/p&gt;
+
+&lt;div class=&#34;basic-alignment center&#34;&gt;
+  {% img /images/paleta.png %}
+&lt;/div&gt;
+
+&lt;p&gt;The lightest and darkest colors we pick should follow the hue chosen for our neutral colors. For example, black and white, or dark grey and white, or if we want a little bit more color, a dark blue like in the example above. It’s important for them to have a big contrast between them to allow an easy reading experience.&lt;/p&gt;
+
+&lt;p&gt;#How to generate a cool palette?&lt;/p&gt;
+
+&lt;p&gt;There are a number of ways to generate a palette:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;You can find one you like on &lt;a href=&#34;http://colorhunt.co/&#34;&gt;http://colorhunt.co/&lt;/a&gt; and tune it according to your needs by adding or removing colors.&lt;/li&gt;
+&lt;li&gt;You can play around with: &lt;a href=&#34;http://www.colourco.de/&#34;&gt;http://www.colourco.de/&lt;/a&gt; and generate palettes through triads and quads.&lt;/li&gt;
+&lt;li&gt;You can choose colors one by one (we will go over how to do this in a bit).&lt;/li&gt;
+&lt;li&gt;You can choose a picture with colors that you find nice and are suitable for your web and take your palette from it.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;As promised, let’s create a whole palette in 3 simple steps:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;The first step is to choose a specific color. This could be our company logo’s or brand color. If you don’t have a brand color we must pick one, it could simply be a color we like or do a market research to find the one that would fit our web. There are tons of information on the web about the color meanings as well as research on the colors most frequently used by large corporations that can help you take a decision. I’m gonna pick 10Pines’ brand color: #7EC247&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;The second step involves picking a second and/or third highlight color. This will be a support color used when we need to show a secondary interaction for the user. A good way to look for these colors is finding the complementary color or creating a triad or quad based on the color we chose on the previous step. Don’t be afraid, these pages can help you with it:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://colorschemedesigner.com/csd-3.5/&#34;&gt;http://colorschemedesigner.com/csd-3.5/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.colourlovers.com/copaso/ColorPaletteSoftware&#34;&gt;http://www.colourlovers.com/copaso/ColorPaletteSoftware&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&#34;basic-alignment center&#34;&gt;
+  {% img /images/complementarios.png %}
+&lt;/div&gt;
+
+&lt;p&gt;Or you can choose another color you like. Mine will be: #F7931E&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;The last step is to generate our neutral colors, they could simply be a grey scale or we can chose a different color, preferably with low saturation, and generate a  gradient from it. I will go ahead and pick a grey scale, ending up with the following palette:&lt;/p&gt;
+
+&lt;div class=&#34;basic-alignment center&#34;&gt;
+  {% img /images/paleta2.png %}
+&lt;/div&gt;  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Before saying goodbye, I would like to show you a couple of examples generated from photographs. These are mine, but there is no need for you to go out and take pictures for this, you can just get them on the internet.&lt;/p&gt;
+
+&lt;div class=&#34;basic-alignment center&#34;&gt;
+  {% img /images/fotos.png %}
+&lt;/div&gt;
+
+&lt;p&gt;This web will help you extract a palette from a image: &lt;a href=&#34;http://www.pictaculous.com/&#34;&gt;http://www.pictaculous.com/&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Finally, keep in mind that having a good palette will help you organize the information we offer to the user hierarchically. I’ll leave how to properly use this palette for another post.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

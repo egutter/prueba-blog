@@ -1,0 +1,1677 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on 10 Pines Blog</title>
+    <link>http://blog.10pines.com/post/</link>
+    <description>Recent content in Posts on 10 Pines Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 13 Sep 2016 14:17:06 +0000</lastBuildDate>
+    <atom:link href="http://blog.10pines.com/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>From a newbie, to a newbie</title>
+      <link>http://blog.10pines.com/2016/09/13/from-a-newbie-to-a-newbie/</link>
+      <pubDate>Tue, 13 Sep 2016 14:17:06 +0000</pubDate>
+      
+      <guid>http://blog.10pines.com/2016/09/13/from-a-newbie-to-a-newbie/</guid>
+      <description>
+
+&lt;p&gt;It&amp;rsquo;s been less than a year since I joined 10Pines, and a little more than two since I started working officialy as a programmer. I don&amp;rsquo;t like calling myself a &lt;em&gt;junior&lt;/em&gt; developer because seniorities can be easily misused, as their meanings depend on what the person using these terms is looking for in a programmer and the context where they work at. What I can assure you is that I feel like a &lt;em&gt;newbie&lt;/em&gt; developer. Maybe it&amp;rsquo;s all in my head, since my fellow team members treat me as an equal at all times, but sometimes the lack of experience in some scenarios just gets me as frustrated as a kid learning to ride a bike. To fight this, I have gathered a couple of life-savers that help me keep on track when I&amp;rsquo;m about to call it quits.&lt;/p&gt;
+
+&lt;h2 id=&#34;become-friends-with-your-tools&#34;&gt;Become friends with your tools&lt;/h2&gt;
+
+&lt;p&gt;Someone once told me I should code as fast as I think. My fingers are not &lt;em&gt;that&lt;/em&gt; fast, but trying to accomplish this is a satisfying process as I gain confidence in my environment. Learn your IDE shortcuts, create scripts for tasks you have to do often, or establish the way you will arrange your windows by default. Mastering the tools you use everyday will make your workflow more bearable and will make you feel at home on your computer.&lt;/p&gt;
+
+&lt;h2 id=&#34;stop-breathe-and-write-your-ideas-down&#34;&gt;Stop, breathe and write your ideas down&lt;/h2&gt;
+
+&lt;p&gt;I can be a really anxious developer sometimes; I tend to get carried away by big domains and end up having headaches. If you ever start entangling your thoughts with the idea you are trying to craft, stop going from one class to another or staring at a blank test and grab a paper. Make a diagram or whatever can help you capture what you have on your mind; get it out of your head and see it in a static way. It is important that you do it by hand and not in a computer notepad, because at the time of representing thoughts technology can limit our expressiveness.&lt;/p&gt;
+
+&lt;h2 id=&#34;actually-learn-from-the-domain&#34;&gt;Actually learn from the domain&lt;/h2&gt;
+
+&lt;p&gt;As a software developer, you have to solve the problems you are being asked to, but it isn&amp;rsquo;t about doing it fast, counting the lines of code and moving on to the next thing. It is really important that you &lt;strong&gt;understand&lt;/strong&gt; what you are working on. I cannot stress this enough. You are always modeling a bit of the reality we live on, so actually getting it helps you cover all posible workflows and suggest improvements to the solution. Ask for more context when you are not sure about something and go over whatever you are building as if you were a final user. Don&amp;rsquo;t be a coding bot, be a person who develops his/her work consciously.&lt;/p&gt;
+
+&lt;h2 id=&#34;don-t-get-trapped-inside-a-technology&#34;&gt;Don&amp;rsquo;t get trapped inside a technology&lt;/h2&gt;
+
+&lt;p&gt;Some people try to learn as much languages or frameworks as they can. Pablo talks about developing based on &lt;em&gt;essence&lt;/em&gt; on &lt;a href=&#34;https://blog.10pines.com/2015/02/18/essence-driven-development/&#34;&gt;his post&lt;/a&gt; and I couldn&amp;rsquo;t agree more with him. Us newbies can get stuck on technologies just because we don&amp;rsquo;t follow their syntax or other simple problems that take up a lot of time from our project. This should never get in your way if you remember that what matters most is creating good abstractions for the domain you are trying to represent. The rest can be solved by reading documentation, trying to follow some tutorials or asking someone from your team. This last part leads me to another good advice:&lt;/p&gt;
+
+&lt;h2 id=&#34;don-t-wait-until-it-is-too-late-to-ask-for-help&#34;&gt;Don&amp;rsquo;t wait until it is too late to ask for help&lt;/h2&gt;
+
+&lt;p&gt;This might seem insignificant from our perspective, but I&amp;rsquo;ve heard it from a lot of people (and of course it has happened to me). Trying to do things by ourselves is the right way to grow, but debugging two hours the same piece of code with no results is degrading and makes you want to quit and study herbology. Learning to differentiate when the right time to call someone has come will reduce frustration and, by the way, will make you see receiving help is not a crime. Someday you&amp;rsquo;ll be capable and willing to return the favor and give a hand to another newbie.&lt;/p&gt;
+
+&lt;h2 id=&#34;embrace-changes-and-challenges&#34;&gt;Embrace changes and challenges&lt;/h2&gt;
+
+&lt;p&gt;A new procedure you&amp;rsquo;ve never done before? Having to work with new people? Maybe standing up for what you think is the best solution to a problem, even though someone disagrees with you? Don&amp;rsquo;t panic, you are not the first and won&amp;rsquo;t be the last to face these things. Pull yourself together and try to see this as an adventure, as cheesy as it may sound. I assume that you are a passionate developer -I actually can&amp;rsquo;t think of someone doing this for other reason than loving it or being crazy-, so stressing out over this nuisances is a waste of time. With the advice I gave above, you should try to enjoy the process. If you don&amp;rsquo;t, reach out to someone and ask for advice letting them know what is bothering you. But don&amp;rsquo;t ever &lt;em&gt;ever&lt;/em&gt; back up on a new experience!&lt;/p&gt;
+
+&lt;h2 id=&#34;learn-from-your-mistakes&#34;&gt;Learn from your mistakes&lt;/h2&gt;
+
+&lt;p&gt;As Toia explains on &lt;a href=&#34;https://blog.10pines.com/2015/11/02/learning-programming/&#34;&gt;her post about learning programming&lt;/a&gt;, we all experience a lot of frustration in our profession. The key is to get something out of each childish tantrum, make your mistakes memorable in a good way. Be sure that you will get past this problems eventually, and that you will always learn something new because of this. Whether it is learning a new mechanism, or what not to do to avoid dropping the whole database, you should pin those new tips onto your brain to avoid repeating them or solving them quickly.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;I hope that this helps out another insecure developer out there -at least this is a good note to myself for the stressing moments. I know that as long as I keep on programming, I&amp;rsquo;ll face mistakes, challenges and debugging mysteries over and over again. What I also know is that every day I gain a little more experience and tools to handle these situations. Try to remember that, when you are about to break down, and also when you are feeling good about yourself for that nice new feature you just made. Make your own way through this and share your tips with another newbie!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>An Inverted Test Pyramid</title>
+      <link>http://blog.10pines.com/2016/07/26/inverted-test-pyramid/</link>
+      <pubDate>Tue, 26 Jul 2016 17:39:03 +0000</pubDate>
+      
+      <guid>http://blog.10pines.com/2016/07/26/inverted-test-pyramid/</guid>
+      <description>
+
+&lt;p&gt;I believe that most of us are familiar with the concept of &amp;ldquo;Test Pyramid&amp;rdquo;, a simple heuristic originally described by Mike Cohn, that is that a project should aim to have a larger number of unit tests than end-to-end tests. But after working on a project suffering from an inverted pyramid, I think it’s worth mentioning some of the downsides that relying solely on end-to-end tests might have.&lt;/p&gt;
+
+&lt;h2 id=&#34;don-t-slow-me-down&#34;&gt;Don&amp;rsquo;t slow me down&lt;/h2&gt;
+
+&lt;p&gt;If we take developing a web app as an example, then you might end up using something like &lt;a href=&#34;http://www.seleniumhq.org/&#34;&gt;Selenium&lt;/a&gt; to build UI tests. Even with tools or frameworks like &lt;a href=&#34;https://github.com/jnicklas/capybara&#34;&gt;Capybara&lt;/a&gt;, or &lt;a href=&#34;https://github.com/natritmeyer/site_prism&#34;&gt;SitePrism&lt;/a&gt; if you want to use page objects, that make building these tests more accessible, they are usually harder and take longer to write than unit tests. Moreover, they tend to be brittle; when new features are added or UI elements suffer small changes, they may break meaning time and work needs to go into them more often.
+They are also much slower to run, so as your number of tests grows, so does the time it takes to run your whole test suite, slowing everything down further. This of course is to be expected, but you will reach bothersome run times sooner when you have a larger number of UI tests.
+All of this adds up to a more frustrating working environment for the developer, and also to a &lt;strong&gt;slower development process&lt;/strong&gt;, which translates into higher development costs.&lt;/p&gt;
+
+&lt;h2 id=&#34;lack-of-feedback&#34;&gt;Lack of feedback&lt;/h2&gt;
+
+&lt;p&gt;Apart from the disadvantages already mentioned, I feel &lt;strong&gt;their biggest drawback is the lack of feedback they provide for the developer&lt;/strong&gt;. Unit tests are usually self-contained, so when one fails, it leads the developer directly towards where the problem is. On the contrary when a UI test fails, it will probably need some tracking down to be done before finally figuring out what needs to be fixed. So if a UI test fails without a unit test failing alongside it, it probably means there is one missing.
+As Roman mentions on his post &lt;a href=&#34;https://blog.10pines.com/2015/09/18/tests-paving-our-way/&#34;&gt;&amp;ldquo;Tests: Paving Our Way&amp;rdquo;&lt;/a&gt;, tests not only help us achieve better designs and abstractions, they also double up as documentation for our code. Unit tests help document different concepts in the domain we are working on and more importantly how these concepts are represented in our code. On the other hand, end-to-end tests only tell us how a specific user might interact with the system in an specific use case scenario, which is important but not as useful for the developer, specially new team members who might be not familiar with the domain or code base.&lt;/p&gt;
+
+&lt;h2 id=&#34;final-thoughts&#34;&gt;Final thoughts&lt;/h2&gt;
+
+&lt;p&gt;I’m not saying that end-to-end tests should be avoided completely as they help catch errors that might not be detected otherwise, they are specially important in testing critical use case scenarios. Let’s say you have a use case where an error might cost you thousands of dollars over the time it takes for it to be detected and fixed, then of course this should be tested as thoroughly as possible and end-to-end tests provide a necessary additional level of protection.
+It’s just important to keep in mind they test different things and their purpose is different. We should take into account their higher cost when evaluating how to test the system we are working on. &lt;strong&gt;The value they add should balance the time and effort that goes into them&lt;/strong&gt;. Finally, we should also never forgo unit tests even if there are higher level tests that cover the same code.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Collection Filters in Ruby</title>
+      <link>http://blog.10pines.com/2016/07/14/collection-filters-in-ruby/</link>
+      <pubDate>Thu, 14 Jul 2016 13:00:00 +0000</pubDate>
+      
+      <guid>http://blog.10pines.com/2016/07/14/collection-filters-in-ruby/</guid>
+      <description>
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; acknowledgements (and thanks!) to Máximo Prieto (our OOP guru) who had this idea and he implemented it on
+Smalltalk.&lt;/p&gt;
+
+&lt;h2 id=&#34;the-problem&#34;&gt;The problem&lt;/h2&gt;
+
+&lt;p&gt;We want to have a collection that filters its elements as we add them using a given condition. For instance, we can
+have an &lt;code&gt;Array&lt;/code&gt; that only allows even numbers.&lt;/p&gt;
+
+&lt;p&gt;First, and important, is to understand what a filter &lt;em&gt;is&lt;/em&gt;. &amp;ldquo;filter&amp;rdquo; is a very overloaded word, and sometimes used in a
+technical way. Let&amp;rsquo;s say that a filter is someone with the single responsibility of deciding if something has to pass
+over or not.&lt;/p&gt;
+
+&lt;h2 id=&#34;first-approach&#34;&gt;First approach&lt;/h2&gt;
+
+&lt;p&gt;The first, and more intuitive approach, is to subclass &lt;code&gt;Array&lt;/code&gt; and override &lt;code&gt;&amp;lt;&amp;lt;&lt;/code&gt; and any other &amp;ldquo;adding&amp;rdquo; methods if
+needed. Something like this:&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;FilteredArray&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;Array&lt;/span&gt;
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;filter_with&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(condition)&lt;/span&gt;
+    &lt;span style=&#34;color: #66d9ef&#34;&gt;new&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(condition)&lt;/span&gt;
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;initialize&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(condition)&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;@condition&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;condition&lt;/span&gt;
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(element)&lt;/span&gt;
+    &lt;span style=&#34;color: #66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;@condition&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;call(element)&lt;/span&gt;
+      &lt;span style=&#34;color: #66d9ef&#34;&gt;super&lt;/span&gt;
+    &lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+&lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Which problems does it have?&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;It is specific to &lt;code&gt;Array&lt;/code&gt;s. if we want to filter other kind of collections, we need to create specific subclasses for
+each of them. We can move a step forward and try to define a &lt;code&gt;Filterable&lt;/code&gt; module or something similar, but we will need
+to touch collection classes anyway. So we will avoid mixins.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;It uses an &lt;code&gt;if&lt;/code&gt;. Remember, #RealDevsDontUseIf (it&amp;rsquo;s in our T-shirts, we take this seriously). We are losing a
+concept here if we limit the solution to just put an if, just because it &lt;em&gt;looks&lt;/em&gt; simpler.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;The filter is not reified. We just &lt;em&gt;hacked&lt;/em&gt; something into &lt;code&gt;Array&lt;/code&gt;. We still do not &lt;em&gt;know&lt;/em&gt; what a filter &lt;em&gt;is&lt;/em&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;the-idea&#34;&gt;The idea&lt;/h2&gt;
+
+&lt;p&gt;There should be a filter object, and it should be placed between the user and the filtered object. Imagine you are
+modeling a person using a pair of glasses. Does the eyes tell the glass what/how to filter? No, glasses do!. So why
+a collection need to decide whether to filter or not? is it in its essence?&lt;/p&gt;
+
+&lt;p&gt;Light goes first to the glasses, then glasses &amp;ldquo;decide&amp;rdquo; which light pass to the eyes. In a similar way, a &amp;ldquo;collection
+filter&amp;rdquo; decide which objects passes and which don&amp;rsquo;t.&lt;/p&gt;
+
+&lt;h2 id=&#34;implementing-collection-filters&#34;&gt;Implementing collection filters&lt;/h2&gt;
+
+&lt;p&gt;The two main responsibilities of a collection filter are:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Intercept the &amp;ldquo;adding&amp;rdquo; messages, to evaluate the given condition and decide what to do based on the result.&lt;/li&gt;
+&lt;li&gt;Delegate any other messages to the collection.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This collection filter should act as an &amp;ldquo;invisible proxy&amp;rdquo;, so the user does not know if they are using a filter or a
+collection. It should be a polymorphic object respect to collections. To implement it, I subclassed my proxy object from
+&lt;code&gt;BasicObject&lt;/code&gt;. Maybe there is a better solution, but it solved my concrete problem here. It&amp;rsquo;s not the purpose
+of this post discussing proxy implementations.&lt;/p&gt;
+
+&lt;p&gt;Introducing the proxy object, and the definition of &lt;code&gt;&amp;lt;&amp;lt;&lt;/code&gt;, we end up with this code:&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;UndefinedCollectionFilter&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;BasicObject&lt;/span&gt;
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;initialize&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(collection,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;condition)&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;@collection&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;collection&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;@condition&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;condition&lt;/span&gt;
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(an_object)&lt;/span&gt;
+    &lt;span style=&#34;color: #66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;@condition&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;call(an_object)&lt;/span&gt;
+      &lt;span style=&#34;color: #66d9ef&#34;&gt;super&lt;/span&gt;
+    &lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;respond_to?&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(selector,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;include_private&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;false&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;)&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;@collection&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;respond_to?(selector,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;include_private)&lt;/span&gt;
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;private&lt;/span&gt;
+
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;method_missing&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(selector,&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;args,&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;block)&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;@collection&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;send(selector,&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;args,&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;block)&lt;/span&gt;
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+&lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Are we done? Can we go home? No! we still have the &lt;code&gt;if&lt;/code&gt;. How can we eliminate it? Well, we have 3 different filtering
+decisions, so we should have 3 objects representing each one. Let me introduce you those objects:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Undefined filter&lt;/strong&gt;: it is the &amp;ldquo;passive&amp;rdquo; filter, the object that is waiting for an object to come. As it does not
+know if should behave as open or closed, we call it undefined. It&amp;rsquo;s the object that we will pass to the user and it
+will act as an invisible proxy.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Open filter&lt;/strong&gt;: it is the object that should let the object pass.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Closed filter&lt;/strong&gt;: in opposition to the open filter, this object should not let the object pass.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;After implementing the filters, and the logic to decide which filter to use in each case, the code resulted in:&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #75715e&#34;&gt;# collection_filter/undefined.rb&lt;/span&gt;
+&lt;span style=&#34;color: #66d9ef&#34;&gt;module&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;CollectionFilter&lt;/span&gt;
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;Undefined&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;BasicObject&lt;/span&gt;
+    &lt;span style=&#34;color: #66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;filter_with&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(collection,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;block)&lt;/span&gt;
+      &lt;span style=&#34;color: #66d9ef&#34;&gt;new&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(collection,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;block)&lt;/span&gt;
+    &lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+
+    &lt;span style=&#34;color: #66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;initialize&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(collection,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;block)&lt;/span&gt;
+      &lt;span style=&#34;color: #f8f8f2&#34;&gt;@collection&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;collection&lt;/span&gt;
+      &lt;span style=&#34;color: #f8f8f2&#34;&gt;@condition&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;block&lt;/span&gt;
+    &lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+
+    &lt;span style=&#34;color: #66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(object)&lt;/span&gt;
+      &lt;span style=&#34;color: #f8f8f2&#34;&gt;filter_for(object)&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;add(object,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;@collection)&lt;/span&gt;
+    &lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+
+    &lt;span style=&#34;color: #66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;respond_to?&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(selector,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;include_private&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;false&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;)&lt;/span&gt;
+      &lt;span style=&#34;color: #f8f8f2&#34;&gt;@collection&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;respond_to?(selector,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;include_private)&lt;/span&gt;
+    &lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+
+    &lt;span style=&#34;color: #66d9ef&#34;&gt;private&lt;/span&gt;
+
+    &lt;span style=&#34;color: #66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;filter_for&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(object)&lt;/span&gt;
+      &lt;span style=&#34;color: #f8f8f2&#34;&gt;filters_provider&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;find_filter(object,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;@condition)&lt;/span&gt;
+    &lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+
+    &lt;span style=&#34;color: #66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;filters_provider&lt;/span&gt;
+      &lt;span style=&#34;color: #66d9ef&#34;&gt;Base&lt;/span&gt;
+    &lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+
+    &lt;span style=&#34;color: #66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;method_missing&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(selector,&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;args,&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;block)&lt;/span&gt;
+      &lt;span style=&#34;color: #f8f8f2&#34;&gt;@collection&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;send(selector,&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;args,&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;block)&lt;/span&gt;
+    &lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+&lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+
+&lt;span style=&#34;color: #75715e&#34;&gt;# collection_filter/base.rb&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;require&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;error_handling_protocol&amp;#39;&lt;/span&gt;
+
+&lt;span style=&#34;color: #66d9ef&#34;&gt;module&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;CollectionFilter&lt;/span&gt;
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;Base&lt;/span&gt;
+    &lt;span style=&#34;color: #66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;find_filter&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(object,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;block)&lt;/span&gt;
+      &lt;span style=&#34;color: #f8f8f2&#34;&gt;filter_implementation_for(object,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;block)&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;new&lt;/span&gt;
+    &lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+
+    &lt;span style=&#34;color: #66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;filter_implementation_for&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(object,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;block)&lt;/span&gt;
+      &lt;span style=&#34;color: #f8f8f2&#34;&gt;filter_implementations&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;detect&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;{&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;|&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;each&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;each&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;can_filter?(object,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;block)&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;}&lt;/span&gt;
+    &lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+
+    &lt;span style=&#34;color: #66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;filter_implementations&lt;/span&gt;
+      &lt;span style=&#34;color: #f92672&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;CollectionFilter&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;Open&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;CollectionFilter&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;Closed&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;]&lt;/span&gt;
+    &lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+
+    &lt;span style=&#34;color: #66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;can_filter?&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(object,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;block)&lt;/span&gt;
+      &lt;span style=&#34;color: #f8f8f2&#34;&gt;subclass_responsibility&lt;/span&gt;
+    &lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+&lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+
+&lt;span style=&#34;color: #75715e&#34;&gt;# collection_filter/closed.rb&lt;/span&gt;
+&lt;span style=&#34;color: #66d9ef&#34;&gt;module&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;CollectionFilter&lt;/span&gt;
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;Closed&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;Base&lt;/span&gt;
+    &lt;span style=&#34;color: #66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;can_filter?&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(object,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;block)&lt;/span&gt;
+      &lt;span style=&#34;color: #f92672&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;block&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;call(object)&lt;/span&gt;
+    &lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+
+    &lt;span style=&#34;color: #66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;add&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(object,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;collection)&lt;/span&gt;
+      &lt;span style=&#34;color: #75715e&#34;&gt;# nothing to do&lt;/span&gt;
+    &lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+&lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+
+&lt;span style=&#34;color: #75715e&#34;&gt;# collection_filter/open.rb&lt;/span&gt;
+&lt;span style=&#34;color: #66d9ef&#34;&gt;module&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;CollectionFilter&lt;/span&gt;
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;Open&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;Base&lt;/span&gt;
+    &lt;span style=&#34;color: #66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;can_filter?&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(object,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;block)&lt;/span&gt;
+      &lt;span style=&#34;color: #f8f8f2&#34;&gt;block&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;call(object)&lt;/span&gt;
+    &lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+
+    &lt;span style=&#34;color: #66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;add&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(object,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;collection)&lt;/span&gt;
+      &lt;span style=&#34;color: #f8f8f2&#34;&gt;collection&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;object&lt;/span&gt;
+    &lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+&lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Look at the &lt;code&gt;detect&lt;/code&gt; usage to find the filter, and the &lt;code&gt;if&lt;/code&gt; was just gone. The collection triggered the decision, not
+us. That&amp;rsquo;s good.&lt;/p&gt;
+
+&lt;p&gt;How can we use it? Let&amp;rsquo;s take a look at some simple tests, as well as the &lt;code&gt;Array&lt;/code&gt; extension to build the filtered
+collection easier:&lt;/p&gt;
+
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #75715e&#34;&gt;# undefined_collection_filter_test.rb&lt;/span&gt;
+&lt;span style=&#34;color: #66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;UndefinedCollectionFilterTest&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;Minitest&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;Test&lt;/span&gt;
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;test_it_does_not_add_an_element_that_should_be_filtered&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;array&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;array_filtering_even_numbers&lt;/span&gt;
+
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;array&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;3&lt;/span&gt;
+
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;assert&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;array&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;empty?&lt;/span&gt;
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;test_it_adds_an_element_that_should_not_be_filtered&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;array&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;array_filtering_even_numbers&lt;/span&gt;
+
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;array&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;12&lt;/span&gt;
+
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;assert&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;array&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;size&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;1&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;assert&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;array&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;include?(&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;12&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;)&lt;/span&gt;
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;array_filtering_even_numbers&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;condition&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(element)&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;{&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;element&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;even?&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;}&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;Array&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;filter_with(condition)&lt;/span&gt;
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+&lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+
+&lt;span style=&#34;color: #75715e&#34;&gt;# array.rb&lt;/span&gt;
+&lt;span style=&#34;color: #66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;Array&lt;/span&gt;
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #a6e22e&#34;&gt;filter_with&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(block)&lt;/span&gt;
+    &lt;span style=&#34;color: #66d9ef&#34;&gt;CollectionFilter&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;Undefined&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;filter_with(&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;new&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;block)&lt;/span&gt;
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+&lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;h2 id=&#34;wrapping-up&#34;&gt;Wrapping up&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;This solution can be criticized because it has several classes, and it could be implemented in much less lines of
+code. But, are the responsibilities in other potential smaller solutions well splitted? Are filters part of the
+domain model of those solutions?&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Which object do we need to touch for modifying the behavior when the filter does not let you pass? Well, one single
+object with that specific responsibility.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;It&amp;rsquo;s good to evaluate an implementation not seeing only how easy it is, or how many lines of code it has, but also
+validating all the responsibilities belong to the proper objects and how easy it is to be extended in the future.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;To me, filters are relevant concepts, that is worth to have as separate objects. These relevant concepts (and
+hidden most of the time) make a difference and they are a sign of mature, well modeled systems.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;There&amp;rsquo;s more coming! how we can use this filter with other kind of objects? is there more filtering options rather
+than open/closed? these are some of the questions I&amp;rsquo;ll try to answer in my next post.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;You can take a look at the full code at the &lt;a href=&#34;https://github.com/ngarbezza/collection_filter&#34;&gt;collection_filter repo&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>A Little Bit of Color!</title>
+      <link>http://blog.10pines.com/2016/07/11/a-little-bit-of-color/</link>
+      <pubDate>Mon, 11 Jul 2016 16:58:01 +0000</pubDate>
+      
+      <guid>http://blog.10pines.com/2016/07/11/a-little-bit-of-color/</guid>
+      <description>&lt;p&gt;#How to create a great palette for your app/web&lt;/p&gt;
+
+&lt;p&gt;You may have never paid close attention to the colors you pick for your web or app, but having a good palette helps organizinge information in your site.The idea behind this post is not to give an introduction to color theory but to offer a simple guide to help you create an harmonious and useful palette.&lt;/p&gt;
+
+&lt;p&gt;#What does a good palette look like?&lt;/p&gt;
+
+&lt;p&gt;Well, it depends on what we need. We have to think of color as an aid to organize information, for instance having different sections and identifying them more easily or drawing the user’s attention to take a specific action.&lt;/p&gt;
+
+&lt;p&gt;The first step to create our palette is understanding how it’s composed: basically we have 2 main color groups, neutral and highlights. The first group can be used on large blocks (our main, footer, header, texts, etc.). And the second one is ideal for smaller elements that need to draw attention, such as buttons, links and call to actions.&lt;/p&gt;
+
+&lt;div class=&#34;basic-alignment center&#34;&gt;
+  {% img /images/paleta.png %}
+&lt;/div&gt;
+
+&lt;p&gt;The lightest and darkest colors we pick should follow the hue chosen for our neutral colors. For example, black and white, or dark grey and white, or if we want a little bit more color, a dark blue like in the example above. It’s important for them to have a big contrast between them to allow an easy reading experience.&lt;/p&gt;
+
+&lt;p&gt;#How to generate a cool palette?&lt;/p&gt;
+
+&lt;p&gt;There are a number of ways to generate a palette:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;You can find one you like on &lt;a href=&#34;http://colorhunt.co/&#34;&gt;http://colorhunt.co/&lt;/a&gt; and tune it according to your needs by adding or removing colors.&lt;/li&gt;
+&lt;li&gt;You can play around with: &lt;a href=&#34;http://www.colourco.de/&#34;&gt;http://www.colourco.de/&lt;/a&gt; and generate palettes through triads and quads.&lt;/li&gt;
+&lt;li&gt;You can choose colors one by one (we will go over how to do this in a bit).&lt;/li&gt;
+&lt;li&gt;You can choose a picture with colors that you find nice and are suitable for your web and take your palette from it.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;As promised, let’s create a whole palette in 3 simple steps:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;The first step is to choose a specific color. This could be our company logo’s or brand color. If you don’t have a brand color we must pick one, it could simply be a color we like or do a market research to find the one that would fit our web. There are tons of information on the web about the color meanings as well as research on the colors most frequently used by large corporations that can help you take a decision. I’m gonna pick 10Pines’ brand color: #7EC247&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;The second step involves picking a second and/or third highlight color. This will be a support color used when we need to show a secondary interaction for the user. A good way to look for these colors is finding the complementary color or creating a triad or quad based on the color we chose on the previous step. Don’t be afraid, these pages can help you with it:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://colorschemedesigner.com/csd-3.5/&#34;&gt;http://colorschemedesigner.com/csd-3.5/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.colourlovers.com/copaso/ColorPaletteSoftware&#34;&gt;http://www.colourlovers.com/copaso/ColorPaletteSoftware&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&#34;basic-alignment center&#34;&gt;
+  {% img /images/complementarios.png %}
+&lt;/div&gt;
+
+&lt;p&gt;Or you can choose another color you like. Mine will be: #F7931E&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;The last step is to generate our neutral colors, they could simply be a grey scale or we can chose a different color, preferably with low saturation, and generate a  gradient from it. I will go ahead and pick a grey scale, ending up with the following palette:&lt;/p&gt;
+
+&lt;div class=&#34;basic-alignment center&#34;&gt;
+  {% img /images/paleta2.png %}
+&lt;/div&gt;  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Before saying goodbye, I would like to show you a couple of examples generated from photographs. These are mine, but there is no need for you to go out and take pictures for this, you can just get them on the internet.&lt;/p&gt;
+
+&lt;div class=&#34;basic-alignment center&#34;&gt;
+  {% img /images/fotos.png %}
+&lt;/div&gt;
+
+&lt;p&gt;This web will help you extract a palette from a image: &lt;a href=&#34;http://www.pictaculous.com/&#34;&gt;http://www.pictaculous.com/&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Finally, keep in mind that having a good palette will help you organize the information we offer to the user hierarchically. I’ll leave how to properly use this palette for another post.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>svn to git</title>
+      <link>http://blog.10pines.com/2016/02/24/svn-to-git/</link>
+      <pubDate>Wed, 24 Feb 2016 10:05:05 +0000</pubDate>
+      
+      <guid>http://blog.10pines.com/2016/02/24/svn-to-git/</guid>
+      <description>
+
+&lt;h1 id=&#34;svn-to-git-full-migration&#34;&gt;Svn to git, full migration&lt;/h1&gt;
+
+&lt;p&gt;Finally you decided that git is more suitable than svn for your work. But, what happens when you have projects that where using svn for a while?
+All of that information represented in thousand of svn revisions is something that normally you don&amp;rsquo;t want to lose. For these cases I wrote this step by step guide to successfully migrate all the history stored in svn on a git repository, included all branches and tags no matter svn repository size. The only drawback is, more revisions you have more time you need to wait to get migration finished.&lt;/p&gt;
+
+&lt;h1 id=&#34;step-by-step&#34;&gt;Step by step&lt;/h1&gt;
+
+&lt;p&gt;To start the migration process, you need some info about how is data organized in your svn.&lt;/p&gt;
+
+&lt;h2 id=&#34;layout-of-directories-inside-svn&#34;&gt;Layout of directories inside svn&lt;/h2&gt;
+
+&lt;p&gt;If you are lucky your project follows this directories layout&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;a/path/projectname
+
+&lt;ul&gt;
+&lt;li&gt;trunk&lt;/li&gt;
+&lt;li&gt;branches&lt;/li&gt;
+&lt;li&gt;tags&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This can be simply informed to git-svn with -s or &amp;ndash;stdlayout. If is not your case you have to inform to git-svn where is every one of these tree directories.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;-T trunkSubdirecty or --trunk=trunkSubdirecty
+-t tagsSubdirecty or --tags=tagsSubdirecty
+-b brenchesSubdirecty or --branches=brenchesSubdirecty
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;For example you can have a layout like this&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;a/path
+
+&lt;ul&gt;
+&lt;li&gt;trunk
+
+&lt;ul&gt;
+&lt;li&gt;projectname1&lt;/li&gt;
+&lt;li&gt;projectname2&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;branches
+
+&lt;ul&gt;
+&lt;li&gt;projectname1&lt;/li&gt;
+&lt;li&gt;projectname2&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;tags
+
+&lt;ul&gt;
+&lt;li&gt;projectname1&lt;/li&gt;
+&lt;li&gt;projectname2&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If you are migrating projectname1 the arguments must look like this&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;-T trunk/projectname1 -t tags/projectname1 -b branches/projectname1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;first-svn-revision-where-git-history-will-start&#34;&gt;First svn revision where git history will start&lt;/h2&gt;
+
+&lt;p&gt;The other thing you need to know is the revision number where start the history of what you want to migrate. First candidate is first revision number where your project exists. You can ask svn by running this line.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;svn log -r 1:HEAD --limit 1 svnrepourl/a/path/trunkSubdirectory
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you want to truncate some of the old history simply choose a newer revision number.&lt;/p&gt;
+
+&lt;h2 id=&#34;creating-git-repository&#34;&gt;Creating git repository&lt;/h2&gt;
+
+&lt;p&gt;Standar&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git svn clone --username=yourSvnUsername --stdlayout -r aRevisionNumber svnurl/a/path/projectname gitreponame
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Custom layout&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git svn clone --username=yourSvnUsername -T trunk/projectname -t tags/projectname -b branches/projectname -r aRevisionNumber svnurl/a/path/projectname gitreponame
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;fetching-data-from-svn&#34;&gt;Fetching data from svn&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;cd gitreponame
+git svn fetch
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This step could last long time even days depending the amount of revisions, data transfer ratios and from my experience, if you use windows takes more time than linux or osx. Git-svn will perform one request per revision to svn and will create a git commit if it considered convenient. If something goes wrong during data fetching, you simply run again &amp;ldquo;git svn fetch&amp;rdquo; and work will resume from last svn revision successfully processed. That&amp;rsquo;s the reason why you must use &amp;ldquo;git clone -r n&amp;rdquo; and then &amp;ldquo;git svn fetch&amp;rdquo;.
+When you run &amp;ldquo;git svn fetch&amp;rdquo; and finish with nothing to log it minds you finished the hardest part, now you have all data in your local git repository. But to finish your work you need to put all this information in github, bitbucket, your intranet git repositories container or where you consider useful.&lt;/p&gt;
+
+&lt;h1 id=&#34;preparing-local-repository-to-push-to-an-external-repository&#34;&gt;Preparing local repository to push to an external repository&lt;/h1&gt;
+
+&lt;h2 id=&#34;updating-master-branch&#34;&gt;Updating master branch&lt;/h2&gt;
+
+&lt;p&gt;Run this line&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git svn rebase
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This has the same effect of&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git reset --hard origin/trunk
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;but have the advantage of confirming you that origin/trunk is already updated with the last svn revision&lt;/p&gt;
+
+&lt;h2 id=&#34;adding-svn-branches-to-local-repository&#34;&gt;Adding svn branches to local repository&lt;/h2&gt;
+
+&lt;p&gt;Regarding branches in git, are references to commit-objects inside git database you can simply copy those references that git-svn made.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cp .git/refs/remotes/origin/* .git/refs/heads/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you run&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git branch
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You will see all branches that exists in svn including trunk&lt;/p&gt;
+
+&lt;h2 id=&#34;adding-svn-tags-as-git-tags-on-local-repository&#34;&gt;Adding svn tags as git tags on local repository&lt;/h2&gt;
+
+&lt;p&gt;Tags in git are different than branches, tag references point to tag-objects inside git database. The references that git-svn created are references that point to commit-objects instead of tag-objects, then they are branches instead of tags. Well, lets create a tag for every references that git-svn have created inside .git/refs/remotes/origin/tags.
+Just run this line, if you are using windows you have to run it inside git bash console&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git for-each-ref refs/remotes/origin/tags | sed &#39;s#^.*\([[:xdigit:]]\{40\}\).*refs/remotes/origin/tags/\(.*\)$#\2 \1#g&#39; | while read p; do git tag -m &amp;quot;tag from svn&amp;quot; $p; done
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you run&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git tag
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You will see the same list of tags that exists in svn&lt;/p&gt;
+
+&lt;h1 id=&#34;pushing-data&#34;&gt;Pushing data&lt;/h1&gt;
+
+&lt;p&gt;Create an empty repository in your repositories container, for example github. Then in your local repository add remote and push.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git remotes add newrepo git@github.com:aUser/aProjectName.git
+git push newrepo refs/heads/*
+git push --tags newrepo
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;say-goodbye-to-svn&#34;&gt;Say goodbye to svn&lt;/h1&gt;
+
+&lt;p&gt;At this point you can forget that your project once was using svn.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How, What, Why: The three essences of software development</title>
+      <link>http://blog.10pines.com/2016/02/17/how-what-why-the-three-essences-of-software-development/</link>
+      <pubDate>Wed, 17 Feb 2016 17:39:59 +0000</pubDate>
+      
+      <guid>http://blog.10pines.com/2016/02/17/how-what-why-the-three-essences-of-software-development/</guid>
+      <description>
+
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;Facebook is as much sociology and psychology as it is technology&amp;rdquo; - &lt;em&gt;Mark Zuckerberg&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;In my previous article, &lt;a href=&#34;http://blog.10pines.com/2014/07/31/two-ways-we-understand-code-unitary-vs-integral-understanding/&#34;&gt;Unitary vs Integral Understanding&lt;/a&gt;,
+I delved into how we understand a part of a system in terms of how it relates to the rest of the system. To recap, Unitary Understanding is understanding the
+part by itself, abstracting the rest of the system, e.g. &amp;ldquo;i = i + 1&amp;rdquo; understood as a unit means nothing more than &amp;ldquo;increment i by one&amp;rdquo;.
+Integral Understanding would require us to see how that sentences interacts witht the rest of the code, so for example that sentence could &amp;ldquo;move a loop forward&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;&amp;ldquo;How&amp;rdquo;, &amp;ldquo;What&amp;rdquo;, &amp;ldquo;Why&amp;rdquo; are three questions that are also helpful to see different facets of a system. A lot of what follows in this article might seem obvious to seasoned developers, but in my experience, these dimensions, because they&amp;rsquo;re intuitive, are often not adecuately explained to junior developers.&lt;/p&gt;
+
+&lt;p&gt;(warning: Abuse of the English language for rhetorical purposes might follow)&lt;/p&gt;
+
+&lt;h1 id=&#34;how&#34;&gt;How&lt;/h1&gt;
+
+&lt;p&gt;To ask &amp;ldquo;how&amp;rdquo; the software works, it means to basically treat it as many subsystems
+that collaborate between each other to produce a result. We don&amp;rsquo;t care what the result is or why do we want that result.&lt;/p&gt;
+
+&lt;p&gt;Suppose we have a Cow Counting System. You have this web app:&lt;/p&gt;
+
+&lt;p&gt;{% img /images/2016-02-05-cow-counting-system.png %}&lt;/p&gt;
+
+&lt;p&gt;The buttons plus and minus alter the current amount of cows we have right now. To ask &amp;ldquo;how&amp;rdquo; this works would mean answering&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&amp;ldquo;Where it is deployed?&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;Does it use POST roundtrips or AJAX requests?&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;how does it keep state? mongo? sql? cookies?&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So &amp;ldquo;How&amp;rdquo; (and also &amp;ldquo;what&amp;rdquo; and &amp;ldquo;why&amp;rdquo;) is a guiding question we use to both understand existing system and to build new systems.
+And the starting point of the &amp;ldquo;how&amp;rdquo; is the result we want to achieve, so &amp;ldquo;how&amp;rdquo; is actually the last question we ask, since it&amp;rsquo;s preceded by &amp;ldquo;what&amp;rdquo;.&lt;/p&gt;
+
+&lt;h1 id=&#34;what&#34;&gt;What&lt;/h1&gt;
+
+&lt;p&gt;&amp;ldquo;What&amp;rdquo; as in &amp;ldquo;What does this system do&amp;rdquo;? Going back to the Cow Counting System example, one might be tempted to answer &amp;ldquo;what&amp;rdquo; with:
+&amp;ldquo;Well, the system has two buttons, and a cow count display, when the buttons are clicked,
+a POST goes to the server, increases the record in the database&amp;hellip;&amp;ldquo;, but that&amp;rsquo;s what I called the &amp;ldquo;how&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;So let&amp;rsquo;s remove the &amp;ldquo;how&amp;rdquo; and just focus on the &amp;ldquo;what&amp;rdquo; and try again:
+&amp;ldquo;Well, the system has two buttons, and a cow count display, when the buttons are clicked, the cow count is increased or decreased.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;But this description is lacking: &lt;em&gt;where is the human?&lt;/em&gt;
+What is not only &amp;ldquo;what the computer system does?&amp;rdquo; but &amp;ldquo;what the human does with the system and outside the system?&amp;rdquo;&lt;/p&gt;
+
+&lt;h2 id=&#34;what-does-the-user-do&#34;&gt;What does the user &lt;em&gt;do&lt;/em&gt;?&lt;/h2&gt;
+
+&lt;p&gt;In this case, suppose there is someone who wants to keep track of the cows in a corral. Cows go out sometimes to eat grass, so someone is there at the door
+of the corral hitting the minus button everytime a cow goes out to eat grass, and the plus button everytime a cow goes in.
+After the cows have finished eating grass, the user looks at the count, if it&amp;rsquo;s lesser than the known amount of cows, the user will go out to look for the
+missing cow.&lt;/p&gt;
+
+&lt;p&gt;This is a &lt;em&gt;story&lt;/em&gt; (this is why Agile focuses on User Stories as the basis of requirements!). Stories basically have actors interpreting and acting
+through time with the state of things changing as a result of it.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s look deeper into what happens in this very simple story. The user ACTS on the computer and ACTS outside the computer, clicks on the buttons, and
+goes looking for the unruly cow. And the user also INTERPRETS the computer and INTERPRETS the world outside the computer. All four things are linked.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;(Interpreting the world) User looks at cow going in and out&lt;/li&gt;
+&lt;li&gt;(Acting on the computer) User clicks on plus and minus&lt;/li&gt;
+&lt;li&gt;(Interpreting the world) User notices enough time has passed, must now ensure all cows are in the corral.&lt;/li&gt;
+&lt;li&gt;(Interpreting the computer) Looking at the cow count display&lt;/li&gt;
+&lt;li&gt;(Acting on the world) Go look for any missing cows.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The external world is then &amp;ldquo;linked&amp;rdquo; to the computer system, allowing the user to interpret the world according to what they read on the screen.
+The user by reading the count on the screen takes that as a symbol of the actual amount of cows in the corral.&lt;/p&gt;
+
+&lt;p&gt;This is not a feature of computer systems. Something fairly similar would happen if instead of a computer there were two people, someone counting
+the cows in their head, and another asking this person how many cows are in the corral and hearing back the answer.
+We humans interpret the world symbolically: we need to interpret the world and we need to go beyond our five senses, so words become facts about the world,
+a smile becomes happines, a foul smell becomes a gas leak, etc. Symbols work by hinting into something that goes beyond the symbol, in this case,
+the cow display is just a number on the screen, yet the user will go beyond the number on the screen and say &amp;ldquo;this means the internal state of the computer
+equals the number I&amp;rsquo;m reading, and the internal state of the system equals the amount of cows in the corral&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;So the interaction with the computer takes the form of a dialogue, human and computer talking
+with each other and interpreting what each other says, both interpreting symbollicaly each other, the human reads a plus sign and goes &amp;ldquo;I guess that increments the counter&amp;rdquo;
+and the computer when it receives a click it goes &amp;ldquo;the user wanted to increment the counter, store updated data and refresh display&amp;rdquo;.&lt;/p&gt;
+
+&lt;h2 id=&#34;the-interpretation-of-the-computer-system-is-dependent-on-the-contextual-story&#34;&gt;The interpretation of the computer system is dependent on the contextual story&lt;/h2&gt;
+
+&lt;p&gt;Each user will interpret what they read from the world and the computer, each symbol, according to their previous knowledge (i..e representation) of the world.
+So like children, who have little previous knowledge about the world, won&amp;rsquo;t see in certain foul smell a hint of a gas leak, or might not see the subtleties
+in different kind of smiles, or might take words at face value without accounting for error and lies&amp;hellip; users might sit in front of your lovely user interface
+and not understand a damn thing of what you meant to convey.&lt;/p&gt;
+
+&lt;p&gt;Because every user has lived different lives, thought different things, and will interpret differently the symbols you&amp;rsquo;re presenting to them.&lt;/p&gt;
+
+&lt;p&gt;The Cow Counting System I presented earlier is a good example of this: After I told you the story of how the system was used, the symbols took on new meaning,
+e.g. plus means not only &amp;ldquo;adding one&amp;rdquo; but also &amp;ldquo;cow went back into the corral&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;So, for example, doing a &lt;a href=&#34;http://blog.10pines.com/2014/11/07/mvps-the-real-deal/&#34;&gt;user test&lt;/a&gt; is immensely helpful to understand &lt;em&gt;what&lt;/em&gt; the system actually does when the user
+is sitting in front of the screen. My (admittedly short) experience with it is that it quickly reveals that:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;The people developing the system have a highly invested story with the system and understand everything and are generally not thinking of what a &amp;ldquo;blank state&amp;rdquo; user might
+interpret unless they cultivate this skill.&lt;/li&gt;
+&lt;li&gt;Different users will create their own story with the system that won&amp;rsquo;t match what you originally thought, for example someone might use the Cow Counting System to count
+how many cows do they have, regardless of whether they&amp;rsquo;re inside the corral or not.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The user interface needs to tell a good story, that&amp;rsquo;s it, it needs to provide symbols along the ride, taking the context of each moment of the story at every point, to make
+sure the user builds a story that&amp;rsquo;s coherent. I say that the user is the one that builds the story because like all symbolic communication, the story is hinted at by the
+teller, and it&amp;rsquo;s the user&amp;rsquo;s tasks to actually build it in their heads. It&amp;rsquo;s a bit like the relationship between a recipe of a cake and the cake itself, and it&amp;rsquo;s also why two
+different movie watchers might watch a different &amp;ldquo;story&amp;rdquo; when watching the same film (one might say it sucked, another might say it rocked).&lt;/p&gt;
+
+&lt;p&gt;And you need to think your target users: a sleek interface might be mysterious to less proeficient users, a more explicit interface might look clunky to more proeficient ones.&lt;/p&gt;
+
+&lt;h2 id=&#34;bugs-are-what-happen-when-the-story-breaks-down&#34;&gt;Bugs are what happen when the story breaks down&lt;/h2&gt;
+
+&lt;p&gt;All software developers know this story: A user comes and reports a bug. The developers answer &amp;ldquo;it&amp;rsquo;s not a bug, it&amp;rsquo;s a feature&amp;rdquo;. Resentment might grow if the dev forgets
+what a bug is: A rupture in the story that the user is building. For example, if I click on a button that says &amp;lsquo;delete&amp;rsquo; and I see a message that says &amp;ldquo;this user was deleted&amp;rdquo;,
+then I figure out that the user is still there somehow (it was a soft deletion), I as a user might not care or not know if keeping the user &amp;ldquo;half-deleted&amp;rdquo; was a feature because
+it conflicted with my expectation. It might even conflict with my will (&amp;ldquo;I want the user really deleted! I don&amp;rsquo;t care if they cannot login anymore!&amp;rdquo;).&lt;/p&gt;
+
+&lt;p&gt;From the user point of view, that was a bug. Which brings us to the next question&amp;hellip;&lt;/p&gt;
+
+&lt;h1 id=&#34;why&#34;&gt;Why&lt;/h1&gt;
+
+&lt;p&gt;&amp;ldquo;Why&amp;rdquo; are to &amp;ldquo;whats&amp;rdquo; like &amp;ldquo;whats&amp;rdquo; are to &amp;ldquo;hows&amp;rdquo;. To think about how to build a thing, first I need to know what I want to build, and to think what I want to build,
+I need to know why. If &amp;ldquo;how&amp;rdquo; was the realm of computers, &amp;ldquo;what&amp;rdquo; was the realm of human-computer interaction, &amp;ldquo;why&amp;rdquo; is the realm of the physical world, ideas, and will.
+Those three things are what actually gives form to software.&lt;/p&gt;
+
+&lt;p&gt;Back to our example: what drives &amp;ldquo;what&amp;rdquo; the Cow Counting System does? and why we built it that way, with a display of the current count of cows and two buttons?&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Physical reality: Cows and their movement&lt;/li&gt;
+&lt;li&gt;Ideas that mirror this reality: The mathematical concept of an indifferentiated set (an integer), where substraction and addition mirrors the physical reality
+of cows getting in and out.&lt;/li&gt;
+&lt;li&gt;Symbolism: The symbols of a &amp;ldquo;plus&amp;rdquo; and a &amp;ldquo;minus&amp;rdquo; sign, the shape of the button, numbers, the image of the cow, and the expression &amp;ldquo;cow counting system&amp;rdquo; all draw from an
+ideal-symbolic system that&amp;rsquo;s shared and enables communication.&lt;/li&gt;
+&lt;li&gt;Human will: The user wants to control the cows. Why? Because a cow might get lost. Why do we care a cow might get lost? Because the owner of the cow profits from them,
+and a lost cow means a loss of profit.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;All these work like &amp;ldquo;invisible forces&amp;rdquo; that we intuitively graps and shape computer systems as much as pointers and loops.&lt;/p&gt;
+
+&lt;h2 id=&#34;know-thy-forces&#34;&gt;Know thy forces&lt;/h2&gt;
+
+&lt;p&gt;Knowing these forces is &lt;em&gt;partly&lt;/em&gt; what allows to be creative and precise when designing &lt;em&gt;what&lt;/em&gt; our software will do. Most of you, when I first introduced the
+Cow Counting System, probably didn&amp;rsquo;t see any use for it, but when I introduced the story associated with it, could quickly see possible improvements: The system
+should know the total amount of cows besides knowing how many there are currently within the corral, compare the two, and possibly show a green sign whenever
+we have all cows in, and red whenever some cows are out. This proposal comes from knowing the forces at play outside the system, the will to control in one hand,
+and human distractedness and forgetfulness, by avoiding the need of the user of remembering the total count of cows and making a mental comparison, we avoid a source
+of mistakes that might lead to a loss of profit (symbolic reactions to the green and red colour is also a force we know applies here).&lt;/p&gt;
+
+&lt;p&gt;Where do forces lie? Ultimately they lie in the human being, in forms of ideas, behaviors, desires, interpretations, institutions. The outside world plays a role as well,
+of course, but only insofar as it relates to use (remember the dictum &amp;lsquo;man is the measure of all things&amp;rsquo;). Again, in this example, cows are not just a number, each of them is
+unique, but as so far as this system is concerned, they&amp;rsquo;re an undifferentiated set.&lt;/p&gt;
+
+&lt;h2 id=&#34;a-common-mistake-minimizing-the-forces&#34;&gt;A common mistake: minimizing the forces&lt;/h2&gt;
+
+&lt;p&gt;An usual mistake I see is to believe that what one needs to learn from the outside world is the domain, where the domain is basically entities, their attributes, their
+relations, how state changes through time, and the processes the user has interacting with these entities. So for this case, the domain would be cows, how many there are, which state they can be in (outside/inside the corral), and the act of counting and controlling them.&lt;/p&gt;
+
+&lt;p&gt;But you need to consider &lt;em&gt;all&lt;/em&gt; possible forces that can have any potential impact on the user. For example, an app you&amp;rsquo;re trying to sell to end users is very different than, say,
+a cash register app that all cashiers on a supermarket are going to use. The driving force in both cases is profit, but in one case, the user needs to be interested in using the app,
+then it needs to use it, not shy away from it, and then buy it&amp;hellip; everything that works towards this goal or against it matters. Psychological responses matter: Curiosity,
+desire, frustration, pleasure, etc. So the UI must look pretty, be clear to avoid frustration and confusion, engagement has to be built&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;Meanwhile, in the cashier app, efficiency is king. The UI doesn&amp;rsquo;t need to be intuitive at first sight, nor pretty, it might even be complex, but the cashier has time to master it,
+and they cannot whine about it and stop using it&amp;hellip; because they would lose their jobs. The person we need to convince to buy the app is not the cashier (the end user),
+but the supermarket owner, and very different goals mean different forces are at play.&lt;/p&gt;
+
+&lt;h2 id=&#34;some-more-examples-of-typical-forces-that-affect-most-systems&#34;&gt;Some more examples of typical forces that affect most systems&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Security: ownership/privacy of data&lt;/li&gt;
+&lt;li&gt;History of what has happened: Being able to see what happened for debugging purposes, being able to blame a particular employee for missing cash, mining data, etc.&lt;/li&gt;
+&lt;li&gt;The Law: Legal requirements, users being able to commit fraud by using your system&lt;/li&gt;
+&lt;li&gt;Human forgetfulness&lt;/li&gt;
+&lt;li&gt;Human mistakes, data being out of sync with the outside world: e.g. consider a feature to import thousands of users into a system via a csv, and what happens when the columns of
+the first name and last name are switched and you have no quick way of undoing the operation&amp;hellip; people can and will make mistakes.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;know-all-sides-and-their-interests-know-the-forces-in-opposition&#34;&gt;Know all sides and their interests, know the forces in opposition&lt;/h2&gt;
+
+&lt;p&gt;We need to be aware as well that there are many actors in a system that relate differently in each case.
+Take a social network for example. Many people use it for different things. Someone might use it to know new people, someone might use it to communicate with their families,
+someone might use it to promote themselves, their projects, their business, their points of views and experiences&amp;hellip; while some people might create fake ids and learn when
+someone is on vacation to break into their houses. Advertisers, administrators, data miners, owners of the app, developers, devops, all have their sides and interests.&lt;/p&gt;
+
+&lt;p&gt;And forces can be in opposition, and often are. People&amp;rsquo;s interests with an app might collide. A banal example: Traceability might take developers time, disk space, and might
+slow down the app. So we desire traceability but we also need to consider the costs that come with traceability. A less banal example: you might want
+to make registration simple and unencumbering for the users, but at the same time avoid fraud and false identities. Nobody likes bureaucracy, right? But we might do
+want it when it helps us avoid undesirable situations.&lt;/p&gt;
+
+&lt;h1 id=&#34;conclusion-or-something-like-it-why-should-i-care-how-should-i-take-this-into-acount&#34;&gt;Conclusion&amp;hellip; or something like it: Why should I care? how should I take this into acount?&lt;/h1&gt;
+
+&lt;p&gt;One might ask: &amp;ldquo;why should I care about all this in the presence of division of labor?&amp;rdquo; (or alternatively, &amp;ldquo;knowing all those things is damn near impossible,
+that&amp;rsquo;s why we do agile iterative processes and we seek constant feedback&amp;rdquo;). It&amp;rsquo;s true that sometimes different things are handled by different people, and with
+division of labor, some people focus more on the &amp;ldquo;whys&amp;rdquo; and &amp;ldquo;whats&amp;rdquo; and others more on the &amp;ldquo;how&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;But even if you do work only in the &amp;ldquo;how&amp;rdquo;, it&amp;rsquo;s helpful to be mindful of these things. A few examples:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;You&amp;rsquo;ll notice that what might initially seem like an implementation detail, purely &amp;ldquo;how&amp;rdquo; stuff, actually ends up impacting in the end user. For example,
+in the Cow Counting System, doing a whole POST of the whole html page vs doing an ajax request is not equivalent, since POST makes the screen refresh,
+and it might be annoying for the user, and if many cows are going out at the same time, end up being problematic.&lt;/li&gt;
+&lt;li&gt;You&amp;rsquo;ll see that &amp;ldquo;how&amp;rdquo; you build the system and the &amp;ldquo;whys&amp;rdquo;, the external forces and entities, if they&amp;rsquo;re in harmony or not, matters a lot when new requirements come in.
+E.g. Conceptually a user, how the user logs in into a system, and the email account we send notifications too, are different things that can be highly related,
+so in many systems, you get a single db record for User with an email field. This works fine and it&amp;rsquo;s very simple, until it turns out a single user might have many ways of
+logging into the system, and the email for logging in might be different from the email you wanted email notifications to be sent to.&lt;/li&gt;
+&lt;li&gt;Sometimes someone might say you &amp;ldquo;what&amp;rdquo; to implement, but when thinking of &amp;ldquo;how&amp;rdquo; to
+do it, you&amp;rsquo;ll see that little details of the &amp;ldquo;what&amp;rdquo; are missing. Suppose a requirement that says &amp;ldquo;Delete a user from the system&amp;rdquo;. What does it mean deleting for
+traceability?
+What does it mean for entities created by that user? Should those entities disappear, or not? Is there any chance the user might want to undo the deletion? If the user
+profile is still visible, should it have a message saying &amp;ldquo;this user has been deleted&amp;rdquo;? To be able to
+understand these things and its ramifications the developers&amp;rsquo;s theory of the system, the inner mental representation,comes into play, the theory of not only how the
+system works, but what it does, and how it relates to people and what do those people want from the system.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In general, even in presence of division of labor, we should be mindful of exactly what you&amp;rsquo;re delegating to whom and what is expected of each one of us, while at the same
+time it&amp;rsquo;s good to strive to add the most value possible besides of what you&amp;rsquo;re supposed to specialize in. And it&amp;rsquo;s also good of being mindful of the forces at play, and the
+symbolic links we&amp;rsquo;re reading and giving away.&lt;/p&gt;
+
+&lt;h1 id=&#34;further-reading&#34;&gt;Further Reading&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.jnd.org/dn.mss/design_as_communicat.html&#34;&gt;Design as Communication&lt;/a&gt;: An article by Don Norman, author of the book The Design of Everyday Things, that touches
+on how the interfaces we build communicate and help the user build a story.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://pages.cs.wisc.edu/~remzi/Naur.pdf&#34;&gt;Programming as Theory Building&lt;/a&gt;: An old article (1985) by Peter Naur, early influential Computer Scientist, about how the
+activity of programming relies heavily on the programmer building useful internal theory of the system.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://medium.com/@nicolaerusan/conceptual-debt-is-worse-than-technical-debt-5b65a910fd46#.asspxn589&#34;&gt;Conceptual Debt is Worse than Technical Debt&lt;/a&gt; an article on the
+concepts the system exposes to your users and how that impacts on the user experience.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.ece.cmu.edu/~ganger/712.fall02/papers/p761-thompson.pdf&#34;&gt;Reflections on Trusting Trust&lt;/a&gt; A &lt;em&gt;very&lt;/em&gt; short, 3 pages, but &lt;em&gt;very&lt;/em&gt; important and &lt;em&gt;very&lt;/em&gt; recommended
+reading about computer security by Ken Thompson. It relates to the concepts outlined here
+because it talks precisely about the symbolic thought and links that the &lt;em&gt;developer&lt;/em&gt; makes when reading code, and the security pitfalls that come associated with it.
+It also reveals why computer systems security is so hard.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>To care or not to care</title>
+      <link>http://blog.10pines.com/2016/02/11/to-care-or-not-to-care/</link>
+      <pubDate>Thu, 11 Feb 2016 11:13:04 +0000</pubDate>
+      
+      <guid>http://blog.10pines.com/2016/02/11/to-care-or-not-to-care/</guid>
+      <description>
+
+&lt;h1 id=&#34;that-is-the-question&#34;&gt;That is the question!&lt;/h1&gt;
+
+&lt;p&gt;A week ago I had an interview with a potential new client who owns a startup company that is related to sports activities.&lt;/p&gt;
+
+&lt;p&gt;This potential new client, let&amp;rsquo;s call him Peter, told me about some problems he was having with the developers who were building his web application.
+One of the problems Peter mentioned was that these developers didn&amp;rsquo;t know enough about sports, so he asked me about how much we know about it.
+We talked a bit about people in Argentina (where we live) pays a lot of attention to  sports, specially soccer. We don&amp;rsquo;t watch much American football, but we do have rugby which has some similarities. Some other sports are also important, tennis and boxing on the individual sports, and basketball, volleyball, female hockey and some others on the team sports. I don&amp;rsquo;t think many people over here play or watch baseball, another important American sport, but there are quite a lot NBA fans each with their favorite team or player.
+Of course we had to mention that generally speaking developers are not the most sporty people, although that we play soccer with the guys in the office, maybe 15-20% of our staff doesn&amp;rsquo;t care about sports at all.&lt;/p&gt;
+
+&lt;p&gt;After I finished the call with Peter, I kept thinking about our conversation and there was something about my answer to his question that didn&amp;rsquo;t feel quite right. I started to think about other kind of projects we had worked for. We developed software for the healthcare industry; manufacturing (a piping company for the energy industry); banking and finance; restaurants and fast foods; and legal among other industries. We even did a project for the aerospace industry! It was a web console to communicate from ground with a new kind of nano-satellites manufactured by an Argentinean startup company&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;. I am almost sure we knew little or maybe nothing about these industries before we got engaged on those projects, so I asked to myself why we were able to work on all those different things and be successful without knowing much about them beforehand.&lt;/p&gt;
+
+&lt;p&gt;The answer I found is quite simple: &lt;em&gt;we care about what we do&lt;/em&gt;. As soon as we see a new opportunity, even before we get started, we google and search about its business. We have tons of meetings and we communicate as much as we can with the business experts: we listen to them, but more than just listening we ask them every small or big question that cross our mind and we keep asking them until we feel comfortable that we have reached the understanding we need about what we are building.&lt;/p&gt;
+
+&lt;h1 id=&#34;my-advice&#34;&gt;My advice&lt;/h1&gt;
+
+&lt;p&gt;To the entrepreneurs or head of development or anyone who is looking for hiring a software developer or contracting a software development firm: do not go out and look for domain experts on your business, rather go and look for people who love what they do and put all their effort and passion on their daily work. You don&amp;rsquo;t need someone who knows about sports, all you need is developers who care for what they do. That is the answer!&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;If you are curious about nano-satellites you can find more about this company over &lt;a href=&#34;http://www.satellogic.com/&#34;&gt;here&lt;/a&gt;.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:1&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Be careful with the mocks</title>
+      <link>http://blog.10pines.com/2016/01/14/be-careful-with-the-mocks/</link>
+      <pubDate>Thu, 14 Jan 2016 15:13:41 +0000</pubDate>
+      
+      <guid>http://blog.10pines.com/2016/01/14/be-careful-with-the-mocks/</guid>
+      <description>&lt;p&gt;Mocking objects is a common practice when writing tests, however it can be painful when refactoring a class tested with mocks. I will show a simple example to explain the problems that mocking can generate, but first I would like to give some definitions:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Stubs&lt;/strong&gt; are objects that respond to a subset of messages from the object to be stubbed with specific responses.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Mocks&lt;/strong&gt; are objects that verify the integration between the system under test and the mocked object.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Fake&lt;/strong&gt; are objects with implementation that simulate the real one but they are simpler and/or faster.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Suppose we have the next class for sending email notifications to an user of our system:&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;EmailNotifier&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;{&lt;/span&gt;
+    
+    &lt;span style=&#34;color: #66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;initialize&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(email_client,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;from_email)&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;{&lt;/span&gt;
+        &lt;span style=&#34;color: #f8f8f2&#34;&gt;@email_client&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;email_client&lt;/span&gt;
+        &lt;span style=&#34;color: #f8f8f2&#34;&gt;@from_email&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;from_email&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;}&lt;/span&gt;
+
+    &lt;span style=&#34;color: #66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;notify&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(an_user,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;a_message)&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;{&lt;/span&gt;
+        &lt;span style=&#34;color: #f8f8f2&#34;&gt;@email_client&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;send(@from_email,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;an_user&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;email,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;a_message)&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;}&lt;/span&gt;
+
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;There are some different ways to write the tests for the &lt;code&gt;notify&lt;/code&gt; method. Maybe the easiest way of doing it is using mocks:&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;describe&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;EmailNotification&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;do&lt;/span&gt;
+
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;describe&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;:notify&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;do&lt;/span&gt;    
+
+        &lt;span style=&#34;color: #f8f8f2&#34;&gt;it&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;sends an email to the given user with the given message&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;do&lt;/span&gt;
+            
+            &lt;span style=&#34;color: #f8f8f2&#34;&gt;from_email&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;server@test.com&amp;quot;&lt;/span&gt;
+            &lt;span style=&#34;color: #f8f8f2&#34;&gt;user_email_address&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;user@test.com&amp;quot;&lt;/span&gt;
+            &lt;span style=&#34;color: #f8f8f2&#34;&gt;user&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;double(&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;User&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;email&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;user_email_address)&lt;/span&gt;
+            &lt;span style=&#34;color: #f8f8f2&#34;&gt;message&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;Message&amp;quot;&lt;/span&gt;
+
+            &lt;span style=&#34;color: #f8f8f2&#34;&gt;email_client&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;double(&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;EmailClient&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;)&lt;/span&gt;
+            &lt;span style=&#34;color: #f8f8f2&#34;&gt;expect(email_client)&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;to&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;receive(&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;:send&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;with(from_email,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;user_email_address,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;message)&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;and_return(&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;:success&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;)&lt;/span&gt;
+
+            &lt;span style=&#34;color: #f8f8f2&#34;&gt;notifier&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;EmailNotifier&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;email_client,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;from_email&lt;/span&gt;
+            &lt;span style=&#34;color: #f8f8f2&#34;&gt;notifier&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;notify(user,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;message)&lt;/span&gt;
+        &lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+        
+    &lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+&lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;On this test we have created one stub for User and a mock for EmailClient. In order to check if an email is sent, we defined the expectations knowing the implementation should call the send message, but by doing this we are writing tests that are strongly coupled to their method implementation because it is expecting &lt;code&gt;notify&lt;/code&gt; to send the message &lt;code&gt;send&lt;/code&gt; to &lt;code&gt;email_client&lt;/code&gt;. So, in my opinion, testing a message in this way has the next problems:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;It is testing HOW the method is implemented instead of WHAT the method should do&lt;/strong&gt;, which may result on test failures if we change the code. Instead of testing the &lt;code&gt;send&lt;/code&gt; message is called, we should be testing an email has been sent.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;It forces you to write the expected behavior of the mocked class in each test&lt;/strong&gt;, which distracts you from the test itself when reading and writing the test, and also, it may increase the difficulty of understanding it.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The tests are hard to maintain&lt;/strong&gt;, changing a message of the mocked class will require to change all the places in which that message was mocked. If one of the tests that mocks this message is not changed, it may generate a &lt;em&gt;false positive&lt;/em&gt;, for example, if you remove the message &lt;code&gt;send&lt;/code&gt; from &lt;em&gt;EmailClient&lt;/em&gt;, the mock wouldn&amp;rsquo;t fail, so the test will pass.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;One option to solve the first 2 problems and reduce the impact of the last one can be to use a &lt;em&gt;Fake object&lt;/em&gt;. In this case, we should write a &lt;em&gt;FakeEmailClient&lt;/em&gt;, which should respond to the same messages of the real &lt;em&gt;EmailNotifier&lt;/em&gt;, and also it should have a message to test the sender, the receiver, the message and if an email has been sent. Creating a &lt;em&gt;FakeEmailClient&lt;/em&gt; won&amp;rsquo;t solve the &lt;em&gt;false positive&lt;/em&gt; problem, but it will be easier to fix because you should only update the fake object instead of all the tests where the &lt;em&gt;EmailClient&lt;/em&gt; is used.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s assume the &lt;em&gt;EmailClient&lt;/em&gt; class has a constructor without parameters, and it only has the &lt;code&gt;send(from, to, message)&lt;/code&gt; method. In that case, the &lt;em&gt;Fake Class&lt;/em&gt; would be:&lt;/p&gt;
+
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;FakeEmailClient&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;{&lt;/span&gt;
+
+    &lt;span style=&#34;color: #66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;send&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(sender_address,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;to_address,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;message)&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;{&lt;/span&gt;
+        &lt;span style=&#34;color: #f8f8f2&#34;&gt;@last_sender_address&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;from_address&lt;/span&gt;
+        &lt;span style=&#34;color: #f8f8f2&#34;&gt;@last_receiver_address&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;to_address&lt;/span&gt;
+        &lt;span style=&#34;color: #f8f8f2&#34;&gt;@last_message_sent&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;message&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;}&lt;/span&gt;
+
+    &lt;span style=&#34;color: #66d9ef&#34;&gt;attr_reader&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;:last_sender_address&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;:last_receiver_address&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;:last_message_sent&lt;/span&gt;
+    
+    &lt;span style=&#34;color: #66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;assert_last_email_received&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(from,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;to,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;message)&lt;/span&gt;
+        &lt;span style=&#34;color: #f8f8f2&#34;&gt;expect(@last_sender_address)&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;to&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;eq(from_address)&lt;/span&gt;
+        &lt;span style=&#34;color: #f8f8f2&#34;&gt;expect(@last_receiver_address)&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;to&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;eq(to_address)&lt;/span&gt;
+        &lt;span style=&#34;color: #f8f8f2&#34;&gt;expect(@last_message_sent)&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;to&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;eq(message)&lt;/span&gt;
+    &lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+    
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;p&gt;This &lt;em&gt;Fake object&lt;/em&gt; should be used in every test that needs to use an &lt;em&gt;EmailClient&lt;/em&gt;, and if you need to test if an email has been sent, you can ask it to the fake client.&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;describe&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;EmailNotification&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;do&lt;/span&gt;
+
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;describe&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;:notify&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;do&lt;/span&gt;    
+
+        &lt;span style=&#34;color: #f8f8f2&#34;&gt;it&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;sends an email to the given user with the given message&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;do&lt;/span&gt;
+            
+            &lt;span style=&#34;color: #f8f8f2&#34;&gt;from_email&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;server@test.com&amp;quot;&lt;/span&gt;
+            &lt;span style=&#34;color: #f8f8f2&#34;&gt;user_email_address&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;user@test.com&amp;quot;&lt;/span&gt;
+            &lt;span style=&#34;color: #f8f8f2&#34;&gt;user&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;double(&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;User&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;email&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;user_email_address)&lt;/span&gt;
+            &lt;span style=&#34;color: #f8f8f2&#34;&gt;message&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;Message&amp;quot;&lt;/span&gt;
+
+            &lt;span style=&#34;color: #f8f8f2&#34;&gt;email_client&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;FakeEmailClient&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;new&lt;/span&gt;
+
+            &lt;span style=&#34;color: #f8f8f2&#34;&gt;notifier&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;EmailNotifier&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;email_client,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;from_email&lt;/span&gt;
+            &lt;span style=&#34;color: #f8f8f2&#34;&gt;notifier&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;notify(user,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;message)&lt;/span&gt;
+
+            &lt;span style=&#34;color: #f8f8f2&#34;&gt;email_client&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;assert_last_email_received(from_email,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;user_email_address,message)&lt;/span&gt;
+        &lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+        
+    &lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+&lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;To conclude, I am not saying that mocks are useless, but I think that avoiding them whenever is possible makes the tests safer and easier to understand and maintain.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>There are null reasons</title>
+      <link>http://blog.10pines.com/2016/01/04/there-are-null-reasons/</link>
+      <pubDate>Mon, 04 Jan 2016 10:32:10 +0000</pubDate>
+      
+      <guid>http://blog.10pines.com/2016/01/04/there-are-null-reasons/</guid>
+      <description>
+
+&lt;p&gt;This post will try and maybe fail to convince you that using &lt;code&gt;null&lt;/code&gt; in your code is an error.
+For those of you willing to listen, here are my reasons to stop using it.&lt;/p&gt;
+
+&lt;h2 id=&#34;super-brief-history&#34;&gt;Super brief history&lt;/h2&gt;
+
+&lt;p&gt;The programming notion of null was introduced by Tony Hoare in 1965 for ALGOL W. In his own words, his intention was:&lt;br /&gt;
+&amp;rdquo;  My goal was to &lt;em&gt;ensure that all use of references should be absolutely safe&lt;/em&gt;, with checking performed automatically by
+the compiler. But I couldn&amp;rsquo;t resist the temptation to put in a null reference, simply because &lt;em&gt;it was so easy to
+implement&lt;/em&gt;. This has led to innumerable errors, vulnerabilities, and system crashes, which have probably caused a billion
+ dollars of pain and damage in the last forty years.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;The name is probably inspired on Math, as the notion of empty set, or &amp;lsquo;no value&amp;rsquo;. And from Legal systems, as the notion
+ of nullity, an entity that possess no legal significance. In programming, null is used as a value for any variable that
+  represents &amp;lsquo;no value&amp;rsquo;.&lt;/p&gt;
+
+&lt;p&gt;You know by now that it didn&amp;rsquo;t prevent unsafe references (as originally intended). On the contrary, unsafe references is
+ probably the number one error on programming languages that use it.&lt;br /&gt;
+The funny thing is that you would think that the problem is a human error, not a language feature unintentionally
+designed to fail when used.&lt;/p&gt;
+
+&lt;h1 id=&#34;the-two-wrong-use-cases&#34;&gt;The two wrong use cases&lt;/h1&gt;
+
+&lt;p&gt;I didn&amp;rsquo;t believe it either. But our 10Pines version of the white mage warned us against using null/nil.
+Some 4 years ago &lt;a href=&#34;http://blog.10pines.com/authors/hernan-wilkinson/&#34;&gt;uncle Wilki&lt;/a&gt; tried in vain to convince us that using null was a proven mistake. I thought he was only
+ranting and discredited the idea: &amp;lsquo;So many people using it can&amp;rsquo;t be wrong&amp;rsquo;.&lt;br /&gt;
+Nevertheless I payed attention, and over the years I collected information, trying to prove him wrong.&lt;br /&gt;
+Luckily, I was the one proven wrong and now I understand why.&lt;/p&gt;
+
+&lt;p&gt;There are two use cases were null is used and they are both wrong. But they are so common, and feel so natural that you
+don&amp;rsquo;t question them. That&amp;rsquo;s the trap of null. It&amp;rsquo;s so easy to fulfill those use cases with null that you don&amp;rsquo;t think
+about the right way of doing it.&lt;/p&gt;
+
+&lt;h2 id=&#34;as-initial-value&#34;&gt;As initial value&lt;/h2&gt;
+
+&lt;p&gt;The first use case is introduced by the language itself. An uninitialized reference variable by default gets a null/nil
+value.&lt;br /&gt;
+Making you think that if you don&amp;rsquo;t know the value of a variable, it&amp;rsquo;s ok to set its value to null.&lt;br /&gt;
+Harmless as it seems, an unsafe null reference cannot be detected on all cases by humans, static compilers, or even
+flow analysis, and thus an uninitialized variable can be accessed on runtime producing an null reference error.&lt;/p&gt;
+
+&lt;p&gt;More importantly, by giving you an &amp;lsquo;easy to implement&amp;rsquo; &lt;em&gt;undefined&lt;/em&gt; value, it generates a hole in your design.&lt;br /&gt;
+Instead of defining your own behavior for uninitialized values, you take the language default which falls short and
+many times it&amp;rsquo;s completely undescriptive.&lt;/p&gt;
+
+&lt;p&gt;Look at null reference errors for 3 common languages:&lt;br /&gt;
+java:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Exception in thread &amp;quot;main&amp;quot; java.lang.NullPointerException
+at ....
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;.Net:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;System.NullReferenceException: Object reference not set to an instance of an object.
+at
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;or javascript:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;TypeError: foo is undefined
+TypeError: foo is null
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Without looking at the code there&amp;rsquo;s no way to find the error, and sometimes you can only discover it by debugging.&lt;/p&gt;
+
+&lt;p&gt;Instead of using null as a default value, take the chance to think on the expected behavior of your system when that
+happens. Complete your design by using a NullObject if appropriate default behavior can be defined, or add an
+error object that describes the error with context that is helpful to spot the original cause. Add domain semantics
+to the problem by creating a custom &lt;em&gt;undefined&lt;/em&gt; value instead of null.&lt;/p&gt;
+
+&lt;p&gt;Look how mockito informs null references, when configured to do so:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;org.mockito.exceptions.verification.SmartNullPointerException:
+You have a NullPointerException here:
+-&amp;gt; at test.SNPETest.doSomething(SNPETest.java:23)
+Because this method was *not* stubbed correctly:
+-&amp;gt; at test.SNPETest.doSomething(SNPETest.java:22)
+
+        at test.SNPETest.doSomething(SNPETest.java:23)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;It&amp;rsquo;s a little more helpful, right? What about an error message specific to your domain? It only takes a little more work.
+ But it pays off big time, and it&amp;rsquo;s not that much if you use a generic tool to generate them.&lt;/p&gt;
+
+&lt;p&gt;Just by doing this, you will reduce a percentage of your bugs because you won&amp;rsquo;t have automatic omissions. By removing
+null as a valid initial value, every variable needs to be initialized explicitly, and thus you will need to think about
+it, or have a better error description when you don&amp;rsquo;t.&lt;br /&gt;
+Some errors will still persist, but hopefully with a better detection mechanism in place.&lt;/p&gt;
+
+&lt;h2 id=&#34;as-optional-value&#34;&gt;As optional value&lt;/h2&gt;
+
+&lt;p&gt;The second use case, and the most difficult to eradicate, is the use of null to represent the absence of a value.&lt;br /&gt;
+I know that using null for its purpose sounds like the logical thing to do but the problem is that null falls short. It
+doesn&amp;rsquo;t have the behavior that you need from it.&lt;br /&gt;
+It&amp;rsquo;s no wonder that language designers need to complicate the language to deal with null values by adding operators that
+ don&amp;rsquo;t follow the object-message principle, like Ruby&amp;rsquo;s &lt;code&gt;&amp;amp;.&lt;/code&gt;, or Groovy&amp;rsquo;s &lt;code&gt;?.&lt;/code&gt;. You have no polymorphism to use with
+ null. Null is a value for all types, that behaves like none. Once you have null, you have no object.&lt;/p&gt;
+
+&lt;p&gt;That&amp;rsquo;s why these operators come handy when dealing with &amp;lsquo;optional values&amp;rsquo;. But again, the solution falls short.
+By using these operators you deprive your design from behavior that is needed to represent the absence of a value
+(a case that is part of your domain!). To complicate things worse, the error description will be the same that is used
+for uninitialied values.&lt;br /&gt;
+Accessing an optional value as it was present, is an error that you can better describe with custom errors, or prevent
+completely by using better tools than null.&lt;/p&gt;
+
+&lt;h2 id=&#34;alternatives-to-null&#34;&gt;Alternatives to null&lt;/h2&gt;
+
+&lt;p&gt;In a nutshell there are 4 alternatives you can choose (in no particular order):&lt;/p&gt;
+
+&lt;p&gt;a. a null object for default behavior&lt;br /&gt;
+b. a block/closure to handle the absence&lt;br /&gt;
+c. a maybe object to reify the absence&lt;br /&gt;
+d. don&amp;rsquo;t make it optional&lt;/p&gt;
+
+&lt;p&gt;To put it in an example, let&amp;rsquo;s say you need to implement a method to find a user. You can do:&lt;/p&gt;
+
+&lt;p&gt;a) NullObject&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;findUser(credentials)
+  return unknownUser
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you know the expected interface of the returned object, and you can guarantee that in every context that is going to
+be used a default behavior is acceptable then you can return a default object.&lt;br /&gt;
+That object can then be interacted with as a normal user.&lt;br /&gt;
+For the sake of the example, let&amp;rsquo;s say that the unkown user can redirect you to a registration form as its main page.&lt;/p&gt;
+
+&lt;p&gt;b) Explicit block&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;findUser(credentials, blockIfNone)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you can&amp;rsquo;t anticipate the expected behavior, you can ask for it.&lt;br /&gt;
+Add a second parameter to your code that accepts a block of code to be executed when the user is not found. That forces
+your client to define what to do in the case of absence, and makes explicit that scenario. The client code will then
+have to decide its course of action as part of finding a user which removes the possibility of ommitting that detail.&lt;/p&gt;
+
+&lt;p&gt;c) Reify the empty set/result or Maybe&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Maybe&amp;lt;User&amp;gt; findUser(credential)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If your client code can&amp;rsquo;t define what the correct action for absence is, use a &lt;code&gt;maybe&lt;/code&gt; object to reify the optionality,
+and return that object, instead of the user.&lt;br /&gt;
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Monad_%28functional_programming%29#The_Maybe_monad&#34;&gt;Taken from functional programming&lt;/a&gt; a
+&amp;lsquo;maybe&amp;rsquo; object responsibility is to represent an optional value (not the value itself, but the uncertainty of it).&lt;br /&gt;
+Instead of sharing the same interface as the user, the interface of a maybe object has semantics specific to the
+presence or absence of values, and how to deal with it.&lt;br /&gt;
+This option defers the decision of what to do for absence to the moment the user is actually needed. And because this maybe object responsibility is to represent a set, it can share semantics with collections.&lt;br /&gt;
+If you need the name of the user, instead of doing &lt;code&gt;findUser(credential)&amp;amp;.name&lt;/code&gt; and getting a possible string, or nil (which inevitable needs an if statement), you can do &lt;code&gt;findUser(credential).map(&amp;amp;:name)&lt;/code&gt; which gets you another &lt;code&gt;maybe&lt;/code&gt; for the name, delaying the problem until the name is really needed.&lt;/p&gt;
+
+&lt;p&gt;d) Avoid optionality if not needed&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;findUser(credentials) throws NotfoundError
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In some domains, the absence is not a valid state for the system. In those cases, don&amp;rsquo;t consider the absence as a valid use case. Treat it as an error, and prevent it.&lt;br /&gt;
+For instance, when you create a new object, you shouldn&amp;rsquo;t have optional instance variables. It&amp;rsquo;s a code smell that may imply two classes in one (as pointed out by our Object Evangelist &lt;a href=&#34;http://blog.10pines.com/authors/nicolas-papagna/&#34;&gt;npapagna&lt;/a&gt; ). Don&amp;rsquo;t allow nil parameters in the creation of an object.&lt;/p&gt;
+
+&lt;p&gt;Finally, don&amp;rsquo;t use exceptions to represent absence as a normal case. They are not polymorphic, require additional code branches (code complexity) and more importantly should be used for exceptional cases. If the value is optional, its absence it&amp;rsquo;s not an exception. It&amp;rsquo;s part of the domain.&lt;/p&gt;
+
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;I tried to be as brief as possible to keep this post short. Because of that I may be ommiting some details or edge cases.&lt;br /&gt;
+But my intention is to give you few simple rules to follow and avoid null at all cost.&lt;/p&gt;
+
+&lt;p&gt;If you follow these rules, or at least question the necessity for null and create your own, you will make me, uncle Wilki, npapagna and your future self a lot happier.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Ruby On Pains</title>
+      <link>http://blog.10pines.com/2015/11/25/ruby-on-pains/</link>
+      <pubDate>Wed, 25 Nov 2015 15:28:11 +0000</pubDate>
+      
+      <guid>http://blog.10pines.com/2015/11/25/ruby-on-pains/</guid>
+      <description>
+
+&lt;p&gt;Have you ever heard about the &lt;em&gt;Rails way&lt;/em&gt;?
+I would like to introduce some pains that I&amp;rsquo;ve seen and keep seeing in all the Rails projects due to the &lt;em&gt;Rails way&lt;/em&gt;&amp;hellip;&lt;/p&gt;
+
+&lt;h2 id=&#34;activerecord&#34;&gt;ActiveRecord&lt;/h2&gt;
+
+&lt;p&gt;How many times do we need to find an object in a Rails project? How many times do we create, update or delete objects from the DB? Many times, isn&amp;rsquo;t it? We are used to repeat these actions in all our ActiveRecord classes. We do it like monkeys, never ask for a timeout and think about it. It seems to be something &lt;em&gt;normal&lt;/em&gt; when we use this framework, it&amp;rsquo;s the famous &lt;em&gt;Rails way&lt;/em&gt;. It&amp;rsquo;s &lt;em&gt;normal&lt;/em&gt; for us to have a class that answers &lt;code&gt;find&lt;/code&gt;, &lt;code&gt;update&lt;/code&gt;, &lt;code&gt;save&lt;/code&gt;, etc, but we never think if it’s right and whether there could be a better way of doing it.&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s typical to find this kind of logic in a Rails project, see the example of this controller:&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;UserController&lt;/span&gt;
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;index&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;@users&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;User&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;all&lt;/span&gt;
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+  
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;show&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;@user&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;User&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;find(params&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;:id&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;)&lt;/span&gt;
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+    
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;create&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;@user&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;User&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;create(user_params)&lt;/span&gt;
+  &lt;span style=&#34;color: #f92672&#34;&gt;...&lt;/span&gt;
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;private&lt;/span&gt;
+ 
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;user_params&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;params&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;require(&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;:user&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;permit(&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;...&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;)&lt;/span&gt;
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+  &lt;span style=&#34;color: #f92672&#34;&gt;...&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The OO paradigm defines, among other things, that a class has two main responsibilities. The first one is defining the behavior for the objects of that class, and the second one is creating instances of it. This means that all objects that are instances of the same class can perform the same actions. So, when did we talk about persisting? We didn&amp;rsquo;t say anything about classes having the responsibility of writing to the database or executing a query in order to load some instances in memory. Have you ever thought what are we doing to our classes in order to answer those kind of messages? Basically inheriting from &lt;code&gt;ActiveRecord::Base&lt;/code&gt;, which is a strong association that defines a rigid behavior that doesn&amp;rsquo;t follow the paradigm principles. Look at this alternative:&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;UserController&lt;/span&gt;
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;index&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;@users&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;UserRecords&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;find_all&lt;/span&gt;
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+  
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;show&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;@user&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;UserRecords&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;find(params&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;:id&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;)&lt;/span&gt;
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+  &lt;span style=&#34;color: #f92672&#34;&gt;...&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Definitely our business domain models shouldn&amp;rsquo;t be coupled to the way we persist them. The main reason is both belong to different domains, having different kind of responsibilities. Moreover, have you ever thought about changing Rails for another framework? Our models shouldn&amp;rsquo;t change, our code shouldn&amp;rsquo;t change much. We should only need to change those entities in charge of persistence. But if those entities are the same that model our business domain, probably we are in trouble.&lt;/p&gt;
+
+&lt;h2 id=&#34;validations&#34;&gt;Validations&lt;/h2&gt;
+
+&lt;p&gt;Have you ever thought about invalid objects? Moreover, have you ever thought if it make sense to think about valid objects? Well, in real life we don&amp;rsquo;t have invalid entities, we don&amp;rsquo;t have invalid persons, or invalid cars, it would be ridiculous. But, since the external world interacts with computer systems, for example someone using a web application, we can always do it in a bad way. We can fill forms incorrectly, e.g. filling a telephone input field with my name. However this doesn&amp;rsquo;t mean that invalid objects should exist. We can have validations or rules that need to be satisfied in order to process that form and create a new user in our system.&lt;/p&gt;
+
+&lt;p&gt;Let me be more specific. In a Rails project we can probably find controllers like&amp;hellip;&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;create&lt;/span&gt;
+  &lt;span style=&#34;color: #f8f8f2&#34;&gt;@user&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;User&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;create(params&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;:user&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;)&lt;/span&gt;
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;@user&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;valid?&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;redirect_to&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;show_path(@user)&lt;/span&gt;
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;else&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;render&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;:create&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;errors&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;@user&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;errors&lt;/span&gt;
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+&lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;We usually ask an object if it&amp;rsquo;s valid because, I suppose, it&amp;rsquo;s the &lt;em&gt;Rails way&lt;/em&gt;. As I said, it&amp;rsquo;s ridiculous, I&amp;rsquo;m sure that User class is full of &lt;code&gt;validates&lt;/code&gt; and we still can create invalid instances.&lt;/p&gt;
+
+&lt;p&gt;Suppose we are in 1930, and you go to a club asking for a sign up. The help desk gives you the users record book and asks you to write your enrollment, then the help desk checks whether you have filled the enrollment correctly. If you did it wrong, you will be asked to fix it. Well, I&amp;rsquo;m sure that book would be full of corrections. Wouldn&amp;rsquo;t it be better to have a sign up form that the helpdesk uses to complete an enrollment that we know is correct?&lt;/p&gt;
+
+&lt;p&gt;The problem here is that we are modeling a user when we don&amp;rsquo;t have to. We are omitting something in the middle, the form. We aren&amp;rsquo;t modeling that, take a look at this short example:&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;create&lt;/span&gt;
+  &lt;span style=&#34;color: #f8f8f2&#34;&gt;form&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;UserEnrollmentForm&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;new(user_params)&lt;/span&gt;
+  &lt;span style=&#34;color: #f8f8f2&#34;&gt;@user&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;UserEnroller&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;new&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;call(form)&lt;/span&gt;
+  &lt;span style=&#34;color: #f8f8f2&#34;&gt;redirect_to&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;show_path(@user)&lt;/span&gt;
+&lt;span style=&#34;color: #66d9ef&#34;&gt;rescue&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;UserEnrollmentError&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;e&lt;/span&gt;
+  &lt;span style=&#34;color: #f8f8f2&#34;&gt;render&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;:create&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;form&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;form,&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;error&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;e&lt;/span&gt;
+&lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Here we are just delegating the responsibility of deciding whether to create or not a User based on an input form. Again, have in mind the given implementation is not part of the scope, we can discuss multiple ways of doing this. The main thing is, we should never have invalid objects in our system. If something goes wrong while creating or modifying an instance, I would like to be notified asap - In Rails, use the bang always!&lt;/p&gt;
+
+&lt;h2 id=&#34;ruby-coals&#34;&gt;Ruby Coals&lt;/h2&gt;
+
+&lt;p&gt;I like using that word just to refer to awful gems. What happens when you grab a coal? Your hands get dirty right? Well, this is what I feel with some gems when I start using them in a project. Also a coal is the primitive of a gem and it really feels like we are not progressing when we use that kind. The fact is that the &lt;em&gt;Rails way&lt;/em&gt; is awesome cause we can find some functionality that someone has already built, installing that gem, and voilá.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s see some examples. We can start with this pagination coal&amp;hellip;&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;Post&lt;/span&gt;
+  &lt;span style=&#34;color: #f8f8f2&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;per_page&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;10&lt;/span&gt;
+&lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+
+&lt;span style=&#34;color: #66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;PostsController&lt;/span&gt;
+  &lt;span style=&#34;color: #f92672&#34;&gt;...&lt;/span&gt;
+  &lt;span style=&#34;color: #f8f8f2&#34;&gt;@posts&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;Post&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;paginate(&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;page&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;params&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;:page&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;)&lt;/span&gt;
+  &lt;span style=&#34;color: #f92672&#34;&gt;...&lt;/span&gt;
+&lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;I don&amp;rsquo;t like that way of doing things, we are breaking the OO design rule about responsibilities and not coupling things that belong to different domains. Here, we are coupling our &lt;code&gt;Post&lt;/code&gt; model with the idea of paginating them for a view, that&amp;rsquo;s crazy! We should find a better way, such as modeling a paginator instead of having our classes answering messages like &lt;code&gt;per_page&lt;/code&gt; or &lt;code&gt;paginate&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;PostsController&lt;/span&gt;
+  &lt;span style=&#34;color: #f92672&#34;&gt;...&lt;/span&gt;
+  &lt;span style=&#34;color: #f8f8f2&#34;&gt;paginator&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;Paginator&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;new(&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;PostsBook&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;find_all,&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;per_page&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;POSTS_PER_PAGE&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;)&lt;/span&gt;
+  &lt;span style=&#34;color: #f8f8f2&#34;&gt;posts&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;paginator&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;call(&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;page&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;params&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;:page&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;)&lt;/span&gt;
+  &lt;span style=&#34;color: #f92672&#34;&gt;...&lt;/span&gt;
+&lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now take a look at this filtering coal&amp;hellip;&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;Student&lt;/span&gt;
+  &lt;span style=&#34;color: #f8f8f2&#34;&gt;scope&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;:with_country_id&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;(country_id)&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;{&lt;/span&gt; &lt;span style=&#34;color: #960050; background-color: #1e0010&#34;&gt;…&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;}&lt;/span&gt;
+  &lt;span style=&#34;color: #f8f8f2&#34;&gt;scope&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;:sorted_by&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;(field)&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;{&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;...&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;}&lt;/span&gt;
+  &lt;span style=&#34;color: #f8f8f2&#34;&gt;scope&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;:search_query&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;...&lt;/span&gt;
+      
+  &lt;span style=&#34;color: #f8f8f2&#34;&gt;filterrific(&lt;/span&gt;
+    &lt;span style=&#34;color: #e6db74&#34;&gt;default_filter_params&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;{&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;sorted_by&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;created_at_desc&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;},&lt;/span&gt;
+    &lt;span style=&#34;color: #e6db74&#34;&gt;available_filters&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;:sorted_by&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;:search_query&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;:with_country_id&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;)&lt;/span&gt;
+  &lt;span style=&#34;color: #f92672&#34;&gt;...&lt;/span&gt;
+&lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+
+&lt;span style=&#34;color: #66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;StudentController&lt;/span&gt;
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;index&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;@filterrific&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;initialize_filterrific(&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;Student&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;params&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;:filterrific&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;or&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;return&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;@students&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;@filterrific&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;find&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;page(params&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;:page&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;)&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;respond_to&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;do&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;|&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;format&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;|&lt;/span&gt;
+      &lt;span style=&#34;color: #f8f8f2&#34;&gt;format&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;html&lt;/span&gt;
+      &lt;span style=&#34;color: #f8f8f2&#34;&gt;format&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;js&lt;/span&gt;
+    &lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+  &lt;span style=&#34;color: #f92672&#34;&gt;...&lt;/span&gt;
+&lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;That&amp;rsquo;s really good! Our models become a storage of filtering configuration! Seriously, the filtering functionallity that we offer in a view has nothing to do in our &lt;code&gt;Student&lt;/code&gt; model. Does a student need to know about filtering configuration? One more time, we are coupling. Here is another simple way of doing this:&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;StudentController&lt;/span&gt;
+  &lt;span style=&#34;color: #f92672&#34;&gt;...&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;students_filter&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;StudentsFilter&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;new(params&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;:filtering&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;)&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;@students&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;StudentRecords&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;with_filter(filter)&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;find_all&lt;/span&gt;
+  &lt;span style=&#34;color: #f92672&#34;&gt;...&lt;/span&gt;
+&lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Again, let me remeber that the examples shown above are just ilustrative, we are not discussing the implementation, but the approach we are choosing. My suggestion is, let&amp;rsquo;s think twice before adding this kind of coals as your code will get dirty and removing or refactoring this kind of functionality to another place will be a pain in the ass.&lt;/p&gt;
+
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;In my opinion, Rails is a good framework for a kick-off. It’s easy to write the firsts test cases, implement the idea, and deploy it. But, what happens when the application starts to grow? Sometimes we lose our mind trying to get things out faster, and we shouldn&amp;rsquo;t forget the importance of designing good models, otherwise implementing the next feature becomes a headache. Also you will always find multiple gems to solve your problem, but think the way you are going to implement such thing, most of them make your models dirty. Always remember that it is key to understand the essence of the objects in the reality&amp;rsquo;s domain to keep it on our code.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Learning Programming</title>
+      <link>http://blog.10pines.com/2015/11/02/learning-programming/</link>
+      <pubDate>Mon, 02 Nov 2015 12:07:16 +0000</pubDate>
+      
+      <guid>http://blog.10pines.com/2015/11/02/learning-programming/</guid>
+      <description>
+
+&lt;h2 id=&#34;dealing-with-failure-and-frustration&#34;&gt;Dealing with failure and frustration&lt;/h2&gt;
+
+&lt;p&gt;I’ve recently finished my apprenticeship program here at 10Pines.
+The experience was way beyond my expectations. Really. I’ve learned much more than I expected.
+In order to show some of my experience during my time here, I was asked to write a post about something I’ve learned. I’ve decide not to write about the techniques or tools I have gained, but about the human aspects of this educational period, which include, in my opinion, two very important concepts.&lt;/p&gt;
+
+&lt;p&gt;First of all, I want to write about the importance of seeing error as &lt;strong&gt;feedback&lt;/strong&gt; and as a &lt;strong&gt;way to learn&lt;/strong&gt;.
+It’s important to change that mindset that tells us that making a mistake is wrong and we need to start seeing it as an opportunity for learning. Failure is not a bad thing, it gives us constructive critique about something that is not working the way we are expecting and needs to be fixed. Thus, it helps us reconsider the steps we’ve taken, find what to fix and &lt;em&gt;learn with it&lt;/em&gt;. So..&lt;/p&gt;
+
+&lt;h3 id=&#34;let-s-make-some-mistakes&#34;&gt;Let&amp;rsquo;s make some mistakes!&lt;/h3&gt;
+
+&lt;p&gt;With programming we are always learning and that is a fact. I feel there is so much to learn, so much to grasp. Sometimes, that feeling discourages me. But I’ve discovered that it doesn&amp;rsquo;t matter how much you know or how good programmer you are, you can always learn something new. So I will always feel that there is so much to learn, and that’s okay.&lt;/p&gt;
+
+&lt;p&gt;During my apprenticeship I understood that programming and failing is where we encounter opportunities to learn the most. And when I thought about my feelings when I couldn’t get things right, I realized that programming is indeed frustrating. And it will always be like that.&lt;/p&gt;
+
+&lt;p&gt;The programming experience includes: trying to fix something, getting frustrated, keep going trying to fix it, stopping for a minute, getting a new idea and finally finding the solution that &lt;em&gt;makes the program work&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;So I learned that getting frustrated is normal. There is nothing wrong with it. And &lt;strong&gt;I will never stop getting frustrated&lt;/strong&gt;. This sense of frustration is what will make the satisfaction of finding  and solving the problem much bigger. So..&lt;/p&gt;
+
+&lt;h3 id=&#34;let-s-get-frustrated&#34;&gt;Let&amp;rsquo;s get frustrated!&lt;/h3&gt;
+
+&lt;p&gt;We need to adapt ourselves until we feel comfortable with these feelings while working.
+With this, I would like to write a little about the second concept, which is psychological:&lt;/p&gt;
+
+&lt;h2 id=&#34;tolerance-to-frustration&#34;&gt;Tolerance to frustration&lt;/h2&gt;
+
+&lt;p&gt;So, what does this concept have to do with programming?&lt;/p&gt;
+
+&lt;p&gt;We often use the words &lt;strong&gt;tolerance to frustration&lt;/strong&gt; referring to whether a person has this skill, and if so, how much of it.
+So, what is tolerance, anyway? The definition of &lt;strong&gt;tolerance&lt;/strong&gt; implies the existence of a threshold. When something manages to make us surpass this limit, a reaction occurs. This way, people can be more or less tolerant depending on their personality, their emotional state, what circumstances they are under, etc.&lt;/p&gt;
+
+&lt;p&gt;On the other hand, the word &lt;strong&gt;frustration&lt;/strong&gt; has several psychological connotations. This is: the emotional experience a person undergoes when confronting a situation in which an expectation, a wish, a project, a hope or a necessity is not fulfilled or achieved.&lt;/p&gt;
+
+&lt;p&gt;Whether it comes from an external or internal source, every frustration involves a specific situation and an experience. Not everyone reacts exactly the same. That’s why we could say that there are a lot of different reactions to frustration, as many as people.&lt;/p&gt;
+
+&lt;p&gt;So when a wish or hope is not fulfilled, a person can react in different ways to this frustration, from feeling anger to being aggressive or even violent, if we want to mention the most extreme way. Or on the contrary, the person can experience a state of no reaction whatsoever, or feelings of sadness, pessimism, fear and lack of motivation.&lt;/p&gt;
+
+&lt;p&gt;Have you ever &lt;em&gt;felt something like this&lt;/em&gt; when programming? Have you ever &lt;em&gt;experienced one of this reactions&lt;/em&gt;?
+I have. I’ve felt so discouraged that I didn’t feel like coding anymore, ever again.&lt;/p&gt;
+
+&lt;p&gt;So, what about tolerance to frustration then? Can we tolerate our own frustrations in a healthy way? Of course we can. And we should.&lt;/p&gt;
+
+&lt;p&gt;When a person has tolerance to frustration, internally what this person has is a degree of strength and balance that allows him/her to continue loving and working, against or despite frustration.&lt;/p&gt;
+
+&lt;p&gt;Moving forward, every frustration, not only as the situation, but as the experience, is horrendous, but not bad in itself. It’s very important to know that maturity involves a subtle balance between the frequency of gratifying experiences and frustration. What’s more, Freud said that the possibility of further growth and development of the subject depends partly on this balance&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+
+&lt;p&gt;With this I want to point out:
+The importance of being in an environment where not everything is a gratification, and where our problems aren&amp;rsquo;t always solved by someone else, since that&amp;rsquo;s when we lose this opportunity for progress and growth: a little frustration helps us become more capable and mature;
+And the importance of not living in a state of permanent frustration: in an environment where we do get frustrated all the time, because that&amp;rsquo;s what could make you feel overwhelmed and hinder your wish to improve yourself and grow.&lt;/p&gt;
+
+&lt;p&gt;During my time here in 10Pines, I found this kind of environment with the balance Freud mentioned: I was motivated to face challenges, with the responsibility to do things for myself, knowing that I was going to find errors/problems that I’d have to solve but with the support of our mentors and my colleagues to not feel completely discouraged.&lt;/p&gt;
+
+&lt;p&gt;So, for me, the most interesting thing in this apprenticeship, beyond the concepts, techniques and tools I’ve learned, was that I could &lt;strong&gt;learn from failure and frustrations&lt;/strong&gt; and that I should &lt;strong&gt;increase my tolerance to them&lt;/strong&gt; in order to become a happier programmer… without dying while trying.&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;An Introduction to Freud and Modern Psychoanalysis, Hans H. Strupp (&lt;a href=&#34;https://books.google.com.ar/books?id=keYQ900Mq1oC&amp;amp;pg=PA14&amp;amp;lpg=PA14&amp;amp;dq=Freud+and+tolerance+to+frustration&amp;amp;source=bl&amp;amp;ots=eFVsSKPrHe&amp;amp;sig=LI3Mv1YJUIqvQtAxMFYf5-ljSCg&amp;amp;hl=es&amp;amp;sa=X&amp;amp;ved=0CFIQ6AEwCWoVChMIjMvm6vHkxwIVSpOQCh2huQUy#v=onepage&amp;amp;q=tolerance%20frustration&amp;amp;f=false&#34;&gt;page 14&lt;/a&gt;)
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:1&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Caring about coding</title>
+      <link>http://blog.10pines.com/2015/11/02/caring-about-coding/</link>
+      <pubDate>Mon, 02 Nov 2015 10:55:09 +0000</pubDate>
+      
+      <guid>http://blog.10pines.com/2015/11/02/caring-about-coding/</guid>
+      <description>
+
+&lt;p&gt;&lt;em&gt;This is a repost of an article we wrote with our friends at 8th Light.
+See the original article &lt;a href=&#34;http://blog.8thlight.com/alexandru-codreanu/dario-garcia/lucas-giudice/2015/10/30/caring-coding.html&#34;&gt;here&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;As a programmer I spend a lot of time in front of the computer. But despite appearances, I am not there. I am not in front of a computer every day for 8 hours drying my eyes and weakening my muscles. I am somewhere else.&lt;/p&gt;
+
+&lt;p&gt;I am in an amazing world of executable ideas, manipulating abstract artifacts made of concepts. I am assembling them to generate a meaningful structure in which a computer program can evolve. This world is like a city that grows as we add more behavior to it. This world has the neighborhood of repositories, the shopping cart markets, the fashion contests of views, controllers directing traffic, etc.&lt;/p&gt;
+
+&lt;p&gt;But this city is not mine alone. It’s built by all the people on my team. It’s a place shared with others, where our creations grow together. It starts small and simple like a village with just a few small classes, but as time passes it can evolve into a crowded city which abounds with components. Some of the neighborhoods are clean and artfully crafted with well decoupled skyscrapers, while others are rotting, under the pressure to “Deliver now!”&lt;/p&gt;
+
+&lt;h2 id=&#34;the-broken-window-theory&#34;&gt;The Broken Window Theory&lt;/h2&gt;
+
+&lt;p&gt;The Broken Window Theory is based on a set of experiments on abandoned cars. Researchers left a car parked in Palo Alto, Calif., where it remained intact for more than a week. After a week, a researcher returned to the car and broke a window. Once the car seemed abandoned, rather than simply parked, it didn’t take long to be vandalized and destroyed. It only took one broken window to start the process.&lt;/p&gt;
+
+&lt;p&gt;The theory, in a nutshell, states that social perception of how much the people around you “care” about something is an important factor in how much care you devote to the same thing. When you see litter in the streets, throwing one more wrapper doesn’t make a difference. When the streets around you are clean, you pause and question yourself.&lt;/p&gt;
+
+&lt;p&gt;The other part of the theory is that problems are easier to fix when they are small. What begins with a single broken window leads to more broken windows, and eventually to abandoned or bug-infested buildings. Small problems can easily become big problems if we don’t fix them quickly.&lt;/p&gt;
+
+&lt;h2 id=&#34;are-you-contributing-to-the-broken-window-effect&#34;&gt;Are you contributing to the Broken Window Effect?&lt;/h2&gt;
+
+&lt;p&gt;As a good programmer, chances are that you are really good at finding errors, or better ways to implement another developer’s code. Sometimes I find myself wondering what the dev who wrote that code was thinking, or even calling it “crap” out loud. But what happens if I don’t actually change it?&lt;/p&gt;
+
+&lt;p&gt;What’s the effect of highlighting something really wrong with the code, and not doing anything about it? It’s like pointing at a broken window and letting everybody know that vandalizing this neighborhood is acceptable.&lt;/p&gt;
+
+&lt;p&gt;Having broken code is not great, but the real danger lies in what happens when you and your team accept it as reality and nobody fixes it. Imagine the effect on new team members when everybody acts like that. It’s like an invitation to live in one of the worst parts of the city. Would you like to stay there? Would you have the courage to improve things if no one else does?&lt;/p&gt;
+
+&lt;p&gt;If broken windows accumulate, then at some point the gradual decay in quality of your project gets out of control. As with the Broken Window Theory, the cost of refactoring entangled code is smaller up front, but if you delay it, it quickly becomes unaffordable.&lt;/p&gt;
+
+&lt;p&gt;The biggest difference-maker in the quality of a project is the development team’s attitude toward improving things.&lt;/p&gt;
+
+&lt;h2 id=&#34;the-boy-scout-rule&#34;&gt;The Boy Scout rule&lt;/h2&gt;
+
+&lt;p&gt;Good teams follow the Boy Scout rule: “Always leave the campground cleaner than you found it.” Good teams improve the environment, making it easier for the rest to add new code. Make your city better by slowly fixing one window at the time. Do it while you are adding a new feature nearby. There is no bad neighborhood for the Boy Scout rule.&lt;/p&gt;
+
+&lt;p&gt;One of the first steps for applying the rule is to stop ignoring the difficult code. By calling code bad, you are labeling it as code that is not worth rescuing. When you do so, you are reinforcing the idea that your neighborhood is a bad neighborhood. Being ‘crap’ is then an essential part of your code, and there is nothing you could do about it.&lt;/p&gt;
+
+&lt;p&gt;Instead, treat it as “unattended.” This does not state that the code is good, but it expresses your willingness to improve it. It’s a piece of software that is actually working, but is waiting for (and deserves) some attention and care.&lt;/p&gt;
+
+&lt;h2 id=&#34;so-now-what&#34;&gt;So, now what?&lt;/h2&gt;
+
+&lt;p&gt;If you feel like you don’t know where to start improving your city&amp;hellip; If you see a lot of broken windows&amp;hellip; If you know your city needs to get better&amp;hellip; Then start taking action now.&lt;/p&gt;
+
+&lt;p&gt;You can encourage people to take actions by just changing the words you use. Start talking about the state of the code in a time frame (e.g. “It’s unattended for now”) and take away the idea of code being “crap.” Doing so, you generate the proper environment to apply the Boy Scout rule. Start refactoring little pieces of software when you see the opportunity, and encourage your team to do the same.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&amp;ldquo;Is the Broken Windows Theory Effective?&amp;rdquo; - SiOWfa13: Science in Our World: Certainty and Controversy. N.p., n.d. Web. 01 Oct. 2015.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Tips for introducing yourself in a conference or &#39;the conference elevator pitch&#39;</title>
+      <link>http://blog.10pines.com/2015/10/13/the-conference-elevator-pitch/</link>
+      <pubDate>Tue, 13 Oct 2015 15:26:07 +0000</pubDate>
+      
+      <guid>http://blog.10pines.com/2015/10/13/the-conference-elevator-pitch/</guid>
+      <description>
+
+&lt;p&gt;It could sounds basic, but when you talk with people in a conference, you have to think quickly. So it&amp;rsquo;s very important to have in mind a successful path to a productive five-minutes chat. After being talking with a lot of people and making a lot of mistakes (since not knowing what to say about what our company do, to not asking how to contact him/her back); I’ve decided to write down a guidelines to introduce yourself and getting to know the other person, avoiding typical mistakes.&lt;/p&gt;
+
+&lt;h2 id=&#34;must-ask-questions-and-its-must-remember-answers&#34;&gt;Must-ask questions (and its must-remember answers)&lt;/h2&gt;
+
+&lt;p&gt;It&amp;rsquo;s important to talk, but sometimes it&amp;rsquo;s more important and more difficult to listen. That&amp;rsquo;s why I prefer to start talking about what you need to hear and know from the person in front of you:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;What&amp;rsquo;s her/his name?&lt;/strong&gt; Basic, but sometimes when you are in a rush, you forget this.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;What does she/he do?&lt;/strong&gt; Again, basic. But a lot of times I&amp;rsquo;ve found myself speaking a lot about what I do in order to convince the other how great we are, that I forgot to know and understand what this guy does. And this is one of the most important things in order to identify how you can make synergy together.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;How can you contact her/him back?&lt;/strong&gt; This is important so you can continue your conversation if a potential lead emerges from the talk.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Finally, it&amp;rsquo;s not important to ask the questions like this or in this order; what it is really important is that at the end of the conversation you know these 3 things:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;you know his/her name,&lt;/li&gt;
+&lt;li&gt;what his/her company do,&lt;/li&gt;
+&lt;li&gt;and how you can contact him/her&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;what-do-i-need-to-tell-from-me&#34;&gt;What do I need to tell from me?&lt;/h2&gt;
+
+&lt;p&gt;It is really important also to let him/her know about you. And since you have a very short limited time, you have to choose very careful what do you want the other person to remember. So here it&amp;rsquo;s the top 3 messages you should always send:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;What is my name and the name of my company?&lt;/strong&gt; This is important so he/she can later connect your name or your company name with other things&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;What do I/we do?&lt;/strong&gt; It&amp;rsquo;s important to be wide open, but not to much. So try to be special in something, but let space for match with the interests of your audition&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;With who?&lt;/strong&gt; Here I encourage to choose your top 3 clients. Not the most important for your company but the most well known.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;template-elevator-pitch-to-introduce-myself&#34;&gt;Template elevator pitch to introduce myself&lt;/h2&gt;
+
+&lt;p&gt;So, saying this, and in order to have a training and think about this basic but important things, I create a template for sort of an elevator pitch to introduce yourself. Again, you could think this is worthless, but try doing it and you will discover that it&amp;rsquo;s not so easy.&lt;/p&gt;
+
+&lt;p&gt;{% blockquote %}
+My template elevator pitch to introduce myself&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;My name is&amp;hellip;&lt;/li&gt;
+&lt;li&gt;My company does&amp;hellip;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;We work with&amp;hellip;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;My name is Jorge Silva, I work at 10Pines, a south america company based in Buenos Aires&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;My company does great software for great companies&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Such as Starbucks, 8thLight and Teespring
+{% endblockquote %}&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So, now is your turn, tell me&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Who are you?&lt;/li&gt;
+&lt;li&gt;What do you do?&lt;/li&gt;
+&lt;li&gt;And how can I contact you?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;That&amp;rsquo;s it. Simple and straightforward.
+Hope this is useful.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Review of Agile 2015 @ Washington DC</title>
+      <link>http://blog.10pines.com/2015/10/07/review-of-agile-2015-at-washington-dc/</link>
+      <pubDate>Wed, 07 Oct 2015 12:34:33 +0000</pubDate>
+      
+      <guid>http://blog.10pines.com/2015/10/07/review-of-agile-2015-at-washington-dc/</guid>
+      <description>
+
+&lt;h2 id=&#34;the-organization-the-conference&#34;&gt;The organization &amp;amp; the conference&lt;/h2&gt;
+
+&lt;p&gt;This was the biggest conference I’ve ever attended. There was 2300 registered people. 5 days of talks. More than 13 tracks in parallel every hour. Everything was in big scale.
+One thing that called my attention was the average age of the attendees; I’m used to see young people in the agile conferences in south america. But here, it’s really different; most of the people were around &lt;sup&gt;40&lt;/sup&gt;&amp;frasl;&lt;sub&gt;50&lt;/sub&gt; and even more. So I understood this conference and the US agile culture about software is in a later stage than in South America. And this is pretty interesting because you will find people who have been working with agile practices for more than 10 years. Even in the government there are a lot of projects working that way. So I think it is time to see agile software development as the &amp;ldquo;classic&amp;rdquo; way to develop software and not as the &amp;ldquo;new&amp;rdquo; way. Another weird thing for me is that the conference is designed for you to miss things. There is a lot of things going on at same time, beside the talks, you have a coaching clinic, lighting talks, TDD workshops, space jam, companies lounges with activities, boost, and more. So, I think it’s designed to cover all needs, but it’s impossible not to miss anything you are interested on. For a guy like me, who don’t like to miss anything, it was hard to be relaxed.&lt;/p&gt;
+
+&lt;p&gt;{% img /images/2015-10-07-review-of-agile-2015-at-washington-dc-4.JPG %}
+The conference is about to start! This is the welcome talk.&lt;/p&gt;
+
+&lt;h2 id=&#34;my-top-5-ideas-from-the-top-5-talks&#34;&gt;My top 5 ideas from the top 5 talks&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Awesome super problems by LuKe Hohmann.&lt;/strong&gt;
+Luke showed the collaborative, social, and serious games that have their roots in the agile community and have blossomed into multidimensional frameworks that are being used by agilists around the world to solve awesome superproblems. He shared his experience with the City of San Jose and their annual games over the past 3-4 years and how they were able to involve more community member perspectives in budgeting decisions. He also talked about the Los Altos School District and their experience with games to make difficult decisions about over-crowded classrooms - and again, including more people into the decision. They also presented a non-profit organization, Every Voice Engaged, which is open to work all around the world, for free, solving community problems.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Six Rules for Change by Esther Derby.&lt;/strong&gt;
+From this talk I took two things. The first one was this phrase: &amp;ldquo;don’t force to accept people they are wrong&amp;rdquo;. It’s basic but strong and clear. Instead, just move on to solve the problem. And then encourage you to shift your language to: “This was the best solution we had at that time.” or “This served us well when” or similar. The other thing was the similarity I found between what she was talking about changing organizations, and programming. She concluded: “Big change feels like an existential threat. Small changes allow for learning” and then, “Insert at least 3 ideas (but not too many). Measure, evaluate, adjust”; sounds a lot to TDD right?&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Retrospectives: Moving From A Subjective To An Objective World by Prateek Singh.&lt;/strong&gt;
+I took from this talk just one idea: to show metrics on the retrospective and find an explanation of the different patterns; like for example see a chart of your commits over time and understand the distributions.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Individuals, Interactions and Improvisation by Jessie Shternshus.&lt;/strong&gt;
+Jessie is an agile consultant and improv comedian who noticed parallels between the Agile Manifesto and the key principles of improv. Both disciplines have a common goal, working software &amp;amp; creating a funny play, both are focused on collaboration with customers (audience), and because of this collaboration and feedback from customer/audience this both require it’s members to respond well to change. If you have been in an improv show, you may listen the audience shouting out a movie genre, a funny constrain, etc… Well, those are the features requests.&lt;/p&gt;
+
+&lt;p&gt;{% img /images/2015-10-07-review-of-agile-2015-at-washington-dc-1.JPG %}
+A graphic summary of the talk by Claudia Sandoval (@claumsandoval)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Emotional Intelligence in Leadership by Judith Mills.&lt;/strong&gt;
+From this talk I also took this 3 main ideas:
+- Respond, don’t react. React means to act without thinking, just in an immediate way. To respond means to act after evaluating and thinking. So, in order to respond, you need to know yourself. And we made an exercise to answer: what emotions do get me in trouble? or block my progress? or spoil/sour my relationships? And then, think about what are my triggers? What’s an alternative to my usual behavior? Exploring this questions is a good way to understand yourself and start acting in a more controlled way.
+- Emotional contagion. This is an interesting concept that show us how the emotions can be contaged. So for example, if you are kind of a happy person and you smile you generate the same in the people surrounding you. And of course the same happens with the opposite. So, this is the principle of how just one person can move all a team into a happy/positive team, or to a negative or unhappy one. At last, we saw a video called &amp;ldquo;don’t laugh video” where you could experience yourself the emotional contagion observing other people laughing and discovering yourself after a time with a smile.
+- And last, this quote from Aristotle: &amp;ldquo;We are what we repeatedly do. Excellence then is not an act but a habit”.&lt;/p&gt;
+
+&lt;p&gt;You will find most of the presentations here if you are interested: &lt;a href=&#34;https://agile2015.sched.org/&#34;&gt;https://agile2015.sched.org/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;the-jeff-patton-experience&#34;&gt;The Jeff Patton experience&lt;/h2&gt;
+
+&lt;p&gt;Jeff Patton is one of my favorite famous people in the agile world. And this time I had the opportunity to talk a little more with him. Once you do it, you can easily see he is a modest guy with a lot of knowledge. We were talking about his mona lisa example of how to develop iteratively and incrementally, and my example of the bull fighting by Picasso inspired on the previous one. After talking with him, I decided to write a more detailed post about this ideas.
+I also attended to his talk, about story mapping, and one thing that was awesome was that he give the talk without any presentation. Instead he choose to draw in sticky notes everything while he was speaking. Awesome! and very graphical.&lt;/p&gt;
+
+&lt;h2 id=&#34;my-talk&#34;&gt;My talk&lt;/h2&gt;
+
+&lt;p&gt;My talk was called “Lean Sales Up” and it was oriented to all who are worried about the gap existing between sales and execution of an agile project. Bringing the concepts and principles of lean model to sales, we had created a practice which integrates the pre-sales phase with the traditional agile development cycle. Unlike the traditional pre-sales practices, ours helps to add value to the customer beginning at the conception stage; promoting closing the deal, while at the same time making the development team happier. This talk was a consequence of an experience report[*] I have to write in order to be accepted in the conference as speaker.
+Regarding the time I had to give the talk, my experience was really great. I wasn’t nervous during the talk (obviously I was nervous before). At the end I felt comfortable. There wasn’t too much people considering the amount of conference attendees (mine was around 30 people). I had half an hour, so I needed to be pretty clear and go directly to the point. The time was enough. I printed several copies of my experience report, so at the end I offered a printed copy and it turned out to be a good idea because a lot of people asked for one; so I suppose people were interested in that topic.&lt;/p&gt;
+
+&lt;p&gt;{% img /images/2015-10-07-review-of-agile-2015-at-washington-dc-6.JPG %}
+This is me about to start my talk&lt;/p&gt;
+
+&lt;p&gt;Here you can find the published experience report:
+&lt;a href=&#34;http://www.agilealliance.org/files/5814/3691/4983/LeanSalesUp-MakingValueFromProductConception.pdf&#34;&gt;http://www.agilealliance.org/files/5814/3691/4983/LeanSalesUp-MakingValueFromProductConception.pdf&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;and here my presentation of the talk:
+&lt;a href=&#34;http://prezi.com/bqpkwk3zlwls&#34;&gt;http://prezi.com/bqpkwk3zlwls&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;{% img /images/2015-10-07-review-of-agile-2015-at-washington-dc-3.jpg %}
+[*] Many thanks to Rebecca Wirfs-Brock who was my shepherd and help me a lot&lt;/p&gt;
+
+&lt;h2 id=&#34;the-latino-community&#34;&gt;The latino community&lt;/h2&gt;
+
+&lt;p&gt;I had the chance of spending time with lot of latino guys, mainly from the latin-america agile community. And I think this was a huge difference regards my experience. But I think we lack of previous organization; we could have been more productive if we could organized ourselves a little more. So for example, in a sort of retrospective and thinking in the future US conferences we could explore the following things:
+share hotel rooms. Speakers have free room and can add an additional person for a very low fare. So we could share rooms saving as much a ticket plane from Buenos Aires to New York.
+Commercial Missions: if we take all the companies together, we could organize commercial mission with the Argentine embassy for our companies
+Co-Speaker: to be a speaker here is really hard. You don’t have the fluid language, the audience is more critic, you are far away of your comfort zone. So, you could minimize this by co-speaking with other guy. You can low the tension and the pression if you speak with a partner.
+Share your experience with newbies or first attendees.
+We could be more present in the conference, for example using all the same t-shirt, or proposing some king of side activity.
+The idea is to show to the world we have a lot of experience and we are also pretty good at agile.&lt;/p&gt;
+
+&lt;p&gt;{% img /images/2015-10-07-review-of-agile-2015-at-washington-dc-2.jpg %}
+The latino community having dinner&lt;/p&gt;
+
+&lt;h2 id=&#34;final-thoughts&#34;&gt;Final Thoughts&lt;/h2&gt;
+
+&lt;p&gt;I think it was a really good experience, you can learn a lot in different levels. And I think for me was a really interesting experience to another perspective of how can be a conference. I feel now more mature about speaking and attending at international conferences.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Tests: Paving our way</title>
+      <link>http://blog.10pines.com/2015/09/18/tests-paving-our-way/</link>
+      <pubDate>Fri, 18 Sep 2015 01:28:42 +0000</pubDate>
+      
+      <guid>http://blog.10pines.com/2015/09/18/tests-paving-our-way/</guid>
+      <description>
+
+&lt;blockquote&gt;
+&lt;p&gt;Three Months have passed since I started working in 10 Pines as a participant of the apprenticeship program. Although we covered different topics and technologies, one of the things that has touched me most during my short journey as a programmer is that you can actually use your tests as the documentation of your system (you read it right, I&amp;rsquo;m not insane). This was a breakthrough for me so I decided to write this post to share some thoughts about it.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;why-do-we-write-tests&#34;&gt;Why do we write tests?&lt;/h2&gt;
+
+&lt;p&gt;I&amp;rsquo;d like to start with a short reflection about tests and the meaning we give to them. It&amp;rsquo;s true, testing gives us security and confidence. It lights our way, allowing us to perform changes without blowing the entire system into pieces. However, there is another (and equally important) reason to write tests: It&amp;rsquo;s the place where we write down the things that we&amp;rsquo;ve just learned about the domain we&amp;rsquo;re modelling.
+Bearing this in mind, tests have become a compilation of my discoveries and that’s what they must reflect.&lt;/p&gt;
+
+&lt;h2 id=&#34;what-is-all-this-fuss-about&#34;&gt;What is all this fuss about?&lt;/h2&gt;
+
+&lt;p&gt;Imagine for a moment that you&amp;rsquo;ve just entered a new project; it&amp;rsquo;s a great project with hundreds of thousands of lines of code. The developers of the project are super proud of their work because everything is covered with tests, and the system seems pretty solid. In order to work on the system, you have to understand the domain that is being represented, and you also need to understand what solution is provided through it. After someone explains you the basics of the system and you made some pairing with coworkers, you are ready to take the scene. But once you go right after the tests, you find out that they don&amp;rsquo;t tell you much about the system. You are there, making your first steps, trying to solve this puzzle. How much time do you think you would have to spend to learn something about the system on your own?&lt;/p&gt;
+
+&lt;p&gt;Earlier in this post, we talked about the tests reflecting the knowledge we have about the domain we were representing, and one of the most important properties that our tests gave to us is &lt;strong&gt;transmitting this knowledge and help others to learning about it.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;let-s-strike-while-the-iron-is-hot&#34;&gt;Let’s strike while the iron is hot&lt;/h2&gt;
+
+&lt;p&gt;When we are modeling a domain, we always try to represent things that exists in the real world, we tend to use analogies for this, giving our classes the same responsibilities that they have in the real world. We name methods with equally representative names, a name is a very powerful idea, it transmits an idea that is linked to the domain, an idea that we, people of the real world, can connect with ideas that lies in our minds.
+Same things happens when we write tests and the abstractions that we create inside them, they should have a representative name that help us understand which role they play and pay off our learning curve.&lt;/p&gt;
+
+&lt;p&gt;Although, it&amp;rsquo;s very interesting how a simple space between this steps can make your tests more readable, and if that&amp;rsquo;s not enough, it also mentally prepare the reader to understand what are you trying to do. In other words, it&amp;rsquo;s a simple but powerful detail.
+Having this in mind, let&amp;rsquo;s take a look at this test that I made for the tennis scoreboard kata:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;
+@Test
+public void when_Score_Is_FortyToADV_And_Player1_Makes_A_Point_The_Score_Is_Back_To_FortyToForty() {
+     scoreMultiplePoints( threePoints, playerOne());
+     scoreMultiplePoints( threePoints, playerTwo());
+     advPoint(playerOne());
+     backToFortyFortyPoint(playerTwo());
+     scoreForCurrentGameIs(40, 40);
+     scoreForGames(0, 0);
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If we apply the things that we mentioned early, we get something like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;
+@Test
+public void when_Score_Is_FortyToADV_And_Player1_Makes_A_Point_The_Score_Is_Back_To_FortyToForty() {
+    scoreMultiplePoints( threePoints, playerOne());
+    scoreMultiplePoints( threePoints, playerTwo());
+    advPoint(playerOne());
+
+    backToFortyFortyPoint(playerTwo());
+
+    scoreForCurrentGameIs(40, 40);
+    scoreForGames(0, 0);
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;With these examples, we can appreciate the benefits of using a space between steps and the readability we gain for it.&lt;/p&gt;
+
+&lt;p&gt;On the other hand, and in a more technical way, the same standards that we use when we code should be applied to tests, we should spend some effort keeping our tests clean following simple principles like DRY. Practices like isolating the creation of complex objects through Factory or Builder objects can reduce the noise that we are introducing to a simple test where we want to test a certain aspect of it.&lt;/p&gt;
+
+&lt;p&gt;Personally, I think that this practices comes very cheap when we use techniques like TDD. I like to think that when we follow these principles, we&amp;rsquo;re paving a road.
+A paved road is easier to pass through, not only for ourselves, also for the people who will have to walk it down after us. I know sometimes we are tied to a schedule or time-boxed iterations but the effort pays in the long run. To sum up, pave the road or tell the people who will come after to adjust their seat belts, &lt;strong&gt;It&amp;rsquo;s going to be a bumpy ride!&lt;/strong&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

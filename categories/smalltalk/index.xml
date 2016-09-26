@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Smalltalk on 10 Pines Blog</title>
+    <link>http://blog.10pines.com/categories/smalltalk/</link>
+    <description>Recent content in Smalltalk on 10 Pines Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 12 Nov 2010 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://blog.10pines.com/categories/smalltalk/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>agile software development with smalltalk at smalltalks 2010</title>
+      <link>http://blog.10pines.com/2010/11/12/agile-software-development-with-smalltalks-at-smalltalks-2010/</link>
+      <pubDate>Fri, 12 Nov 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.10pines.com/2010/11/12/agile-software-development-with-smalltalks-at-smalltalks-2010/</guid>
+      <description>&lt;p&gt;Click &amp;lsquo;Read on&amp;rsquo; to see the presentation&lt;/p&gt;
+
+&lt;p&gt;{% slideshare 5754977 %}&lt;/p&gt;
+
+&lt;p&gt;View more &lt;a href=&#34;http://www.slideshare.net/&#34;&gt;presentations&lt;/a&gt; from &lt;a href=&#34;http://www.slideshare.net/silvajorge&#34;&gt;10Pines&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to be rich with smalltalk - Intregrating RIA &amp; Smalltalk</title>
+      <link>http://blog.10pines.com/2009/09/24/how-to-be-rich-with-smalltalk-intregrating-ria-and-smalltalk/</link>
+      <pubDate>Thu, 24 Sep 2009 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.10pines.com/2009/09/24/how-to-be-rich-with-smalltalk-intregrating-ria-and-smalltalk/</guid>
+      <description>&lt;p&gt;Nowadays, more applications are RIA oriented solutions. RIA (Rich Internet Applications) is a new kind of application with more advantages than traditional applications. It emerges as a combination of features offered by web applications and desktop applications. Even multimedia capabilities are covered because these environments have internal players.&lt;/p&gt;
+
+&lt;p&gt;RIA is a new concept that is growing with the advent of Adobe&amp;rsquo;s product Flex, Flash, OpenLaszlo and the Ajax platform.&lt;/p&gt;
+
+&lt;p&gt;The goal of this presentation is to show by example the way to integrate a pure Smalltalk back-end with a flexible front-end made it with Flex, using web services. In this way we:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Obtain Smalltalk capabilities to model my business domain&lt;/li&gt;
+&lt;li&gt;Give my application a rich and appealing interface in short time, with many problems already solved.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;With this integration we look for best domain modeling techniques with Smalltalk, as reflective capabilities, dynamic typing and, in the other hand, to get the best communicative interface as RIA.&lt;/p&gt;
+
+&lt;p&gt;Finally, integrating in this manner is a perfect complement when developing applications not only web but desktop too, because you give the final product a unique dynamism thank to Smalltalk and a rich, friendly and interactive interface as Flex (o more generally RIA).&lt;/p&gt;
+
+&lt;p&gt;{% youtube bwk5eLXpoLA %}&lt;/p&gt;
+
+&lt;p&gt;This presentation was presented at &lt;a href=&#34;http://www.esug.org/Conferences/2009&#34;&gt;ESUG 2009&lt;/a&gt;. You can see the handouts here:&lt;/p&gt;
+
+&lt;p&gt;{% slideshare 2065194 %}&lt;/p&gt;
+
+&lt;p&gt;View more &lt;a href=&#34;http://www.slideshare.net/&#34;&gt;presentations&lt;/a&gt; from &lt;a href=&#34;http://www.slideshare.net/silvajorge&#34;&gt;10Pines&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Mutation testing</title>
+      <link>http://blog.10pines.com/2009/09/18/mutation-testing/</link>
+      <pubDate>Fri, 18 Sep 2009 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.10pines.com/2009/09/18/mutation-testing/</guid>
+      <description>&lt;p&gt;During the 70s, mutation testing emerged as a technique to assess the fault-finding effectiveness of a test suite. It works mutating objects behavior and looking for tests to “kill” those mutants. The surviving mutants are the starting point to write better tests. Thus, this technique is an interesting alternative to code coverage regarding test quality.&lt;/p&gt;
+
+&lt;p&gt;However, so far it is a “brute force” technique that takes too long to provide useful results. This characteristic has forbidden its widespread and practical use regardless new techniques, such as schema-based mutation and selective mutation. Additionally, there are no mutation testing tools (to our knowledge) that work on a meta-circular and dynamic environments, such as Smalltalk, so the compile and link time are the current technique&amp;rsquo;s bottleneck.&lt;/p&gt;
+
+&lt;p&gt;This presentation will introduce the notion of mutation testing, analyzing its advantages and disadvantages with a Smalltalk-based tool. The tool uses the Smalltalk&amp;rsquo;s dynamic and meta-programming facilities to notably reduce the time to get valuable output and help to understand and implement new tests due to its integration with the rest of the environment.&lt;/p&gt;
+
+&lt;p&gt;{% youtube omvClOja4Js %}&lt;/p&gt;
+
+&lt;p&gt;This presentation was presented at &lt;a href=&#34;http://www.esug.org/Conferences/2009&#34;&gt;ESUG 2009&lt;/a&gt;. You can see the handouts here:&lt;/p&gt;
+
+&lt;p&gt;{% slideshare 2049016 %}&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;View more &lt;a href=&#34;http://www.slideshare.net/&#34;&gt;presentations&lt;/a&gt; from &lt;a href=&#34;http://www.slideshare.net/silvajorge&#34;&gt;10Pines&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>About inheritance as means of reuse</title>
+      <link>http://blog.10pines.com/2009/05/20/about-inheritance-as-means-of-reuse/</link>
+      <pubDate>Wed, 20 May 2009 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.10pines.com/2009/05/20/about-inheritance-as-means-of-reuse/</guid>
+      <description>
+
+&lt;p&gt;When talking about Smalltalk, there is definitively an over use on the possibility to add messages to &lt;code&gt;Object&lt;/code&gt; class. It is so easy to do it, that people usually do it just to get something working fast, even if the coding is poor. There are a lot of messages (mainly &lt;code&gt;#isXXX&lt;/code&gt; messages) that do not belong to &lt;code&gt;Object&lt;/code&gt; and represent a bad design decision. Most of them are implemented there because they are &amp;ldquo;handy&amp;rdquo; and easily &amp;ldquo;reused&amp;rdquo;. For example &lt;code&gt;#-&amp;gt;&lt;/code&gt; or &lt;code&gt;#assert:&lt;/code&gt; implemented in Squeak. Definitively not all objects should respond to them.&lt;/p&gt;
+
+&lt;p&gt;Many of these messages are only used from &amp;ldquo;inside&amp;rdquo; the object, like the &lt;code&gt;#assert:&lt;/code&gt; message. I would never write something like this: &lt;code&gt;1 assert: xxxx&lt;/code&gt;. Instead I would write: &lt;code&gt;self assert: xxx&lt;/code&gt; witch clearly shows that &lt;code&gt;#assert:&lt;/code&gt; is not a message that should be respond by every object, but only for those that represent assertions.&lt;/p&gt;
+
+&lt;p&gt;From my point of view, this issue is not an inheritance&amp;rsquo;s problem per se, it is a misuse of inheritance. If I try to use a hammer as a screwdriver, it is not the hammer&amp;rsquo;s fault, but mine.&lt;/p&gt;
+
+&lt;h2 id=&#34;how-is-inheritance-related-with-reuse&#34;&gt;How is inheritance related with reuse?&lt;/h2&gt;
+
+&lt;p&gt;Well, that is an important question. Inheritance from the &amp;ldquo;pure theory&amp;rdquo; point of view, should not be used as a means of reuse. Reuse comes from good models, not from inheritance. Inheritance should be used as a tool to organize the knowledge that, as a programmer, you are acquiring from the business domain.&lt;/p&gt;
+
+&lt;p&gt;Classes should be used to represent the concepts and ideas you see in the business domain and inheritance should be used to organize how this concepts are related in an ontological way. So for example, an abstract class should represent an abstract concept wich defines the essential behavior that all the objects instances of its concrete subclasses should respond. Due to this relationship reuse comes aside, but reuse is not the means of inheritance. Subclassing just to reuse the implementation of a superclass is not a good design decision; it will bring problems sooner or later.&lt;/p&gt;
+
+&lt;p&gt;There has been an attempt to minimize the methods implemented in the &lt;code&gt;Object&lt;/code&gt; class. For example on the Squeak distribution the class &lt;code&gt;ProtoObject&lt;/code&gt; has been created. &lt;code&gt;ProtoObject&lt;/code&gt; has only 35 methods whereas &lt;code&gt;Object&lt;/code&gt; has 436! (on the basic image of Squeak version 3.10.x). Although &lt;code&gt;ProtoObject&lt;/code&gt; has fewer methods, I do not agree with some of them. For example &lt;code&gt;#ifNil:&lt;/code&gt; (and the like) and &lt;code&gt;#tryNamedPrimitive:&lt;/code&gt; (and the like). Clearly these two messages (and their mutations) are implemented in &lt;code&gt;ProtoObject&lt;/code&gt; as a means of reuse and not because every object should understand them.&lt;/p&gt;
+
+&lt;p&gt;For example, why an account should respond &lt;code&gt;#tryNamedPrimitive:&lt;/code&gt;? What does it mean to an account? A better design should have an object that represents the VM (for example) to which I can send the message &lt;code&gt;#tryNamedPrimitive:&lt;/code&gt;. Of course the problem with this is how to access to this object and that is why that message is implemented in &lt;code&gt;ProtoObject&lt;/code&gt;, because every object will inherit that method! And it will be so easy to use it as to write &lt;code&gt;self tryNamedPrimitive: xxx&lt;/code&gt;. But thinking a little bit we can see that it is very easy to solve this problem. For example declaring this VM object in a global scope, so any object could send the message &lt;code&gt;#tryNamedPrimitive:&lt;/code&gt; (and therefore reuse it), but not understand it.&lt;/p&gt;
+
+&lt;h2 id=&#34;composition-vs-inheritance&#34;&gt;Composition vs Inheritance&lt;/h2&gt;
+
+&lt;p&gt;This brings me to the &amp;ldquo;rule&amp;rdquo; that says composition is a better tool to reuse. The problem of using inheritance to reuse is that inheritance generates a strong coupling between the classes, its subclasses and its instances, where composition does not.&lt;/p&gt;
+
+&lt;p&gt;Inheritance generates an implementation and structural coupling between the classes and its subclasses (affecting directly their instances) where composition only couples an object with the composed one through the messages the former sends to the later. No implementation coupling, no structural coupling, just coupled by the message names one object send to the other, therefore a better design (the lower the coupling the better). This is the reason why good frameworks, black-box frameworks use composition over inheritance, where white-box frameworks being more immature, use inheritance to configure them.&lt;/p&gt;
+
+&lt;p&gt;This brings me to the idea of how hard should we stick to this, should we never &amp;ldquo;break&amp;rdquo; this rule? Well, I would not called it a rule but an heuristic, therefore it should be follow as much as possible, but we should also be pragmatic too. Sometimes subclassing to reuse while we are still learning about the problem is ok, is like making a white-box framework at the beginning. But we should never forget that our goal is a &amp;ldquo;black-box framework&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;Other languages like Java do not suffer this problem and good designs can be implemented with it (although not so easily :-)). Java does not have this problem because &lt;code&gt;Object&lt;/code&gt; class cannot be modified. This clearly shows that having too many methods in &lt;code&gt;Object&lt;/code&gt; is not a problem of inheritance, but on how use it.&lt;/p&gt;
+
+&lt;h2 id=&#34;to-summarize&#34;&gt;To summarize&lt;/h2&gt;
+
+&lt;p&gt;Inheritance should not be used to reuse, therefore having a lot of methods in &lt;code&gt;Object&lt;/code&gt; class just because it is &amp;ldquo;handy&amp;rdquo; is a clear example of inheritance being used incorrectly. It generates unnecessary coupling which will make the system harder to change or refactor later.&lt;/p&gt;
+
+&lt;p&gt;Inheritance is just a tool; you can use it right or wrong.&lt;/p&gt;
+
+&lt;p&gt;There are other tools like composition and design techniques which solve the same problems and generate less coupling.&lt;/p&gt;
+
+&lt;p&gt;Reuse comes from good models, not from inheritance.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

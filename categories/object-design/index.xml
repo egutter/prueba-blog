@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Object Design on 10 Pines Blog</title>
+    <link>http://blog.10pines.com/categories/object-design/</link>
+    <description>Recent content in Object Design on 10 Pines Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 04 Jan 2016 10:32:10 +0000</lastBuildDate>
+    <atom:link href="http://blog.10pines.com/categories/object-design/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>There are null reasons</title>
+      <link>http://blog.10pines.com/2016/01/04/there-are-null-reasons/</link>
+      <pubDate>Mon, 04 Jan 2016 10:32:10 +0000</pubDate>
+      
+      <guid>http://blog.10pines.com/2016/01/04/there-are-null-reasons/</guid>
+      <description>
+
+&lt;p&gt;This post will try and maybe fail to convince you that using &lt;code&gt;null&lt;/code&gt; in your code is an error.
+For those of you willing to listen, here are my reasons to stop using it.&lt;/p&gt;
+
+&lt;h2 id=&#34;super-brief-history&#34;&gt;Super brief history&lt;/h2&gt;
+
+&lt;p&gt;The programming notion of null was introduced by Tony Hoare in 1965 for ALGOL W. In his own words, his intention was:&lt;br /&gt;
+&amp;rdquo;  My goal was to &lt;em&gt;ensure that all use of references should be absolutely safe&lt;/em&gt;, with checking performed automatically by
+the compiler. But I couldn&amp;rsquo;t resist the temptation to put in a null reference, simply because &lt;em&gt;it was so easy to
+implement&lt;/em&gt;. This has led to innumerable errors, vulnerabilities, and system crashes, which have probably caused a billion
+ dollars of pain and damage in the last forty years.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;The name is probably inspired on Math, as the notion of empty set, or &amp;lsquo;no value&amp;rsquo;. And from Legal systems, as the notion
+ of nullity, an entity that possess no legal significance. In programming, null is used as a value for any variable that
+  represents &amp;lsquo;no value&amp;rsquo;.&lt;/p&gt;
+
+&lt;p&gt;You know by now that it didn&amp;rsquo;t prevent unsafe references (as originally intended). On the contrary, unsafe references is
+ probably the number one error on programming languages that use it.&lt;br /&gt;
+The funny thing is that you would think that the problem is a human error, not a language feature unintentionally
+designed to fail when used.&lt;/p&gt;
+
+&lt;h1 id=&#34;the-two-wrong-use-cases&#34;&gt;The two wrong use cases&lt;/h1&gt;
+
+&lt;p&gt;I didn&amp;rsquo;t believe it either. But our 10Pines version of the white mage warned us against using null/nil.
+Some 4 years ago &lt;a href=&#34;http://blog.10pines.com/authors/hernan-wilkinson/&#34;&gt;uncle Wilki&lt;/a&gt; tried in vain to convince us that using null was a proven mistake. I thought he was only
+ranting and discredited the idea: &amp;lsquo;So many people using it can&amp;rsquo;t be wrong&amp;rsquo;.&lt;br /&gt;
+Nevertheless I payed attention, and over the years I collected information, trying to prove him wrong.&lt;br /&gt;
+Luckily, I was the one proven wrong and now I understand why.&lt;/p&gt;
+
+&lt;p&gt;There are two use cases were null is used and they are both wrong. But they are so common, and feel so natural that you
+don&amp;rsquo;t question them. That&amp;rsquo;s the trap of null. It&amp;rsquo;s so easy to fulfill those use cases with null that you don&amp;rsquo;t think
+about the right way of doing it.&lt;/p&gt;
+
+&lt;h2 id=&#34;as-initial-value&#34;&gt;As initial value&lt;/h2&gt;
+
+&lt;p&gt;The first use case is introduced by the language itself. An uninitialized reference variable by default gets a null/nil
+value.&lt;br /&gt;
+Making you think that if you don&amp;rsquo;t know the value of a variable, it&amp;rsquo;s ok to set its value to null.&lt;br /&gt;
+Harmless as it seems, an unsafe null reference cannot be detected on all cases by humans, static compilers, or even
+flow analysis, and thus an uninitialized variable can be accessed on runtime producing an null reference error.&lt;/p&gt;
+
+&lt;p&gt;More importantly, by giving you an &amp;lsquo;easy to implement&amp;rsquo; &lt;em&gt;undefined&lt;/em&gt; value, it generates a hole in your design.&lt;br /&gt;
+Instead of defining your own behavior for uninitialized values, you take the language default which falls short and
+many times it&amp;rsquo;s completely undescriptive.&lt;/p&gt;
+
+&lt;p&gt;Look at null reference errors for 3 common languages:&lt;br /&gt;
+java:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Exception in thread &amp;quot;main&amp;quot; java.lang.NullPointerException
+at ....
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;.Net:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;System.NullReferenceException: Object reference not set to an instance of an object.
+at
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;or javascript:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;TypeError: foo is undefined
+TypeError: foo is null
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Without looking at the code there&amp;rsquo;s no way to find the error, and sometimes you can only discover it by debugging.&lt;/p&gt;
+
+&lt;p&gt;Instead of using null as a default value, take the chance to think on the expected behavior of your system when that
+happens. Complete your design by using a NullObject if appropriate default behavior can be defined, or add an
+error object that describes the error with context that is helpful to spot the original cause. Add domain semantics
+to the problem by creating a custom &lt;em&gt;undefined&lt;/em&gt; value instead of null.&lt;/p&gt;
+
+&lt;p&gt;Look how mockito informs null references, when configured to do so:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;org.mockito.exceptions.verification.SmartNullPointerException:
+You have a NullPointerException here:
+-&amp;gt; at test.SNPETest.doSomething(SNPETest.java:23)
+Because this method was *not* stubbed correctly:
+-&amp;gt; at test.SNPETest.doSomething(SNPETest.java:22)
+
+        at test.SNPETest.doSomething(SNPETest.java:23)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;It&amp;rsquo;s a little more helpful, right? What about an error message specific to your domain? It only takes a little more work.
+ But it pays off big time, and it&amp;rsquo;s not that much if you use a generic tool to generate them.&lt;/p&gt;
+
+&lt;p&gt;Just by doing this, you will reduce a percentage of your bugs because you won&amp;rsquo;t have automatic omissions. By removing
+null as a valid initial value, every variable needs to be initialized explicitly, and thus you will need to think about
+it, or have a better error description when you don&amp;rsquo;t.&lt;br /&gt;
+Some errors will still persist, but hopefully with a better detection mechanism in place.&lt;/p&gt;
+
+&lt;h2 id=&#34;as-optional-value&#34;&gt;As optional value&lt;/h2&gt;
+
+&lt;p&gt;The second use case, and the most difficult to eradicate, is the use of null to represent the absence of a value.&lt;br /&gt;
+I know that using null for its purpose sounds like the logical thing to do but the problem is that null falls short. It
+doesn&amp;rsquo;t have the behavior that you need from it.&lt;br /&gt;
+It&amp;rsquo;s no wonder that language designers need to complicate the language to deal with null values by adding operators that
+ don&amp;rsquo;t follow the object-message principle, like Ruby&amp;rsquo;s &lt;code&gt;&amp;amp;.&lt;/code&gt;, or Groovy&amp;rsquo;s &lt;code&gt;?.&lt;/code&gt;. You have no polymorphism to use with
+ null. Null is a value for all types, that behaves like none. Once you have null, you have no object.&lt;/p&gt;
+
+&lt;p&gt;That&amp;rsquo;s why these operators come handy when dealing with &amp;lsquo;optional values&amp;rsquo;. But again, the solution falls short.
+By using these operators you deprive your design from behavior that is needed to represent the absence of a value
+(a case that is part of your domain!). To complicate things worse, the error description will be the same that is used
+for uninitialied values.&lt;br /&gt;
+Accessing an optional value as it was present, is an error that you can better describe with custom errors, or prevent
+completely by using better tools than null.&lt;/p&gt;
+
+&lt;h2 id=&#34;alternatives-to-null&#34;&gt;Alternatives to null&lt;/h2&gt;
+
+&lt;p&gt;In a nutshell there are 4 alternatives you can choose (in no particular order):&lt;/p&gt;
+
+&lt;p&gt;a. a null object for default behavior&lt;br /&gt;
+b. a block/closure to handle the absence&lt;br /&gt;
+c. a maybe object to reify the absence&lt;br /&gt;
+d. don&amp;rsquo;t make it optional&lt;/p&gt;
+
+&lt;p&gt;To put it in an example, let&amp;rsquo;s say you need to implement a method to find a user. You can do:&lt;/p&gt;
+
+&lt;p&gt;a) NullObject&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;findUser(credentials)
+  return unknownUser
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you know the expected interface of the returned object, and you can guarantee that in every context that is going to
+be used a default behavior is acceptable then you can return a default object.&lt;br /&gt;
+That object can then be interacted with as a normal user.&lt;br /&gt;
+For the sake of the example, let&amp;rsquo;s say that the unkown user can redirect you to a registration form as its main page.&lt;/p&gt;
+
+&lt;p&gt;b) Explicit block&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;findUser(credentials, blockIfNone)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you can&amp;rsquo;t anticipate the expected behavior, you can ask for it.&lt;br /&gt;
+Add a second parameter to your code that accepts a block of code to be executed when the user is not found. That forces
+your client to define what to do in the case of absence, and makes explicit that scenario. The client code will then
+have to decide its course of action as part of finding a user which removes the possibility of ommitting that detail.&lt;/p&gt;
+
+&lt;p&gt;c) Reify the empty set/result or Maybe&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Maybe&amp;lt;User&amp;gt; findUser(credential)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If your client code can&amp;rsquo;t define what the correct action for absence is, use a &lt;code&gt;maybe&lt;/code&gt; object to reify the optionality,
+and return that object, instead of the user.&lt;br /&gt;
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Monad_%28functional_programming%29#The_Maybe_monad&#34;&gt;Taken from functional programming&lt;/a&gt; a
+&amp;lsquo;maybe&amp;rsquo; object responsibility is to represent an optional value (not the value itself, but the uncertainty of it).&lt;br /&gt;
+Instead of sharing the same interface as the user, the interface of a maybe object has semantics specific to the
+presence or absence of values, and how to deal with it.&lt;br /&gt;
+This option defers the decision of what to do for absence to the moment the user is actually needed. And because this maybe object responsibility is to represent a set, it can share semantics with collections.&lt;br /&gt;
+If you need the name of the user, instead of doing &lt;code&gt;findUser(credential)&amp;amp;.name&lt;/code&gt; and getting a possible string, or nil (which inevitable needs an if statement), you can do &lt;code&gt;findUser(credential).map(&amp;amp;:name)&lt;/code&gt; which gets you another &lt;code&gt;maybe&lt;/code&gt; for the name, delaying the problem until the name is really needed.&lt;/p&gt;
+
+&lt;p&gt;d) Avoid optionality if not needed&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;findUser(credentials) throws NotfoundError
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In some domains, the absence is not a valid state for the system. In those cases, don&amp;rsquo;t consider the absence as a valid use case. Treat it as an error, and prevent it.&lt;br /&gt;
+For instance, when you create a new object, you shouldn&amp;rsquo;t have optional instance variables. It&amp;rsquo;s a code smell that may imply two classes in one (as pointed out by our Object Evangelist &lt;a href=&#34;http://blog.10pines.com/authors/nicolas-papagna/&#34;&gt;npapagna&lt;/a&gt; ). Don&amp;rsquo;t allow nil parameters in the creation of an object.&lt;/p&gt;
+
+&lt;p&gt;Finally, don&amp;rsquo;t use exceptions to represent absence as a normal case. They are not polymorphic, require additional code branches (code complexity) and more importantly should be used for exceptional cases. If the value is optional, its absence it&amp;rsquo;s not an exception. It&amp;rsquo;s part of the domain.&lt;/p&gt;
+
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;I tried to be as brief as possible to keep this post short. Because of that I may be ommiting some details or edge cases.&lt;br /&gt;
+But my intention is to give you few simple rules to follow and avoid null at all cost.&lt;/p&gt;
+
+&lt;p&gt;If you follow these rules, or at least question the necessity for null and create your own, you will make me, uncle Wilki, npapagna and your future self a lot happier.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>language’s type system and their impact in breaking dependencies</title>
+      <link>http://blog.10pines.com/2012/02/16/languages-type-system-and-their-impact-in-breaking-dependencies/</link>
+      <pubDate>Thu, 16 Feb 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.10pines.com/2012/02/16/languages-type-system-and-their-impact-in-breaking-dependencies/</guid>
+      <description>&lt;p&gt;One of the things that makes TDD difficult to apply on existing code (or just “legacy code”) is the dependencies that the object subject to test may have. The more “dependencies” the object has, the more difficult it will be to test it, almost for sure.&lt;/p&gt;
+
+&lt;p&gt;What makes things even harder is that usually most dependencies are incorrect, there is an unnecessary coupling between objects result of bad designs (yes, there are good designs and bad designs as there are good paintings and bad paintings, good music and bad music&amp;hellip; being the definition of good and bad relative to a set of principles or rules. At least there is a design principle in software development that we all agree on that looks to maximize cohesion and minimize coupling. So the more unnecessary dependencies, the bigger the coupling, the worst the design is).&lt;/p&gt;
+
+&lt;p&gt;We can see examples of unnecessary coupling everywhere, like objects that represent a Customer that are tight to a database connection, or objects that represent an e-mail that know how to convert themselves to XML and so on, coupling that breaks one of the basic design rules: do not mix orthogonal responsibilities, that is responsibilities from different problem domains. In this case, a Customer belongs to a domain and how to persist it in a database to another. In other words, an object should be as cohesive as possible (this principle is also know by the name of &lt;em&gt;“Single Responsibility Principle”&lt;/em&gt;).&lt;/p&gt;
+
+&lt;p&gt;There are many problems that incorrect dependencies or strong coupling carry with them, I’m going to concentrate now: &lt;em&gt;Lack of Reuse&lt;/em&gt; (you will see how it relates to testing and finally to the language type system)&lt;/p&gt;
+
+&lt;p&gt;It is not difficult to see that the stronger the coupling is, the harder the reuse is. In our example, let’s say you want to use a Customer in a different context of the one it was develop in, you will have to take the database connection to that context because the Customer is coupled with it, but maybe you don’t need it or you don’t want it in that context, or even worst, you may want to “persist” Customers in a completely different way&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;We can see this problem clearly when testing because basically to test an object you have to reuse it in a context that it might not be thought for, like the testing environment (that’s why now a lot of people is talking about “Design for testability”, that is, design you software to be able to be tested, at the end make your software less coupled and more cohesive). Therefore, if you want to test Customer, you will need a database to do it! Crazy don’t you think? Has that ever happened to you? I bet it has&amp;hellip; it has happened to all of us when maintaining a system.&lt;/p&gt;
+
+&lt;p&gt;So, due to this coupling we end up not testing Customer because it is too difficult to recreate the database in the testing context, and if we can do it, tests are very slow or fragile. So to be able to test the Customer we meed to break that dependency with the database, we need to lower the coupling. Clearly, there is no reason why a Customer needs a database to exist.&lt;/p&gt;
+
+&lt;p&gt;How to break this kind of dependencies is one of the main subjects of our &lt;a href=&#34;http://www.10pines.com/training/listado-cursos/test-driven-development-avanzado&#34;&gt;TDD Advance class&lt;/a&gt; (a little bit of advertisement :-) but now I would like to point out the difference of doing it with a statically and dynamically typed languages given the case that it is not easily remove the database connection from Customer.&lt;/p&gt;
+
+&lt;p&gt;So, we want to test Customer but we can not remove the database connection collaborator from it, it is really entangled in the code and we just want to test a new and simple feature, that for sure does not need the database connection :-). One way to solve this problem is to fake the database connection, that is to provide a polymorphic object to the database connection that will make the customer believe that it is connected to the database when it is not. The main property we need for this “fake object” is to be polymorphic with the database connection, we need an object that will answer all the messages the customer will send to it. Let’s see how we get that polymorphic object using a statically and dynamically typed language.&lt;/p&gt;
+
+&lt;p&gt;There are basically four ways to have polymorphic objects in statically typed languages:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Both objects are instances of the same class&lt;/li&gt;
+&lt;li&gt;Both objects share a common superclass and therefore they are polymorphic to the type defined by that common superclass&lt;/li&gt;
+&lt;li&gt;The classes both objects are instance of share a common implemented “interface” (construction not available in all statically typed OO languages but in many of them like Java and C#).&lt;/li&gt;
+&lt;li&gt;We use meta-programming to accomplish this (I’m not going to comment on this particular option)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Which option is the best one for our problem? We will discard the fourth one on this post. Of the other tree, clearly the first one is not an option, we want to get rid of the database connection! and other object instance of the same class will not do it.&lt;/p&gt;
+
+&lt;p&gt;The second one could do it if we are willing to implement a dirty solution and sleep tight :-). That solution is to subclass DatabaseConnection and redefine all the messages it implements to behave as the test need. The advantage of this option is that we do not need to change the type of the database connection variable in Customer, that is, we do not need to change Customer. But the disadvantage is that it is pretty ugly to do something like this and of course it will not work if database connection is final or any of its public messages are final (a valid reason to never use the final option in java o similar in other languages! The final option restricts changes in your design!. If you are using C++, then all public methods should be virtual).&lt;/p&gt;
+
+&lt;p&gt;The third option, that is to have two classes that implement the same interface, looks nicer at least from the design point of view, but sadly it is not so easy to apply. It would be a piece of cake if the type of that variable that reference the database connection is really a type (an interface) and not a class, but sadly 99% of the time that is not the case. To explain why it would be easy, let me diverge a little bit about the difference of “typing” and “classing” a variable.&lt;/p&gt;
+
+&lt;p&gt;Typing a variable means that the variable’s type is “only” a type. In OO statically typed languages that is achieved with the “interface” construction or with pure abstract classes (although multiple inheritance is needed to really be able to use that abstract class as a “type”). On the other hand, “classing” a variable means that the variable’s type is a class. What is the difference? The coupling&amp;hellip;  when typing a variable, it is only coupled with the set of messages the type defines, when classing the variable not only is coupled with the type but also with the implementation the class provides, with a position in the class hierarchy and therefore all objects that that variable may reference have to be instance of that class or its subclasses. As you can see “classing” a variable makes our design more coupled, therefore makes our design more difficult to change as we can see in the Customer example.&lt;/p&gt;
+
+&lt;p&gt;So, if we want to use option three, first we need to create an interface for DatabaseConnection (please, do not call it IDatabaseConnection!!), make DatabaseConnection implement that interface and change the type of the variable that points to it in Customer. Then, to test Customer you have to change it first&amp;hellip; hmm, not good don’t you think? We should try to test Customer before we change it!. Fortunately most current IDEs provide a refactoring to make this change, and due to the fact that it is a refactoring, it is safe to apply because it does not change the bahavior of the system. The “Extract Inteface” refactoring in Eclipse will create the new type for us and change all variables that were defined with the class to be defined with the new interface.&lt;/p&gt;
+
+&lt;p&gt;Now that we created the new type and changed the database connection variable’s type we have to create a new implementation for that interface. That is, we have to implement in a class all the messages the type defines in the way the test needs. This can get really tough if database connection is highly coupled because you will need to decouple it and&amp;hellip; do you feel like you are in an endless loop? well certainly not endless but long for sure, and difficult.&lt;/p&gt;
+
+&lt;p&gt;But there is another issue that would make option three impossible to use. If we do not own DatabaseConnection, if DatabaseConnection was developed by a third party for sure we will not be able to change it and we need to change it to make it implement the new interface we defined!. So we want to fake DatabaseConnection doing a nice design, but in statically typed languages it is not easy and sometimes impossible. That is why framework developers should always “type” and never “class” variables, but as you know, interfaces are discovered almost at the end of the development cycle, when all your code is almost done! Would you change all your code to use interfaces instead of classes? for sure you will not or your manager will not give you the time to do it&amp;hellip; feel again like in an endless loop? :-). So, faking the database connection in a statically typed language means a lot of work.&lt;/p&gt;
+
+&lt;p&gt;What about faking the database connection when using a dynamically typed language? Remember that we needed a polymorphic object with the database connection, but also a polymorphic object to the messages a Customer sends to it, and even more, only to the messages a Customer sends to it during the evaluation of the test! So, we do not need to implement all the messages DatabaseConnection defines but only the ones a Customer send to it&amp;hellip; and there is even something more interesting, there is no variable type change we have to do in Customer because there are no explicit types in dynamically typed languages! Looks like faking the database connection in a dynamically typed language is easier that in a statically typed language, don’t you think?. No wonder why there are not so many “mock” frameworks on dynamically typed languages, because they are not really needed. Even more, in languages like Smalltalk, the same test implements the fake responsibility, maybe not nice but handy.&lt;/p&gt;
+
+&lt;p&gt;The reason behind all this difference is related to coupling again. Designs in statically typed languages are more coupled that in dynamically typed languages because variables in the former are coupled with the set of messages the type defines, while in the later objects are only coupled with the set of messages they send each other. Going to the extreme, we could say that in dynamically typed languages each message is a type. And of course, things get worse if in statically typed languages variables are not “typed” but “classed”. So, do you remember that coupling was against change and reuse? Then, it is a not difficult to see that statically typed languages makes change and sometimes reuse more difficult that dynamically typed languages.&lt;/p&gt;
+
+&lt;p&gt;Does that means that dynamically typed languages are “better” than static one? Of course not! As we said earlier, better or worse are relative terms and not only on fixed traits but also traits that may diverge in time and space. But if you need to do a system quickly and easy to change, you may consider to use a dynamically typed language, and if you don’t care about those requirements maybe you can stay on a statically typed language.&lt;/p&gt;
+
+&lt;p&gt;I hope that with this post I contributed to rationalize a little bit more the sometimes dogmatic discussion about which type system is better, if dynamically or statically typed ones and also to consider the importance to low the coupling and how to break it. I hope that with this post I contributed to rationalize a little bit more the sometimes dogmatic discussion about which type system is better, if dynamically or statically typed ones and also to consider the importance to low the coupling and how to break it.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The Art of Naming</title>
+      <link>http://blog.10pines.com/2012/02/02/the-art-of-naming/</link>
+      <pubDate>Thu, 02 Feb 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.10pines.com/2012/02/02/the-art-of-naming/</guid>
+      <description>&lt;p&gt;Today we all know now that variables should not be called &lt;code&gt;x&lt;/code&gt; or &lt;code&gt;y&lt;/code&gt;, not even &lt;code&gt;i&lt;/code&gt; nor &lt;code&gt;n&lt;/code&gt; when we use the famous “for”&amp;hellip; but do you know why? have you had
+trouble naming a variable? and what about a method (message) or a class?&lt;/p&gt;
+
+&lt;p&gt;The truth is that naming in software development is really important, so important that I usually say that programming is &lt;em&gt;“the art of naming”&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;But why naming is so important in software development? Because a name &lt;strong&gt;“synthesizes” the “meaning”&lt;/strong&gt; of what it is being named. Names help us understand the “meaning” of the program, what the program is representing without thinking on the how.&lt;/p&gt;
+
+&lt;p&gt;Good names make our lives easier, on the other hand, bad names make us feel in hell. Bad names suck energy from us because we have to &lt;strong&gt;“re-think”&lt;/strong&gt; every time we see that bad name what it really means, what it is the real purpose of that thing being named. At the end, bad names obligate us to do the work that other should have done, that is why we &lt;em&gt;“hate”&lt;/em&gt; programs written by others and we &lt;em&gt;“hate”&lt;/em&gt; them more if they are badly written, if the names are bad.&lt;/p&gt;
+
+&lt;p&gt;Bad names force us to “synthesize” again the “meaning” of what is being named and that is a big effort for our mind. Sometimes we find a good name and we can “rename” the bad name, but sometimes we do not have enough information, enough experience to find a good name and also sometimes (but only sometimes :-) ) our mind prefers to put energy in something else.&lt;/p&gt;
+
+&lt;p&gt;A good name has to provide enough information for us to understand the purpose of what it is being named. In the case of an object, its name has to make us understand its role in the context it is being named (it is not the object’s type what it is important but its name! I can remove the object&amp;rsquo;s type from a program and keep understanding it, but I can not remove the object&amp;rsquo;s name. If you don&amp;rsquo;t believe me, see the dynamically typed languages :-) ). The name of a class (that it is also an object of course), has to help us understand the concept that that class is modeling, it has to help us grasp the behaviour of the objects that the class defines without having to see all the message the class defines. A class name “synthesizes” the meaning of all the messages its instances can understand.&lt;/p&gt;
+
+&lt;p&gt;Names are for humans, not for computers. A computer does not care about the name of a variable or a class, for a computer they are all symbols, but it is not the same for us. We as humans, interpret those symbols, we attach them semantic to be able to understand what we are reading. That is why a refactoring is not important for a computer but it is very important for a programmer, it is because we are providing semantic, meaning, to what we are refactoring. The extract method is one of the most paradigmatic examples of this process of providing meaning, that is why every time you have to maintain code you don’t understand, the first thing you have to do for every piece of code you end up understanding is to extract it to a method, but not to make it “nicer” but &lt;strong&gt;to name that piece of code!&lt;/strong&gt; to provide meaning to that set of collaborations between objects that you are extracting, to help you understand the program the next time you read it.&lt;/p&gt;
+
+&lt;p&gt;And yes, naming is not easy, naming is hard. A name is a &lt;strong&gt;“summary”&lt;/strong&gt; of what it is being named and no good summary can be written without understanding first what has to be summarized. Therefore, if you have problems naming something it is basically because you have not fully understood what you are trying to name.&lt;/p&gt;
+
+&lt;p&gt;For example, why classes are so difficult to name? because you have not completely understood what concept the class is representing. But why smart people, people that have degrees from universities, that are well versed and manage a vast vocabulary can not find a good name for a class? Basically because they don’t have “enough experience” with that “element” they are trying to mane.&lt;/p&gt;
+
+&lt;p&gt;Classes are the more interesting example when dealing with &lt;strong&gt;“class based”&lt;/strong&gt; languages, like Java, C#, Smalltalk, Ruby, etc. In those languages we are “forced” to name a class when we did not have the chance to see, to play, to understand how its instances are going to behave. Those languages go against the natural way of learning, they enforce us to name things we don’t know and that is why we end up with class names like &lt;strong&gt;“ObjectManager”, “ServiceHelper”, “ObjectDirector”&lt;/strong&gt; and so on, names that can mean anything, and that makes sense because at the time they were named they could represent anything.&lt;/p&gt;
+
+&lt;p&gt;So, if you feel bad with yourself because it is difficult for you to name a class, don’t be, most of the time it is the programming language fault, it is because the language is forcing you to learn in an anti-natural way. It is forcing you to name something you don’t understand, but yet, you have to name it, you have to “summarize” its meaning with a name&amp;hellip; crazy.&lt;/p&gt;
+
+&lt;p&gt;That is why &lt;strong&gt;“prototype based”&lt;/strong&gt; languages like Self, IO, JavaScript, that is class-less languages, are better to tackle new problems and domains that you don’t know. They are better because they don’t force you to name something you don’t understand, you just create it and use it, and then, when you have enough information, you name it. Working with Self or LivelyKernel (Dan Ingalls current project) makes you see and feel the difference.&lt;/p&gt;
+
+&lt;p&gt;So, are we stuck? we are doomed to badly name classes? Of course not! and now that we understand what the problem is, we can think on a solution. But before talking about the one I propose, it is important to understand that programming is not a “point in time” task, it is not something that happens in a moment but in a “lapse of time”. Why it is important to understand this? Because it will help us with the solution, it give us the opportunity to do things wrong for certain time until we can do it right&amp;hellip;. until we can do the last step in TDD, the refactoring.&lt;/p&gt;
+
+&lt;p&gt;So, when you don’t know how to name a class do not use a &lt;strong&gt;“bad name”&lt;/strong&gt; for it, do not name it with what gets to your mind at first glace but use a &lt;strong&gt;“meaningless name”&lt;/strong&gt;, a name every time you see it, it tells you &lt;strong&gt;“Hey! change me!”&lt;/strong&gt;. That is the difference between a “bad name” and a “meaningless name”. A bad name becomes a good name with the time&amp;hellip; after reading ObjectManager many times we don’t see it anymore as a bad name, we get use to it and our mind provides it a meaning that it is not explicit but implicit in our head and we live happily ever after with that bad name.&lt;/p&gt;
+
+&lt;p&gt;On the other hand if a class is named “XYZ” or “ZZZ” or something like that, a symbol you can not provide any meaning, your mind will force you to change it some day, and that day will be the day you will understand what you are naming. Will that name be the best? Maybe not, but for sure it will be better that one you thought without enough experience.&lt;/p&gt;
+
+&lt;p&gt;Conclusion, if you don’t know how to name a class, don’t waste your time thinking three hours on that name because the only thing you will get is a headache and a bad name. If you don’t know how to name a class, give it a meaningless name until the time you can correctly name it. That moment will be after you have played sometime with its instances&amp;hellip; Software development is a learning process, therefore incremental and iterative so don’t try to make it right at the first time, you won’t anyway&amp;hellip; and that is why TDD is so important in software development, but that is a topic for another post :-)&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>About names when designing with objects</title>
+      <link>http://blog.10pines.com/2012/01/12/about-names-when-designing-with-objects/</link>
+      <pubDate>Thu, 12 Jan 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.10pines.com/2012/01/12/about-names-when-designing-with-objects/</guid>
+      <description>
+
+&lt;p&gt;One of the recurrent problems I see when teaching OO design is the “names” used by the programmers to name classes, methods, etc.&lt;/p&gt;
+
+&lt;p&gt;The problems are different depending if attendees are from the industry or the university. At the industry I see that names are wrongly selected, bias technology names, while at the university it is common to see the lack of ideas to name things (which makes sense because they have less experience). I will concentrate on the problem I see at the industry.&lt;/p&gt;
+
+&lt;p&gt;Basically the problem can be summarized as using names towards the technology model instead of the business model. I&amp;rsquo;ll show a few examples that will clarify the idea.&lt;/p&gt;
+
+&lt;h2 id=&#34;the-traffic-light-problem&#34;&gt;The traffic light problem&lt;/h2&gt;
+
+&lt;p&gt;I usually use a problem when teaching the introductory OO design class, where attendees have to model a traffic light (&amp;ldquo;semáforo&amp;rdquo; in Spanish). This problem has many interesting edges like what really is a &amp;ldquo;traffic light&amp;rdquo;, is it just the one that control the traffic on a street or in a corner (or street intersection)?. But besides that and going to the problem of this post, it is interesting to see the names that are used to call the class that will model that concept. Usually those names are &lt;code&gt;LightContainer&lt;/code&gt; or &lt;code&gt;TrafficController&lt;/code&gt; instead of just &lt;code&gt;TrafficLight&lt;/code&gt;. Clearly &lt;code&gt;TrafficLight&lt;/code&gt; is a better name because it is the name used in the problem domain and therefore using it in our model will narrows the semantic gap, but why do attendees think on those names?&lt;/p&gt;
+
+&lt;h2 id=&#34;the-shopping-store-problem&#34;&gt;The shopping store problem&lt;/h2&gt;
+
+&lt;p&gt;Another example I use, in this case on the TDD course, is to model a on-line shopping store. That problem is really interesting because there are many many concepts to model that usually are ignored or not seen by most attendees, like shopping cart, the cashier or the just the sale. Shopping carts are generally discovered and modeled, but sometimes attendees use names like &lt;code&gt;ProductContainer&lt;/code&gt; or similar.&lt;/p&gt;
+
+&lt;p&gt;The cashier is a interesting case. I guide the solution using a metaphor on real supermarkets so they can see that when it is time to pay, it is the cashier responsibility to do the sum, debit that amount on your credit card and so. But it is funny to see that even when I use the word “cashier” sometimes the class that models it as &lt;code&gt;SaleTransaction&lt;/code&gt; (not realizing that the sale is the result of what the cashier does) or &lt;code&gt;CreditCardService&lt;/code&gt; or &lt;code&gt;PaymentManager&lt;/code&gt; and the like.&lt;/p&gt;
+
+&lt;p&gt;The sale is an object that usually nobody see and therefore it is not modeled. After the attendees realize that concept has to be modeled I go to the next issue, that is where to “store” the sales. Sadly, and as much as I repeat during the course to think about the problem domain, I usually get names for that object like &lt;code&gt;SalesRepository&lt;/code&gt;, &lt;code&gt;SaleDAO&lt;/code&gt; or the like instead of &lt;code&gt;SalesBook&lt;/code&gt; (in Spanish &lt;code&gt;LibroDeVentas&lt;/code&gt;, a well know accounting term).&lt;/p&gt;
+
+&lt;h2 id=&#34;understanding-the-problem&#34;&gt;Understanding the problem&lt;/h2&gt;
+
+&lt;p&gt;Why does this happen? Why the right names are not selected? I realized after given these courses that the pattern is the same: the selected names are thought from a “technology” point of view, as programmers; we do not use the words of the problem domain in our programs. I mean, I don&amp;rsquo;t know any accountant that calls the sales book as “sale repository”, neither “sale dao”, and I never saw any supermarket employee call the shopping cart as “product container” and my wife never called a traffic light as “traffic controller”&amp;hellip;. what is the problem?&lt;/p&gt;
+
+&lt;p&gt;The problem is that we continue programming (modeling) focusing on the technical side and not on the problem domain side. Of course, if we go to a supermarket we will not tell our companion “please, give me that product container” but “please, give me that shopping cart”. Why?, because we are not programming there, we “are” in the problem domain “for real”.&lt;/p&gt;
+
+&lt;p&gt;Ok, let&amp;rsquo;s assume that that is the problem, why do I see this problem on the industry and not at the university? I think this is due to some kind of “infection” that people at the industry get from models, frameworks, finally examples that students at the university has not been exposed yet. As humans we learned (a big deal) from examples, and sadly most examples we have are really bad at giving names, sometimes because “hey! it is just an example” and sometimes because the ones that wrote the framework, model or example has became part of this vicious circle and therefore the names they use are like those we later choose, that is “nnnContainer”, “nnnRepository”, “nnnController”, etc.&lt;/p&gt;
+
+&lt;p&gt;How can we avoid this mistake? First of all realizing that we have to make a change in the way we think, we have to start thinking on the domain problem and not on “programming issues”. &lt;strong&gt;Date&lt;/strong&gt; is called &lt;code&gt;Date&lt;/code&gt; and not &lt;code&gt;NumberContainer&lt;/code&gt;, and &lt;strong&gt;String&lt;/strong&gt; is called &lt;code&gt;String&lt;/code&gt; and not &lt;code&gt;CharacterCollection&lt;/code&gt;, those are good examples of names thought from a problem domain point of view. After that, we can use a smell to see if we are choosing incorrect names. The smell is basically to see if the name has words like &lt;em&gt;container&lt;/em&gt;, &lt;em&gt;repository&lt;/em&gt;, &lt;em&gt;service&lt;/em&gt;, &lt;em&gt;controller&lt;/em&gt;, &lt;em&gt;manager&lt;/em&gt; or any of the design pattern&amp;rsquo;s name (again, &lt;strong&gt;Directory&lt;/strong&gt; is called &lt;code&gt;Directory&lt;/code&gt; and not &lt;code&gt;FileComposite&lt;/code&gt; or the like). But please remember, this is a smell, not a rule!, sometimes we have to use names bias technology issues, and that is basically when modeling a technological problem domain.&lt;/p&gt;
+
+&lt;p&gt;So from now on, if a name you think for a class has those words, if it has that smell, try to think of a better one and if you can not come up with a good one (that for sure will happen) then choose a meaningless name but please, not a bad name. I will explain the difference between them in another post, this one has became larger that I expected :-)&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Design principles behind Patagonia - ESUG 2010</title>
+      <link>http://blog.10pines.com/2010/10/02/design-principles-behind-patagonia-esug/</link>
+      <pubDate>Sat, 02 Oct 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.10pines.com/2010/10/02/design-principles-behind-patagonia-esug/</guid>
+      <description>&lt;p&gt;Patagonia is a conference registration web based system written in Pharo using Seaside, whose main purpose is to fulfill the ESUG conference registration needs. It was developed at 10Pines under the sponsorship of ESUG. It has been develop using some design principles that were &amp;ldquo;grown&amp;rdquo; developing other two systems, being Patagonia the latest version of them. These design principle&amp;rsquo;s objective is the development of &amp;ldquo;robust&amp;rdquo; software, that is, software that can easily change in a safe fashion, being at the same time self defensive when used incorrectly and self &amp;ldquo;teachable&amp;rdquo; to new programmers of the system.&lt;/p&gt;
+
+&lt;p&gt;{% youtube 8cgmdaKwRvU %}&lt;/p&gt;
+
+&lt;p&gt;This presentation was presented at &lt;a href=&#34;http://www.esug.org/Conferences/2010&#34;&gt;ESUG 2010&lt;/a&gt;. You can see the handouts here:&lt;/p&gt;
+
+&lt;p&gt;{% slideshare 5306451 %}&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;View more &lt;a href=&#34;http://www.slideshare.net/&#34;&gt;presentations&lt;/a&gt; from &lt;a href=&#34;http://www.slideshare.net/esug&#34;&gt;ESUG&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>About inheritance as means of reuse</title>
+      <link>http://blog.10pines.com/2009/05/20/about-inheritance-as-means-of-reuse/</link>
+      <pubDate>Wed, 20 May 2009 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.10pines.com/2009/05/20/about-inheritance-as-means-of-reuse/</guid>
+      <description>
+
+&lt;p&gt;When talking about Smalltalk, there is definitively an over use on the possibility to add messages to &lt;code&gt;Object&lt;/code&gt; class. It is so easy to do it, that people usually do it just to get something working fast, even if the coding is poor. There are a lot of messages (mainly &lt;code&gt;#isXXX&lt;/code&gt; messages) that do not belong to &lt;code&gt;Object&lt;/code&gt; and represent a bad design decision. Most of them are implemented there because they are &amp;ldquo;handy&amp;rdquo; and easily &amp;ldquo;reused&amp;rdquo;. For example &lt;code&gt;#-&amp;gt;&lt;/code&gt; or &lt;code&gt;#assert:&lt;/code&gt; implemented in Squeak. Definitively not all objects should respond to them.&lt;/p&gt;
+
+&lt;p&gt;Many of these messages are only used from &amp;ldquo;inside&amp;rdquo; the object, like the &lt;code&gt;#assert:&lt;/code&gt; message. I would never write something like this: &lt;code&gt;1 assert: xxxx&lt;/code&gt;. Instead I would write: &lt;code&gt;self assert: xxx&lt;/code&gt; witch clearly shows that &lt;code&gt;#assert:&lt;/code&gt; is not a message that should be respond by every object, but only for those that represent assertions.&lt;/p&gt;
+
+&lt;p&gt;From my point of view, this issue is not an inheritance&amp;rsquo;s problem per se, it is a misuse of inheritance. If I try to use a hammer as a screwdriver, it is not the hammer&amp;rsquo;s fault, but mine.&lt;/p&gt;
+
+&lt;h2 id=&#34;how-is-inheritance-related-with-reuse&#34;&gt;How is inheritance related with reuse?&lt;/h2&gt;
+
+&lt;p&gt;Well, that is an important question. Inheritance from the &amp;ldquo;pure theory&amp;rdquo; point of view, should not be used as a means of reuse. Reuse comes from good models, not from inheritance. Inheritance should be used as a tool to organize the knowledge that, as a programmer, you are acquiring from the business domain.&lt;/p&gt;
+
+&lt;p&gt;Classes should be used to represent the concepts and ideas you see in the business domain and inheritance should be used to organize how this concepts are related in an ontological way. So for example, an abstract class should represent an abstract concept wich defines the essential behavior that all the objects instances of its concrete subclasses should respond. Due to this relationship reuse comes aside, but reuse is not the means of inheritance. Subclassing just to reuse the implementation of a superclass is not a good design decision; it will bring problems sooner or later.&lt;/p&gt;
+
+&lt;p&gt;There has been an attempt to minimize the methods implemented in the &lt;code&gt;Object&lt;/code&gt; class. For example on the Squeak distribution the class &lt;code&gt;ProtoObject&lt;/code&gt; has been created. &lt;code&gt;ProtoObject&lt;/code&gt; has only 35 methods whereas &lt;code&gt;Object&lt;/code&gt; has 436! (on the basic image of Squeak version 3.10.x). Although &lt;code&gt;ProtoObject&lt;/code&gt; has fewer methods, I do not agree with some of them. For example &lt;code&gt;#ifNil:&lt;/code&gt; (and the like) and &lt;code&gt;#tryNamedPrimitive:&lt;/code&gt; (and the like). Clearly these two messages (and their mutations) are implemented in &lt;code&gt;ProtoObject&lt;/code&gt; as a means of reuse and not because every object should understand them.&lt;/p&gt;
+
+&lt;p&gt;For example, why an account should respond &lt;code&gt;#tryNamedPrimitive:&lt;/code&gt;? What does it mean to an account? A better design should have an object that represents the VM (for example) to which I can send the message &lt;code&gt;#tryNamedPrimitive:&lt;/code&gt;. Of course the problem with this is how to access to this object and that is why that message is implemented in &lt;code&gt;ProtoObject&lt;/code&gt;, because every object will inherit that method! And it will be so easy to use it as to write &lt;code&gt;self tryNamedPrimitive: xxx&lt;/code&gt;. But thinking a little bit we can see that it is very easy to solve this problem. For example declaring this VM object in a global scope, so any object could send the message &lt;code&gt;#tryNamedPrimitive:&lt;/code&gt; (and therefore reuse it), but not understand it.&lt;/p&gt;
+
+&lt;h2 id=&#34;composition-vs-inheritance&#34;&gt;Composition vs Inheritance&lt;/h2&gt;
+
+&lt;p&gt;This brings me to the &amp;ldquo;rule&amp;rdquo; that says composition is a better tool to reuse. The problem of using inheritance to reuse is that inheritance generates a strong coupling between the classes, its subclasses and its instances, where composition does not.&lt;/p&gt;
+
+&lt;p&gt;Inheritance generates an implementation and structural coupling between the classes and its subclasses (affecting directly their instances) where composition only couples an object with the composed one through the messages the former sends to the later. No implementation coupling, no structural coupling, just coupled by the message names one object send to the other, therefore a better design (the lower the coupling the better). This is the reason why good frameworks, black-box frameworks use composition over inheritance, where white-box frameworks being more immature, use inheritance to configure them.&lt;/p&gt;
+
+&lt;p&gt;This brings me to the idea of how hard should we stick to this, should we never &amp;ldquo;break&amp;rdquo; this rule? Well, I would not called it a rule but an heuristic, therefore it should be follow as much as possible, but we should also be pragmatic too. Sometimes subclassing to reuse while we are still learning about the problem is ok, is like making a white-box framework at the beginning. But we should never forget that our goal is a &amp;ldquo;black-box framework&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;Other languages like Java do not suffer this problem and good designs can be implemented with it (although not so easily :-)). Java does not have this problem because &lt;code&gt;Object&lt;/code&gt; class cannot be modified. This clearly shows that having too many methods in &lt;code&gt;Object&lt;/code&gt; is not a problem of inheritance, but on how use it.&lt;/p&gt;
+
+&lt;h2 id=&#34;to-summarize&#34;&gt;To summarize&lt;/h2&gt;
+
+&lt;p&gt;Inheritance should not be used to reuse, therefore having a lot of methods in &lt;code&gt;Object&lt;/code&gt; class just because it is &amp;ldquo;handy&amp;rdquo; is a clear example of inheritance being used incorrectly. It generates unnecessary coupling which will make the system harder to change or refactor later.&lt;/p&gt;
+
+&lt;p&gt;Inheritance is just a tool; you can use it right or wrong.&lt;/p&gt;
+
+&lt;p&gt;There are other tools like composition and design techniques which solve the same problems and generate less coupling.&lt;/p&gt;
+
+&lt;p&gt;Reuse comes from good models, not from inheritance.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Best Practices on 10 Pines Blog</title>
+    <link>http://blog.10pines.com/tags/best-practices/</link>
+    <description>Recent content in Best Practices on 10 Pines Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 13 Sep 2016 14:17:06 +0000</lastBuildDate>
+    <atom:link href="http://blog.10pines.com/tags/best-practices/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>From a newbie, to a newbie</title>
+      <link>http://blog.10pines.com/2016/09/13/from-a-newbie-to-a-newbie/</link>
+      <pubDate>Tue, 13 Sep 2016 14:17:06 +0000</pubDate>
+      
+      <guid>http://blog.10pines.com/2016/09/13/from-a-newbie-to-a-newbie/</guid>
+      <description>
+
+&lt;p&gt;It&amp;rsquo;s been less than a year since I joined 10Pines, and a little more than two since I started working officialy as a programmer. I don&amp;rsquo;t like calling myself a &lt;em&gt;junior&lt;/em&gt; developer because seniorities can be easily misused, as their meanings depend on what the person using these terms is looking for in a programmer and the context where they work at. What I can assure you is that I feel like a &lt;em&gt;newbie&lt;/em&gt; developer. Maybe it&amp;rsquo;s all in my head, since my fellow team members treat me as an equal at all times, but sometimes the lack of experience in some scenarios just gets me as frustrated as a kid learning to ride a bike. To fight this, I have gathered a couple of life-savers that help me keep on track when I&amp;rsquo;m about to call it quits.&lt;/p&gt;
+
+&lt;h2 id=&#34;become-friends-with-your-tools&#34;&gt;Become friends with your tools&lt;/h2&gt;
+
+&lt;p&gt;Someone once told me I should code as fast as I think. My fingers are not &lt;em&gt;that&lt;/em&gt; fast, but trying to accomplish this is a satisfying process as I gain confidence in my environment. Learn your IDE shortcuts, create scripts for tasks you have to do often, or establish the way you will arrange your windows by default. Mastering the tools you use everyday will make your workflow more bearable and will make you feel at home on your computer.&lt;/p&gt;
+
+&lt;h2 id=&#34;stop-breathe-and-write-your-ideas-down&#34;&gt;Stop, breathe and write your ideas down&lt;/h2&gt;
+
+&lt;p&gt;I can be a really anxious developer sometimes; I tend to get carried away by big domains and end up having headaches. If you ever start entangling your thoughts with the idea you are trying to craft, stop going from one class to another or staring at a blank test and grab a paper. Make a diagram or whatever can help you capture what you have on your mind; get it out of your head and see it in a static way. It is important that you do it by hand and not in a computer notepad, because at the time of representing thoughts technology can limit our expressiveness.&lt;/p&gt;
+
+&lt;h2 id=&#34;actually-learn-from-the-domain&#34;&gt;Actually learn from the domain&lt;/h2&gt;
+
+&lt;p&gt;As a software developer, you have to solve the problems you are being asked to, but it isn&amp;rsquo;t about doing it fast, counting the lines of code and moving on to the next thing. It is really important that you &lt;strong&gt;understand&lt;/strong&gt; what you are working on. I cannot stress this enough. You are always modeling a bit of the reality we live on, so actually getting it helps you cover all posible workflows and suggest improvements to the solution. Ask for more context when you are not sure about something and go over whatever you are building as if you were a final user. Don&amp;rsquo;t be a coding bot, be a person who develops his/her work consciously.&lt;/p&gt;
+
+&lt;h2 id=&#34;don-t-get-trapped-inside-a-technology&#34;&gt;Don&amp;rsquo;t get trapped inside a technology&lt;/h2&gt;
+
+&lt;p&gt;Some people try to learn as much languages or frameworks as they can. Pablo talks about developing based on &lt;em&gt;essence&lt;/em&gt; on &lt;a href=&#34;https://blog.10pines.com/2015/02/18/essence-driven-development/&#34;&gt;his post&lt;/a&gt; and I couldn&amp;rsquo;t agree more with him. Us newbies can get stuck on technologies just because we don&amp;rsquo;t follow their syntax or other simple problems that take up a lot of time from our project. This should never get in your way if you remember that what matters most is creating good abstractions for the domain you are trying to represent. The rest can be solved by reading documentation, trying to follow some tutorials or asking someone from your team. This last part leads me to another good advice:&lt;/p&gt;
+
+&lt;h2 id=&#34;don-t-wait-until-it-is-too-late-to-ask-for-help&#34;&gt;Don&amp;rsquo;t wait until it is too late to ask for help&lt;/h2&gt;
+
+&lt;p&gt;This might seem insignificant from our perspective, but I&amp;rsquo;ve heard it from a lot of people (and of course it has happened to me). Trying to do things by ourselves is the right way to grow, but debugging two hours the same piece of code with no results is degrading and makes you want to quit and study herbology. Learning to differentiate when the right time to call someone has come will reduce frustration and, by the way, will make you see receiving help is not a crime. Someday you&amp;rsquo;ll be capable and willing to return the favor and give a hand to another newbie.&lt;/p&gt;
+
+&lt;h2 id=&#34;embrace-changes-and-challenges&#34;&gt;Embrace changes and challenges&lt;/h2&gt;
+
+&lt;p&gt;A new procedure you&amp;rsquo;ve never done before? Having to work with new people? Maybe standing up for what you think is the best solution to a problem, even though someone disagrees with you? Don&amp;rsquo;t panic, you are not the first and won&amp;rsquo;t be the last to face these things. Pull yourself together and try to see this as an adventure, as cheesy as it may sound. I assume that you are a passionate developer -I actually can&amp;rsquo;t think of someone doing this for other reason than loving it or being crazy-, so stressing out over this nuisances is a waste of time. With the advice I gave above, you should try to enjoy the process. If you don&amp;rsquo;t, reach out to someone and ask for advice letting them know what is bothering you. But don&amp;rsquo;t ever &lt;em&gt;ever&lt;/em&gt; back up on a new experience!&lt;/p&gt;
+
+&lt;h2 id=&#34;learn-from-your-mistakes&#34;&gt;Learn from your mistakes&lt;/h2&gt;
+
+&lt;p&gt;As Toia explains on &lt;a href=&#34;https://blog.10pines.com/2015/11/02/learning-programming/&#34;&gt;her post about learning programming&lt;/a&gt;, we all experience a lot of frustration in our profession. The key is to get something out of each childish tantrum, make your mistakes memorable in a good way. Be sure that you will get past this problems eventually, and that you will always learn something new because of this. Whether it is learning a new mechanism, or what not to do to avoid dropping the whole database, you should pin those new tips onto your brain to avoid repeating them or solving them quickly.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;I hope that this helps out another insecure developer out there -at least this is a good note to myself for the stressing moments. I know that as long as I keep on programming, I&amp;rsquo;ll face mistakes, challenges and debugging mysteries over and over again. What I also know is that every day I gain a little more experience and tools to handle these situations. Try to remember that, when you are about to break down, and also when you are feeling good about yourself for that nice new feature you just made. Make your own way through this and share your tips with another newbie!&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

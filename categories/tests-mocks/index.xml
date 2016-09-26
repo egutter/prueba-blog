@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tests Mocks on 10 Pines Blog</title>
+    <link>http://blog.10pines.com/categories/tests-mocks/</link>
+    <description>Recent content in Tests Mocks on 10 Pines Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 14 Jan 2016 15:13:41 +0000</lastBuildDate>
+    <atom:link href="http://blog.10pines.com/categories/tests-mocks/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Be careful with the mocks</title>
+      <link>http://blog.10pines.com/2016/01/14/be-careful-with-the-mocks/</link>
+      <pubDate>Thu, 14 Jan 2016 15:13:41 +0000</pubDate>
+      
+      <guid>http://blog.10pines.com/2016/01/14/be-careful-with-the-mocks/</guid>
+      <description>&lt;p&gt;Mocking objects is a common practice when writing tests, however it can be painful when refactoring a class tested with mocks. I will show a simple example to explain the problems that mocking can generate, but first I would like to give some definitions:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Stubs&lt;/strong&gt; are objects that respond to a subset of messages from the object to be stubbed with specific responses.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Mocks&lt;/strong&gt; are objects that verify the integration between the system under test and the mocked object.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Fake&lt;/strong&gt; are objects with implementation that simulate the real one but they are simpler and/or faster.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Suppose we have the next class for sending email notifications to an user of our system:&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;EmailNotifier&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;{&lt;/span&gt;
+    
+    &lt;span style=&#34;color: #66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;initialize&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(email_client,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;from_email)&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;{&lt;/span&gt;
+        &lt;span style=&#34;color: #f8f8f2&#34;&gt;@email_client&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;email_client&lt;/span&gt;
+        &lt;span style=&#34;color: #f8f8f2&#34;&gt;@from_email&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;from_email&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;}&lt;/span&gt;
+
+    &lt;span style=&#34;color: #66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;notify&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(an_user,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;a_message)&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;{&lt;/span&gt;
+        &lt;span style=&#34;color: #f8f8f2&#34;&gt;@email_client&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;send(@from_email,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;an_user&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;email,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;a_message)&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;}&lt;/span&gt;
+
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;There are some different ways to write the tests for the &lt;code&gt;notify&lt;/code&gt; method. Maybe the easiest way of doing it is using mocks:&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;describe&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;EmailNotification&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;do&lt;/span&gt;
+
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;describe&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;:notify&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;do&lt;/span&gt;    
+
+        &lt;span style=&#34;color: #f8f8f2&#34;&gt;it&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;sends an email to the given user with the given message&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;do&lt;/span&gt;
+            
+            &lt;span style=&#34;color: #f8f8f2&#34;&gt;from_email&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;server@test.com&amp;quot;&lt;/span&gt;
+            &lt;span style=&#34;color: #f8f8f2&#34;&gt;user_email_address&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;user@test.com&amp;quot;&lt;/span&gt;
+            &lt;span style=&#34;color: #f8f8f2&#34;&gt;user&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;double(&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;User&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;email&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;user_email_address)&lt;/span&gt;
+            &lt;span style=&#34;color: #f8f8f2&#34;&gt;message&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;Message&amp;quot;&lt;/span&gt;
+
+            &lt;span style=&#34;color: #f8f8f2&#34;&gt;email_client&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;double(&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;EmailClient&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;)&lt;/span&gt;
+            &lt;span style=&#34;color: #f8f8f2&#34;&gt;expect(email_client)&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;to&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;receive(&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;:send&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;with(from_email,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;user_email_address,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;message)&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;and_return(&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;:success&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;)&lt;/span&gt;
+
+            &lt;span style=&#34;color: #f8f8f2&#34;&gt;notifier&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;EmailNotifier&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;email_client,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;from_email&lt;/span&gt;
+            &lt;span style=&#34;color: #f8f8f2&#34;&gt;notifier&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;notify(user,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;message)&lt;/span&gt;
+        &lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+        
+    &lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+&lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;On this test we have created one stub for User and a mock for EmailClient. In order to check if an email is sent, we defined the expectations knowing the implementation should call the send message, but by doing this we are writing tests that are strongly coupled to their method implementation because it is expecting &lt;code&gt;notify&lt;/code&gt; to send the message &lt;code&gt;send&lt;/code&gt; to &lt;code&gt;email_client&lt;/code&gt;. So, in my opinion, testing a message in this way has the next problems:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;It is testing HOW the method is implemented instead of WHAT the method should do&lt;/strong&gt;, which may result on test failures if we change the code. Instead of testing the &lt;code&gt;send&lt;/code&gt; message is called, we should be testing an email has been sent.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;It forces you to write the expected behavior of the mocked class in each test&lt;/strong&gt;, which distracts you from the test itself when reading and writing the test, and also, it may increase the difficulty of understanding it.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The tests are hard to maintain&lt;/strong&gt;, changing a message of the mocked class will require to change all the places in which that message was mocked. If one of the tests that mocks this message is not changed, it may generate a &lt;em&gt;false positive&lt;/em&gt;, for example, if you remove the message &lt;code&gt;send&lt;/code&gt; from &lt;em&gt;EmailClient&lt;/em&gt;, the mock wouldn&amp;rsquo;t fail, so the test will pass.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;One option to solve the first 2 problems and reduce the impact of the last one can be to use a &lt;em&gt;Fake object&lt;/em&gt;. In this case, we should write a &lt;em&gt;FakeEmailClient&lt;/em&gt;, which should respond to the same messages of the real &lt;em&gt;EmailNotifier&lt;/em&gt;, and also it should have a message to test the sender, the receiver, the message and if an email has been sent. Creating a &lt;em&gt;FakeEmailClient&lt;/em&gt; won&amp;rsquo;t solve the &lt;em&gt;false positive&lt;/em&gt; problem, but it will be easier to fix because you should only update the fake object instead of all the tests where the &lt;em&gt;EmailClient&lt;/em&gt; is used.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s assume the &lt;em&gt;EmailClient&lt;/em&gt; class has a constructor without parameters, and it only has the &lt;code&gt;send(from, to, message)&lt;/code&gt; method. In that case, the &lt;em&gt;Fake Class&lt;/em&gt; would be:&lt;/p&gt;
+
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;FakeEmailClient&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;{&lt;/span&gt;
+
+    &lt;span style=&#34;color: #66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;send&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(sender_address,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;to_address,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;message)&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;{&lt;/span&gt;
+        &lt;span style=&#34;color: #f8f8f2&#34;&gt;@last_sender_address&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;from_address&lt;/span&gt;
+        &lt;span style=&#34;color: #f8f8f2&#34;&gt;@last_receiver_address&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;to_address&lt;/span&gt;
+        &lt;span style=&#34;color: #f8f8f2&#34;&gt;@last_message_sent&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;message&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;}&lt;/span&gt;
+
+    &lt;span style=&#34;color: #66d9ef&#34;&gt;attr_reader&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;:last_sender_address&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;:last_receiver_address&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;:last_message_sent&lt;/span&gt;
+    
+    &lt;span style=&#34;color: #66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;assert_last_email_received&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(from,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;to,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;message)&lt;/span&gt;
+        &lt;span style=&#34;color: #f8f8f2&#34;&gt;expect(@last_sender_address)&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;to&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;eq(from_address)&lt;/span&gt;
+        &lt;span style=&#34;color: #f8f8f2&#34;&gt;expect(@last_receiver_address)&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;to&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;eq(to_address)&lt;/span&gt;
+        &lt;span style=&#34;color: #f8f8f2&#34;&gt;expect(@last_message_sent)&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;to&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;eq(message)&lt;/span&gt;
+    &lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+    
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;p&gt;This &lt;em&gt;Fake object&lt;/em&gt; should be used in every test that needs to use an &lt;em&gt;EmailClient&lt;/em&gt;, and if you need to test if an email has been sent, you can ask it to the fake client.&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;describe&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;EmailNotification&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;do&lt;/span&gt;
+
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;describe&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;:notify&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;do&lt;/span&gt;    
+
+        &lt;span style=&#34;color: #f8f8f2&#34;&gt;it&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;sends an email to the given user with the given message&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;do&lt;/span&gt;
+            
+            &lt;span style=&#34;color: #f8f8f2&#34;&gt;from_email&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;server@test.com&amp;quot;&lt;/span&gt;
+            &lt;span style=&#34;color: #f8f8f2&#34;&gt;user_email_address&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;user@test.com&amp;quot;&lt;/span&gt;
+            &lt;span style=&#34;color: #f8f8f2&#34;&gt;user&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;double(&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;User&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;email&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;user_email_address)&lt;/span&gt;
+            &lt;span style=&#34;color: #f8f8f2&#34;&gt;message&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;Message&amp;quot;&lt;/span&gt;
+
+            &lt;span style=&#34;color: #f8f8f2&#34;&gt;email_client&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;FakeEmailClient&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;new&lt;/span&gt;
+
+            &lt;span style=&#34;color: #f8f8f2&#34;&gt;notifier&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;EmailNotifier&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;email_client,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;from_email&lt;/span&gt;
+            &lt;span style=&#34;color: #f8f8f2&#34;&gt;notifier&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;notify(user,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;message)&lt;/span&gt;
+
+            &lt;span style=&#34;color: #f8f8f2&#34;&gt;email_client&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;assert_last_email_received(from_email,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;user_email_address,message)&lt;/span&gt;
+        &lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+        
+    &lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+&lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;To conclude, I am not saying that mocks are useless, but I think that avoiding them whenever is possible makes the tests safer and easier to understand and maintain.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

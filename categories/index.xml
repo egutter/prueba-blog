@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>10 Pines Blog</title>
+    <link>http://blog.10pines.com/categories/</link>
+    <description>Recent content on 10 Pines Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 04 Jan 2016 10:32:10 +0000</lastBuildDate>
+    <atom:link href="http://blog.10pines.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>There are null reasons</title>
+      <link>http://blog.10pines.com/2016/01/04/there-are-null-reasons/</link>
+      <pubDate>Mon, 04 Jan 2016 10:32:10 +0000</pubDate>
+      
+      <guid>http://blog.10pines.com/2016/01/04/there-are-null-reasons/</guid>
+      <description>
+
+&lt;p&gt;This post will try and maybe fail to convince you that using &lt;code&gt;null&lt;/code&gt; in your code is an error.
+For those of you willing to listen, here are my reasons to stop using it.&lt;/p&gt;
+
+&lt;h2 id=&#34;super-brief-history&#34;&gt;Super brief history&lt;/h2&gt;
+
+&lt;p&gt;The programming notion of null was introduced by Tony Hoare in 1965 for ALGOL W. In his own words, his intention was:&lt;br /&gt;
+&amp;rdquo;  My goal was to &lt;em&gt;ensure that all use of references should be absolutely safe&lt;/em&gt;, with checking performed automatically by
+the compiler. But I couldn&amp;rsquo;t resist the temptation to put in a null reference, simply because &lt;em&gt;it was so easy to
+implement&lt;/em&gt;. This has led to innumerable errors, vulnerabilities, and system crashes, which have probably caused a billion
+ dollars of pain and damage in the last forty years.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;The name is probably inspired on Math, as the notion of empty set, or &amp;lsquo;no value&amp;rsquo;. And from Legal systems, as the notion
+ of nullity, an entity that possess no legal significance. In programming, null is used as a value for any variable that
+  represents &amp;lsquo;no value&amp;rsquo;.&lt;/p&gt;
+
+&lt;p&gt;You know by now that it didn&amp;rsquo;t prevent unsafe references (as originally intended). On the contrary, unsafe references is
+ probably the number one error on programming languages that use it.&lt;br /&gt;
+The funny thing is that you would think that the problem is a human error, not a language feature unintentionally
+designed to fail when used.&lt;/p&gt;
+
+&lt;h1 id=&#34;the-two-wrong-use-cases&#34;&gt;The two wrong use cases&lt;/h1&gt;
+
+&lt;p&gt;I didn&amp;rsquo;t believe it either. But our 10Pines version of the white mage warned us against using null/nil.
+Some 4 years ago &lt;a href=&#34;http://blog.10pines.com/authors/hernan-wilkinson/&#34;&gt;uncle Wilki&lt;/a&gt; tried in vain to convince us that using null was a proven mistake. I thought he was only
+ranting and discredited the idea: &amp;lsquo;So many people using it can&amp;rsquo;t be wrong&amp;rsquo;.&lt;br /&gt;
+Nevertheless I payed attention, and over the years I collected information, trying to prove him wrong.&lt;br /&gt;
+Luckily, I was the one proven wrong and now I understand why.&lt;/p&gt;
+
+&lt;p&gt;There are two use cases were null is used and they are both wrong. But they are so common, and feel so natural that you
+don&amp;rsquo;t question them. That&amp;rsquo;s the trap of null. It&amp;rsquo;s so easy to fulfill those use cases with null that you don&amp;rsquo;t think
+about the right way of doing it.&lt;/p&gt;
+
+&lt;h2 id=&#34;as-initial-value&#34;&gt;As initial value&lt;/h2&gt;
+
+&lt;p&gt;The first use case is introduced by the language itself. An uninitialized reference variable by default gets a null/nil
+value.&lt;br /&gt;
+Making you think that if you don&amp;rsquo;t know the value of a variable, it&amp;rsquo;s ok to set its value to null.&lt;br /&gt;
+Harmless as it seems, an unsafe null reference cannot be detected on all cases by humans, static compilers, or even
+flow analysis, and thus an uninitialized variable can be accessed on runtime producing an null reference error.&lt;/p&gt;
+
+&lt;p&gt;More importantly, by giving you an &amp;lsquo;easy to implement&amp;rsquo; &lt;em&gt;undefined&lt;/em&gt; value, it generates a hole in your design.&lt;br /&gt;
+Instead of defining your own behavior for uninitialized values, you take the language default which falls short and
+many times it&amp;rsquo;s completely undescriptive.&lt;/p&gt;
+
+&lt;p&gt;Look at null reference errors for 3 common languages:&lt;br /&gt;
+java:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Exception in thread &amp;quot;main&amp;quot; java.lang.NullPointerException
+at ....
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;.Net:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;System.NullReferenceException: Object reference not set to an instance of an object.
+at
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;or javascript:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;TypeError: foo is undefined
+TypeError: foo is null
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Without looking at the code there&amp;rsquo;s no way to find the error, and sometimes you can only discover it by debugging.&lt;/p&gt;
+
+&lt;p&gt;Instead of using null as a default value, take the chance to think on the expected behavior of your system when that
+happens. Complete your design by using a NullObject if appropriate default behavior can be defined, or add an
+error object that describes the error with context that is helpful to spot the original cause. Add domain semantics
+to the problem by creating a custom &lt;em&gt;undefined&lt;/em&gt; value instead of null.&lt;/p&gt;
+
+&lt;p&gt;Look how mockito informs null references, when configured to do so:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;org.mockito.exceptions.verification.SmartNullPointerException:
+You have a NullPointerException here:
+-&amp;gt; at test.SNPETest.doSomething(SNPETest.java:23)
+Because this method was *not* stubbed correctly:
+-&amp;gt; at test.SNPETest.doSomething(SNPETest.java:22)
+
+        at test.SNPETest.doSomething(SNPETest.java:23)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;It&amp;rsquo;s a little more helpful, right? What about an error message specific to your domain? It only takes a little more work.
+ But it pays off big time, and it&amp;rsquo;s not that much if you use a generic tool to generate them.&lt;/p&gt;
+
+&lt;p&gt;Just by doing this, you will reduce a percentage of your bugs because you won&amp;rsquo;t have automatic omissions. By removing
+null as a valid initial value, every variable needs to be initialized explicitly, and thus you will need to think about
+it, or have a better error description when you don&amp;rsquo;t.&lt;br /&gt;
+Some errors will still persist, but hopefully with a better detection mechanism in place.&lt;/p&gt;
+
+&lt;h2 id=&#34;as-optional-value&#34;&gt;As optional value&lt;/h2&gt;
+
+&lt;p&gt;The second use case, and the most difficult to eradicate, is the use of null to represent the absence of a value.&lt;br /&gt;
+I know that using null for its purpose sounds like the logical thing to do but the problem is that null falls short. It
+doesn&amp;rsquo;t have the behavior that you need from it.&lt;br /&gt;
+It&amp;rsquo;s no wonder that language designers need to complicate the language to deal with null values by adding operators that
+ don&amp;rsquo;t follow the object-message principle, like Ruby&amp;rsquo;s &lt;code&gt;&amp;amp;.&lt;/code&gt;, or Groovy&amp;rsquo;s &lt;code&gt;?.&lt;/code&gt;. You have no polymorphism to use with
+ null. Null is a value for all types, that behaves like none. Once you have null, you have no object.&lt;/p&gt;
+
+&lt;p&gt;That&amp;rsquo;s why these operators come handy when dealing with &amp;lsquo;optional values&amp;rsquo;. But again, the solution falls short.
+By using these operators you deprive your design from behavior that is needed to represent the absence of a value
+(a case that is part of your domain!). To complicate things worse, the error description will be the same that is used
+for uninitialied values.&lt;br /&gt;
+Accessing an optional value as it was present, is an error that you can better describe with custom errors, or prevent
+completely by using better tools than null.&lt;/p&gt;
+
+&lt;h2 id=&#34;alternatives-to-null&#34;&gt;Alternatives to null&lt;/h2&gt;
+
+&lt;p&gt;In a nutshell there are 4 alternatives you can choose (in no particular order):&lt;/p&gt;
+
+&lt;p&gt;a. a null object for default behavior&lt;br /&gt;
+b. a block/closure to handle the absence&lt;br /&gt;
+c. a maybe object to reify the absence&lt;br /&gt;
+d. don&amp;rsquo;t make it optional&lt;/p&gt;
+
+&lt;p&gt;To put it in an example, let&amp;rsquo;s say you need to implement a method to find a user. You can do:&lt;/p&gt;
+
+&lt;p&gt;a) NullObject&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;findUser(credentials)
+  return unknownUser
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you know the expected interface of the returned object, and you can guarantee that in every context that is going to
+be used a default behavior is acceptable then you can return a default object.&lt;br /&gt;
+That object can then be interacted with as a normal user.&lt;br /&gt;
+For the sake of the example, let&amp;rsquo;s say that the unkown user can redirect you to a registration form as its main page.&lt;/p&gt;
+
+&lt;p&gt;b) Explicit block&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;findUser(credentials, blockIfNone)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you can&amp;rsquo;t anticipate the expected behavior, you can ask for it.&lt;br /&gt;
+Add a second parameter to your code that accepts a block of code to be executed when the user is not found. That forces
+your client to define what to do in the case of absence, and makes explicit that scenario. The client code will then
+have to decide its course of action as part of finding a user which removes the possibility of ommitting that detail.&lt;/p&gt;
+
+&lt;p&gt;c) Reify the empty set/result or Maybe&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Maybe&amp;lt;User&amp;gt; findUser(credential)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If your client code can&amp;rsquo;t define what the correct action for absence is, use a &lt;code&gt;maybe&lt;/code&gt; object to reify the optionality,
+and return that object, instead of the user.&lt;br /&gt;
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Monad_%28functional_programming%29#The_Maybe_monad&#34;&gt;Taken from functional programming&lt;/a&gt; a
+&amp;lsquo;maybe&amp;rsquo; object responsibility is to represent an optional value (not the value itself, but the uncertainty of it).&lt;br /&gt;
+Instead of sharing the same interface as the user, the interface of a maybe object has semantics specific to the
+presence or absence of values, and how to deal with it.&lt;br /&gt;
+This option defers the decision of what to do for absence to the moment the user is actually needed. And because this maybe object responsibility is to represent a set, it can share semantics with collections.&lt;br /&gt;
+If you need the name of the user, instead of doing &lt;code&gt;findUser(credential)&amp;amp;.name&lt;/code&gt; and getting a possible string, or nil (which inevitable needs an if statement), you can do &lt;code&gt;findUser(credential).map(&amp;amp;:name)&lt;/code&gt; which gets you another &lt;code&gt;maybe&lt;/code&gt; for the name, delaying the problem until the name is really needed.&lt;/p&gt;
+
+&lt;p&gt;d) Avoid optionality if not needed&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;findUser(credentials) throws NotfoundError
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In some domains, the absence is not a valid state for the system. In those cases, don&amp;rsquo;t consider the absence as a valid use case. Treat it as an error, and prevent it.&lt;br /&gt;
+For instance, when you create a new object, you shouldn&amp;rsquo;t have optional instance variables. It&amp;rsquo;s a code smell that may imply two classes in one (as pointed out by our Object Evangelist &lt;a href=&#34;http://blog.10pines.com/authors/nicolas-papagna/&#34;&gt;npapagna&lt;/a&gt; ). Don&amp;rsquo;t allow nil parameters in the creation of an object.&lt;/p&gt;
+
+&lt;p&gt;Finally, don&amp;rsquo;t use exceptions to represent absence as a normal case. They are not polymorphic, require additional code branches (code complexity) and more importantly should be used for exceptional cases. If the value is optional, its absence it&amp;rsquo;s not an exception. It&amp;rsquo;s part of the domain.&lt;/p&gt;
+
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;I tried to be as brief as possible to keep this post short. Because of that I may be ommiting some details or edge cases.&lt;br /&gt;
+But my intention is to give you few simple rules to follow and avoid null at all cost.&lt;/p&gt;
+
+&lt;p&gt;If you follow these rules, or at least question the necessity for null and create your own, you will make me, uncle Wilki, npapagna and your future self a lot happier.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

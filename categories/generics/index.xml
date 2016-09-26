@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Generics on 10 Pines Blog</title>
+    <link>http://blog.10pines.com/categories/generics/</link>
+    <description>Recent content in Generics on 10 Pines Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 02 Dec 2014 17:10:14 +0000</lastBuildDate>
+    <atom:link href="http://blog.10pines.com/categories/generics/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Java generics and inheritance (part 2)</title>
+      <link>http://blog.10pines.com/2014/12/02/java-generics-and-inheritance-part-2/</link>
+      <pubDate>Tue, 02 Dec 2014 17:10:14 +0000</pubDate>
+      
+      <guid>http://blog.10pines.com/2014/12/02/java-generics-and-inheritance-part-2/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;http://blog.10pines.com/2014/12/02/java-generics-and-inheritance-part-1&#34;&gt;On the first part of this article&lt;/a&gt; I explained why java generics don&amp;rsquo;t allow up-casting for generified types.
+In this part we will see why, arrays don&amp;rsquo;t have that restriction, and the implications for &lt;em&gt;reflection&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;but-arrays&#34;&gt;But arrays&amp;hellip;&lt;/h2&gt;
+
+&lt;p&gt;If generified lists aren&amp;rsquo;t allowed to up-cast, why arrays are?&lt;br /&gt;
+The reason is very simple: arrays don&amp;rsquo;t erase their element type. At runtime, each array knows exactly which kind of element it should allow in. If you try this code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;
+String[] stringArray = new String[1];
+Object[] objectArray = stringArray; // Perfectly normal
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The compiler allows you to up-cast. What if we try to put something in the string array, that is not a string?&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;
+objectArray[0] = 1; //1 is not a String -&amp;gt; ArrayStoreException
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Yep, the array reacts to your wrong doing and it throws you an ArrayStoreException if you try to put anything that is not a String (or subtype). The array retains its complete type information in runtime.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.10pines.com/images/2014-12-02-java-generics-and-inheritance-part-2-VennArrayObjectArrayString.jpg&#34; alt=&#34;Venn diagram of arrays&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;So basically, while you can see an array as an instance of a super type, the array doesn&amp;rsquo;t lose its type. The type of an array is not lost at runtime because it&amp;rsquo;s reified (there&amp;rsquo;s an object that represents it at runtime). It doesn&amp;rsquo;t depend on the type of the variable it&amp;rsquo;s assigned to.
+On the other hand, a list type does depend on the variable it&amp;rsquo;s assigned to, and that&amp;rsquo;s why you cannot up-cast generic types, so you don&amp;rsquo;t change the type of contained elements. As lists don&amp;rsquo;t reify their element type you could put whatever inside, and then the implicit casts of generics may break.&lt;/p&gt;
+
+&lt;h2 id=&#34;not-everything-is-erased&#34;&gt;Not everything is erased&lt;/h2&gt;
+
+&lt;p&gt;Would all this be fixed if we retained the element type of List, as arrays do?&lt;br /&gt;
+If we could do that, then we could be consistent about the list type, no matter what. And we could check that the list contains elements of a single type.
+In other words if we retained the type argument of a generified type in runtime, using reflection we could reject wrong elements.&lt;br /&gt;
+I dare say that if the type arguments were reified with the parameterized type and made available to the created instance, none of the counter-intuitive generics restrictions would be needed. Assigning a string list to an object list variable would be as natural as doing so for arrays.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Bad news&lt;/strong&gt; is that instantiating a generic class with a type argument like&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;
+new ArrayList&amp;lt;String&amp;gt;()
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Will not preserve its type argument at runtime, and there seems to be no interest in doing so.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Good news&lt;/strong&gt; is that extending a generic class with a type argument like&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;
+class MyStringList extends ArrayList&amp;lt;String&amp;gt;{
+  List&amp;lt;Object&amp;gt; castToObjectList(){return (List)this;}
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Does retain the type argument in runtime. So using reflection to check for valid additions to the list is possible and also this kind of code is compile time safe:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;
+MyStringList stringList = new MyStringList();
+List&amp;lt;Object&amp;gt; objectList = stringList.castToObjectList(); // no error
+objectList.add(1);   // Proper error if not a string
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;multiple-ways-of-getting-the-supertype&#34;&gt;Multiple ways of getting the supertype&lt;/h2&gt;
+
+&lt;p&gt;So far this has been an introduction to finally talk about reflection and generics.&lt;br /&gt;
+We declared a class that parametrizes a List:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;
+class MyStringList extends ArrayList&amp;lt;String&amp;gt;{
+ ...
+    public boolean add(Object s) {
+        if(!getReifiedElementType().isInstance(s)){
+            return false; // Or throw new IllegalArgument()
+        }
+        return super.add((String)s);
+    }
+ ...
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;It extends ArrayList with a &lt;em&gt;String&lt;/em&gt; type parameter, and checks for valid additions based on the type of contained elements.&lt;br /&gt;
+This can be done at runtime using reflection. But let&amp;rsquo;s see how that &lt;code&gt;getReifiedElementType()&lt;/code&gt; could get the String type parameter from its superclass.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Pre-java 5&lt;/strong&gt;: original &lt;code&gt;getSuperclass()&lt;/code&gt; method&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;
+		Class&amp;lt;?&amp;gt; myRawSuperclass= MyStringList.class.getSuperclass();
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;However, that will only return you an ArrayList.class instance. No type argument information.
+This is the runtime super-type of our class (&lt;code&gt;ArrayList&lt;/code&gt;), but it&amp;rsquo;s not the compile time super-type (&lt;code&gt;ArrayList&amp;lt;String&amp;gt;&lt;/code&gt;).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Post-Java 5&lt;/strong&gt;: &lt;code&gt;Class.getGenericSuperclass()&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;
+Type myGenericSuperClass = MyStringList.class.getGenericSuperclass();
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You guessed right. This Type instance has the type arguments. However, it wouldn&amp;rsquo;t let you access it unless you know what sub-typ of &lt;code&gt;Type&lt;/code&gt; is:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;
+  ParameterizedType parameterizedSuperclass = (ParameterizedType) myGenericSuperClass;
+  Type[] typeArguments = parameterizedSuperclass.getActualTypeArguments();
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Yeah. You are forced to downcast it. &lt;code&gt;Type&lt;/code&gt; is designed in such a way that has no behavior and it is useless by itself. You need to ask what kind of instance is before doing something with it, and then downcast it.
+If you check the returned Type array for arguments, you will find String.class as the only contained element (again, only after downcasting it will you be able to do something useful).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Post-Java 8&lt;/strong&gt;: &lt;code&gt;Class.getAnnotatedSuperclass()&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;
+  AnnotatedType annotatedSuperclass = MyStringList.class.getAnnotatedSuperclass();
+  Type typeThatWasAnnotated = annotatedSuperclass.getType();
+  Annotation[] annotations = annotatedSuperclass.getAnnotations();
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;What&amp;rsquo;s this AnnotatedType instance you ask?&lt;br /&gt;
+It&amp;rsquo;s how Oracle engineers extended reflection to support annotations on types. Since Java 8, you can use annotations on any type declaration. My class can extend an annotated super type:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;
+public class MyStringList extends ArrayList&amp;lt;@NotNull String&amp;gt; {
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;So, basically every type can have annotations that specify the type more precisely (although they have no effect on runtime). And the way to know which annotations and which type arguments are used is by calling &lt;code&gt;getAnnotatedSuperclass()&lt;/code&gt;.
+But it won&amp;rsquo;t help you much. It uses &lt;code&gt;Type&lt;/code&gt; hierarchy to know the type arguments.&lt;/p&gt;
+
+&lt;h2 id=&#34;ok-let-s-use-the-latest&#34;&gt;Ok, let&amp;rsquo;s use the latest&lt;/h2&gt;
+
+&lt;p&gt;Not only you do have 3 different ways to know your super type, you also have three different non-polymorphic objects.  If you are like me for simplicity&amp;rsquo;s sake, you will say ok, let&amp;rsquo;s use the most complete one, and let&amp;rsquo;s forget about the others (the older ones). Let&amp;rsquo;s use &lt;code&gt;getAnnotatedSuperclass():AnnotatedType&lt;/code&gt; right?&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.10pines.com/images/2014-12-02-java-generics-and-inheritance-part-2-threeSuperTypes.jpg&#34; alt=&#34;Three options for super-types&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;But what if I have more than one inheritance level? What if I want to know an argument of the super type of my super type? Does AnnotatedType has a super class method as Class does? A super type of List&lt;String&gt; is Collection&lt;String&gt; can I get to it? &lt;strong&gt;Can I traverse my generic lineage? Short answer: no.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;An &lt;code&gt;AnnotatedType&lt;/code&gt; doesn&amp;rsquo;t have the concept of inheritance in any of its methods &amp;hellip;. But &amp;hellip;&lt;br /&gt;
+&lt;code&gt;AnnotatedType::getType()&lt;/code&gt; allows you to get a &lt;code&gt;Type&lt;/code&gt; instance which doesn&amp;rsquo;t have the concept of inheritance either&amp;hellip;. But&amp;hellip;.&lt;br /&gt;
+If &lt;code&gt;Type&lt;/code&gt; is an instance of &lt;code&gt;ParameterizedType&lt;/code&gt;, then you have &lt;code&gt;ParameterizedType::getRawType()&lt;/code&gt; that gives you an instance of &lt;code&gt;Class&lt;/code&gt; and finally you can ask that class its super type again.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.10pines.com/images/2014-12-02-java-generics-and-inheritance-part-2-whot.jpg&#34; alt=&#34;Whot?&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Let me say it again: from a &lt;code&gt;Class&lt;/code&gt; instance you can have the annotated super type (to get the annotations) then get the generic &lt;code&gt;Type&lt;/code&gt;, cast it to a parameterized type (to get the type arguments), ask its raw class and only then get the super super type. It can&amp;rsquo;t be easier!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.10pines.com/images/2014-12-02-java-generics-and-inheritance-part-2-superSuperType.jpg&#34; alt=&#34;Navigating to a super type&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Oh, one more thing. Each level you go up, you lose the actual type arguments. Why?&lt;br /&gt;
+Because you have to pass through a Class instance in order to go up the next level. &lt;code&gt;Class&lt;/code&gt; knows nothing about type arguments.&lt;br /&gt;
+In our example, once you get to the super type of ArrayList you will get a type variable &lt;code&gt;E&lt;/code&gt; instead of the actual type argument &lt;code&gt;String&lt;/code&gt;. You will have to manually keep track of type parameters, variable names and type arguments to figure out which is which.&lt;/p&gt;
+
+&lt;p&gt;I have no idea why they just didn&amp;rsquo;t add the annotations and generics information in &lt;code&gt;Type&lt;/code&gt; instead of adding another &lt;code&gt;AnnotatedType&lt;/code&gt;, and chose to have 3 different representations (and two parallel class hierarchies) for type information. Someone should have noticed that something was going wrong when they had almost same class names!&lt;/p&gt;
+
+&lt;h2 id=&#34;one-last-thing-contradiction&#34;&gt;One last thing: contradiction&lt;/h2&gt;
+
+&lt;p&gt;Don&amp;rsquo;t be too harsh on them. Reflection is supposed to represent parts of the language. It&amp;rsquo;s not necessarily complete (it doesn&amp;rsquo;t have to represent everything) but it should be true and precise about the things it does.&lt;/p&gt;
+
+&lt;p&gt;The way java reflection API has evolved to include generics information is the result of an unsolvable contradiction produced by erasure.&lt;br /&gt;
+Java language at compile time is not what Java language is at runtime. This may seem obvious, but it&amp;rsquo;s a recent discovery for me: if you have erasure (or any other compilation transformation) then you have two languages.&lt;br /&gt;
+The constructs that the language has at compile time don&amp;rsquo;t exist at runtime and that&amp;rsquo;s why reflection has internal contradictions at runtime when it tries to represent compile time concepts. A &lt;code&gt;List&lt;/code&gt; is not the same type at compile-time as &lt;code&gt;List&amp;lt;String&amp;gt;&lt;/code&gt;, however at runtime, they are!&lt;/p&gt;
+
+&lt;p&gt;That&amp;rsquo;s why at runtime the super class of &lt;code&gt;MyStringList&lt;/code&gt; is &lt;code&gt;ArrayList&lt;/code&gt;, not &lt;code&gt;ArrayList&amp;lt;String&amp;gt;&lt;/code&gt;. That&amp;rsquo;s why you lose the type arguments of a parameterized type when you have a Class.&lt;br /&gt;
+Because making the language erase part of itself at compile time generates two different languages. And if you call with the same name the runtime and the compile versions of a language constructs, you will have contradictions.&lt;br /&gt;
+Two different personalities that need one representation. That&amp;rsquo;s why you end up with a schizo reflection. You are two inside one.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Java generics and inheritance (part 1)</title>
+      <link>http://blog.10pines.com/2014/12/02/java-generics-and-inheritance-part-1/</link>
+      <pubDate>Tue, 02 Dec 2014 16:51:45 +0000</pubDate>
+      
+      <guid>http://blog.10pines.com/2014/12/02/java-generics-and-inheritance-part-1/</guid>
+      <description>
+
+&lt;h2 id=&#34;types-sets-variables-and-casting&#34;&gt;Types, Sets, variables and casting&lt;/h2&gt;
+
+&lt;p&gt;When you use a compile-time typed language, like Java, you expect that types in each variable will help you by restricting the possibilities for a value. Instead of being able to do everything, you want to do things that are valid in your domain.&lt;/p&gt;
+
+&lt;p&gt;Discussions aside about strong vs weak typing, when you code with types you think of types as sets. A variable can be one of the elements of the implicit set for its type. Thus &lt;code&gt;Integer a&lt;/code&gt; means that variable &lt;em&gt;&amp;lsquo;a&amp;rsquo;&lt;/em&gt; will be one of the elements in the Integer set, and only that.&lt;br /&gt;
+If you have a &lt;em&gt;String&lt;/em&gt; variable &lt;em&gt;&amp;lsquo;a&amp;rsquo;&lt;/em&gt; and want to assign its value to a variable &lt;em&gt;&amp;lsquo;b&amp;rsquo;&lt;/em&gt; of type &lt;em&gt;Object&lt;/em&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;String a = &amp;quot;A&amp;quot;;
+Object b = a;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The compiler does an implicit up-casting and you expect that to be a valid operation. The set of &lt;em&gt;Object&lt;/em&gt; instances is a super-set of &lt;em&gt;String&lt;/em&gt; instances. That is basically because Object is a superclass of String and inheritance implies set inclusion.&lt;br /&gt;
+But once you upcast, you lose specificity. Your set of possibilities gets bigger and you can&amp;rsquo;t ensure that &lt;em&gt;&amp;lsquo;b&amp;rsquo;&lt;/em&gt; will always be a &lt;em&gt;String&lt;/em&gt;. The value of variable &lt;em&gt;&amp;lsquo;b&amp;rsquo;&lt;/em&gt; could be the &lt;em&gt;String&lt;/em&gt; a, or could be something completely different like the number 1, that belongs to the &lt;em&gt;Integer&lt;/em&gt; set.&lt;/p&gt;
+
+&lt;p&gt;{% img center /images/java-generics-and-inheritance-part-1-VennDeObjectString.jpg &amp;ldquo;Venn diagram of objects&amp;rdquo; %}&lt;/p&gt;
+
+&lt;p&gt;So far, I haven&amp;rsquo;t told you anything new.&lt;/p&gt;
+
+&lt;h2 id=&#34;what-s-wrong-with-generics&#34;&gt;What&amp;rsquo;s wrong with generics?!&lt;/h2&gt;
+
+&lt;p&gt;If you use Java generics, it&amp;rsquo;s fairly probable that you have tried this example wondering what is wrong with the compiler:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;List&amp;lt;String&amp;gt; stringList = new ArrayList&amp;lt;&amp;gt;();
+List&amp;lt;Object&amp;gt;objectList = stringList; 	//error: cannot convert from List&amp;lt;String&amp;gt; to List&amp;lt;Object&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If &lt;code&gt;List&amp;lt;Object&amp;gt;&lt;/code&gt; is the set of all lists that have objects inside, then List&lt;String&gt; should be a subset, right? We are just using intuition, but the compiler complains about it.&lt;br /&gt;
+To complicate things worse, the compiler will accept that same reasoning for arrays:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;        String[] stringArray = new String[0];
+        Object[] objectArray = stringArray;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Why can arrays be assigned and lists cant&amp;rsquo;t? Have you ever dedicated some thoughts to it? They are both container types, they have both just one element type. What makes those types conceptually different?&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.10pines.com/images/java-generics-and-inheritance-part-1-genericsYUNo.jpg&#34; alt=&#34;Generics YU&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;the-reason&#34;&gt;The reason&lt;/h2&gt;
+
+&lt;p&gt;Reading the authors of generics you can find a very good reason for it. Remember, at that time, they were trying to generify collections (having only java 1.4 on their hands).&lt;br /&gt;
+If you allow a list of strings to be upcasted to a list of objects and operated as a list of objects, you can do something like:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;  List&amp;lt;String&amp;gt; stringList = new ArrayList&amp;lt;String&amp;gt;();
+  List&amp;lt;Object&amp;gt; objectList = stringList;  // Let&#39;s pretend this is possible
+  objectList.add(1); // Hey, 1 is not a String!
+  String element = stringList.get(0); // Wonder what will happen...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Since it&amp;rsquo;s an object list, why can&amp;rsquo;t you just put a number inside. It&amp;rsquo;s an object right? And what happens when the reference to that same list instance but with a &lt;code&gt;List&amp;lt;String&amp;gt;&lt;/code&gt; type tries to get the added element?&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;String element = stringList.get(0);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Yeah! KaBoom. ClassCastException!&lt;br /&gt;
+Wait, what? Why do I have a cast exception if I&amp;rsquo;m not even casting?&lt;br /&gt;
+To understand what&amp;rsquo;s is going on, we need to see the implicit code there. When you use generics you have what they called &lt;em&gt;&amp;ldquo;erasure&amp;rdquo;&lt;/em&gt;: the compiler modifies your code and some of the generic information is lost. This is the actual runtime code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;String element = (String) stringList.get(0);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You are not only casting, you are down-casting (which it&amp;rsquo;s not runtime-safe). The return type of get() method, in runtime, is &lt;em&gt;Object&lt;/em&gt;, not &lt;em&gt;String&lt;/em&gt;. That&amp;rsquo;s why, in runtime, you need to downcast to String.&lt;br /&gt;
+The compiler does it for you, but at the cost of assuming that the list only contains &lt;em&gt;Strings&lt;/em&gt;. That assumption can be made at compile time if you avoid addition of other non &lt;em&gt;String&lt;/em&gt; objects. How do they do that?&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;At compile time, let&amp;rsquo;s not allow the list to be used for anything else than &lt;em&gt;Strings&lt;/em&gt;. So list of objects is out of the question.&lt;/strong&gt;
+There are, of course, other solutions to this problem (see &lt;a href=&#34;http://en.wikipedia.org/wiki/Covariance_and_contravariance_%28computer_science%29&#34;&gt;Covariance and Contravariance&lt;/a&gt; ) but we will stick to Java solution in this article.&lt;/p&gt;
+
+&lt;p&gt;If you know what you are doing, there&amp;rsquo;s one way to workaround this &lt;em&gt;generics&lt;/em&gt; restriction. To see it graphically at compile time, we have three types &lt;code&gt;List&amp;lt;String&amp;gt;&lt;/code&gt;, &lt;code&gt;List&amp;lt;Object&amp;gt;&lt;/code&gt; and &lt;code&gt;List&lt;/code&gt; which is the &amp;ldquo;raw&amp;rdquo; type, represented as sets:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.10pines.com/images/java-generics-and-inheritance-part-1-VennListObjectListString.jpg&#34; alt=&#34;Venn diagram of lists&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The only way to escape this rule, at compile time, is to move to the super-set, and then go down to the other sub-set.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;List&amp;lt;String&amp;gt; stringList = new ArrayList&amp;lt;String&amp;gt;();
+List&amp;lt;Object&amp;gt; objectList = (List)stringList;  // no error
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Fool the compiler by up-casting to &lt;code&gt;List&lt;/code&gt; so it doesn&amp;rsquo;t know which kind of elements is in the list, and then down-cast to &lt;code&gt;List&amp;lt;Object&amp;gt;&lt;/code&gt; which is accepted. Why is that allowed and &lt;code&gt;(List&amp;lt;Object&amp;gt;)stringList&lt;/code&gt; isn&amp;rsquo;t, it&amp;rsquo;s out of my grasp.&lt;br /&gt;
+Just to warn you: if you manage to do this, you may have &lt;em&gt;ClassClassExceptions&lt;/em&gt; in runtime.&lt;/p&gt;
+
+&lt;h2 id=&#34;but-arrays&#34;&gt;But arrays!&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://blog.10pines.com/2014/12/02/java-generics-and-inheritance-part-2&#34;&gt;On the next part of this article&lt;/a&gt;, I&amp;rsquo;ll show you why this doesn&amp;rsquo;t happen with arrays, and the implications for reflection.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

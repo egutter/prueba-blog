@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Iis on 10 Pines Blog</title>
+    <link>http://blog.10pines.com/categories/iis/</link>
+    <description>Recent content in Iis on 10 Pines Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 19 Oct 2010 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://blog.10pines.com/categories/iis/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>deploy ruby on rails on windows 2008 server and iis 7.0</title>
+      <link>http://blog.10pines.com/2010/10/19/deploy-ruby-on-rails-on-windows-server-and-iis/</link>
+      <pubDate>Tue, 19 Oct 2010 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.10pines.com/2010/10/19/deploy-ruby-on-rails-on-windows-server-and-iis/</guid>
+      <description>&lt;p&gt;Deploying Ruby On Rails in a Windows environment can be very painful. I couldn&amp;rsquo;t find any blog which really helped me, so I decided to summarize all the necessary steps I followed to successfully deploy a Rails application in a Windows 2008 server from scratch. I won&amp;rsquo;t give much explanation on each step, so if you like to know more about it, at the end of this post you&amp;rsquo;ll find a list of articles I found useful.&lt;/p&gt;
+
+&lt;p&gt;**The environment: **&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Windows 2008 SP2 x64&lt;/li&gt;
+&lt;li&gt;SQL Server 2005&lt;/li&gt;
+&lt;li&gt;IIS 7.0&lt;/li&gt;
+&lt;li&gt;Ruby 1.8.7&lt;/li&gt;
+&lt;li&gt;Ruby on Rails 2.3.5&lt;/li&gt;
+&lt;li&gt;Mongrel 1.1.5&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Steps:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Install Ruby VM&lt;/li&gt;
+&lt;li&gt;Install Rails: &lt;code&gt;gem install rails -v &#39;= 2.3.5&#39; --include-dependencies&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Install any other dependencies your application requires&lt;/li&gt;
+&lt;li&gt;Install SQL Server adapter: &lt;code&gt;gem install activerecord-sqlserver-adapter --version 2.3.5&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Install ruby-odbc
+a. Download ruby-odbc
+b. Copy the zip&amp;rsquo;s content to &lt;code&gt;${RUBY_INSTALLATION_DIR}\lib\ruby\site_ruby\1.8\i386-msvcrt&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Open the ODBC Data Source Administrator with the command &lt;code&gt;C:\Windows&amp;gt;SysWOW64\odbcad32.exe&lt;/code&gt; (make sure you use this command instead of using the regular access from the control panel)&lt;/li&gt;
+&lt;li&gt;Create a System DSN using your specific database connection properties&lt;/li&gt;
+&lt;li&gt;Open the command prompt and go to the Rails application root folder&lt;/li&gt;
+&lt;li&gt;Create and initialize your database:
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;rake db:create RAILS_ENV=production&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;rake db:migrate RAILS_ENV=production&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;rake db:seed RAILS_ENV=production&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Install IIS Application Request Routing and URL Rewrite extensions
+Edit the hosts file located at &lt;code&gt;C:\Windows\System32\drivers\etc\hosts&lt;/code&gt; and add the following line &lt;code&gt;127.0.0.1 localhost localhost-1 localhost-2&lt;/code&gt; (add as many localhost-x hostnames as mongrel services you&amp;rsquo;re planning to setup)&lt;/li&gt;
+&lt;li&gt;Open IIS Manager and create a new farm. Add one server for each of the mongrel services you&amp;rsquo;re planning to setup. For each server use a different address (i.e. localhost-1, localhost-2, etc.) and a different port number (i.e. 3000, 3001, etc.)&lt;/li&gt;
+&lt;li&gt;Edit URL Rewrite rules and add the following rules
+&lt;strong&gt;Rule 1&lt;/strong&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Pattern: ^$&lt;/li&gt;
+&lt;li&gt;Action: Route to Server Farm&lt;/li&gt;
+&lt;li&gt;Path: /main/index&lt;/li&gt;
+&lt;li&gt;Check stop processing subsequent rules&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Rule 2&lt;/strong&gt;
+ * Pattern:^([^.]+)$
+ * Action: Route to Server Farm
+ * Path: /{R:1}
+ * Do not check stop processing subsequent rules
+13. In the IIS Manager create a new Web Site and in the Path box, type or browse to the directory that contains your Rails public folder.
+14. Download this win32 services gem and install it.
+15. Download this mongrel-service gem and install it.
+16. Setup as many mongrel services as you need&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mongrel_rails service::install -N my-app-node-1 -e production -p 3000
+mongrel_rails service::install -N my-app-node-2 -e production -p 3001
+etc..
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Launch the Window Services console from Control Panel. Change the startup type of your mongrel services to Automatic and start each of them.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Open a browser and test your application&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Finally, some articles you might find useful:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.ch-werner.de/rubyodbc/&#34;&gt;ODBC binding for Ruby&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.boche.net/blog/index.php/2009/11/21/create-a-32-bit-vcenter-dsn-on-a-64-bit-operating-system/&#34;&gt;Create a 32bit DSN on a 64bit operating system&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://ruslany.net/2008/08/ruby-on-rails-in-iis-70-with-url-rewriter/&#34;&gt;Ruby on Rails in IIS70 with url rewriter&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://learn.iis.net/page.aspx/485/define-and-configure-an-application-request-routing-server-farm/&#34;&gt;Define and configure an application request routing server farm&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://learn.iis.net/page.aspx/461/creating-rewrite-rules-for-the-url-rewrite-module/&#34;&gt;Creating rewrite rules for the url rewrite module&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://mvolo.com/blogs/serverside/archive/2007/02/18/10-steps-to-get-Ruby-on-Rails-running-on-Windows-with-IIS-FastCGI.aspx&#34;&gt;10 steps to get Ruby on Rails running on Windows with IIS FastCGI&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

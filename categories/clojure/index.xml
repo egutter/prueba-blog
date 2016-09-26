@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Clojure on 10 Pines Blog</title>
+    <link>http://blog.10pines.com/categories/clojure/</link>
+    <description>Recent content in Clojure on 10 Pines Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 24 Sep 2014 16:36:22 +0000</lastBuildDate>
+    <atom:link href="http://blog.10pines.com/categories/clojure/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>State and Polymorphism with Clojure</title>
+      <link>http://blog.10pines.com/2014/09/24/clojure-multimethods/</link>
+      <pubDate>Wed, 24 Sep 2014 16:36:22 +0000</pubDate>
+      
+      <guid>http://blog.10pines.com/2014/09/24/clojure-multimethods/</guid>
+      <description>
+
+&lt;p&gt;A couple of weeks ago, I started to take my first steps on Clojure as part of my apprenticeship residency. Having very little experience with functional programming, I quickly run into a few situations that I wasn&amp;rsquo;t sure how to handle. Setting aside Clojure&amp;rsquo;s syntax, which even though I like its simplicity and consistency, I still find the number of parenthesis somewhat uncomfortable. This short post will be about a couple of differences with OOP that caught my attention: how to approach state and how to handle polymorphism.&lt;/p&gt;
+
+&lt;h2 id=&#34;quick-note-on-state&#34;&gt;Quick note on state&lt;/h2&gt;
+
+&lt;p&gt;I started by doing some simple exercises and examples, that mostly consisted of mathematical functions or processes with a very clear input and output - so far, so good. But when I moved to slightly more complex problems that involved some kind of change over time, I was tempted to imitate imperative programming and use some kind of variable. In fact, Clojure offers a number features that allow this: &lt;a href=&#34;http://clojure.org/Vars&#34;&gt;Vars&lt;/a&gt;, &lt;a href=&#34;http://clojure.org/Refs&#34;&gt;Refs&lt;/a&gt;, &lt;a href=&#34;http://clojure.org/Agents&#34;&gt;Agents&lt;/a&gt; and &lt;a href=&#34;http://clojure.org/Atoms&#34;&gt;Atoms&lt;/a&gt;.
+For example, one of the exercises, which I had already implemented in Ruby, was modeling a tennis scoreboard. With OOP, I had an object that represented the game, and when someone scored I  could just send a message to that object and it would change the players&amp;rsquo; score.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;
+game.score_a_point_for(a_player) 
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;At first, I tried doing something like this by storing each player&amp;rsquo;s score in an Atom, but by doing this, most of my functions would have side effects, therefore violating their [referential transparency](&lt;a href=&#34;http://en.wikipedia.org/wiki/Referential_transparency_(computer_science)&#34;&gt;http://en.wikipedia.org/wiki/Referential_transparency_(computer_science)&lt;/a&gt;).
+I ended up with a simpler solution by having a structure that represented the state of the game which was passed as a parameter to most functions, and most of them returned a new structure with the new state as a result. I think this solution looks simpler and more aligned with the functional paradigm.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;
+(score-point-for a-player game)
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;polymorphism-with-multimethods&#34;&gt;Polymorphism with multimethods&lt;/h2&gt;
+
+&lt;p&gt;Continuing with the same example, this function that calculates the new score could easily be solved with a series of &lt;code&gt;IF&lt;/code&gt;s that concentrate all the game logic. I started by doing this but I wondered if I could use some kind of polymorphism instead, like I did with Ruby. In Ruby I modeled each of the scores (0, 15, 30, 40, A) as a set of polymorphic objects that know the next result after a player scores, thus distributing this logic. For example the Thirty points score looks like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;
+class ThirtyScore &amp;lt; Score
+  def initialize(player, game)
+    @player = player
+    @game = game
+  end
+  def point_scored
+    @game.new_score_for(@player, FortyScore.new(@player, @game))
+  end
+end
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;While doing TDD, I started with the simplest cases and then arrived to the &lt;strong&gt;deuce&lt;/strong&gt; case which is a bit more complex. To solve the next score I realized I also needed the opponent&amp;rsquo;s score, so I refactored the points scored method like this&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;
+class FortyScore &amp;lt; Score
+  def point_scored_on(opponent_score)
+    opponent_score.resolve_new_score(self)
+  end
+  def resolve_new_score(opponent_score)
+    opponent_score.advantage
+  end
+  def advantage
+    @game.new_score_for(@player, AdvantageScore.new(@player, @game))
+  end
+end
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Eventually I found that something similar could accomplished using &lt;a href=&#34;http://clojure.org/multimethods&#34;&gt;multimethods&lt;/a&gt;. This Clojure  feature allows multiple implementations of a single function, but what method to execute does not depend on the object receiving the message but on a user defined &lt;strong&gt;dispatch function&lt;/strong&gt;  instead:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-clojure&#34;&gt;
+(defmulti calculate-next-score-for (fn [player game] (game player)))
+
+(defmethod calculate-next-score-for :zero [player game] 
+(assoc game player :fifteen))
+
+(defmethod calculate-next-score-for :fifteen [player game] 
+(assoc game player :thirty))
+
+(defmethod calculate-next-score-for :thirty [player game] 
+(assoc game player :forty))
+
+(defmethod calculate-next-score-for :forty [player game] 
+(resolv-possible-victory-for player game))
+
+(defmethod calculate-next-score-for :advantage [player game] 
+(assoc game :winner player))
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;defmulti&lt;/code&gt; defines a new multimethod with the dispatch function provided, in this case the function simply returns the player&amp;rsquo;s current score, and based on this result it executes the proper method. By doing this we can avoid hard coding everything inside a big &lt;code&gt;IF&lt;/code&gt;, and the resulting code makes it easier to differentiate each case, making it more declarative&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:2&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;Maybe a more experienced Clojure developer would have done things differently, however this exercise was very interesting for me, as it allowed me to explore different solutions and how some things in functional programming can be done similarly to OOP. After this short time exploring the language, I still feel a little foreign to the functional paradigm but it served as a way to learn several useful concepts, including immutability and referential transparency.&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;The complete solution for the tennis scoreboard in Ruby can be found &lt;a href=&#34;https://github.com/nodarsan/TDD-TennisScoreRUBY&#34;&gt;here&lt;/a&gt;
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:1&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;The complete solution for the tennis scoreboard in Clojure can be found &lt;a href=&#34;https://github.com/nodarsan/clj-tennis/&#34;&gt;here&lt;/a&gt;
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:2&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

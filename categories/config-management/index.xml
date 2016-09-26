@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Config Management on 10 Pines Blog</title>
+    <link>http://blog.10pines.com/categories/config-management/</link>
+    <description>Recent content in Config Management on 10 Pines Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 23 Feb 2012 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://blog.10pines.com/categories/config-management/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>automatically change configuration based on current environment</title>
+      <link>http://blog.10pines.com/2012/02/23/automatically-change-configuration-based-on-current-environment/</link>
+      <pubDate>Thu, 23 Feb 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.10pines.com/2012/02/23/automatically-change-configuration-based-on-current-environment/</guid>
+      <description>&lt;p&gt;What if the application &lt;strong&gt;were aware&lt;/strong&gt; of its different running environments so it could change its configuration &lt;strong&gt;automatically&lt;/strong&gt; based on the current one?&lt;/p&gt;
+
+&lt;p&gt;If we wanted to do that, we had to solve 2 issues:&lt;/p&gt;
+
+&lt;p&gt;{% img &lt;a href=&#34;http://2.bp.blogspot.com/-eiWPoCGfqzQ/Tz7KWbP8pLI/AAAAAAAAAEM/XzBpA6-RV3Y/s1600/steps.png&#34;&gt;http://2.bp.blogspot.com/-eiWPoCGfqzQ/Tz7KWbP8pLI/AAAAAAAAAEM/XzBpA6-RV3Y/s1600/steps.png&lt;/a&gt; %}&lt;/p&gt;
+
+&lt;p&gt;Fortunately &lt;strong&gt;for the second issue&lt;/strong&gt; we have &lt;em&gt;Spring 3.1&lt;/em&gt; which introduced the concept of profiles to bean definitions. This is similar to what maven does to files but applied to beans.&lt;/p&gt;
+
+&lt;p&gt;Now, we can define different set of beans according to the current spring profile. If we structure our configuration in different sets of beans for each desired configuration we can change it easily.&lt;/p&gt;
+
+&lt;p&gt;The problem remains in how to detect the current environment to tell which spring profile to use.
+&lt;a href=&#34;http://goodenoughpractices.blogspot.com/2012/02/automatically-change-configuration.html&#34;&gt;(keep reading to know how&amp;hellip;)&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

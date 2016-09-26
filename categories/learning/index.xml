@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Learning on 10 Pines Blog</title>
+    <link>http://blog.10pines.com/categories/learning/</link>
+    <description>Recent content in Learning on 10 Pines Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 02 Nov 2015 12:07:16 +0000</lastBuildDate>
+    <atom:link href="http://blog.10pines.com/categories/learning/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Learning Programming</title>
+      <link>http://blog.10pines.com/2015/11/02/learning-programming/</link>
+      <pubDate>Mon, 02 Nov 2015 12:07:16 +0000</pubDate>
+      
+      <guid>http://blog.10pines.com/2015/11/02/learning-programming/</guid>
+      <description>
+
+&lt;h2 id=&#34;dealing-with-failure-and-frustration&#34;&gt;Dealing with failure and frustration&lt;/h2&gt;
+
+&lt;p&gt;I’ve recently finished my apprenticeship program here at 10Pines.
+The experience was way beyond my expectations. Really. I’ve learned much more than I expected.
+In order to show some of my experience during my time here, I was asked to write a post about something I’ve learned. I’ve decide not to write about the techniques or tools I have gained, but about the human aspects of this educational period, which include, in my opinion, two very important concepts.&lt;/p&gt;
+
+&lt;p&gt;First of all, I want to write about the importance of seeing error as &lt;strong&gt;feedback&lt;/strong&gt; and as a &lt;strong&gt;way to learn&lt;/strong&gt;.
+It’s important to change that mindset that tells us that making a mistake is wrong and we need to start seeing it as an opportunity for learning. Failure is not a bad thing, it gives us constructive critique about something that is not working the way we are expecting and needs to be fixed. Thus, it helps us reconsider the steps we’ve taken, find what to fix and &lt;em&gt;learn with it&lt;/em&gt;. So..&lt;/p&gt;
+
+&lt;h3 id=&#34;let-s-make-some-mistakes&#34;&gt;Let&amp;rsquo;s make some mistakes!&lt;/h3&gt;
+
+&lt;p&gt;With programming we are always learning and that is a fact. I feel there is so much to learn, so much to grasp. Sometimes, that feeling discourages me. But I’ve discovered that it doesn&amp;rsquo;t matter how much you know or how good programmer you are, you can always learn something new. So I will always feel that there is so much to learn, and that’s okay.&lt;/p&gt;
+
+&lt;p&gt;During my apprenticeship I understood that programming and failing is where we encounter opportunities to learn the most. And when I thought about my feelings when I couldn’t get things right, I realized that programming is indeed frustrating. And it will always be like that.&lt;/p&gt;
+
+&lt;p&gt;The programming experience includes: trying to fix something, getting frustrated, keep going trying to fix it, stopping for a minute, getting a new idea and finally finding the solution that &lt;em&gt;makes the program work&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;So I learned that getting frustrated is normal. There is nothing wrong with it. And &lt;strong&gt;I will never stop getting frustrated&lt;/strong&gt;. This sense of frustration is what will make the satisfaction of finding  and solving the problem much bigger. So..&lt;/p&gt;
+
+&lt;h3 id=&#34;let-s-get-frustrated&#34;&gt;Let&amp;rsquo;s get frustrated!&lt;/h3&gt;
+
+&lt;p&gt;We need to adapt ourselves until we feel comfortable with these feelings while working.
+With this, I would like to write a little about the second concept, which is psychological:&lt;/p&gt;
+
+&lt;h2 id=&#34;tolerance-to-frustration&#34;&gt;Tolerance to frustration&lt;/h2&gt;
+
+&lt;p&gt;So, what does this concept have to do with programming?&lt;/p&gt;
+
+&lt;p&gt;We often use the words &lt;strong&gt;tolerance to frustration&lt;/strong&gt; referring to whether a person has this skill, and if so, how much of it.
+So, what is tolerance, anyway? The definition of &lt;strong&gt;tolerance&lt;/strong&gt; implies the existence of a threshold. When something manages to make us surpass this limit, a reaction occurs. This way, people can be more or less tolerant depending on their personality, their emotional state, what circumstances they are under, etc.&lt;/p&gt;
+
+&lt;p&gt;On the other hand, the word &lt;strong&gt;frustration&lt;/strong&gt; has several psychological connotations. This is: the emotional experience a person undergoes when confronting a situation in which an expectation, a wish, a project, a hope or a necessity is not fulfilled or achieved.&lt;/p&gt;
+
+&lt;p&gt;Whether it comes from an external or internal source, every frustration involves a specific situation and an experience. Not everyone reacts exactly the same. That’s why we could say that there are a lot of different reactions to frustration, as many as people.&lt;/p&gt;
+
+&lt;p&gt;So when a wish or hope is not fulfilled, a person can react in different ways to this frustration, from feeling anger to being aggressive or even violent, if we want to mention the most extreme way. Or on the contrary, the person can experience a state of no reaction whatsoever, or feelings of sadness, pessimism, fear and lack of motivation.&lt;/p&gt;
+
+&lt;p&gt;Have you ever &lt;em&gt;felt something like this&lt;/em&gt; when programming? Have you ever &lt;em&gt;experienced one of this reactions&lt;/em&gt;?
+I have. I’ve felt so discouraged that I didn’t feel like coding anymore, ever again.&lt;/p&gt;
+
+&lt;p&gt;So, what about tolerance to frustration then? Can we tolerate our own frustrations in a healthy way? Of course we can. And we should.&lt;/p&gt;
+
+&lt;p&gt;When a person has tolerance to frustration, internally what this person has is a degree of strength and balance that allows him/her to continue loving and working, against or despite frustration.&lt;/p&gt;
+
+&lt;p&gt;Moving forward, every frustration, not only as the situation, but as the experience, is horrendous, but not bad in itself. It’s very important to know that maturity involves a subtle balance between the frequency of gratifying experiences and frustration. What’s more, Freud said that the possibility of further growth and development of the subject depends partly on this balance&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+
+&lt;p&gt;With this I want to point out:
+The importance of being in an environment where not everything is a gratification, and where our problems aren&amp;rsquo;t always solved by someone else, since that&amp;rsquo;s when we lose this opportunity for progress and growth: a little frustration helps us become more capable and mature;
+And the importance of not living in a state of permanent frustration: in an environment where we do get frustrated all the time, because that&amp;rsquo;s what could make you feel overwhelmed and hinder your wish to improve yourself and grow.&lt;/p&gt;
+
+&lt;p&gt;During my time here in 10Pines, I found this kind of environment with the balance Freud mentioned: I was motivated to face challenges, with the responsibility to do things for myself, knowing that I was going to find errors/problems that I’d have to solve but with the support of our mentors and my colleagues to not feel completely discouraged.&lt;/p&gt;
+
+&lt;p&gt;So, for me, the most interesting thing in this apprenticeship, beyond the concepts, techniques and tools I’ve learned, was that I could &lt;strong&gt;learn from failure and frustrations&lt;/strong&gt; and that I should &lt;strong&gt;increase my tolerance to them&lt;/strong&gt; in order to become a happier programmer… without dying while trying.&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;An Introduction to Freud and Modern Psychoanalysis, Hans H. Strupp (&lt;a href=&#34;https://books.google.com.ar/books?id=keYQ900Mq1oC&amp;amp;pg=PA14&amp;amp;lpg=PA14&amp;amp;dq=Freud+and+tolerance+to+frustration&amp;amp;source=bl&amp;amp;ots=eFVsSKPrHe&amp;amp;sig=LI3Mv1YJUIqvQtAxMFYf5-ljSCg&amp;amp;hl=es&amp;amp;sa=X&amp;amp;ved=0CFIQ6AEwCWoVChMIjMvm6vHkxwIVSpOQCh2huQUy#v=onepage&amp;amp;q=tolerance%20frustration&amp;amp;f=false&#34;&gt;page 14&lt;/a&gt;)
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:1&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Essence-driven Development</title>
+      <link>http://blog.10pines.com/2015/02/18/essence-driven-development/</link>
+      <pubDate>Wed, 18 Feb 2015 11:13:05 +0000</pubDate>
+      
+      <guid>http://blog.10pines.com/2015/02/18/essence-driven-development/</guid>
+      <description>&lt;p&gt;Something that has always seemed motivating is the feeling that my way of doing things generally maintained good adaptability. Throughout my years of study at the University, and later in 10pines, I realized the type of programmer who I want to be.&lt;/p&gt;
+
+&lt;p&gt;Many aim to learn Object-Oriented Programming, Functional Programming, or a particular programming language, but this profession is characterized for being constantly changing. For my part, I have always wanted to be sure I’m prepared to face any challenge. Therefore, my way to learn always relies on capturing the essence of knowledge.&lt;/p&gt;
+
+&lt;p&gt;It is important to remember that the abstractions we generate will be crucial for future elements, and an essential part of this is remembering the essence of what we do. Our technique must not be driven by design patterns or naming conventions. All these things vary according to the paradigm in which your solution is based. Instead, programming basing on the essence of your abstractions is a crucial element to be a good developer.&lt;/p&gt;
+
+&lt;p&gt;Why am I referring to the essence? Mainly because it is very common that, by force of habit or an inflexible scheme of work, the first thing you think when you design, are database attributes instead of variables, controllers before interfaces, or even configuration files before any other thing.&lt;/p&gt;
+
+&lt;p&gt;While this seems unusual, it unfortunately happens. And it is partly because we are formed in a specific paradigm, we see a little part of the wide world of programming. If we don’t have some level of variation, hungry to want to see beyond that barrier, we will not be as good as we can in this profession.&lt;/p&gt;
+
+&lt;p&gt;Never stop learning. Keep feeding your mind. The good programmer is not the one who knows lots of technologies and the best frameworks, but the one who knows how to create the best abstractions, and represent in the most accurate way possible, the solution to a real problem in the world of ideas.&lt;/p&gt;
+
+&lt;p&gt;Thanks for reading.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

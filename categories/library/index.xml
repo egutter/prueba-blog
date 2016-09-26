@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Library on 10 Pines Blog</title>
+    <link>http://blog.10pines.com/categories/library/</link>
+    <description>Recent content in Library on 10 Pines Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 21 Nov 2011 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://blog.10pines.com/categories/library/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>protocolo fix: aspectos básicos y utilización en java mediante la librería quickfix/j</title>
+      <link>http://blog.10pines.com/2011/11/21/protocolo-fix-aspectos-basicos-y-utilizacion-en-java-mediante-la-librera-quickfixj/</link>
+      <pubDate>Mon, 21 Nov 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.10pines.com/2011/11/21/protocolo-fix-aspectos-basicos-y-utilizacion-en-java-mediante-la-librera-quickfixj/</guid>
+      <description>
+
+&lt;h2 id=&#34;introducción&#34;&gt;Introducción&lt;/h2&gt;
+
+&lt;p&gt;El protocolo **FIX ** (&lt;em&gt;Financial Information Exchange Protocol&lt;/em&gt;) es un protocolo de mensajes para el comercio de instrumentos financieros. &lt;strong&gt;FIX&lt;/strong&gt; se utiliza ampliamente para la comunicación automática entre los participantes del intercambio de instrumentos, y especifica como son los mensajes para crear ordenes de compra y venta y consultar cotizaciones de instrumento, entre otros. Este protocolo es el que hay que utilizar para comunicarnos con practicamente todos los mercados financieros de manera electrónica.&lt;/p&gt;
+
+&lt;p&gt;En este articulo, veremos los aspectos básicos del protocolo &lt;strong&gt;FIX&lt;/strong&gt;, como utilizarlo mediante la librería de java &lt;strong&gt;QuickFIX/J&lt;/strong&gt; mediante un ejemplo como cliente y servidor, y algunos aspectos poco obvios que hay que tener en cuenta al utilizarlo.&lt;/p&gt;
+
+&lt;h2 id=&#34;diferentes-versiones-del-protocolo-fix&#34;&gt;Diferentes versiones del protocolo FIX&lt;/h2&gt;
+
+&lt;p&gt;El protocolo tiene diferentes versiones, el mismo fue evolucionando a través de los años, agregando diferentes mensajes y campos para acomodar las funcionalidades requeridas por los interlocutores de todo el mundo. La versión del protocolo se divide en dos: la versión del protocolo de mensajes en si (por ejemplo, &lt;strong&gt;FIX 5.0 SP2&lt;/strong&gt;), y la versión del protocolo de transporte de &lt;strong&gt;FIX&lt;/strong&gt;, &lt;strong&gt;FIXT&lt;/strong&gt; (por ejemplo, &lt;strong&gt;FIXT 1.1&lt;/strong&gt;). Las versiones anteriores a la 5 no tenían esa division de protocolo de mensajes y protocolo de transporte, y se denotan únicamente por el número de version del protocolo.&lt;/p&gt;
+
+&lt;p&gt;El protocolo &lt;strong&gt;FIX&lt;/strong&gt; soporta extensiones, agregando nuevos mensajes y campos dentro de mensajes existentes, definiendo nuevos códigos de mensaje y nuevos números de campos. Para esto, los interlocutores deben conocer y estar de acuerdo en estas extensiones. De todas maneras, el protocolo &lt;strong&gt;FIX&lt;/strong&gt; tiene una gran cantidad de campos pensados para muchisimos casos de usos, ampliandose versión a versión, por lo que la necesidad de extender el protocolo debería en teoría ser muy baja. Tampoco es necesario implementar la totalidad de los mensajes y todos los códigos opcionales existentes, sino solo los que tengan sentido y sean utilizados por nuestros interlocutores.&lt;/p&gt;
+
+&lt;h2 id=&#34;cómo-es-el-formato-fix&#34;&gt;Cómo es el formato FIX&lt;/h2&gt;
+
+&lt;p&gt;El formato &lt;strong&gt;FIX&lt;/strong&gt; es un formato textual, donde cada mensaje es una única linea de la forma:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;NUMERO_DE_CAMPO=CONTENIDO[SEPARADOR]NUMERO_DE_CAMPO=CONTENIDO[SEPARADOR]....&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;El separador es el caracter unicode representado en Java y otros como &lt;strong&gt;&amp;ldquo;\u0001&amp;rdquo;&lt;/strong&gt;. Los campos se identifican por su número, y el tipo de mensaje es un campo más dentro del mensaje (el campo 35), y el último campo es el campo 10 que es el checksum. El orden de los campos importa, y está especificado para cada mensaje &lt;strong&gt;FIX&lt;/strong&gt;. Las estructuras repetitivas en &lt;strong&gt;FIX&lt;/strong&gt; se llaman &lt;strong&gt;Repeating Group&lt;/strong&gt; y se definen simplemente definiendo un campo cabecera del &lt;strong&gt;Repeating Group&lt;/strong&gt; que indica la cantidad de elementos contenidos, y todos los elementos se diferencian entre sí detectando el primer campo de cada elemento, esto funciona precisamente porque importa el orden de los campos.&lt;/p&gt;
+
+&lt;h2 id=&#34;quickfix-j&#34;&gt;QuickFIX/J&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;FIX&lt;/strong&gt; es un protocolo abierto y gratuito; es solo la especificación de los mensajes y de los campos de los mismos, y existen varias implementaciones de este protocolo. &lt;strong&gt;QuickFIX/J&lt;/strong&gt; es una implementación gratuita y open source (con una licencia propia similar a &lt;strong&gt;BSD&lt;/strong&gt;/&lt;strong&gt;MIT&lt;/strong&gt;) para Java (es un port de &lt;strong&gt;QuickFIX&lt;/strong&gt;, que está escrita en C++), que es muy fácil de utilizar para comunicarnos con cualquier participante, ya sea como cliente o servidor.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Nota: QuickFIX/J no implementa lógica de negocio alguna, es decir, no implementa ningún motor de cotizaciones, matcheo de ordenes de compra y venta, etc; lo que implementa es únicamente es el protocolo de comunicación.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;ejemplos-de-cliente-y-servidor-en-quickfix-j&#34;&gt;Ejemplos de Cliente y Servidor en QuickFIX/J&lt;/h2&gt;
+
+&lt;p&gt;Vamos a hacer un cliente de ejemplo en &lt;strong&gt;QuickFIX/J&lt;/strong&gt; versión 1.5.1. Este cliente se conectará a un servidor, y apenas se conecte enviará una orden de compra de un instrumento ficticio, el servidor responderá con otro mensaje, y cuando el cliente reciba la respuesta de la compra, seteará una variable, y observaremos la respuesta de esa variable. Con este ejemplo, si bien irreal, veremos como se utiliza &lt;strong&gt;QuickFIX/J&lt;/strong&gt; como cliente y como servidor.&lt;/p&gt;
+
+&lt;p&gt;El primer paso es &lt;a href=&#34;http://www.quickfixj.org/downloads/&#34;&gt;bajar la librería&lt;/a&gt;. Hay varios Jars, uno por cada versión del protocolo &lt;strong&gt;FIX&lt;/strong&gt;, pero vamos a incluir simplemente el que tiene todo (&amp;ldquo;all&amp;rdquo;), en este caso voy a incluir la última versión: &lt;strong&gt;quickfixj-all-1.5.1.jar&lt;/strong&gt;. También debemos bajar (o bien configurar via Maven) las dependencias especificadas &lt;a href=&#34;http://www.quickfixj.org/quickfixj/usermanual/1.5.1/installation.html#dependencies&#34;&gt;aquí&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Incluida esta librería en nuestro proyecto, tenemos que implementar nuestro cliente, y para esto &lt;strong&gt;QuickFIX/J&lt;/strong&gt; nos pide que implementemos la interfaz &lt;code&gt;quickfix.Application&lt;/code&gt;. &lt;strong&gt;QuickFIX/J&lt;/strong&gt; es un framework que trabaja con el concepto de &lt;em&gt;Inversión de Control&lt;/em&gt;: en lugar de invocar los métodos de &lt;strong&gt;QuickFIX/J&lt;/strong&gt; para loguearnos, ir recibiendo los mensajes, etc; nosotros tenemos que darle un objeto &lt;code&gt;Application&lt;/code&gt; y &lt;strong&gt;QuickFIX/J&lt;/strong&gt; invoca a los métodos de ese objeto con los eventos que vayan ocurriendo, en sus propios threads.&lt;/p&gt;
+
+&lt;p&gt;La interfaz &lt;code&gt;Application&lt;/code&gt; define métodos para cada evento que ocurra durante la comunicación, por ejemplo &lt;code&gt;onLogon&lt;/code&gt;, &lt;code&gt;onLogout&lt;/code&gt;, &lt;code&gt;fromApp&lt;/code&gt; (se recibió un mensaje de negocio), &lt;code&gt;fromAdmin&lt;/code&gt; (se recibio un mensaje relativo a la sesión, como por ejemplo rechazo de un mensaje mal formado), entre otros. Nosotros, en vez de implementar &lt;code&gt;Application&lt;/code&gt; directamente, vamos a heredar de &lt;code&gt;ApplicationAdapter&lt;/code&gt; que es una clase abstracta que tiene definiciones vacías para todos estos métodos por default. Es la misma interfaz tanto para Cliente como para Servidor.&lt;/p&gt;
+
+&lt;p&gt;``` java ExampleClientApplication.java&lt;/p&gt;
+
+&lt;p&gt;package com.tenpines.ejemplofix;&lt;/p&gt;
+
+&lt;p&gt;import quickfix.ApplicationAdapter;
+import quickfix.FieldNotFound;
+import quickfix.Message;
+import quickfix.Session;
+import quickfix.SessionID;
+import quickfix.SessionNotFound;
+import quickfix.field.ExecType;
+import quickfix.field.Password;
+import quickfix.field.Username;
+import quickfix.fix50.ExecutionReport;
+import quickfix.fix50.NewOrderSingle;
+import quickfix.fixt11.Logon;&lt;/p&gt;
+
+&lt;p&gt;public class ExampleClientApplication extends ApplicationAdapter {
+  private boolean seEjecutoOrdenCorrectamente = false;
+  private  boolean estaLogueado = false;&lt;/p&gt;
+
+&lt;p&gt;private final NewOrderSingle newOrder;
+  private final String usuario;
+  private final String password;&lt;/p&gt;
+
+&lt;p&gt;public ExampleClientApplication(NewOrderSingle newOrder, String usuario, String password) {
+    this.newOrder = newOrder;
+    this.usuario = usuario;
+    this.password = password;
+  }&lt;/p&gt;
+
+&lt;p&gt;@Override
+  public  void onLogon(SessionID sessionId) {
+    this.estaLogueado = true;
+    try {
+      Session.sendToTarget(this.newOrder, sessionId);
+    } catch (SessionNotFound e) {
+      throw new RuntimeException(e);
+    }
+  }&lt;/p&gt;
+
+&lt;p&gt;@Override
+  public  void fromApp(Message message, SessionID sessionId) throws FieldNotFound {
+    if (message instanceof ExecutionReport) {
+      ExecutionReport executionReport = (ExecutionReport) message;
+      if (esExecutionReportNew(executionReport)) {
+        // Como el mensaje corresponde a una creacion de orden,
+        // verifico que se refiera a la misma orden que acabo de enviar
+        // comparando su ClOrdID.
+        if (esClOrdIDCorrecto(executionReport)) {
+          this.seEjecutoOrdenCorrectamente = true;
+        }
+      }
+    }
+  }&lt;/p&gt;
+
+&lt;p&gt;private  boolean esClOrdIDCorrecto(ExecutionReport executionReport) throws FieldNotFound {
+    return executionReport.getClOrdID().getValue().equals(this.newOrder.getClOrdID().getValue());
+  }&lt;/p&gt;
+
+&lt;p&gt;private  boolean esExecutionReportNew(ExecutionReport executionReport) throws FieldNotFound {
+    return executionReport.getExecType().getValue() == ExecType.NEW;
+  }&lt;/p&gt;
+
+&lt;p&gt;@Override
+  public  void toAdmin(Message message, SessionID sessionId) {
+    if (message instanceof Logon) {
+      message.setField(new Username(usuario));
+      message.setField(new Password(password));
+    }
+  }&lt;/p&gt;
+
+&lt;p&gt;public  boolean estaLogueado() {
+    return estaLogueado;
+  }&lt;/p&gt;
+
+&lt;p&gt;public  boolean seEjecutoOrdenCorrectamente() {
+    return seEjecutoOrdenCorrectamente;
+  }
+}&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;
+Esta clase en su constructor recibirá el mensaje `NewOrderSingle` de creación de una orden, que el cliente deberá enviar al loguearse. En el método `onLogon`, el cual **QuickFIX/J** invoca luego de un logueo exitoso, realiza el envío del mensaje con el método estático `Session.sendToTarget`.
+
+En el método `fromApp`, se reciben los mensajes de negocio, y lo que buscamos es un mensaje de `ExecutionReport`, que es el mensaje de **FIX** con el que se reportan los cambios de estado de una orden (cuando es creada, cuando es cancelada, a medida que se va ejecutando, cuando es completada, etc).
+
+Si el campo `ClOrdID` (el cual representa el *id de orden del cliente*) del `ExecutionReport` coincide con el que mandamos en el `NewOrderSingle`, seteamos el flag de `seEjecutoOrdenCorrectamente`.
+
+Finalmente en el método `toAdmin`, que se invoca inmediatamente antes de enviar un mensaje &amp;quot;administrativo&amp;quot; (es decir, un mensaje que no es de negocio), interceptamos el mensaje `Logon` (que se crea automáticamente) y le asignamos usuario y password (sí, esa es la forma estándar de definir el usuario y password de la conexión).
+
+``` java ExampleServerApplication.java
+
+package com.tenpines.ejemplofix;
+
+import quickfix.ApplicationAdapter;
+import quickfix.FieldNotFound;
+import quickfix.IncorrectTagValue;
+import quickfix.Message;
+import quickfix.RejectLogon;
+import quickfix.Session;
+import quickfix.SessionID;
+import quickfix.SessionNotFound;
+import quickfix.UnsupportedMessageType;
+import quickfix.field.ClOrdID;
+import quickfix.field.CumQty;
+import quickfix.field.ExecID;
+import quickfix.field.ExecType;
+import quickfix.field.LeavesQty;
+import quickfix.field.OrdStatus;
+import quickfix.field.OrderID;
+import quickfix.fix50.ExecutionReport;
+import quickfix.fix50.NewOrderSingle;
+import quickfix.fixt11.Logon;
+
+public class ExampleServerApplication extends ApplicationAdapter {
+
+  @Override
+  public  void fromAdmin(Message message, SessionID sessionId) throws FieldNotFound, RejectLogon {
+    if (message instanceof Logon) {
+      if (!usuarioYPasswordCorrectos((Logon) message)) {
+        throw new RejectLogon();
+      }
+    }
+  }
+
+  private  boolean usuarioYPasswordCorrectos(Logon logon) throws FieldNotFound {
+    return logon.getUsername().getValue().equals(&amp;quot;usuario&amp;quot;) 
+        &amp;amp;&amp;amp; logon.getPassword().getValue().equals(&amp;quot;password&amp;quot;);
+  }
+
+  @Override
+  public  void fromApp(Message message, SessionID sessionId) throws FieldNotFound, IncorrectTagValue,
+          UnsupportedMessageType {
+    if (message instanceof NewOrderSingle) {
+      NewOrderSingle newOrderSingle = ((NewOrderSingle) message);
+      ExecutionReport executionReport = new ExecutionReport();
+      String clOrdID = newOrderSingle.getClOrdID().getValue();
+      executionReport.set(new ClOrdID(clOrdID));
+      executionReport.set(new ExecID(&amp;quot;98765&amp;quot;));
+      executionReport.set(new OrderID(&amp;quot;99999&amp;quot;));
+      executionReport.set(newOrderSingle.getSide());
+      executionReport.set(new OrdStatus(OrdStatus.NEW));
+      executionReport.set(new CumQty(0));
+      executionReport.set(new ExecType(ExecType.NEW));
+      executionReport.set(new LeavesQty(newOrderSingle.getOrderQty().getValue()));
+      try {
+        Session.sendToTarget(executionReport, sessionId);
+      } catch (SessionNotFound e) {
+        throw new RuntimeException(e);
+      }
+    }
+  }
+
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Este es el &lt;code&gt;Application&lt;/code&gt; del servidor de ejemplo. En el método &lt;code&gt;fromAdmin&lt;/code&gt; (donde se reciben los mensajes administrativos), validamos el &lt;code&gt;Login&lt;/code&gt;, si no coincide el usuario y password, lanzamos la excepcion &lt;code&gt;RejectLogin&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Nota:&lt;/strong&gt; en este esquema sencillo, el password viaja como texto plano: Las conexiones de FIX tienen que segurizarse por medio de algún esquema como SSL, utilizar una VPN, o similar.&lt;/p&gt;
+
+&lt;p&gt;En el metodo &lt;code&gt;fromApp&lt;/code&gt; recibimos el &lt;code&gt;NewOrderSingle&lt;/code&gt; y creamos un mensaje de &lt;code&gt;ExecutionReport&lt;/code&gt; y le asignamos varios campos (en este ejemplo, solo los obligatorios). En el campo &lt;code&gt;ClOrdID&lt;/code&gt;, copiamos el dato recibido por el &lt;code&gt;NewOrderSingle&lt;/code&gt;, para que el cliente pueda detectar a que &lt;code&gt;ExecutionReport&lt;/code&gt; corresponde. Y finalmente enviamos el mensaje.&lt;/p&gt;
+
+&lt;p&gt;``` java ExampleFixTest.java&lt;/p&gt;
+
+&lt;p&gt;package com.tenpines.ejemplofix;&lt;/p&gt;
+
+&lt;p&gt;import java.util.Date;&lt;/p&gt;
+
+&lt;p&gt;import org.junit.Assert;
+import org.junit.Test;&lt;/p&gt;
+
+&lt;p&gt;import com.tenpines.ejemplofix.ExampleClientApplication;
+import com.tenpines.ejemplofix.ExampleServerApplication;&lt;/p&gt;
+
+&lt;p&gt;import quickfix.Application;
+import quickfix.ConfigError;
+import quickfix.DefaultMessageFactory;
+import quickfix.MemoryStoreFactory;
+import quickfix.ScreenLogFactory;
+import quickfix.SessionSettings;
+import quickfix.SocketAcceptor;
+import quickfix.SocketInitiator;
+import quickfix.field.ClOrdID;
+import quickfix.field.OrdType;
+import quickfix.field.OrderQty;
+import quickfix.field.Side;
+import quickfix.field.TransactTime;
+import quickfix.fix50.NewOrderSingle;&lt;/p&gt;
+
+&lt;p&gt;public class ExampleFixTest {&lt;/p&gt;
+
+&lt;p&gt;@Test
+  public  void test() throws Exception {
+    iniciarServidor();
+    String password = &amp;ldquo;password&amp;rdquo;;
+    String usuario = &amp;ldquo;usuario&amp;rdquo;;
+    NewOrderSingle newOrder = new NewOrderSingle(new ClOrdID(&amp;ldquo;12345&amp;rdquo;), new Side(Side.BUY),
+        new TransactTime(new Date()), new OrdType(OrdType.MARKET));
+    newOrder.set(new OrderQty(1000));
+    ExampleClientApplication application = new ExampleClientApplication(newOrder, usuario, password);
+    iniciarCliente(application);
+    Thread.sleep(5000L); // 5 segundos
+    Assert.assertTrue(application.estaLogueado());
+    Assert.assertTrue(application.seEjecutoOrdenCorrectamente());
+  }&lt;/p&gt;
+
+&lt;p&gt;private  void iniciarCliente(Application application) throws ConfigError {
+    SessionSettings settings = new SessionSettings(this.getClass().getResourceAsStream(&amp;ldquo;cliente.cfg&amp;rdquo;));
+    SocketInitiator socketInitiator = new SocketInitiator(application, new MemoryStoreFactory(), settings,
+            new ScreenLogFactory(), new DefaultMessageFactory());
+    socketInitiator.start();
+  }&lt;/p&gt;
+
+&lt;p&gt;private  void iniciarServidor() throws ConfigError {
+    SessionSettings settings = new SessionSettings(this.getClass().getResourceAsStream(&amp;ldquo;servidor.cfg&amp;rdquo;));
+    ExampleServerApplication application = new ExampleServerApplication();
+    SocketAcceptor acceptor = new SocketAcceptor(application, new MemoryStoreFactory(), settings,
+            new ScreenLogFactory(), new DefaultMessageFactory());
+    acceptor.start();
+  }
+}&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;
+En este test inicializamos el cliente y el servidor, y vemos que efectivamente el cliente se loguea contra el servidor, envia la orden, y recibe la respuesta. Notese que el cliente y el servidor se construyen de maneras distintas pero similares: el primero con un `SocketIniciator` y el segundo con un `SocketAcceptor`. En el constructor de cada uno de ellos se pasan objetos que permiten parametrizar el comportamiento del motor de **QuickFIX/J**, definiendo el esquema de logging, como se guardan los mensajes, y cual es el Factory de los mensajes (que depende de la versión del protocolo de **FIX**, pero `DefaultMessageFactory` sirve para cualquier versión).
+
+Hay que tener cuidado al hacer tests integrales con **QuickFIX/J**, ya que como el `Application` corre en un thread aparte, instanciado por **QuickFIX/J**, perdemos el control de la ejecución y necesitamos algún tipo de espera o sincronismo para asegurarnos de que cumplieron las acciones deseadas (en este caso, que se loguee el cliente contra el servidor y se envien entre ellos los mensajes `NewOrderSingle` y `ExecutionReport`). Por esto hay en el test un `Thread.sleep` con 5 segundos, si este fuera un test real, lo correcto sería utilizar polling con timeout, no `Thread.sleep` ya que es un método obviamente lento.
+
+``` linux-config cliente.cfg
+
+[default]
+ConnectionType=initiator
+StartTime=00:00:00
+EndTime=00:00:00
+HeartBtInt=300
+
+[session]
+BeginString=FIXT.1.1
+DefaultApplVerID=FIX.5.0
+SocketConnectHost=localhost
+SocketConnectPort=9876
+SenderCompID=CLIENTE
+TargetCompID=SERVIDOR
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;``` linux-config servidor.cfg&lt;/p&gt;
+
+&lt;p&gt;[default]
+ConnectionType=acceptor&lt;/p&gt;
+
+&lt;p&gt;StartTime=00:00:00
+EndTime=00:00:00&lt;/p&gt;
+
+&lt;p&gt;HeartBtInt=300
+RejectInvalidMessage=N&lt;/p&gt;
+
+&lt;p&gt;[session]
+BeginString=FIXT.1.1
+DefaultApplVerID=FIX.5.0
+SocketAcceptPort=9876
+SenderCompID=SERVIDOR
+TargetCompID=CLIENTE&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;
+`ConnectionType` identifica el tipo de conexión, es decir, si es servidor o cliente. `StartTime` y `EndTime` indican el inicio y fin de la sesión y está relacionado al tiempo de apertura y cierre de los mercados. `BeginString` indica la versión del protocolo de transporte de **FIX**, y `DefaultApplVerID` indica la versión del protocolo (las versiones anterior a la 5, no tienen un protocolo de transporte especifico diferenciado de la versión de **FIX** en sí, y se definen únicamente por el `BeginString` indicando el protocolo de **FIX**).
+
+`SenderCompID` y `TargetCompID` son identificadores de los interlocutores de la sesión, y están invertidos en el Cliente y el Servidor. En **FIX**, la sesión es algo que se considera que va más allá de la conexión dada en un momento, si la conexión se cae y después se vuelve a conectar, la sesión sigue siendo la misma, y de hecho se reenvían los mensajes pendientes al momento de caerse la sesión (en **QuickFIX/J** para que esto funcione hay que instanciar el `SocketAcceptor/Initiator` con el `FileStoreFactory`, no el `MemoryStoreFactory`, el cual guarda los mensajes en un archivo para poder reenviarlos). Justamente porque la sesión es algo global, el `SessionID` de **QuickFIX/J** está definido básicamente por tres valores: `SenderCompID`, `TargetCompID` y `BeginString`.
+
+## Cuestiones a considerar de QuickFIX/J
+
+**QuickFIX/J** utiliza &amp;quot;diccionarios&amp;quot; que definen los mensajes de **FIX**:
+
+- Los tipos de mensajes y su código identificatorio
+- Los campos que contiene cada mensaje, su tipo, valores válidos
+- Los repeating groups (cual es el encabezado del grupo y los campos de los elementos del repeating group)
+
+Cada diccionario es un XML que se puede editar. Si abrimos los fuentes de **QuickFIX/J** veremos que tiene un diccionario de datos por cada versión del protocolo **FIX**, y utiliza generación de código en el build para crear todas las clases que representan cada mensaje y cada campo (ya que en **QuickFIX/J**, cada campo es una clase). Si queremos, podemos modificar este XML y configurar **QuickFIX/J** para que utilice nuestro XML, esto es necesario si utilizamos extensiones del protocolo que agreguen nuevos campos.
+
+Justamente por ser estas clases autogeneradas, tienen ciertos aspectos contra-intutivos:
+
+Cada campo está representado por una clase. El campo `OrderQty`, que representa la cantidad a comerciar en una órden y es un número, por ejemplo, está representado por la clase `OrderQty`, y una instancia de `OrderQty` tiene métodos como `getValue` para obtener el valor del campo y `getField` para obtener el número de campo en el protocolo.
+
+En las clases que representan los mensajes, no existen métodos `setCAMPO(tipoDeDato)`, sino unicamente overloads del metodo set que reciben la clase que representa el tipo de dato. Por eso, para setear por ejemplo el campo `OrderQty`, hay que hacer cosas como `newOrder.set(new OrderQty(1000))`. Y los métodos get, si bien están definidos, devuelven el valor envuelto en la clase que representa su campo.
+
+Los **Repeating Groups** también están representados por una clase, y la clase se llama igual que el campo del encabezado. Por ejemplo, en el mensaje `SecurityList`, que contiene una lista de instrumentos financieros, hay un repeating group de instrumentos, y para extraerlos, hay que hacer lo siguiente:
+
+``` java
+
+quickfix.fix50.SecurityList.NoRelatedSym noRelatedSym = new quickfix.fix50.SecurityList.NoRelatedSym();
+message.getGroup(indiceDeGrupo + 1, noRelatedSym); // +1 porque el primer grupo tiene indice 1, no 0.
+//ahora noRelatedSym tiene los datos del grupo
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Esto es confuso porque &lt;code&gt;NoRelatedSym&lt;/code&gt; es en realidad el nombre del campo que tiene la cantidad de simbolos relacionados (&amp;ldquo;No&amp;rdquo; en &amp;ldquo;NoRelatedSym&amp;rdquo; es una abreviación de &amp;ldquo;número&amp;rdquo;), y no del &lt;strong&gt;Repeating Group&lt;/strong&gt; en sí, esto es una consecuencia de la generación de código automática de &lt;strong&gt;QuickFix/J&lt;/strong&gt;. Para añadir confusión, hay multiples clases llamadas &lt;code&gt;NoRelatedSym&lt;/code&gt;, cada una de ellas representando un &lt;strong&gt;Repeating Group&lt;/strong&gt; distinto dentro de cada mensaje. Por eso estas clases son internas al mensaje (como se puede ver en el ejemplo, esta clase &lt;code&gt;NoRelatedSym&lt;/code&gt; es interna a la clase &lt;code&gt;SecurityList&lt;/code&gt;).&lt;/p&gt;
+
+&lt;h3 id=&#34;recursos-útiles&#34;&gt;Recursos útiles&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.fixprotocol.org:&#34;&gt;http://www.fixprotocol.org:&lt;/a&gt; Donde se puede conseguir la especificación del protocolo en todas sus versiones. Dentro de este sitio se encuentra &lt;a href=&#34;http://www.fixprotocol.org/FIXimate3.0/&#34;&gt;FIXimate&lt;/a&gt;, herramienta que permite consultar mensajes o campos por su código, esencial para entender mensajes de errores y logs de mensajes.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.quickfixj.org/:&#34;&gt;http://www.quickfixj.org/:&lt;/a&gt; Sitio web de QuickFIX/J, con la documentación de la librería.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

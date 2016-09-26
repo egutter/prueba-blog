@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Naming on 10 Pines Blog</title>
+    <link>http://blog.10pines.com/categories/naming/</link>
+    <description>Recent content in Naming on 10 Pines Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 02 Feb 2012 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://blog.10pines.com/categories/naming/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>The Art of Naming</title>
+      <link>http://blog.10pines.com/2012/02/02/the-art-of-naming/</link>
+      <pubDate>Thu, 02 Feb 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.10pines.com/2012/02/02/the-art-of-naming/</guid>
+      <description>&lt;p&gt;Today we all know now that variables should not be called &lt;code&gt;x&lt;/code&gt; or &lt;code&gt;y&lt;/code&gt;, not even &lt;code&gt;i&lt;/code&gt; nor &lt;code&gt;n&lt;/code&gt; when we use the famous “for”&amp;hellip; but do you know why? have you had
+trouble naming a variable? and what about a method (message) or a class?&lt;/p&gt;
+
+&lt;p&gt;The truth is that naming in software development is really important, so important that I usually say that programming is &lt;em&gt;“the art of naming”&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;But why naming is so important in software development? Because a name &lt;strong&gt;“synthesizes” the “meaning”&lt;/strong&gt; of what it is being named. Names help us understand the “meaning” of the program, what the program is representing without thinking on the how.&lt;/p&gt;
+
+&lt;p&gt;Good names make our lives easier, on the other hand, bad names make us feel in hell. Bad names suck energy from us because we have to &lt;strong&gt;“re-think”&lt;/strong&gt; every time we see that bad name what it really means, what it is the real purpose of that thing being named. At the end, bad names obligate us to do the work that other should have done, that is why we &lt;em&gt;“hate”&lt;/em&gt; programs written by others and we &lt;em&gt;“hate”&lt;/em&gt; them more if they are badly written, if the names are bad.&lt;/p&gt;
+
+&lt;p&gt;Bad names force us to “synthesize” again the “meaning” of what is being named and that is a big effort for our mind. Sometimes we find a good name and we can “rename” the bad name, but sometimes we do not have enough information, enough experience to find a good name and also sometimes (but only sometimes :-) ) our mind prefers to put energy in something else.&lt;/p&gt;
+
+&lt;p&gt;A good name has to provide enough information for us to understand the purpose of what it is being named. In the case of an object, its name has to make us understand its role in the context it is being named (it is not the object’s type what it is important but its name! I can remove the object&amp;rsquo;s type from a program and keep understanding it, but I can not remove the object&amp;rsquo;s name. If you don&amp;rsquo;t believe me, see the dynamically typed languages :-) ). The name of a class (that it is also an object of course), has to help us understand the concept that that class is modeling, it has to help us grasp the behaviour of the objects that the class defines without having to see all the message the class defines. A class name “synthesizes” the meaning of all the messages its instances can understand.&lt;/p&gt;
+
+&lt;p&gt;Names are for humans, not for computers. A computer does not care about the name of a variable or a class, for a computer they are all symbols, but it is not the same for us. We as humans, interpret those symbols, we attach them semantic to be able to understand what we are reading. That is why a refactoring is not important for a computer but it is very important for a programmer, it is because we are providing semantic, meaning, to what we are refactoring. The extract method is one of the most paradigmatic examples of this process of providing meaning, that is why every time you have to maintain code you don’t understand, the first thing you have to do for every piece of code you end up understanding is to extract it to a method, but not to make it “nicer” but &lt;strong&gt;to name that piece of code!&lt;/strong&gt; to provide meaning to that set of collaborations between objects that you are extracting, to help you understand the program the next time you read it.&lt;/p&gt;
+
+&lt;p&gt;And yes, naming is not easy, naming is hard. A name is a &lt;strong&gt;“summary”&lt;/strong&gt; of what it is being named and no good summary can be written without understanding first what has to be summarized. Therefore, if you have problems naming something it is basically because you have not fully understood what you are trying to name.&lt;/p&gt;
+
+&lt;p&gt;For example, why classes are so difficult to name? because you have not completely understood what concept the class is representing. But why smart people, people that have degrees from universities, that are well versed and manage a vast vocabulary can not find a good name for a class? Basically because they don’t have “enough experience” with that “element” they are trying to mane.&lt;/p&gt;
+
+&lt;p&gt;Classes are the more interesting example when dealing with &lt;strong&gt;“class based”&lt;/strong&gt; languages, like Java, C#, Smalltalk, Ruby, etc. In those languages we are “forced” to name a class when we did not have the chance to see, to play, to understand how its instances are going to behave. Those languages go against the natural way of learning, they enforce us to name things we don’t know and that is why we end up with class names like &lt;strong&gt;“ObjectManager”, “ServiceHelper”, “ObjectDirector”&lt;/strong&gt; and so on, names that can mean anything, and that makes sense because at the time they were named they could represent anything.&lt;/p&gt;
+
+&lt;p&gt;So, if you feel bad with yourself because it is difficult for you to name a class, don’t be, most of the time it is the programming language fault, it is because the language is forcing you to learn in an anti-natural way. It is forcing you to name something you don’t understand, but yet, you have to name it, you have to “summarize” its meaning with a name&amp;hellip; crazy.&lt;/p&gt;
+
+&lt;p&gt;That is why &lt;strong&gt;“prototype based”&lt;/strong&gt; languages like Self, IO, JavaScript, that is class-less languages, are better to tackle new problems and domains that you don’t know. They are better because they don’t force you to name something you don’t understand, you just create it and use it, and then, when you have enough information, you name it. Working with Self or LivelyKernel (Dan Ingalls current project) makes you see and feel the difference.&lt;/p&gt;
+
+&lt;p&gt;So, are we stuck? we are doomed to badly name classes? Of course not! and now that we understand what the problem is, we can think on a solution. But before talking about the one I propose, it is important to understand that programming is not a “point in time” task, it is not something that happens in a moment but in a “lapse of time”. Why it is important to understand this? Because it will help us with the solution, it give us the opportunity to do things wrong for certain time until we can do it right&amp;hellip;. until we can do the last step in TDD, the refactoring.&lt;/p&gt;
+
+&lt;p&gt;So, when you don’t know how to name a class do not use a &lt;strong&gt;“bad name”&lt;/strong&gt; for it, do not name it with what gets to your mind at first glace but use a &lt;strong&gt;“meaningless name”&lt;/strong&gt;, a name every time you see it, it tells you &lt;strong&gt;“Hey! change me!”&lt;/strong&gt;. That is the difference between a “bad name” and a “meaningless name”. A bad name becomes a good name with the time&amp;hellip; after reading ObjectManager many times we don’t see it anymore as a bad name, we get use to it and our mind provides it a meaning that it is not explicit but implicit in our head and we live happily ever after with that bad name.&lt;/p&gt;
+
+&lt;p&gt;On the other hand if a class is named “XYZ” or “ZZZ” or something like that, a symbol you can not provide any meaning, your mind will force you to change it some day, and that day will be the day you will understand what you are naming. Will that name be the best? Maybe not, but for sure it will be better that one you thought without enough experience.&lt;/p&gt;
+
+&lt;p&gt;Conclusion, if you don’t know how to name a class, don’t waste your time thinking three hours on that name because the only thing you will get is a headache and a bad name. If you don’t know how to name a class, give it a meaningless name until the time you can correctly name it. That moment will be after you have played sometime with its instances&amp;hellip; Software development is a learning process, therefore incremental and iterative so don’t try to make it right at the first time, you won’t anyway&amp;hellip; and that is why TDD is so important in software development, but that is a topic for another post :-)&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>About names when designing with objects</title>
+      <link>http://blog.10pines.com/2012/01/12/about-names-when-designing-with-objects/</link>
+      <pubDate>Thu, 12 Jan 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.10pines.com/2012/01/12/about-names-when-designing-with-objects/</guid>
+      <description>
+
+&lt;p&gt;One of the recurrent problems I see when teaching OO design is the “names” used by the programmers to name classes, methods, etc.&lt;/p&gt;
+
+&lt;p&gt;The problems are different depending if attendees are from the industry or the university. At the industry I see that names are wrongly selected, bias technology names, while at the university it is common to see the lack of ideas to name things (which makes sense because they have less experience). I will concentrate on the problem I see at the industry.&lt;/p&gt;
+
+&lt;p&gt;Basically the problem can be summarized as using names towards the technology model instead of the business model. I&amp;rsquo;ll show a few examples that will clarify the idea.&lt;/p&gt;
+
+&lt;h2 id=&#34;the-traffic-light-problem&#34;&gt;The traffic light problem&lt;/h2&gt;
+
+&lt;p&gt;I usually use a problem when teaching the introductory OO design class, where attendees have to model a traffic light (&amp;ldquo;semáforo&amp;rdquo; in Spanish). This problem has many interesting edges like what really is a &amp;ldquo;traffic light&amp;rdquo;, is it just the one that control the traffic on a street or in a corner (or street intersection)?. But besides that and going to the problem of this post, it is interesting to see the names that are used to call the class that will model that concept. Usually those names are &lt;code&gt;LightContainer&lt;/code&gt; or &lt;code&gt;TrafficController&lt;/code&gt; instead of just &lt;code&gt;TrafficLight&lt;/code&gt;. Clearly &lt;code&gt;TrafficLight&lt;/code&gt; is a better name because it is the name used in the problem domain and therefore using it in our model will narrows the semantic gap, but why do attendees think on those names?&lt;/p&gt;
+
+&lt;h2 id=&#34;the-shopping-store-problem&#34;&gt;The shopping store problem&lt;/h2&gt;
+
+&lt;p&gt;Another example I use, in this case on the TDD course, is to model a on-line shopping store. That problem is really interesting because there are many many concepts to model that usually are ignored or not seen by most attendees, like shopping cart, the cashier or the just the sale. Shopping carts are generally discovered and modeled, but sometimes attendees use names like &lt;code&gt;ProductContainer&lt;/code&gt; or similar.&lt;/p&gt;
+
+&lt;p&gt;The cashier is a interesting case. I guide the solution using a metaphor on real supermarkets so they can see that when it is time to pay, it is the cashier responsibility to do the sum, debit that amount on your credit card and so. But it is funny to see that even when I use the word “cashier” sometimes the class that models it as &lt;code&gt;SaleTransaction&lt;/code&gt; (not realizing that the sale is the result of what the cashier does) or &lt;code&gt;CreditCardService&lt;/code&gt; or &lt;code&gt;PaymentManager&lt;/code&gt; and the like.&lt;/p&gt;
+
+&lt;p&gt;The sale is an object that usually nobody see and therefore it is not modeled. After the attendees realize that concept has to be modeled I go to the next issue, that is where to “store” the sales. Sadly, and as much as I repeat during the course to think about the problem domain, I usually get names for that object like &lt;code&gt;SalesRepository&lt;/code&gt;, &lt;code&gt;SaleDAO&lt;/code&gt; or the like instead of &lt;code&gt;SalesBook&lt;/code&gt; (in Spanish &lt;code&gt;LibroDeVentas&lt;/code&gt;, a well know accounting term).&lt;/p&gt;
+
+&lt;h2 id=&#34;understanding-the-problem&#34;&gt;Understanding the problem&lt;/h2&gt;
+
+&lt;p&gt;Why does this happen? Why the right names are not selected? I realized after given these courses that the pattern is the same: the selected names are thought from a “technology” point of view, as programmers; we do not use the words of the problem domain in our programs. I mean, I don&amp;rsquo;t know any accountant that calls the sales book as “sale repository”, neither “sale dao”, and I never saw any supermarket employee call the shopping cart as “product container” and my wife never called a traffic light as “traffic controller”&amp;hellip;. what is the problem?&lt;/p&gt;
+
+&lt;p&gt;The problem is that we continue programming (modeling) focusing on the technical side and not on the problem domain side. Of course, if we go to a supermarket we will not tell our companion “please, give me that product container” but “please, give me that shopping cart”. Why?, because we are not programming there, we “are” in the problem domain “for real”.&lt;/p&gt;
+
+&lt;p&gt;Ok, let&amp;rsquo;s assume that that is the problem, why do I see this problem on the industry and not at the university? I think this is due to some kind of “infection” that people at the industry get from models, frameworks, finally examples that students at the university has not been exposed yet. As humans we learned (a big deal) from examples, and sadly most examples we have are really bad at giving names, sometimes because “hey! it is just an example” and sometimes because the ones that wrote the framework, model or example has became part of this vicious circle and therefore the names they use are like those we later choose, that is “nnnContainer”, “nnnRepository”, “nnnController”, etc.&lt;/p&gt;
+
+&lt;p&gt;How can we avoid this mistake? First of all realizing that we have to make a change in the way we think, we have to start thinking on the domain problem and not on “programming issues”. &lt;strong&gt;Date&lt;/strong&gt; is called &lt;code&gt;Date&lt;/code&gt; and not &lt;code&gt;NumberContainer&lt;/code&gt;, and &lt;strong&gt;String&lt;/strong&gt; is called &lt;code&gt;String&lt;/code&gt; and not &lt;code&gt;CharacterCollection&lt;/code&gt;, those are good examples of names thought from a problem domain point of view. After that, we can use a smell to see if we are choosing incorrect names. The smell is basically to see if the name has words like &lt;em&gt;container&lt;/em&gt;, &lt;em&gt;repository&lt;/em&gt;, &lt;em&gt;service&lt;/em&gt;, &lt;em&gt;controller&lt;/em&gt;, &lt;em&gt;manager&lt;/em&gt; or any of the design pattern&amp;rsquo;s name (again, &lt;strong&gt;Directory&lt;/strong&gt; is called &lt;code&gt;Directory&lt;/code&gt; and not &lt;code&gt;FileComposite&lt;/code&gt; or the like). But please remember, this is a smell, not a rule!, sometimes we have to use names bias technology issues, and that is basically when modeling a technological problem domain.&lt;/p&gt;
+
+&lt;p&gt;So from now on, if a name you think for a class has those words, if it has that smell, try to think of a better one and if you can not come up with a good one (that for sure will happen) then choose a meaningless name but please, not a bad name. I will explain the difference between them in another post, this one has became larger that I expected :-)&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

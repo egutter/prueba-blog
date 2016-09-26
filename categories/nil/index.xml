@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nil on 10 Pines Blog</title>
+    <link>http://blog.10pines.com/categories/nil/</link>
+    <description>Recent content in Nil on 10 Pines Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 29 Sep 2014 14:29:50 +0000</lastBuildDate>
+    <atom:link href="http://blog.10pines.com/categories/nil/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Symbols: the new return codes? (Pt. 2)</title>
+      <link>http://blog.10pines.com/2014/09/29/symbols-the-new-return-codes-part-2/</link>
+      <pubDate>Mon, 29 Sep 2014 14:29:50 +0000</pubDate>
+      
+      <guid>http://blog.10pines.com/2014/09/29/symbols-the-new-return-codes-part-2/</guid>
+      <description>
+
+&lt;h2 id=&#34;flow-control-with-exceptions-and-closures&#34;&gt;Flow control with exceptions and closures&lt;/h2&gt;
+
+&lt;p&gt;In &lt;a href=&#34;http://blog.10pines.com/2014/09/23/symbols-the-new-return-codes/&#34; title=&#34;Symbols, the new return codes?&#34;&gt;this previous post&lt;/a&gt; we&amp;rsquo;ve considered the benefits and inconveniences of using nil and symbols as return values in a method.
+Now we’ll evaluate the possibility of throwing an exception, and yet another alternative: using a closure.&lt;/p&gt;
+
+&lt;p&gt;So, before jumping in, let&amp;rsquo;s bring to memory the example with which we were working.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;
+class User
+
+  def find_by_id(id)
+    # retrieve something from the persistence layer
+    user_record = persistence_layer.find_record_by_id(id)
+
+    # build user from record
+    parse user_record
+  end
+
+end
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This method should find an instance of a class by it&amp;rsquo;s id. If none is found, then &lt;code&gt;find_record_by_id&lt;/code&gt; returns nil.&lt;/p&gt;
+
+&lt;h2 id=&#34;throwing-an-exception&#34;&gt;Throwing an exception&lt;/h2&gt;
+
+&lt;p&gt;If we were to work with exceptions in this scenario, the code for our method would look something like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;
+class User
+ 
+  def find_by_id(id)
+    # retrieve something from the persistence layer
+    user_record = persistence_layer.find_record_by_id(id)
+    
+    raise ObjectNotFoundError.new(id) if user_record.nil? 
+    
+    # build user from record
+    parse user_record
+  end
+ 
+end
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And this is how we would use it:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;
+begin
+  user = User.find_by_id(1)
+rescue ObjectNotFoundError =&amp;gt; e
+  # do something to handle user not found
+end
+ 
+# do something with the user
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This solution is usually more acceptable than the ones we have previously considered.
+It allows us to send a meaningful message to those who are expecting a non-null object, telling them that it was not found, and it also provides a way to choose the scope in which we want to handle the object-not-found situation.&lt;/p&gt;
+
+&lt;p&gt;Plus, we automatically have context: and almost as much as we want to! Besides from getting the full stack trace printed out to our noses, exceptions provide us a way to subclass and specify errors, to add descriptions, and even supply the id of the user that we were looking for.&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;And if we don&amp;rsquo;t want to catch them, it&amp;rsquo;s OK too. We can let them reach our global error handler, and forget about it.&lt;/p&gt;
+
+&lt;p&gt;This is fine if we don’t mind using a try/catch block each time we send the message, or any message that we know collaborates with this one.
+But it comes with the burden of needing to know what, and if, this message throws an exception. Something that without meta-programming, we lack in dynamic typed programming languages.&lt;/p&gt;
+
+&lt;p&gt;Another downside is that we would be using exceptions as flow-control structures, when instead we should be using them for what they are really meant to do: handle exceptional cases.&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:2&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;
+If having an unauthenticated user is part of our business logic, then not finding him in our database should be something quite normal.&lt;/p&gt;
+
+&lt;p&gt;So, what can we do if we don’t want to sprinkle our code with try/catch blocks, nor remember that we have to?
+What if we want to have an object that represents the decisions we make in the flow of the program?&lt;/p&gt;
+
+&lt;p&gt;Then, we arrive to our final destination: closures!&lt;/p&gt;
+
+&lt;h2 id=&#34;using-closures&#34;&gt;Using Closures&lt;/h2&gt;
+
+&lt;p&gt;What benefit do closures provide for us, and why?
+Let’s see how we would use them in our method:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;
+class User
+ 
+  def find_by_id(id, &amp;amp;user_not_found_block)
+    # retrieve something from the persistence layer
+    user_record = persistence_layer.find_record_by_id(id)
+    
+     # do something to handle user not found
+    return user_not_found_block.call if user_record.nil? 
+    
+    # build user from record
+    parse user_record
+  end
+ 
+end
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;So, what has changed?&lt;/p&gt;
+
+&lt;p&gt;First of all, let’s pay attention to the signature. This signature by itself will remind us that each time we send this message, we should provide a way to handle an inexistent result.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;
+user = User.find_by_id(1) { raise &amp;quot;Hey! I couldn&#39;t find an user with id: #{1}&amp;quot; }
+ 
+# do something with the user
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Or even better!&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;
+user = User.find_by_id(1) { AnonymousUser.new }
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This way, we could return an object that is polymorphic with what we are expecting (a &lt;code&gt;User&lt;/code&gt;), as opossed to the nil/symbols scenario.&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:3&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:3&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;And of course, if we don’t want to provide a block each time we use this particular method, the class of the object itself could define a default way of handling this, which could be, for example, throwing an exception:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;
+class User
+
+
+  def find_by_id(id, user_not_found_block=method(:default_not_found_block))
+    # retrieve something from the persistence layer
+    user_record = persistence_layer.find_record_by_id(id)
+    
+     # do something to handle user not found
+    return user_not_found_block.call(id) if user_record.nil? 
+    
+    # build user from record
+    parse user_record
+  end
+
+  def default_not_found_block(id)
+    raise &amp;quot;Hey! I couldn&#39;t find an user with id: #{id}&amp;quot; 
+  end
+ 
+end
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The second advantage of using closures, besides the friendly reminder of the object-not-found possibility, is that &lt;strong&gt;it eliminates the need of checking for nil each time we send the message&lt;/strong&gt; &lt;code&gt;find_by_id&lt;/code&gt;. This is what allows us to encapsulate the &lt;code&gt;if&lt;/code&gt;, and get rid of the repeated pattern.&lt;/p&gt;
+
+&lt;p&gt;In this matter, it is similar to the “throw an exception” solution, but with the benefit that at the same time it solves the exceptional case from within the method, it does so using a block provided from an outer context. And apart from eliminating repeated code, closures are flexible enough to allow us to recreate any of the situations we&amp;rsquo;ve reviewed so far (which tells us they are a good generalization).&lt;/p&gt;
+
+&lt;p&gt;The third advantage, also similar to the exceptions solution, is that because closures bind to the context in which they are instantiated, there is no context loss. So you still have access to the execution context (e.g. you could make use of the user id, if you needed to).&lt;/p&gt;
+
+&lt;p&gt;The fourth advantage is that using closures you can create your own flow control sintax.&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:4&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:4&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;And finally, in systems where performance is critical, closures tend to behave better than exceptions.&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:5&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:5&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;So, where is the trick? What&amp;rsquo;s the downside?
+Surprisingly enough, sometimes the only reason for closures to be unpopular is the mental effort that one must do before being able to incorporate them into the way of thinking. But the truth is we have been using this since Smalltalk&amp;rsquo;s “detect”!&lt;/p&gt;
+
+&lt;h2 id=&#34;to-summarize&#34;&gt;To summarize&lt;/h2&gt;
+
+&lt;p&gt;Nil&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;+ Does not answer messages
+
+- Will explode only if (and when) we try to use it
+- Hard to debug
+- Repeated code
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Symbols&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;+ Descriptive
+
+- Be careful when you write them!
+- Annoying conventions
+- They answer messages, they can be evasive
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Exceptions&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;+ Descriptive
++ We can choose the solution&#39;s scope
++ Automatic context information
++ We can choose not to handle them
+
+- Try/catch blocks everywhere
+- Need to remember which methods throw them
+- Normal flow handled by exceptions
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Closures&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;+ Friendly reminder
++ Default way to handle error
++ Flexible
++ No context loss
++ You can create your own flow control sintax
++ Performant
+
+- Mental effort?
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;more on writing exceptions in ruby &lt;a href=&#34;https://www.youtube.com/watch?v=nlvCYJodigM&amp;amp;list=PLMkq_h36PcLA4yY58tQgj5FAXRzMaZAaY&#34; title=&#34;Implementando Excepciones con Ruby&#34;&gt;here!&lt;/a&gt;
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:1&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;see &lt;a href=&#34;http://c2.com/cgi/wiki?DontUseExceptionsForFlowControl&#34; title=&#34;Don&#39;t use exceptions for flow control&#34;&gt;Don&amp;rsquo;t use exceptions for flow control&lt;/a&gt;
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:2&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;see &lt;a href=&#34;http://www.cs.oberlin.edu/~jwalker/refs/woolf.ps&#34; title=&#34;Null Object Pattern&#34;&gt;Null Object Pattern&lt;/a&gt;
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:3&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34;&gt;see &lt;a href=&#34;http://library.readscheme.org/page1.html&#34; title=&#34;The Original &#39;Lambda Papers&#39; by Guy Steele and Gerald Sussman&#34;&gt;Lambda: The Ultimate&lt;/a&gt;
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:4&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:5&#34;&gt;more on exceptions performance in JRuby &lt;a href=&#34;http://blog.10pines.com/2013/05/18/parallel-tests-on-travis/&#34; title=&#34;Parallel Tests on Travis&#34;&gt;here!&lt;/a&gt;
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:5&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Symbols: the new return codes?</title>
+      <link>http://blog.10pines.com/2014/09/24/symbols-the-new-return-codes/</link>
+      <pubDate>Wed, 24 Sep 2014 16:45:03 +0000</pubDate>
+      
+      <guid>http://blog.10pines.com/2014/09/24/symbols-the-new-return-codes/</guid>
+      <description>
+
+&lt;p&gt;Recently I’ve read a &lt;a href=&#34;https://twitter.com/wycats/statuses/504043642869542912&#34; title=&#34;Use symbols&#34;&gt;tweet from Yehuda Katz&lt;/a&gt; in which he suggested an interesting idea, as an alternative for using nil as a result from a method: to use a symbol instead.&lt;/p&gt;
+
+&lt;p&gt;Well, this post is about the reasons why I think you shouldn’t use a symbol, and why even returning nil is a preferable option.&lt;/p&gt;
+
+&lt;p&gt;To better illustrate this, let’s work with an example. Suppose we have the following method:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;
+class User
+
+  def find_by_id(id)
+    # retrieve something from the persistence layer
+    user_record = persistence_layer.find_record_by_id(id)
+
+    # build user from record
+    parse user_record
+  end
+
+end
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This is a common method when working with persistence, and that should find an instance of a class by it&amp;rsquo;s id. If none is found, then the &lt;code&gt;find_record_by_id&lt;/code&gt; method returns nil.&lt;/p&gt;
+
+&lt;h2 id=&#34;using-nil&#34;&gt;Using Nil&lt;/h2&gt;
+
+&lt;p&gt;OK. So what if we choose to return nil?
+When we are trying to find an object by it’s id, a possible and valid outcome is that we can’t find it at all. So it makes sense that if we don’t find it, we return nothing:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;
+class User
+
+  def find_by_id(id)
+    # retrieve something from the persistence layer
+    user_record = persistence_layer.find_record_by_id(id)
+    
+    return nil if user_record.nil?
+    
+    # build user from record
+    parse user_record
+  end
+  
+end
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;But this oblige us to deal with a non-existent result.
+The basic way to handle this is to check for nil each time we call &lt;code&gt;find_by_id&lt;/code&gt;, like so:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;
+user = User.find_by_id(1)
+
+if user.nil?
+  # do something to handle user not found
+end
+  # do something with the user
+end
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The problem with this implementation is that each time we want to find a user by its id we will have to check &lt;em&gt;if&lt;/em&gt; we found it, or &lt;em&gt;if&lt;/em&gt; we got a null result. (And we already know that &lt;a href=&#34;https://www.youtube.com/watch?v=rnud1EjmHBM&#34; title=&#34;Webinar: Real Devs don&#39;t use IF&#34;&gt;real devs don&amp;rsquo;t use if!&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;A positive aspect of this implementation is that we can find out if we make a mistake: nil does not know how to answer messages. So when we try to use it, it will explode.
+But with this little benefit, it comes that nil does not tell us where the problem originates, and it will only explode &lt;strong&gt;if&lt;/strong&gt; we try to use it. This means that a long time can pass between when we get the nil result, and until we decide to use it. Therefore, a nil related error is usually harder to debug.&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;So let’s leave this as it is for a moment and move on to the symbols implementation, to see if it helps us in any way.&lt;/p&gt;
+
+&lt;h2 id=&#34;using-symbols&#34;&gt;Using symbols&lt;/h2&gt;
+
+&lt;p&gt;One positive aspect about symbols is that they are useful to describe what they represent, just as any variable name can and should. This allows us to be as descriptive as we want when we declare it.
+So, in our example, we could create a symbol called &lt;code&gt;:noUserFound&lt;/code&gt; and use it as a return value.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;
+class User
+
+  def find_by_id(id)
+    # retrieve something from the persistence layer
+    user_record = persistence_layer.find_record_by_id(id)
+
+    return :noUserFound if user_record.nil?
+    
+    # build user from record
+    parse user_record
+  end
+ 
+end
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This way, it would be much more descriptive than returning nil, because we can know that this symbol is the specific result of the &lt;code&gt;find_by_id&lt;/code&gt; method (or any method that queries for an object that fits a particular condition), which is way less generic than the nil answer, given that nil can appear anywhere in the code, for whatever reason.&lt;/p&gt;
+
+&lt;p&gt;But besides the small benefit that we gain from a more descriptive reification of our empty result, not much has changed. We still have to ask if the result is empty, the difference being in that this time we should ask it like so:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;
+user = User.find_by_id(1)
+ 
+if user == :noUserFound
+  # do something to handle user not found
+end
+  # do something with the user
+end
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;So now lets consider the not-so-happy aspects of this implementation, which are bound to the symbols nature.
+There are a few things that may be dangerous if not handled with care:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;First of all, symbols, as null, lack context. They don&amp;rsquo;t provide information about the stack trace, or the collaborators, etc.&lt;/li&gt;
+&lt;li&gt;Adding context to this scenario is an effort that the programmer, rather than the programming tools, must do. And to do this, the symbol must be given a descriptive name. So in the end, what we would be doing is using a symbol&amp;rsquo;s name to try to represent and describe a certain context, which could be quite complex.&lt;/li&gt;
+&lt;li&gt;IDEs usually do not provide the auto-complete feature when we write a symbol. And even if they did, the comparison between symbols is case sensitive, so you got to be really careful when you write them. This is particularly annoying when working in group, as the team has to follow yet another convention. And this is not a minor thing, combined with the following point:&lt;/li&gt;
+&lt;li&gt;Symbols, as opposed to nil, know how to answer some messages.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;So what happens if we combine both last points mentioned above? Why is this bad?
+Suppose that in our beloved &lt;code&gt;find_by_id&lt;/code&gt; method we return a symbol, and somewhere after sending that message to &lt;code&gt;User&lt;/code&gt;, we try to validate the result. But when writing the validation, someone not that familiar with our fancy symbol convention writes the symbol with a different case, or spells it wrong:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;
+user = User.find_by_id(1)
+ 
+if user == :NOUserFound
+  # do something to handle user not found
+end
+  # do something with the user
+end
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;As &lt;code&gt;:noUserFound&lt;/code&gt; is different to &lt;code&gt;:NOUserFound&lt;/code&gt;, then this validation will be skipped, for the comparison result will return &lt;code&gt;false&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;The danger with this is that, later on, the symbol that escaped from our clumsy validation could continue to elude us, because it knows how to answer messages.&lt;/p&gt;
+
+&lt;p&gt;So, suppose that our intention in the first place was to find an object by id so we could find it&amp;rsquo;s size (for whatever reason).&lt;/p&gt;
+
+&lt;p&gt;Then, when we send the &lt;code&gt;size&lt;/code&gt; message to our object, if that object is a symbol instead of the desired object, it will silently do as commanded, and no one will ever find out!&lt;/p&gt;
+
+&lt;p&gt;This can be avoided if we use nil. First of all because there is only one possible way in which you can write it. Plus we can count on the IDE to write it for ourselves, eliminating the risk of misspelling when validating.
+And second, but not less important, is because nil does not understand messages. So the instant we send him a message, it will blow up with an exception and we can find out our mistake right away. Or at least we can instantly know that something is wrong.&lt;/p&gt;
+
+&lt;p&gt;From my point of view, this is still preferable to symbols.&lt;/p&gt;
+
+&lt;h2 id=&#34;to-summarize&#34;&gt;To summarize&lt;/h2&gt;
+
+&lt;p&gt;So far, this is what we&amp;rsquo;ve got:&lt;/p&gt;
+
+&lt;p&gt;Nil&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;+ Does not answer messages
+
+- Will explode only if (and when) we try to use it
+- Hard to debug
+- Repeated code
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Symbols&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;+ Descriptive
+
+- Be careful when you write them!
+- Annoying conventions
+- They answer messages, they can be evasive
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;But since we still haven’t found a proper design towards solving this common problem, I encourage you to see if we can find a better solution in the next post: &lt;a href=&#34;http://blog.10pines.com/2014/09/29/symbols-the-new-return-codes-part-2/ &amp;quot;Symbols, the new return codes? (Pt. 2&#34;&gt;flow control with exceptions and closures&lt;/a&gt;&amp;rdquo;).&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;see &lt;a href=&#34;http://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare&#34; title=&#34;Null References The Billion Dollar Mistake&#34;&gt;Null References The Billion Dollar Mistake&lt;/a&gt;
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:1&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

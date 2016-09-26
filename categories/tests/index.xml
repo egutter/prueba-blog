@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tests on 10 Pines Blog</title>
+    <link>http://blog.10pines.com/categories/tests/</link>
+    <description>Recent content in Tests on 10 Pines Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 26 Jul 2016 17:39:03 +0000</lastBuildDate>
+    <atom:link href="http://blog.10pines.com/categories/tests/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>An Inverted Test Pyramid</title>
+      <link>http://blog.10pines.com/2016/07/26/inverted-test-pyramid/</link>
+      <pubDate>Tue, 26 Jul 2016 17:39:03 +0000</pubDate>
+      
+      <guid>http://blog.10pines.com/2016/07/26/inverted-test-pyramid/</guid>
+      <description>
+
+&lt;p&gt;I believe that most of us are familiar with the concept of &amp;ldquo;Test Pyramid&amp;rdquo;, a simple heuristic originally described by Mike Cohn, that is that a project should aim to have a larger number of unit tests than end-to-end tests. But after working on a project suffering from an inverted pyramid, I think it’s worth mentioning some of the downsides that relying solely on end-to-end tests might have.&lt;/p&gt;
+
+&lt;h2 id=&#34;don-t-slow-me-down&#34;&gt;Don&amp;rsquo;t slow me down&lt;/h2&gt;
+
+&lt;p&gt;If we take developing a web app as an example, then you might end up using something like &lt;a href=&#34;http://www.seleniumhq.org/&#34;&gt;Selenium&lt;/a&gt; to build UI tests. Even with tools or frameworks like &lt;a href=&#34;https://github.com/jnicklas/capybara&#34;&gt;Capybara&lt;/a&gt;, or &lt;a href=&#34;https://github.com/natritmeyer/site_prism&#34;&gt;SitePrism&lt;/a&gt; if you want to use page objects, that make building these tests more accessible, they are usually harder and take longer to write than unit tests. Moreover, they tend to be brittle; when new features are added or UI elements suffer small changes, they may break meaning time and work needs to go into them more often.
+They are also much slower to run, so as your number of tests grows, so does the time it takes to run your whole test suite, slowing everything down further. This of course is to be expected, but you will reach bothersome run times sooner when you have a larger number of UI tests.
+All of this adds up to a more frustrating working environment for the developer, and also to a &lt;strong&gt;slower development process&lt;/strong&gt;, which translates into higher development costs.&lt;/p&gt;
+
+&lt;h2 id=&#34;lack-of-feedback&#34;&gt;Lack of feedback&lt;/h2&gt;
+
+&lt;p&gt;Apart from the disadvantages already mentioned, I feel &lt;strong&gt;their biggest drawback is the lack of feedback they provide for the developer&lt;/strong&gt;. Unit tests are usually self-contained, so when one fails, it leads the developer directly towards where the problem is. On the contrary when a UI test fails, it will probably need some tracking down to be done before finally figuring out what needs to be fixed. So if a UI test fails without a unit test failing alongside it, it probably means there is one missing.
+As Roman mentions on his post &lt;a href=&#34;https://blog.10pines.com/2015/09/18/tests-paving-our-way/&#34;&gt;&amp;ldquo;Tests: Paving Our Way&amp;rdquo;&lt;/a&gt;, tests not only help us achieve better designs and abstractions, they also double up as documentation for our code. Unit tests help document different concepts in the domain we are working on and more importantly how these concepts are represented in our code. On the other hand, end-to-end tests only tell us how a specific user might interact with the system in an specific use case scenario, which is important but not as useful for the developer, specially new team members who might be not familiar with the domain or code base.&lt;/p&gt;
+
+&lt;h2 id=&#34;final-thoughts&#34;&gt;Final thoughts&lt;/h2&gt;
+
+&lt;p&gt;I’m not saying that end-to-end tests should be avoided completely as they help catch errors that might not be detected otherwise, they are specially important in testing critical use case scenarios. Let’s say you have a use case where an error might cost you thousands of dollars over the time it takes for it to be detected and fixed, then of course this should be tested as thoroughly as possible and end-to-end tests provide a necessary additional level of protection.
+It’s just important to keep in mind they test different things and their purpose is different. We should take into account their higher cost when evaluating how to test the system we are working on. &lt;strong&gt;The value they add should balance the time and effort that goes into them&lt;/strong&gt;. Finally, we should also never forgo unit tests even if there are higher level tests that cover the same code.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Tests: Paving our way</title>
+      <link>http://blog.10pines.com/2015/09/18/tests-paving-our-way/</link>
+      <pubDate>Fri, 18 Sep 2015 01:28:42 +0000</pubDate>
+      
+      <guid>http://blog.10pines.com/2015/09/18/tests-paving-our-way/</guid>
+      <description>
+
+&lt;blockquote&gt;
+&lt;p&gt;Three Months have passed since I started working in 10 Pines as a participant of the apprenticeship program. Although we covered different topics and technologies, one of the things that has touched me most during my short journey as a programmer is that you can actually use your tests as the documentation of your system (you read it right, I&amp;rsquo;m not insane). This was a breakthrough for me so I decided to write this post to share some thoughts about it.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;why-do-we-write-tests&#34;&gt;Why do we write tests?&lt;/h2&gt;
+
+&lt;p&gt;I&amp;rsquo;d like to start with a short reflection about tests and the meaning we give to them. It&amp;rsquo;s true, testing gives us security and confidence. It lights our way, allowing us to perform changes without blowing the entire system into pieces. However, there is another (and equally important) reason to write tests: It&amp;rsquo;s the place where we write down the things that we&amp;rsquo;ve just learned about the domain we&amp;rsquo;re modelling.
+Bearing this in mind, tests have become a compilation of my discoveries and that’s what they must reflect.&lt;/p&gt;
+
+&lt;h2 id=&#34;what-is-all-this-fuss-about&#34;&gt;What is all this fuss about?&lt;/h2&gt;
+
+&lt;p&gt;Imagine for a moment that you&amp;rsquo;ve just entered a new project; it&amp;rsquo;s a great project with hundreds of thousands of lines of code. The developers of the project are super proud of their work because everything is covered with tests, and the system seems pretty solid. In order to work on the system, you have to understand the domain that is being represented, and you also need to understand what solution is provided through it. After someone explains you the basics of the system and you made some pairing with coworkers, you are ready to take the scene. But once you go right after the tests, you find out that they don&amp;rsquo;t tell you much about the system. You are there, making your first steps, trying to solve this puzzle. How much time do you think you would have to spend to learn something about the system on your own?&lt;/p&gt;
+
+&lt;p&gt;Earlier in this post, we talked about the tests reflecting the knowledge we have about the domain we were representing, and one of the most important properties that our tests gave to us is &lt;strong&gt;transmitting this knowledge and help others to learning about it.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;let-s-strike-while-the-iron-is-hot&#34;&gt;Let’s strike while the iron is hot&lt;/h2&gt;
+
+&lt;p&gt;When we are modeling a domain, we always try to represent things that exists in the real world, we tend to use analogies for this, giving our classes the same responsibilities that they have in the real world. We name methods with equally representative names, a name is a very powerful idea, it transmits an idea that is linked to the domain, an idea that we, people of the real world, can connect with ideas that lies in our minds.
+Same things happens when we write tests and the abstractions that we create inside them, they should have a representative name that help us understand which role they play and pay off our learning curve.&lt;/p&gt;
+
+&lt;p&gt;Although, it&amp;rsquo;s very interesting how a simple space between this steps can make your tests more readable, and if that&amp;rsquo;s not enough, it also mentally prepare the reader to understand what are you trying to do. In other words, it&amp;rsquo;s a simple but powerful detail.
+Having this in mind, let&amp;rsquo;s take a look at this test that I made for the tennis scoreboard kata:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;
+@Test
+public void when_Score_Is_FortyToADV_And_Player1_Makes_A_Point_The_Score_Is_Back_To_FortyToForty() {
+     scoreMultiplePoints( threePoints, playerOne());
+     scoreMultiplePoints( threePoints, playerTwo());
+     advPoint(playerOne());
+     backToFortyFortyPoint(playerTwo());
+     scoreForCurrentGameIs(40, 40);
+     scoreForGames(0, 0);
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If we apply the things that we mentioned early, we get something like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;
+@Test
+public void when_Score_Is_FortyToADV_And_Player1_Makes_A_Point_The_Score_Is_Back_To_FortyToForty() {
+    scoreMultiplePoints( threePoints, playerOne());
+    scoreMultiplePoints( threePoints, playerTwo());
+    advPoint(playerOne());
+
+    backToFortyFortyPoint(playerTwo());
+
+    scoreForCurrentGameIs(40, 40);
+    scoreForGames(0, 0);
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;With these examples, we can appreciate the benefits of using a space between steps and the readability we gain for it.&lt;/p&gt;
+
+&lt;p&gt;On the other hand, and in a more technical way, the same standards that we use when we code should be applied to tests, we should spend some effort keeping our tests clean following simple principles like DRY. Practices like isolating the creation of complex objects through Factory or Builder objects can reduce the noise that we are introducing to a simple test where we want to test a certain aspect of it.&lt;/p&gt;
+
+&lt;p&gt;Personally, I think that this practices comes very cheap when we use techniques like TDD. I like to think that when we follow these principles, we&amp;rsquo;re paving a road.
+A paved road is easier to pass through, not only for ourselves, also for the people who will have to walk it down after us. I know sometimes we are tied to a schedule or time-boxed iterations but the effort pays in the long run. To sum up, pave the road or tell the people who will come after to adjust their seat belts, &lt;strong&gt;It&amp;rsquo;s going to be a bumpy ride!&lt;/strong&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

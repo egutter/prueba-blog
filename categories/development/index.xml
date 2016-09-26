@@ -1,0 +1,576 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Development on 10 Pines Blog</title>
+    <link>http://blog.10pines.com/categories/development/</link>
+    <description>Recent content in Development on 10 Pines Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 17 Feb 2016 17:39:59 +0000</lastBuildDate>
+    <atom:link href="http://blog.10pines.com/categories/development/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>How, What, Why: The three essences of software development</title>
+      <link>http://blog.10pines.com/2016/02/17/how-what-why-the-three-essences-of-software-development/</link>
+      <pubDate>Wed, 17 Feb 2016 17:39:59 +0000</pubDate>
+      
+      <guid>http://blog.10pines.com/2016/02/17/how-what-why-the-three-essences-of-software-development/</guid>
+      <description>
+
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;Facebook is as much sociology and psychology as it is technology&amp;rdquo; - &lt;em&gt;Mark Zuckerberg&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;In my previous article, &lt;a href=&#34;http://blog.10pines.com/2014/07/31/two-ways-we-understand-code-unitary-vs-integral-understanding/&#34;&gt;Unitary vs Integral Understanding&lt;/a&gt;,
+I delved into how we understand a part of a system in terms of how it relates to the rest of the system. To recap, Unitary Understanding is understanding the
+part by itself, abstracting the rest of the system, e.g. &amp;ldquo;i = i + 1&amp;rdquo; understood as a unit means nothing more than &amp;ldquo;increment i by one&amp;rdquo;.
+Integral Understanding would require us to see how that sentences interacts witht the rest of the code, so for example that sentence could &amp;ldquo;move a loop forward&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;&amp;ldquo;How&amp;rdquo;, &amp;ldquo;What&amp;rdquo;, &amp;ldquo;Why&amp;rdquo; are three questions that are also helpful to see different facets of a system. A lot of what follows in this article might seem obvious to seasoned developers, but in my experience, these dimensions, because they&amp;rsquo;re intuitive, are often not adecuately explained to junior developers.&lt;/p&gt;
+
+&lt;p&gt;(warning: Abuse of the English language for rhetorical purposes might follow)&lt;/p&gt;
+
+&lt;h1 id=&#34;how&#34;&gt;How&lt;/h1&gt;
+
+&lt;p&gt;To ask &amp;ldquo;how&amp;rdquo; the software works, it means to basically treat it as many subsystems
+that collaborate between each other to produce a result. We don&amp;rsquo;t care what the result is or why do we want that result.&lt;/p&gt;
+
+&lt;p&gt;Suppose we have a Cow Counting System. You have this web app:&lt;/p&gt;
+
+&lt;p&gt;{% img /images/2016-02-05-cow-counting-system.png %}&lt;/p&gt;
+
+&lt;p&gt;The buttons plus and minus alter the current amount of cows we have right now. To ask &amp;ldquo;how&amp;rdquo; this works would mean answering&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&amp;ldquo;Where it is deployed?&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;Does it use POST roundtrips or AJAX requests?&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;how does it keep state? mongo? sql? cookies?&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So &amp;ldquo;How&amp;rdquo; (and also &amp;ldquo;what&amp;rdquo; and &amp;ldquo;why&amp;rdquo;) is a guiding question we use to both understand existing system and to build new systems.
+And the starting point of the &amp;ldquo;how&amp;rdquo; is the result we want to achieve, so &amp;ldquo;how&amp;rdquo; is actually the last question we ask, since it&amp;rsquo;s preceded by &amp;ldquo;what&amp;rdquo;.&lt;/p&gt;
+
+&lt;h1 id=&#34;what&#34;&gt;What&lt;/h1&gt;
+
+&lt;p&gt;&amp;ldquo;What&amp;rdquo; as in &amp;ldquo;What does this system do&amp;rdquo;? Going back to the Cow Counting System example, one might be tempted to answer &amp;ldquo;what&amp;rdquo; with:
+&amp;ldquo;Well, the system has two buttons, and a cow count display, when the buttons are clicked,
+a POST goes to the server, increases the record in the database&amp;hellip;&amp;ldquo;, but that&amp;rsquo;s what I called the &amp;ldquo;how&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;So let&amp;rsquo;s remove the &amp;ldquo;how&amp;rdquo; and just focus on the &amp;ldquo;what&amp;rdquo; and try again:
+&amp;ldquo;Well, the system has two buttons, and a cow count display, when the buttons are clicked, the cow count is increased or decreased.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;But this description is lacking: &lt;em&gt;where is the human?&lt;/em&gt;
+What is not only &amp;ldquo;what the computer system does?&amp;rdquo; but &amp;ldquo;what the human does with the system and outside the system?&amp;rdquo;&lt;/p&gt;
+
+&lt;h2 id=&#34;what-does-the-user-do&#34;&gt;What does the user &lt;em&gt;do&lt;/em&gt;?&lt;/h2&gt;
+
+&lt;p&gt;In this case, suppose there is someone who wants to keep track of the cows in a corral. Cows go out sometimes to eat grass, so someone is there at the door
+of the corral hitting the minus button everytime a cow goes out to eat grass, and the plus button everytime a cow goes in.
+After the cows have finished eating grass, the user looks at the count, if it&amp;rsquo;s lesser than the known amount of cows, the user will go out to look for the
+missing cow.&lt;/p&gt;
+
+&lt;p&gt;This is a &lt;em&gt;story&lt;/em&gt; (this is why Agile focuses on User Stories as the basis of requirements!). Stories basically have actors interpreting and acting
+through time with the state of things changing as a result of it.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s look deeper into what happens in this very simple story. The user ACTS on the computer and ACTS outside the computer, clicks on the buttons, and
+goes looking for the unruly cow. And the user also INTERPRETS the computer and INTERPRETS the world outside the computer. All four things are linked.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;(Interpreting the world) User looks at cow going in and out&lt;/li&gt;
+&lt;li&gt;(Acting on the computer) User clicks on plus and minus&lt;/li&gt;
+&lt;li&gt;(Interpreting the world) User notices enough time has passed, must now ensure all cows are in the corral.&lt;/li&gt;
+&lt;li&gt;(Interpreting the computer) Looking at the cow count display&lt;/li&gt;
+&lt;li&gt;(Acting on the world) Go look for any missing cows.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The external world is then &amp;ldquo;linked&amp;rdquo; to the computer system, allowing the user to interpret the world according to what they read on the screen.
+The user by reading the count on the screen takes that as a symbol of the actual amount of cows in the corral.&lt;/p&gt;
+
+&lt;p&gt;This is not a feature of computer systems. Something fairly similar would happen if instead of a computer there were two people, someone counting
+the cows in their head, and another asking this person how many cows are in the corral and hearing back the answer.
+We humans interpret the world symbolically: we need to interpret the world and we need to go beyond our five senses, so words become facts about the world,
+a smile becomes happines, a foul smell becomes a gas leak, etc. Symbols work by hinting into something that goes beyond the symbol, in this case,
+the cow display is just a number on the screen, yet the user will go beyond the number on the screen and say &amp;ldquo;this means the internal state of the computer
+equals the number I&amp;rsquo;m reading, and the internal state of the system equals the amount of cows in the corral&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;So the interaction with the computer takes the form of a dialogue, human and computer talking
+with each other and interpreting what each other says, both interpreting symbollicaly each other, the human reads a plus sign and goes &amp;ldquo;I guess that increments the counter&amp;rdquo;
+and the computer when it receives a click it goes &amp;ldquo;the user wanted to increment the counter, store updated data and refresh display&amp;rdquo;.&lt;/p&gt;
+
+&lt;h2 id=&#34;the-interpretation-of-the-computer-system-is-dependent-on-the-contextual-story&#34;&gt;The interpretation of the computer system is dependent on the contextual story&lt;/h2&gt;
+
+&lt;p&gt;Each user will interpret what they read from the world and the computer, each symbol, according to their previous knowledge (i..e representation) of the world.
+So like children, who have little previous knowledge about the world, won&amp;rsquo;t see in certain foul smell a hint of a gas leak, or might not see the subtleties
+in different kind of smiles, or might take words at face value without accounting for error and lies&amp;hellip; users might sit in front of your lovely user interface
+and not understand a damn thing of what you meant to convey.&lt;/p&gt;
+
+&lt;p&gt;Because every user has lived different lives, thought different things, and will interpret differently the symbols you&amp;rsquo;re presenting to them.&lt;/p&gt;
+
+&lt;p&gt;The Cow Counting System I presented earlier is a good example of this: After I told you the story of how the system was used, the symbols took on new meaning,
+e.g. plus means not only &amp;ldquo;adding one&amp;rdquo; but also &amp;ldquo;cow went back into the corral&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;So, for example, doing a &lt;a href=&#34;http://blog.10pines.com/2014/11/07/mvps-the-real-deal/&#34;&gt;user test&lt;/a&gt; is immensely helpful to understand &lt;em&gt;what&lt;/em&gt; the system actually does when the user
+is sitting in front of the screen. My (admittedly short) experience with it is that it quickly reveals that:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;The people developing the system have a highly invested story with the system and understand everything and are generally not thinking of what a &amp;ldquo;blank state&amp;rdquo; user might
+interpret unless they cultivate this skill.&lt;/li&gt;
+&lt;li&gt;Different users will create their own story with the system that won&amp;rsquo;t match what you originally thought, for example someone might use the Cow Counting System to count
+how many cows do they have, regardless of whether they&amp;rsquo;re inside the corral or not.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The user interface needs to tell a good story, that&amp;rsquo;s it, it needs to provide symbols along the ride, taking the context of each moment of the story at every point, to make
+sure the user builds a story that&amp;rsquo;s coherent. I say that the user is the one that builds the story because like all symbolic communication, the story is hinted at by the
+teller, and it&amp;rsquo;s the user&amp;rsquo;s tasks to actually build it in their heads. It&amp;rsquo;s a bit like the relationship between a recipe of a cake and the cake itself, and it&amp;rsquo;s also why two
+different movie watchers might watch a different &amp;ldquo;story&amp;rdquo; when watching the same film (one might say it sucked, another might say it rocked).&lt;/p&gt;
+
+&lt;p&gt;And you need to think your target users: a sleek interface might be mysterious to less proeficient users, a more explicit interface might look clunky to more proeficient ones.&lt;/p&gt;
+
+&lt;h2 id=&#34;bugs-are-what-happen-when-the-story-breaks-down&#34;&gt;Bugs are what happen when the story breaks down&lt;/h2&gt;
+
+&lt;p&gt;All software developers know this story: A user comes and reports a bug. The developers answer &amp;ldquo;it&amp;rsquo;s not a bug, it&amp;rsquo;s a feature&amp;rdquo;. Resentment might grow if the dev forgets
+what a bug is: A rupture in the story that the user is building. For example, if I click on a button that says &amp;lsquo;delete&amp;rsquo; and I see a message that says &amp;ldquo;this user was deleted&amp;rdquo;,
+then I figure out that the user is still there somehow (it was a soft deletion), I as a user might not care or not know if keeping the user &amp;ldquo;half-deleted&amp;rdquo; was a feature because
+it conflicted with my expectation. It might even conflict with my will (&amp;ldquo;I want the user really deleted! I don&amp;rsquo;t care if they cannot login anymore!&amp;rdquo;).&lt;/p&gt;
+
+&lt;p&gt;From the user point of view, that was a bug. Which brings us to the next question&amp;hellip;&lt;/p&gt;
+
+&lt;h1 id=&#34;why&#34;&gt;Why&lt;/h1&gt;
+
+&lt;p&gt;&amp;ldquo;Why&amp;rdquo; are to &amp;ldquo;whats&amp;rdquo; like &amp;ldquo;whats&amp;rdquo; are to &amp;ldquo;hows&amp;rdquo;. To think about how to build a thing, first I need to know what I want to build, and to think what I want to build,
+I need to know why. If &amp;ldquo;how&amp;rdquo; was the realm of computers, &amp;ldquo;what&amp;rdquo; was the realm of human-computer interaction, &amp;ldquo;why&amp;rdquo; is the realm of the physical world, ideas, and will.
+Those three things are what actually gives form to software.&lt;/p&gt;
+
+&lt;p&gt;Back to our example: what drives &amp;ldquo;what&amp;rdquo; the Cow Counting System does? and why we built it that way, with a display of the current count of cows and two buttons?&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Physical reality: Cows and their movement&lt;/li&gt;
+&lt;li&gt;Ideas that mirror this reality: The mathematical concept of an indifferentiated set (an integer), where substraction and addition mirrors the physical reality
+of cows getting in and out.&lt;/li&gt;
+&lt;li&gt;Symbolism: The symbols of a &amp;ldquo;plus&amp;rdquo; and a &amp;ldquo;minus&amp;rdquo; sign, the shape of the button, numbers, the image of the cow, and the expression &amp;ldquo;cow counting system&amp;rdquo; all draw from an
+ideal-symbolic system that&amp;rsquo;s shared and enables communication.&lt;/li&gt;
+&lt;li&gt;Human will: The user wants to control the cows. Why? Because a cow might get lost. Why do we care a cow might get lost? Because the owner of the cow profits from them,
+and a lost cow means a loss of profit.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;All these work like &amp;ldquo;invisible forces&amp;rdquo; that we intuitively graps and shape computer systems as much as pointers and loops.&lt;/p&gt;
+
+&lt;h2 id=&#34;know-thy-forces&#34;&gt;Know thy forces&lt;/h2&gt;
+
+&lt;p&gt;Knowing these forces is &lt;em&gt;partly&lt;/em&gt; what allows to be creative and precise when designing &lt;em&gt;what&lt;/em&gt; our software will do. Most of you, when I first introduced the
+Cow Counting System, probably didn&amp;rsquo;t see any use for it, but when I introduced the story associated with it, could quickly see possible improvements: The system
+should know the total amount of cows besides knowing how many there are currently within the corral, compare the two, and possibly show a green sign whenever
+we have all cows in, and red whenever some cows are out. This proposal comes from knowing the forces at play outside the system, the will to control in one hand,
+and human distractedness and forgetfulness, by avoiding the need of the user of remembering the total count of cows and making a mental comparison, we avoid a source
+of mistakes that might lead to a loss of profit (symbolic reactions to the green and red colour is also a force we know applies here).&lt;/p&gt;
+
+&lt;p&gt;Where do forces lie? Ultimately they lie in the human being, in forms of ideas, behaviors, desires, interpretations, institutions. The outside world plays a role as well,
+of course, but only insofar as it relates to use (remember the dictum &amp;lsquo;man is the measure of all things&amp;rsquo;). Again, in this example, cows are not just a number, each of them is
+unique, but as so far as this system is concerned, they&amp;rsquo;re an undifferentiated set.&lt;/p&gt;
+
+&lt;h2 id=&#34;a-common-mistake-minimizing-the-forces&#34;&gt;A common mistake: minimizing the forces&lt;/h2&gt;
+
+&lt;p&gt;An usual mistake I see is to believe that what one needs to learn from the outside world is the domain, where the domain is basically entities, their attributes, their
+relations, how state changes through time, and the processes the user has interacting with these entities. So for this case, the domain would be cows, how many there are, which state they can be in (outside/inside the corral), and the act of counting and controlling them.&lt;/p&gt;
+
+&lt;p&gt;But you need to consider &lt;em&gt;all&lt;/em&gt; possible forces that can have any potential impact on the user. For example, an app you&amp;rsquo;re trying to sell to end users is very different than, say,
+a cash register app that all cashiers on a supermarket are going to use. The driving force in both cases is profit, but in one case, the user needs to be interested in using the app,
+then it needs to use it, not shy away from it, and then buy it&amp;hellip; everything that works towards this goal or against it matters. Psychological responses matter: Curiosity,
+desire, frustration, pleasure, etc. So the UI must look pretty, be clear to avoid frustration and confusion, engagement has to be built&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;Meanwhile, in the cashier app, efficiency is king. The UI doesn&amp;rsquo;t need to be intuitive at first sight, nor pretty, it might even be complex, but the cashier has time to master it,
+and they cannot whine about it and stop using it&amp;hellip; because they would lose their jobs. The person we need to convince to buy the app is not the cashier (the end user),
+but the supermarket owner, and very different goals mean different forces are at play.&lt;/p&gt;
+
+&lt;h2 id=&#34;some-more-examples-of-typical-forces-that-affect-most-systems&#34;&gt;Some more examples of typical forces that affect most systems&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Security: ownership/privacy of data&lt;/li&gt;
+&lt;li&gt;History of what has happened: Being able to see what happened for debugging purposes, being able to blame a particular employee for missing cash, mining data, etc.&lt;/li&gt;
+&lt;li&gt;The Law: Legal requirements, users being able to commit fraud by using your system&lt;/li&gt;
+&lt;li&gt;Human forgetfulness&lt;/li&gt;
+&lt;li&gt;Human mistakes, data being out of sync with the outside world: e.g. consider a feature to import thousands of users into a system via a csv, and what happens when the columns of
+the first name and last name are switched and you have no quick way of undoing the operation&amp;hellip; people can and will make mistakes.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;know-all-sides-and-their-interests-know-the-forces-in-opposition&#34;&gt;Know all sides and their interests, know the forces in opposition&lt;/h2&gt;
+
+&lt;p&gt;We need to be aware as well that there are many actors in a system that relate differently in each case.
+Take a social network for example. Many people use it for different things. Someone might use it to know new people, someone might use it to communicate with their families,
+someone might use it to promote themselves, their projects, their business, their points of views and experiences&amp;hellip; while some people might create fake ids and learn when
+someone is on vacation to break into their houses. Advertisers, administrators, data miners, owners of the app, developers, devops, all have their sides and interests.&lt;/p&gt;
+
+&lt;p&gt;And forces can be in opposition, and often are. People&amp;rsquo;s interests with an app might collide. A banal example: Traceability might take developers time, disk space, and might
+slow down the app. So we desire traceability but we also need to consider the costs that come with traceability. A less banal example: you might want
+to make registration simple and unencumbering for the users, but at the same time avoid fraud and false identities. Nobody likes bureaucracy, right? But we might do
+want it when it helps us avoid undesirable situations.&lt;/p&gt;
+
+&lt;h1 id=&#34;conclusion-or-something-like-it-why-should-i-care-how-should-i-take-this-into-acount&#34;&gt;Conclusion&amp;hellip; or something like it: Why should I care? how should I take this into acount?&lt;/h1&gt;
+
+&lt;p&gt;One might ask: &amp;ldquo;why should I care about all this in the presence of division of labor?&amp;rdquo; (or alternatively, &amp;ldquo;knowing all those things is damn near impossible,
+that&amp;rsquo;s why we do agile iterative processes and we seek constant feedback&amp;rdquo;). It&amp;rsquo;s true that sometimes different things are handled by different people, and with
+division of labor, some people focus more on the &amp;ldquo;whys&amp;rdquo; and &amp;ldquo;whats&amp;rdquo; and others more on the &amp;ldquo;how&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;But even if you do work only in the &amp;ldquo;how&amp;rdquo;, it&amp;rsquo;s helpful to be mindful of these things. A few examples:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;You&amp;rsquo;ll notice that what might initially seem like an implementation detail, purely &amp;ldquo;how&amp;rdquo; stuff, actually ends up impacting in the end user. For example,
+in the Cow Counting System, doing a whole POST of the whole html page vs doing an ajax request is not equivalent, since POST makes the screen refresh,
+and it might be annoying for the user, and if many cows are going out at the same time, end up being problematic.&lt;/li&gt;
+&lt;li&gt;You&amp;rsquo;ll see that &amp;ldquo;how&amp;rdquo; you build the system and the &amp;ldquo;whys&amp;rdquo;, the external forces and entities, if they&amp;rsquo;re in harmony or not, matters a lot when new requirements come in.
+E.g. Conceptually a user, how the user logs in into a system, and the email account we send notifications too, are different things that can be highly related,
+so in many systems, you get a single db record for User with an email field. This works fine and it&amp;rsquo;s very simple, until it turns out a single user might have many ways of
+logging into the system, and the email for logging in might be different from the email you wanted email notifications to be sent to.&lt;/li&gt;
+&lt;li&gt;Sometimes someone might say you &amp;ldquo;what&amp;rdquo; to implement, but when thinking of &amp;ldquo;how&amp;rdquo; to
+do it, you&amp;rsquo;ll see that little details of the &amp;ldquo;what&amp;rdquo; are missing. Suppose a requirement that says &amp;ldquo;Delete a user from the system&amp;rdquo;. What does it mean deleting for
+traceability?
+What does it mean for entities created by that user? Should those entities disappear, or not? Is there any chance the user might want to undo the deletion? If the user
+profile is still visible, should it have a message saying &amp;ldquo;this user has been deleted&amp;rdquo;? To be able to
+understand these things and its ramifications the developers&amp;rsquo;s theory of the system, the inner mental representation,comes into play, the theory of not only how the
+system works, but what it does, and how it relates to people and what do those people want from the system.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In general, even in presence of division of labor, we should be mindful of exactly what you&amp;rsquo;re delegating to whom and what is expected of each one of us, while at the same
+time it&amp;rsquo;s good to strive to add the most value possible besides of what you&amp;rsquo;re supposed to specialize in. And it&amp;rsquo;s also good of being mindful of the forces at play, and the
+symbolic links we&amp;rsquo;re reading and giving away.&lt;/p&gt;
+
+&lt;h1 id=&#34;further-reading&#34;&gt;Further Reading&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.jnd.org/dn.mss/design_as_communicat.html&#34;&gt;Design as Communication&lt;/a&gt;: An article by Don Norman, author of the book The Design of Everyday Things, that touches
+on how the interfaces we build communicate and help the user build a story.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://pages.cs.wisc.edu/~remzi/Naur.pdf&#34;&gt;Programming as Theory Building&lt;/a&gt;: An old article (1985) by Peter Naur, early influential Computer Scientist, about how the
+activity of programming relies heavily on the programmer building useful internal theory of the system.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://medium.com/@nicolaerusan/conceptual-debt-is-worse-than-technical-debt-5b65a910fd46#.asspxn589&#34;&gt;Conceptual Debt is Worse than Technical Debt&lt;/a&gt; an article on the
+concepts the system exposes to your users and how that impacts on the user experience.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.ece.cmu.edu/~ganger/712.fall02/papers/p761-thompson.pdf&#34;&gt;Reflections on Trusting Trust&lt;/a&gt; A &lt;em&gt;very&lt;/em&gt; short, 3 pages, but &lt;em&gt;very&lt;/em&gt; important and &lt;em&gt;very&lt;/em&gt; recommended
+reading about computer security by Ken Thompson. It relates to the concepts outlined here
+because it talks precisely about the symbolic thought and links that the &lt;em&gt;developer&lt;/em&gt; makes when reading code, and the security pitfalls that come associated with it.
+It also reveals why computer systems security is so hard.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Organizational Debt and The Romantic Dev</title>
+      <link>http://blog.10pines.com/2015/08/18/organizational-debt-and-the-romantic-dev/</link>
+      <pubDate>Tue, 18 Aug 2015 12:49:27 +0000</pubDate>
+      
+      <guid>http://blog.10pines.com/2015/08/18/organizational-debt-and-the-romantic-dev/</guid>
+      <description>
+
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;While thinking what I could write about, I remembered a distant sunny afternoon, back at the beginning of my professional experience. I left writings about what is now a possible future post and began to write these words&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;In my early days on one of the first companies that I used to work, a bug in production was detected and I was assigned to fix it. After long minutes diving into the code, I discovered that the problem was in a small method of 472 lines which contained 11 nested ifs. When we evaluate this with the architect, the answer I got was &amp;ldquo;easy .. Add an if here and there, and this should be fixed&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;I remember going home extremely absorbed in my thoughts that day, while my body, with a strange autonomy, led my way home on its own.&lt;/p&gt;
+
+&lt;p&gt;On one hand, I’ve come from the university with an innocent idealism, thinking that one should always take the time to design the best abstractions to model the domain, trying to maximize as many design qualities as possible, favoring those that mattered most depending on the context. On the other hand, I felt totally incapable of providing a comprehensive solution to the problem, because I was overwhelmed by its magnitude, I hadn’t (and I think I still haven’t yet) the experience to improve it, and even suspected that the large amount of resources that would be necessary to refactor this will far exceed the benefits.&lt;/p&gt;
+
+&lt;p&gt;Eventually, I realized that it wasn’t convenient to the company to stop providing the service to redesign the product completely, but rather preferred to hire a lot of developers to maintain its product, which certainly was widely accepted in a portion of the market as it fulfilled certain needs like no other.&lt;/p&gt;
+
+&lt;p&gt;And then… then I saw it crystal clear. The architect was teaching me how to be efficient in that context: I just had to find the missing “if” as fast as possible because that business model worked fine that way.. And who was I to criticize that?&lt;/p&gt;
+
+&lt;p&gt;Still, if they had made the right design from the beginning, or made the refactor in time, perhaps they would have even higher margins, since they would had fewer bugs in production, need fewer programmers to maintain the system, and had a better product, or a product easier to improve. This is closely related to the concept of &lt;a href=&#34;https://www.youtube.com/watch?v=pqeJFYwnkjE&#34;&gt;&lt;strong&gt;technical debt&lt;/strong&gt;&lt;/a&gt;, coined by Ward Cunningham, and explained by Martin Fowler &lt;a href=&#34;http://martinfowler.com/bliki/TechnicalDebt.html&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;a-team-of-seconds&#34;&gt;A team of seconds&lt;/h2&gt;
+
+&lt;p&gt;Generalizing a little, this not only occurs in companies that offer a product. This also happens in systems builded by consultants, freelancers teams, academic groups, etc :.&lt;/p&gt;
+
+&lt;p&gt;It’s quite common to find systems that are so technically in debt that the only possible flavors of refactors are &amp;ldquo;small&amp;rdquo; or &amp;ldquo;impossible&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;But .. why does this happen?&lt;/p&gt;
+
+&lt;p&gt;According to my &lt;strong&gt;short&lt;/strong&gt; experience, there are, at least, two kind of professionals:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;There are developers who are not even worried about that, either due to &lt;em&gt;ignorance&lt;/em&gt; or  lack of &lt;em&gt;interest&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;There are others, who sometimes are tempted to make a provisional implementation (for any reason whatsoever, which may be &lt;strong&gt;perfectly valid&lt;/strong&gt;) and then rely on their future self that will make the corresponding refactor. The problem is, that in many cases, either the refactor does not appear, is incomplete, or happens too late.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;However, there is a big difference between the first and the second developer: regardless the reason, the &lt;em&gt;second&lt;/em&gt; &lt;strong&gt;&lt;em&gt;cares&lt;/em&gt;&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;It seems to be a trivial difference, but in my personal opinion, it’s a key aspect that influences the growth prospects of the organization and the person itself:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The &lt;em&gt;second&lt;/em&gt; probably doesn’t always know the right way to do something, but he &lt;strong&gt;does&lt;/strong&gt; have interest in doing it that way&lt;/li&gt;
+&lt;li&gt;Ergo, the presence of doubt is much more common in the &lt;em&gt;second&lt;/em&gt;, therefore, he will probably ask for guidance more often&lt;/li&gt;
+&lt;li&gt;A good &lt;em&gt;second&lt;/em&gt; is open to criticism. Even asks for it&lt;/li&gt;
+&lt;li&gt;A &lt;em&gt;second&lt;/em&gt; feels a &lt;em&gt;characteristic discomfort&lt;/em&gt; when he is implementing something far away from the state of the art (whose precondition is the knowledge of such state of the art, or at least a notion of it)&lt;/li&gt;
+&lt;li&gt;A &lt;em&gt;second&lt;/em&gt; feels guilty when he adds the &amp;ldquo;daily if&amp;rdquo;, or he makes sure to have a reason that explains that addition&lt;/li&gt;
+&lt;li&gt;It’s more likely that a &lt;em&gt;second&lt;/em&gt; takes the time to refactor&lt;/li&gt;
+&lt;li&gt;It’s more probable that a &lt;em&gt;second&lt;/em&gt; anticipates impossible deadlines, inconsistent, incomplete or contradictory requirements&lt;/li&gt;
+&lt;li&gt;A team of good old &lt;em&gt;seconds&lt;/em&gt; probably have right designs from the beginning&lt;/li&gt;
+&lt;li&gt;A team of good old &lt;em&gt;seconds&lt;/em&gt; have higher chances to implement a software with better design qualities&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Great! Then it seems you just need to have a &lt;strong&gt;team of seconds&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;But that’s not so common that .. why?&lt;/p&gt;
+
+&lt;p&gt;In my opinion, the concept of &amp;ldquo;second&amp;rdquo; as I am using in these paragraphs is not to classify only developers, but people. Organizations are nothing but interrelated people trying to achieve common objectives.&lt;/p&gt;
+
+&lt;p&gt;If within the pillars of the organization aren’t:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;the valorization of knowledge as the principal asset of the organization, and, therefore, of those who own it&lt;/li&gt;
+&lt;li&gt;doing what was evaluated as correct as a must.. doing something else &lt;strong&gt;is not&lt;/strong&gt; &lt;strong&gt;consequenceless&lt;/strong&gt;, &lt;strong&gt;it’s wrong&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;the naturalization of the dialog, the discussing and the argueing about what are the right ways to do something, whose mandatory roots are in the previous item&lt;/li&gt;
+&lt;li&gt;and the emphasis and commitment to training: teaching instead of punishing&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&amp;hellip; then it’s very difficult to have that team of seconds, and it’s pretty likely that the few  existing seconds lose interest and &lt;strong&gt;become firsts&lt;/strong&gt;, or &lt;strong&gt;leave the organization&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;organizational-debt&#34;&gt;Organizational Debt&lt;/h2&gt;
+
+&lt;p&gt;Isn’t there a parallel between software and organizations regarding quality? Could we say that there is something like an &lt;strong&gt;organizational debt&lt;/strong&gt;, parallel to the technical debt, which would establish an inverse relationship between the mere passage of time and the ability of organizations to produce quality services or products, if such organizations do not pay the interest that would involve the development of certain internal improvement activities?&lt;/p&gt;
+
+&lt;p&gt;In other words, organizational debt will increase while certain values ​​are not met and no continuous-improvement-costs are assumed, like feedback processes, the development of a self-criticism conscience , the materialization of the mentioned feedback and auto-criticism, furthering communication and cooperation between the teams, among other activities, favoring the seizing of short-term opportunities instead, and the constantly compliance with deadlines, being unable to get free of the daily maelstrom circle vicious.&lt;/p&gt;
+
+&lt;h2 id=&#34;the-romantic-dev&#34;&gt;The Romantic Dev&lt;/h2&gt;
+
+&lt;p&gt;Focussing on the individual again and in the developer as a professional, I propose the idea that in my opinion there is something beyond to being a &amp;ldquo;second&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;Perhaps it’s the beginning, but what we really could aspire to become is that &lt;strong&gt;romantic programmer&lt;/strong&gt; that even if the organizational context does not help, even if the tools are not the best, even in the absence of any expectation of improvement and even if the efforts are not recognized, he has the courage of going against the current and maintain a certain level of quality passing all those obstacles.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;In other words, one who fights lost causes with the belief that they are the only ones that deserve to be fought.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;ldquo;A Man is what he does with what others did to him&amp;rdquo; said Sartre.&lt;/p&gt;
+
+&lt;p&gt;A certain degree of vocation, satisfaction with study, and perfectionism, are an essential part of an aspiring  romantic dev.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;However&lt;/strong&gt;, like all ideal concepts, it’s (and in this case, &lt;strong&gt;must be&lt;/strong&gt;) inexistent in practice. The description of such professional is naive, and even inefficient. In this contexts, it’s much more difficult to do the right thing, and growth opportunities become &lt;strong&gt;exotic&lt;/strong&gt;. &lt;em&gt;Note that to fight lost causes is noble and an artistically powerful idea, but it’s not an interesting feature for work environments.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;However, at least in my opinion, &lt;strong&gt;these ideal concepts are useful to be identified and described, since they set the direction and sense of our evolution&lt;/strong&gt;. They can even help us to receive at least a hint of satisfaction in certain situations that were once all frustration.&lt;/p&gt;
+
+&lt;p&gt;And this is the way..&lt;/p&gt;
+
+&lt;p&gt;This is the way that someone realizes that is in the path of the romantic dev.&lt;/p&gt;
+
+&lt;p&gt;It’s spending long hours until he is in peace with his implementation. It’s evaluating all possible ways to comply with the requirements along with the tradeoffs, and choosing the one he thinks is better. It’s finding himself at home, late at nite, researching on the subject.&lt;/p&gt;
+
+&lt;p&gt;And this is the way.. This is the way that the romantic dev will go to his next meeting: with peace on his mind since he knows that he had suffered enough to be satisfied with his work. This is how he will sit, like anyone else, with predisposition to analyze and explain every single detail.&lt;/p&gt;
+
+&lt;p&gt;But his fate must be tragic. His turn in this meeting will be short: the implementation will icily please his client, since a working system is something to be expected, but difficult to appreciate.&lt;/p&gt;
+
+&lt;p&gt;And that is how that meeting will end, another sprint will start, and the cycle will repeat forever.&lt;/p&gt;
+
+&lt;p&gt;That will be his fate. His contribution will be forgotten and will occupy a little space in the universal superfluous hours. It’s his fate and the fate of all of us.&lt;/p&gt;
+
+&lt;p&gt;But his fate..&lt;/p&gt;
+
+&lt;p&gt;..his fate will be unfair.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;(1) related to Hash Oriented Programming, name by which, not without some humor, we refer to one of the many smells that are living in actual systems&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to gently upgrade your Java application</title>
+      <link>http://blog.10pines.com/2015/06/15/how-to-gently-upgrade-your-java-application/</link>
+      <pubDate>Mon, 15 Jun 2015 14:48:00 +0000</pubDate>
+      
+      <guid>http://blog.10pines.com/2015/06/15/how-to-gently-upgrade-your-java-application/</guid>
+      <description>&lt;p&gt;When I think about getting an upgrade I usually picture myself like this:&lt;/p&gt;
+
+&lt;p&gt;{% img /images/Feel_like_a_sir_in_hd_by_lemmino-200.png %}&lt;/p&gt;
+
+&lt;p&gt;But… as the time passes… I feel like Homer applying for the university, something like:&lt;/p&gt;
+
+&lt;p&gt;{% img /images/homer205ei9.png %}&lt;/p&gt;
+
+&lt;p&gt;Since in 10Pines we reached a successful migration I want to share with you our experience on the road. Also, I want this post to be as short as it can be in order to be handy and easy to read, so, if you have doubts please leave a comment!&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Context&lt;/strong&gt;:
+In 10Pines we work with a set of tools to help us building robust software. The main tools are Jenkins (+sonar+findbugs) for continuous integration, Github and Artifactory for artifacts management, among others. Our goal is to &lt;strong&gt;upgrade Java without losing our environment&lt;/strong&gt; (including our metrics) in our existing projects.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;#Lessons learned&lt;/p&gt;
+
+&lt;p&gt;##1) Retrocompatibility
+We all know the efforts made by the Java team to allow retrocompatibility (maybe… it’s even too much), but… it’s true… so if you just change your java version and compile as Java 8 everything is wonderful.&lt;/p&gt;
+
+&lt;p&gt;BUT I dare you to go to your largest project and replace the first (and horrible) loop with a (beautiful) lambda and see what happens…&lt;/p&gt;
+
+&lt;p&gt;{% img /images/parliamentExplosion.jpg %}&lt;/p&gt;
+
+&lt;p&gt;The lesson learned here is that:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Java is retrocompatible BUT the frameworks not necessarily are…&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Specially if you use “too much reflection”&amp;hellip; let’s say javaasit or Spring or something who depends on Spring (almost everything!).&lt;/p&gt;
+
+&lt;p&gt;##2) Be prepared to upgrade&lt;/p&gt;
+
+&lt;p&gt;Yes… you have to upgrade your tools and dependencies and development environments and your application server…&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Basically, you&amp;rsquo;ll have to upgrade pretty much everything, as a consecuence of 1)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Here is a list of technologies that we had to upgrade:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Spring&lt;/li&gt;
+&lt;li&gt;Spring security&lt;/li&gt;
+&lt;li&gt;Quartz&lt;/li&gt;
+&lt;li&gt;Jacoco&lt;/li&gt;
+&lt;li&gt;Jenkins&lt;/li&gt;
+&lt;li&gt;Findbugs&lt;/li&gt;
+&lt;li&gt;Sonar&lt;/li&gt;
+&lt;li&gt;Tomcat&lt;/li&gt;
+&lt;li&gt;Eclipse&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;##3) Lambdas are not closures&lt;/p&gt;
+
+&lt;p&gt;I don’t want to start a flame war here trying to define the concepts… but…
+&amp;gt; If you consider a &lt;em&gt;closure&lt;/em&gt; the one that you use in Smalltalk and a lambda the one that you have in Java 8 then be aware of the differences&lt;/p&gt;
+
+&lt;p&gt;###Context awareness:&lt;/p&gt;
+
+&lt;p&gt;####Scopes&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;You can NOT modify references outside the context, example:
+Smalltalk code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-smalltalk&#34;&gt;total := 0.
+numbers do: [ :number | total := total + number ]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Java (ideal) but &lt;strong&gt;not working&lt;/strong&gt; code (because you cannot modify non final variables in the local scope):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;Integer total = 0;
+numbers.forEach(number -&amp;gt; total = total + number);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Java &lt;strong&gt;working&lt;/strong&gt; code :&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;final AtomicInteger total = new AtomicInteger(0);
+numbers.forEach(number -&amp;gt; total.set(total.get() + number));
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Summary:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;You have the same restrictions as inside an inner class&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;####Return&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;When you are in a lambda you return from the lambda and not from the whole context:
+Smalltalk:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-smalltalk&#34;&gt;theReturnCase
+	|example|
+	example := [ ^5 ]
+	example value
+	^ 10
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you invoke &lt;code&gt;theReturnCase()&lt;/code&gt;, you get 5!&lt;/p&gt;
+
+&lt;p&gt;Java:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;private static Integer theReturnCase() {
+	Supplier&amp;lt;Integer&amp;gt; example = () -&amp;gt; {return 5;};
+	example.get();
+	return 10;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you invoke &lt;code&gt;theReturnCase()&lt;/code&gt;, you get 10!&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;I think that the best strategy is the one in Ruby where I can choose the behavior I want. Anyway it&amp;rsquo;s allways good to know the result&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;##4) New default options&lt;/p&gt;
+
+&lt;p&gt;There are a lot of changes, &lt;em&gt;even the default options for generating javadoc&lt;/em&gt;. This is important specially if you use a plugin like maven-release-plugin, because maybe you are as lucky as us… and now your build fails because your javadoc have some errors&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;{% img /images/fuuu.jpg %}&lt;/p&gt;
+
+&lt;p&gt;This is because we have a new default when generating javadoc! It&amp;rsquo;s a strict check, so if you have some errors like for example: &lt;code&gt;@see com.tenpines.commons.persistence.entities.Fechable&lt;/code&gt; and this class has been renamed now you have a failing javadoc, and your build is failing.&lt;/p&gt;
+
+&lt;p&gt;You can correct it, in fact you should correct it. But you can also change the option of fail on javadoc errors.&lt;/p&gt;
+
+&lt;p&gt;##5) Streams have too much potential&lt;/p&gt;
+
+&lt;p&gt;{% img /images/tooMuchPotencial.png %}&lt;/p&gt;
+
+&lt;p&gt;Yes, they can be asynchronous, parallel, lazy ….
+But for a simple usage they are verbose, ok we are java programmers and we are used to that, but time to time I think why Oracle? why?&lt;/p&gt;
+
+&lt;p&gt;Let’s say you want to select the older people from a list:&lt;/p&gt;
+
+&lt;p&gt;In Smalltalk:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-smalltalk&#34;&gt;people select: [ :p | p.isOlder]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now in Java 8:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-smalltalk&#34;&gt;people.stream().filter(p -&amp;gt; p.isOlder()).collect(Collectors.toList()))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;We have to obtain a new object that can understand &lt;strong&gt;filter&lt;/strong&gt; (the famous Stream), then we have to declare the filter condition and finally obtain the filtered list&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Stream of Java8 works with operations and terminators, &lt;strong&gt;collect&lt;/strong&gt; is a terminator which obtains a list containing the result of applying all the operations, in our example a list of Person.
+If you are a little curious and explore the Collector&amp;rsquo;s  API and documentation, at least for me, it&amp;rsquo;s quite confusing but fortunately we are provided with usefull implementations. For our example we want an innocent list and we don´t care about other stuff, so it&amp;rsquo;s ok.&lt;/p&gt;
+
+&lt;p&gt;#Good things are waiting for you&lt;/p&gt;
+
+&lt;p&gt;Yes, we had a hard time in the beginning (specially, because we did this like one year ago), but the truth is that our code has been improving a lot, specially with the new Date API and the existence of lambdas, we are able to build better abstractions, and yes:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;For simple usage streams are verbose, but it’s VERY easy to build something to improve that.&lt;/li&gt;
+&lt;li&gt;You have to upgrade, but it’s a good practice for you to be up to date, specially with frameworks that include lot of updates and bug fixes.&lt;/li&gt;
+&lt;li&gt;Maybe your javadoc is failing but it sounds to me that it&amp;rsquo;s time to think Why do you have wrong javadocs? Also, if you are in a hurry you can change the default easily&lt;/li&gt;
+&lt;li&gt;Lambdas are not closure and that is really sad (at least for me)… although at the end of the day I’m happy to have this concept and we should push for improve it.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Java 8 it’s not all about lambdas! We have a lot of interesting new features that gives us more tools to keep improving.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;With more time we can write another post giving examples of our code improvements and talking about our “experiments” simplifying the language, but that is another story. Just for now:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Upgrade should be the path to follow. Maybe it’s a little rough, but today we are very happy with our decision.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Essence-driven Development</title>
+      <link>http://blog.10pines.com/2015/02/18/essence-driven-development/</link>
+      <pubDate>Wed, 18 Feb 2015 11:13:05 +0000</pubDate>
+      
+      <guid>http://blog.10pines.com/2015/02/18/essence-driven-development/</guid>
+      <description>&lt;p&gt;Something that has always seemed motivating is the feeling that my way of doing things generally maintained good adaptability. Throughout my years of study at the University, and later in 10pines, I realized the type of programmer who I want to be.&lt;/p&gt;
+
+&lt;p&gt;Many aim to learn Object-Oriented Programming, Functional Programming, or a particular programming language, but this profession is characterized for being constantly changing. For my part, I have always wanted to be sure I’m prepared to face any challenge. Therefore, my way to learn always relies on capturing the essence of knowledge.&lt;/p&gt;
+
+&lt;p&gt;It is important to remember that the abstractions we generate will be crucial for future elements, and an essential part of this is remembering the essence of what we do. Our technique must not be driven by design patterns or naming conventions. All these things vary according to the paradigm in which your solution is based. Instead, programming basing on the essence of your abstractions is a crucial element to be a good developer.&lt;/p&gt;
+
+&lt;p&gt;Why am I referring to the essence? Mainly because it is very common that, by force of habit or an inflexible scheme of work, the first thing you think when you design, are database attributes instead of variables, controllers before interfaces, or even configuration files before any other thing.&lt;/p&gt;
+
+&lt;p&gt;While this seems unusual, it unfortunately happens. And it is partly because we are formed in a specific paradigm, we see a little part of the wide world of programming. If we don’t have some level of variation, hungry to want to see beyond that barrier, we will not be as good as we can in this profession.&lt;/p&gt;
+
+&lt;p&gt;Never stop learning. Keep feeding your mind. The good programmer is not the one who knows lots of technologies and the best frameworks, but the one who knows how to create the best abstractions, and represent in the most accurate way possible, the solution to a real problem in the world of ideas.&lt;/p&gt;
+
+&lt;p&gt;Thanks for reading.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

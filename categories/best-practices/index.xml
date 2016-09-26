@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Best Practices on 10 Pines Blog</title>
+    <link>http://blog.10pines.com/categories/best-practices/</link>
+    <description>Recent content in Best Practices on 10 Pines Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 25 Nov 2015 15:28:11 +0000</lastBuildDate>
+    <atom:link href="http://blog.10pines.com/categories/best-practices/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Ruby On Pains</title>
+      <link>http://blog.10pines.com/2015/11/25/ruby-on-pains/</link>
+      <pubDate>Wed, 25 Nov 2015 15:28:11 +0000</pubDate>
+      
+      <guid>http://blog.10pines.com/2015/11/25/ruby-on-pains/</guid>
+      <description>
+
+&lt;p&gt;Have you ever heard about the &lt;em&gt;Rails way&lt;/em&gt;?
+I would like to introduce some pains that I&amp;rsquo;ve seen and keep seeing in all the Rails projects due to the &lt;em&gt;Rails way&lt;/em&gt;&amp;hellip;&lt;/p&gt;
+
+&lt;h2 id=&#34;activerecord&#34;&gt;ActiveRecord&lt;/h2&gt;
+
+&lt;p&gt;How many times do we need to find an object in a Rails project? How many times do we create, update or delete objects from the DB? Many times, isn&amp;rsquo;t it? We are used to repeat these actions in all our ActiveRecord classes. We do it like monkeys, never ask for a timeout and think about it. It seems to be something &lt;em&gt;normal&lt;/em&gt; when we use this framework, it&amp;rsquo;s the famous &lt;em&gt;Rails way&lt;/em&gt;. It&amp;rsquo;s &lt;em&gt;normal&lt;/em&gt; for us to have a class that answers &lt;code&gt;find&lt;/code&gt;, &lt;code&gt;update&lt;/code&gt;, &lt;code&gt;save&lt;/code&gt;, etc, but we never think if it’s right and whether there could be a better way of doing it.&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s typical to find this kind of logic in a Rails project, see the example of this controller:&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;UserController&lt;/span&gt;
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;index&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;@users&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;User&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;all&lt;/span&gt;
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+  
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;show&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;@user&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;User&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;find(params&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;:id&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;)&lt;/span&gt;
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+    
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;create&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;@user&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;User&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;create(user_params)&lt;/span&gt;
+  &lt;span style=&#34;color: #f92672&#34;&gt;...&lt;/span&gt;
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;private&lt;/span&gt;
+ 
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;user_params&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;params&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;require(&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;:user&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;permit(&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;...&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;)&lt;/span&gt;
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+  &lt;span style=&#34;color: #f92672&#34;&gt;...&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The OO paradigm defines, among other things, that a class has two main responsibilities. The first one is defining the behavior for the objects of that class, and the second one is creating instances of it. This means that all objects that are instances of the same class can perform the same actions. So, when did we talk about persisting? We didn&amp;rsquo;t say anything about classes having the responsibility of writing to the database or executing a query in order to load some instances in memory. Have you ever thought what are we doing to our classes in order to answer those kind of messages? Basically inheriting from &lt;code&gt;ActiveRecord::Base&lt;/code&gt;, which is a strong association that defines a rigid behavior that doesn&amp;rsquo;t follow the paradigm principles. Look at this alternative:&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;UserController&lt;/span&gt;
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;index&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;@users&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;UserRecords&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;find_all&lt;/span&gt;
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+  
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;show&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;@user&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;UserRecords&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;find(params&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;:id&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;)&lt;/span&gt;
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+  &lt;span style=&#34;color: #f92672&#34;&gt;...&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Definitely our business domain models shouldn&amp;rsquo;t be coupled to the way we persist them. The main reason is both belong to different domains, having different kind of responsibilities. Moreover, have you ever thought about changing Rails for another framework? Our models shouldn&amp;rsquo;t change, our code shouldn&amp;rsquo;t change much. We should only need to change those entities in charge of persistence. But if those entities are the same that model our business domain, probably we are in trouble.&lt;/p&gt;
+
+&lt;h2 id=&#34;validations&#34;&gt;Validations&lt;/h2&gt;
+
+&lt;p&gt;Have you ever thought about invalid objects? Moreover, have you ever thought if it make sense to think about valid objects? Well, in real life we don&amp;rsquo;t have invalid entities, we don&amp;rsquo;t have invalid persons, or invalid cars, it would be ridiculous. But, since the external world interacts with computer systems, for example someone using a web application, we can always do it in a bad way. We can fill forms incorrectly, e.g. filling a telephone input field with my name. However this doesn&amp;rsquo;t mean that invalid objects should exist. We can have validations or rules that need to be satisfied in order to process that form and create a new user in our system.&lt;/p&gt;
+
+&lt;p&gt;Let me be more specific. In a Rails project we can probably find controllers like&amp;hellip;&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;create&lt;/span&gt;
+  &lt;span style=&#34;color: #f8f8f2&#34;&gt;@user&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;User&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;create(params&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;:user&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;)&lt;/span&gt;
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;@user&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;valid?&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;redirect_to&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;show_path(@user)&lt;/span&gt;
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;else&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;render&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;:create&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;errors&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;@user&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;errors&lt;/span&gt;
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+&lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;We usually ask an object if it&amp;rsquo;s valid because, I suppose, it&amp;rsquo;s the &lt;em&gt;Rails way&lt;/em&gt;. As I said, it&amp;rsquo;s ridiculous, I&amp;rsquo;m sure that User class is full of &lt;code&gt;validates&lt;/code&gt; and we still can create invalid instances.&lt;/p&gt;
+
+&lt;p&gt;Suppose we are in 1930, and you go to a club asking for a sign up. The help desk gives you the users record book and asks you to write your enrollment, then the help desk checks whether you have filled the enrollment correctly. If you did it wrong, you will be asked to fix it. Well, I&amp;rsquo;m sure that book would be full of corrections. Wouldn&amp;rsquo;t it be better to have a sign up form that the helpdesk uses to complete an enrollment that we know is correct?&lt;/p&gt;
+
+&lt;p&gt;The problem here is that we are modeling a user when we don&amp;rsquo;t have to. We are omitting something in the middle, the form. We aren&amp;rsquo;t modeling that, take a look at this short example:&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;create&lt;/span&gt;
+  &lt;span style=&#34;color: #f8f8f2&#34;&gt;form&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;UserEnrollmentForm&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;new(user_params)&lt;/span&gt;
+  &lt;span style=&#34;color: #f8f8f2&#34;&gt;@user&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;UserEnroller&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;new&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;call(form)&lt;/span&gt;
+  &lt;span style=&#34;color: #f8f8f2&#34;&gt;redirect_to&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;show_path(@user)&lt;/span&gt;
+&lt;span style=&#34;color: #66d9ef&#34;&gt;rescue&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;UserEnrollmentError&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;e&lt;/span&gt;
+  &lt;span style=&#34;color: #f8f8f2&#34;&gt;render&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;:create&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;form&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;form,&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;error&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;e&lt;/span&gt;
+&lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Here we are just delegating the responsibility of deciding whether to create or not a User based on an input form. Again, have in mind the given implementation is not part of the scope, we can discuss multiple ways of doing this. The main thing is, we should never have invalid objects in our system. If something goes wrong while creating or modifying an instance, I would like to be notified asap - In Rails, use the bang always!&lt;/p&gt;
+
+&lt;h2 id=&#34;ruby-coals&#34;&gt;Ruby Coals&lt;/h2&gt;
+
+&lt;p&gt;I like using that word just to refer to awful gems. What happens when you grab a coal? Your hands get dirty right? Well, this is what I feel with some gems when I start using them in a project. Also a coal is the primitive of a gem and it really feels like we are not progressing when we use that kind. The fact is that the &lt;em&gt;Rails way&lt;/em&gt; is awesome cause we can find some functionality that someone has already built, installing that gem, and voilá.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s see some examples. We can start with this pagination coal&amp;hellip;&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;Post&lt;/span&gt;
+  &lt;span style=&#34;color: #f8f8f2&#34;&gt;self&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;per_page&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;10&lt;/span&gt;
+&lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+
+&lt;span style=&#34;color: #66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;PostsController&lt;/span&gt;
+  &lt;span style=&#34;color: #f92672&#34;&gt;...&lt;/span&gt;
+  &lt;span style=&#34;color: #f8f8f2&#34;&gt;@posts&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;Post&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;paginate(&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;page&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;params&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;:page&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;)&lt;/span&gt;
+  &lt;span style=&#34;color: #f92672&#34;&gt;...&lt;/span&gt;
+&lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;I don&amp;rsquo;t like that way of doing things, we are breaking the OO design rule about responsibilities and not coupling things that belong to different domains. Here, we are coupling our &lt;code&gt;Post&lt;/code&gt; model with the idea of paginating them for a view, that&amp;rsquo;s crazy! We should find a better way, such as modeling a paginator instead of having our classes answering messages like &lt;code&gt;per_page&lt;/code&gt; or &lt;code&gt;paginate&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;PostsController&lt;/span&gt;
+  &lt;span style=&#34;color: #f92672&#34;&gt;...&lt;/span&gt;
+  &lt;span style=&#34;color: #f8f8f2&#34;&gt;paginator&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;Paginator&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;new(&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;PostsBook&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;find_all,&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;per_page&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;POSTS_PER_PAGE&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;)&lt;/span&gt;
+  &lt;span style=&#34;color: #f8f8f2&#34;&gt;posts&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;paginator&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;call(&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;page&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;params&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;:page&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;)&lt;/span&gt;
+  &lt;span style=&#34;color: #f92672&#34;&gt;...&lt;/span&gt;
+&lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now take a look at this filtering coal&amp;hellip;&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;Student&lt;/span&gt;
+  &lt;span style=&#34;color: #f8f8f2&#34;&gt;scope&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;:with_country_id&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;(country_id)&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;{&lt;/span&gt; &lt;span style=&#34;color: #960050; background-color: #1e0010&#34;&gt;…&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;}&lt;/span&gt;
+  &lt;span style=&#34;color: #f8f8f2&#34;&gt;scope&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;:sorted_by&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;(field)&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;{&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;...&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;}&lt;/span&gt;
+  &lt;span style=&#34;color: #f8f8f2&#34;&gt;scope&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;:search_query&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;...&lt;/span&gt;
+      
+  &lt;span style=&#34;color: #f8f8f2&#34;&gt;filterrific(&lt;/span&gt;
+    &lt;span style=&#34;color: #e6db74&#34;&gt;default_filter_params&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;{&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;sorted_by&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;created_at_desc&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;},&lt;/span&gt;
+    &lt;span style=&#34;color: #e6db74&#34;&gt;available_filters&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;:sorted_by&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;:search_query&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;:with_country_id&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;)&lt;/span&gt;
+  &lt;span style=&#34;color: #f92672&#34;&gt;...&lt;/span&gt;
+&lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+
+&lt;span style=&#34;color: #66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;StudentController&lt;/span&gt;
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;index&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;@filterrific&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;initialize_filterrific(&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;Student&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;params&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;:filterrific&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;or&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;return&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;@students&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;@filterrific&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;find&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;page(params&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;:page&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;)&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;respond_to&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;do&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;|&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;format&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;|&lt;/span&gt;
+      &lt;span style=&#34;color: #f8f8f2&#34;&gt;format&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;html&lt;/span&gt;
+      &lt;span style=&#34;color: #f8f8f2&#34;&gt;format&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;js&lt;/span&gt;
+    &lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+  &lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+  &lt;span style=&#34;color: #f92672&#34;&gt;...&lt;/span&gt;
+&lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;That&amp;rsquo;s really good! Our models become a storage of filtering configuration! Seriously, the filtering functionallity that we offer in a view has nothing to do in our &lt;code&gt;Student&lt;/code&gt; model. Does a student need to know about filtering configuration? One more time, we are coupling. Here is another simple way of doing this:&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;StudentController&lt;/span&gt;
+  &lt;span style=&#34;color: #f92672&#34;&gt;...&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;students_filter&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;StudentsFilter&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;new(params&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;:filtering&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;)&lt;/span&gt;
+    &lt;span style=&#34;color: #f8f8f2&#34;&gt;@students&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;StudentRecords&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;with_filter(filter)&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;find_all&lt;/span&gt;
+  &lt;span style=&#34;color: #f92672&#34;&gt;...&lt;/span&gt;
+&lt;span style=&#34;color: #66d9ef&#34;&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Again, let me remeber that the examples shown above are just ilustrative, we are not discussing the implementation, but the approach we are choosing. My suggestion is, let&amp;rsquo;s think twice before adding this kind of coals as your code will get dirty and removing or refactoring this kind of functionality to another place will be a pain in the ass.&lt;/p&gt;
+
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;In my opinion, Rails is a good framework for a kick-off. It’s easy to write the firsts test cases, implement the idea, and deploy it. But, what happens when the application starts to grow? Sometimes we lose our mind trying to get things out faster, and we shouldn&amp;rsquo;t forget the importance of designing good models, otherwise implementing the next feature becomes a headache. Also you will always find multiple gems to solve your problem, but think the way you are going to implement such thing, most of them make your models dirty. Always remember that it is key to understand the essence of the objects in the reality&amp;rsquo;s domain to keep it on our code.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
